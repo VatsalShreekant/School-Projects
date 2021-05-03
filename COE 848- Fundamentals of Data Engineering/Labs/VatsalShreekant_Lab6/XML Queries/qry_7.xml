@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="qry_7.xslt" type="text/xsl" ?>
+<document>
+<qry_7>
+<Product_ID>1</Product_ID>
+<Product_Name>Greenlights</Product_Name>
+<Product_Availability>No</Product_Availability>
+<Rating_Stars>4</Rating_Stars>
+<Comment_Sentiment>Good</Comment_Sentiment>
+</qry_7>
+<qry_7>
+<Product_ID>3</Product_ID>
+<Product_Name>After Hours</Product_Name>
+<Product_Availability>No</Product_Availability>
+<Rating_Stars>5</Rating_Stars>
+<Comment_Sentiment>Good</Comment_Sentiment>
+</qry_7>
+<qry_7>
+<Product_ID>4</Product_ID>
+<Product_Name>SAMSUNG 27-inch M5 Smart Monitor</Product_Name>
+<Product_Availability>No</Product_Availability>
+<Rating_Stars>5</Rating_Stars>
+<Comment_Sentiment>Good</Comment_Sentiment>
+</qry_7>
+<qry_7>
+<Product_ID>6</Product_ID>
+<Product_Name>McCafe K-Cup pod</Product_Name>
+<Product_Availability>No</Product_Availability>
+<Rating_Stars>5</Rating_Stars>
+<Comment_Sentiment>Good</Comment_Sentiment>
+</qry_7>
+<qry_7>
+<Product_ID>9</Product_ID>
+<Product_Name>Michelin Tires</Product_Name>
+<Product_Availability>No</Product_Availability>
+<Rating_Stars>5</Rating_Stars>
+<Comment_Sentiment>Good</Comment_Sentiment>
+</qry_7>
+</document>

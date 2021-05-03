@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="qry_2.xslt" type="text/xsl" ?>
+<document>
+<qry_2>
+<Product_ID>3</Product_ID>
+<Product_Name>After Hours</Product_Name>
+<Product_Avg_Ratings>5</Product_Avg_Ratings>
+</qry_2>
+<qry_2>
+<Product_ID>4</Product_ID>
+<Product_Name>SAMSUNG 27-inch M5 Smart Monitor</Product_Name>
+<Product_Avg_Ratings>5</Product_Avg_Ratings>
+</qry_2>
+<qry_2>
+<Product_ID>6</Product_ID>
+<Product_Name>McCafe K-Cup pod</Product_Name>
+<Product_Avg_Ratings>5</Product_Avg_Ratings>
+</qry_2>
+<qry_2>
+<Product_ID>9</Product_ID>
+<Product_Name>Michelin Tires</Product_Name>
+<Product_Avg_Ratings>5</Product_Avg_Ratings>
+</qry_2>
+<qry_2>
+<Product_ID>10</Product_ID>
+<Product_Name>Samsung Ear Buds</Product_Name>
+<Product_Avg_Ratings>5</Product_Avg_Ratings>
+</qry_2>
+<qry_2>
+<Product_ID>1</Product_ID>
+<Product_Name>Greenlights</Product_Name>
+<Product_Avg_Ratings>4</Product_Avg_Ratings>
+</qry_2>
+<qry_2>
+<Product_ID>2</Product_ID>
+<Product_Name>Grand Theft Auto V</Product_Name>
+<Product_Avg_Ratings>4</Product_Avg_Ratings>
+</qry_2>
+<qry_2>
+<Product_ID>5</Product_ID>
+<Product_Name>CALVIN KLEIN CKIN2U</Product_Name>
+<Product_Avg_Ratings>4</Product_Avg_Ratings>
+</qry_2>
+<qry_2>
+<Product_ID>7</Product_ID>
+<Product_Name>Flannel Shirt</Product_Name>
+<Product_Avg_Ratings>3</Product_Avg_Ratings>
+</qry_2>
+<qry_2>
+<Product_ID>8</Product_ID>
+<Product_Name>Golf Balls</Product_Name>
+<Product_Avg_Ratings>3</Product_Avg_Ratings>
+</qry_2>
+
+</document>
+

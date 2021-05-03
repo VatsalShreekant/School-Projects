@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="amazondatabase.xslt" type="text/xsl" ?>
+<document>
+   
+<!--        Billing_Detail        -->
+
+   <Billing_Detail>
+      <Billing_ID>1</Billing_ID>
+      <Customer_ID>1</Customer_ID>
+      <Street_Num>123</Street_Num>
+      <Street_Name>1st Street</Street_Name>
+      <Postal_Code>99999</Postal_Code>
+      <City>Seattle</City>
+      <Province>WA</Province>
+      <Country>USA</Country>
+   </Billing_Detail>
+   <Billing_Detail>
+      <Billing_ID>2</Billing_ID>
+      <Customer_ID>2</Customer_ID>
+      <Street_Num>123</Street_Num>
+      <Street_Name>2nd Street</Street_Name>
+      <Postal_Code>99999</Postal_Code>
+      <City>Boston</City>
+      <Province>MA</Province>
+      <Country>USA</Country>
+   </Billing_Detail>
+   <Billing_Detail>
+      <Billing_ID>3</Billing_ID>
+      <Customer_ID>3</Customer_ID>
+      <Street_Num>123</Street_Num>
+      <Street_Name>3rd Street</Street_Name>
+      <Postal_Code>99999</Postal_Code>
+      <City>Los Angelas</City>
+      <Province>CA</Province>
+      <Country>USA</Country>
+   </Billing_Detail>
+   <Billing_Detail>
+      <Billing_ID>4</Billing_ID>
+      <Customer_ID>4</Customer_ID>
+      <Street_Num>123</Street_Num>
+      <Street_Name>4th Street</Street_Name>
+      <Postal_Code>99999</Postal_Code>
+      <City>New York</City>
+      <Province>NY</Province>
+      <Country>USA</Country>
+   </Billing_Detail>
+   <Billing_Detail>
+      <Billing_ID>5</Billing_ID>
+      <Customer_ID>5</Customer_ID>
+      <Street_Num>123</Street_Num>
+      <Street_Name>5th Street</Street_Name>
+      <Postal_Code>99999</Postal_Code>
+      <City>Minneapolis</City>
+      <Province>MN</Province>
+      <Country>USA</Country>
+   </Billing_Detail>
+   <Billing_Detail>
+      <Billing_ID>6</Billing_ID>
+      <Customer_ID>6</Customer_ID>
+      <Street_Num>123</Street_Num>
+      <Street_Name>6th Street</Street_Name>
+      <Postal_Code>99999</Postal_Code>
+      <City>Milwaukee</City>
+      <Province>WI</Province>
+      <Country>USA</Country>
+   </Billing_Detail>
+   <Billing_Detail>
+      <Billing_ID>7</Billing_ID>
+      <Customer_ID>7</Customer_ID>
+      <Street_Num>123</Street_Num>
+      <Street_Name>7th Street</Street_Name>
+      <Postal_Code>99999</Postal_Code>
+      <City>Boise</City>
+      <Province>ID</Province>
+      <Country>USA</Country>
+   </Billing_Detail>
+   <Billing_Detail>
+      <Billing_ID>8</Billing_ID>
+      <Customer_ID>8</Customer_ID>
+      <Street_Num>123</Street_Num>
+      <Street_Name>8th Street</Street_Name>
+      <Postal_Code>99999</Postal_Code>
+      <City>Portland</City>
+      <Province>OR</Province>
+      <Country>USA</Country>
+   </Billing_Detail>
+   <Billing_Detail>
+      <Billing_ID>9</Billing_ID>
+      <Customer_ID>9</Customer_ID>
+      <Street_Num>123</Street_Num>
+      <Street_Name>9th Street</Street_Name>
+      <Postal_Code>99999</Postal_Code>
+      <City>Salt Lake City</City>
+      <Province>UT</Province>
+      <Country>USA</Country>
+   </Billing_Detail>
+   <Billing_Detail>
+      <Billing_ID>10</Billing_ID>
+      <Customer_ID>10</Customer_ID>
+      <Street_Num>123</Street_Num>
+      <Street_Name>10th Street</Street_Name>
+      <Postal_Code>99999</Postal_Code>
+      <City>Chicago</City>
+      <Province>IL</Province>
+      <Country>USA</Country>
+   </Billing_Detail>
+   
+<!--        Customer        -->
+
+   <Customer>
+      <Customer_ID>1</Customer_ID>
+      <Customer_First_Name>Elizabeth A.</Customer_First_Name>
+      <Customer_Last_Name>Andersen</Customer_Last_Name>
+      <Num_Of_Orders>2.0</Num_Of_Orders>
+   </Customer>
+   <Customer>
+      <Customer_ID>2</Customer_ID>
+      <Customer_First_Name>Bryn Paul</Customer_First_Name>
+      <Customer_Last_Name>Dunton</Customer_Last_Name>
+      <Num_Of_Orders>4.0</Num_Of_Orders>
+   </Customer>
+   <Customer>
+      <Customer_ID>3</Customer_ID>
+      <Customer_First_Name>Stuart</Customer_First_Name>
+      <Customer_Last_Name>Glasson</Customer_Last_Name>
+      <Num_Of_Orders>6.0</Num_Of_Orders>
+   </Customer>
+   <Customer>
+      <Customer_ID>4</Customer_ID>
+      <Customer_First_Name>Satomi</Customer_First_Name>
+      <Customer_Last_Name>Hayakawa</Customer_Last_Name>
+      <Num_Of_Orders>8.0</Num_Of_Orders>
+   </Customer>
+   <Customer>
+      <Customer_ID>5</Customer_ID>
+      <Customer_First_Name>Amaya</Customer_First_Name>
+      <Customer_Last_Name>Hernandez-Echevarria</Customer_Last_Name>
+      <Num_Of_Orders>10.0</Num_Of_Orders>
+   </Customer>
+   <Customer>
+      <Customer_ID>6</Customer_ID>
+      <Customer_First_Name>Madeleine</Customer_First_Name>
+      <Customer_Last_Name>Kelley</Customer_Last_Name>
+      <Num_Of_Orders>12.0</Num_Of_Orders>
+   </Customer>
+   <Customer>
+      <Customer_ID>7</Customer_ID>
+      <Customer_First_Name>Mikael</Customer_First_Name>
+      <Customer_Last_Name>Sandberg</Customer_Last_Name>
+      <Num_Of_Orders>14.0</Num_Of_Orders>
+   </Customer>
+   <Customer>
+      <Customer_ID>8</Customer_ID>
+      <Customer_First_Name>Naoki</Customer_First_Name>
+      <Customer_Last_Name>Sato</Customer_Last_Name>
+      <Num_Of_Orders>16.0</Num_Of_Orders>
+   </Customer>
+   <Customer>
+      <Customer_ID>9</Customer_ID>
+      <Customer_First_Name>Luis</Customer_First_Name>
+      <Customer_Last_Name>Sousa</Customer_Last_Name>
+      <Num_Of_Orders>18.0</Num_Of_Orders>
+   </Customer>
+   <Customer>
+      <Customer_ID>10</Customer_ID>
+      <Customer_First_Name>Cornelia</Customer_First_Name>
+      <Customer_Last_Name>Weiler</Customer_Last_Name>
+      <Num_Of_Orders>20.0</Num_Of_Orders>
+   </Customer>
+   
+<!--        Deals         -->
+
+   <Deals>
+      <Deal_ID>1</Deal_ID>
+      <Product_ID>1</Product_ID>
+      <Product_Sell_Performance>Best-Seller</Product_Sell_Performance>
+      <Price>90.0</Price>
+      <Dicount_Rates>10.0</Dicount_Rates>
+   </Deals>
+   <Deals>
+      <Deal_ID>2</Deal_ID>
+      <Product_ID>2</Product_ID>
+      <Product_Sell_Performance>Best-Seller</Product_Sell_Performance>
+      <Price>180.0</Price>
+      <Dicount_Rates>10.0</Dicount_Rates>
+   </Deals>
+   <Deals>
+      <Deal_ID>3</Deal_ID>
+      <Product_ID>3</Product_ID>
+      <Product_Sell_Performance>Avg-Seller</Product_Sell_Performance>
+      <Price>240.0</Price>
+      <Dicount_Rates>20.0</Dicount_Rates>
+   </Deals>
+   <Deals>
+      <Deal_ID>4</Deal_ID>
+      <Product_ID>4</Product_ID>
+      <Product_Sell_Performance>Best-Seller</Product_Sell_Performance>
+      <Price>360.0</Price>
+      <Dicount_Rates>10.0</Dicount_Rates>
+   </Deals>
+   <Deals>
+      <Deal_ID>5</Deal_ID>
+      <Product_ID>5</Product_ID>
+      <Product_Sell_Performance>Worse-Seller</Product_Sell_Performance>
+      <Price>300.0</Price>
+      <Dicount_Rates>40.0</Dicount_Rates>
+   </Deals>
+   <Deals>
+      <Deal_ID>6</Deal_ID>
+      <Product_ID>6</Product_ID>
+      <Product_Sell_Performance>Best-Seller</Product_Sell_Performance>
+      <Price>560.0</Price>
+      <Dicount_Rates>10.0</Dicount_Rates>
+   </Deals>
+   <Deals>
+      <Deal_ID>7</Deal_ID>
+      <Product_ID>7</Product_ID>
+      <Product_Sell_Performance>Avg-Seller</Product_Sell_Performance>
+      <Price>560.0</Price>
+      <Dicount_Rates>20.0</Dicount_Rates>
+   </Deals>
+   <Deals>
+      <Deal_ID>8</Deal_ID>
+      <Product_ID>8</Product_ID>
+      <Product_Sell_Performance>Best-Seller</Product_Sell_Performance>
+      <Price>720.0</Price>
+      <Dicount_Rates>10.0</Dicount_Rates>
+   </Deals>
+   <Deals>
+      <Deal_ID>9</Deal_ID>
+      <Product_ID>9</Product_ID>
+      <Product_Sell_Performance>Avg-Seller</Product_Sell_Performance>
+      <Price>720.0</Price>
+      <Dicount_Rates>20.0</Dicount_Rates>
+   </Deals>
+   <Deals>
+      <Deal_ID>10</Deal_ID>
+      <Product_ID>10</Product_ID>
+      <Product_Sell_Performance>Best-Seller</Product_Sell_Performance>
+      <Price>700.0</Price>
+      <Dicount_Rates>30.0</Dicount_Rates>
+   </Deals>
+  
+<!--        Order_Des         --> 
+
+   <Order_Des>
+      <Order_ID>1</Order_ID>
+      <Customer_ID>1</Customer_ID>
+      <Order_Cost>100.0</Order_Cost>
+      <Order_Status>Shipped</Order_Status>
+      <Order_Date>2020-12-07</Order_Date>
+   </Order_Des>
+   <Order_Des>
+      <Order_ID>2</Order_ID>
+      <Customer_ID>2</Customer_ID>
+      <Order_Cost>200.0</Order_Cost>
+      <Order_Status>Delivered</Order_Status>
+      <Order_Date>2020-11-02</Order_Date>
+   </Order_Des>
+   <Order_Des>
+      <Order_ID>3</Order_ID>
+      <Customer_ID>3</Customer_ID>
+      <Order_Cost>300.0</Order_Cost>
+      <Order_Status>In-Progress</Order_Status>
+      <Order_Date>2020-07-28</Order_Date>
+   </Order_Des>
+   <Order_Des>
+      <Order_ID>4</Order_ID>
+      <Customer_ID>4</Customer_ID>
+      <Order_Cost>400.0</Order_Cost>
+      <Order_Status>Delivered</Order_Status>
+      <Order_Date>2021-03-08</Order_Date>
+   </Order_Des>
+   <Order_Des>
+      <Order_ID>5</Order_ID>
+      <Customer_ID>5</Customer_ID>
+      <Order_Cost>500.0</Order_Cost>
+      <Order_Status>Shipped</Order_Status>
+      <Order_Date>2021-02-14</Order_Date>
+   </Order_Des>
+   <Order_Des>
+      <Order_ID>6</Order_ID>
+      <Customer_ID>6</Customer_ID>
+      <Order_Cost>600.0</Order_Cost>
+      <Order_Status>Shipped</Order_Status>
+      <Order_Date>2021-01-19</Order_Date>
+   </Order_Des>
+   <Order_Des>
+      <Order_ID>7</Order_ID>
+      <Customer_ID>7</Customer_ID>
+      <Order_Cost>700.0</Order_Cost>
+      <Order_Status>Delivered</Order_Status>
+      <Order_Date>2020-10-13</Order_Date>
+   </Order_Des>
+   <Order_Des>
+      <Order_ID>8</Order_ID>
+      <Customer_ID>8</Customer_ID>
+      <Order_Cost>800.0</Order_Cost>
+      <Order_Status>In-Progress</Order_Status>
+      <Order_Date>2020-09-11</Order_Date>
+   </Order_Des>
+   <Order_Des>
+      <Order_ID>9</Order_ID>
+      <Customer_ID>9</Customer_ID>
+      <Order_Cost>900.0</Order_Cost>
+      <Order_Status>Shipped</Order_Status>
+      <Order_Date>2021-03-11</Order_Date>
+   </Order_Des>
+   <Order_Des>
+      <Order_ID>10</Order_ID>
+      <Customer_ID>10</Customer_ID>
+      <Order_Cost>1000.0</Order_Cost>
+      <Order_Status>Shipped</Order_Status>
+      <Order_Date>2021-03-01</Order_Date>
+   </Order_Des>
+   
+<!--        Product          -->
+
+   <Product>
+      <Product_ID>1</Product_ID>
+      <Order_ID>1</Order_ID>
+      <Department>Books</Department>
+      <Subscription_Option>Yes</Subscription_Option>
+      <Product_Name>Greenlights</Product_Name>
+      <Product_Description>From the Academy Awardr-winning actor, an unconventional memoir filled with raucous stories, outlaw wisdom, and lessons learned the hard way about living with greater satisfaction.</Product_Description>
+      <Product_Avg_Ratings>4.0</Product_Avg_Ratings>
+      <Product_Company>Matthew McConaughey</Product_Company>
+      <Product_Availability>No</Product_Availability>
+      <Warehouse_Offering>Yes</Warehouse_Offering>
+      <Listing_Date>2020-06-06</Listing_Date>
+   </Product>
+   <Product>
+      <Product_ID>2</Product_ID>
+      <Order_ID>2</Order_ID>
+      <Department>Video Games</Department>
+      <Subscription_Option>No</Subscription_Option>
+      <Product_Name>Grand Theft Auto V</Product_Name>
+      <Product_Description>Grand Theft Auto V Premium Online Edition - PlayStation 4 Standard Edition</Product_Description>
+      <Product_Avg_Ratings>4.0</Product_Avg_Ratings>
+      <Product_Company>Rockstar Games</Product_Company>
+      <Product_Availability>Yes</Product_Availability>
+      <Warehouse_Offering>No</Warehouse_Offering>
+      <Listing_Date>2020-12-24</Listing_Date>
+   </Product>
+   <Product>
+      <Product_ID>3</Product_ID>
+      <Order_ID>3</Order_ID>
+      <Department>Music</Department>
+      <Subscription_Option>Yes</Subscription_Option>
+      <Product_Name>After Hours</Product_Name>
+      <Product_Description>The Weeknds latest chapter After Hours which features the global hit Blinding Lights.</Product_Description>
+      <Product_Avg_Ratings>5.0</Product_Avg_Ratings>
+      <Product_Company>The Weeknd</Product_Company>
+      <Product_Availability>No</Product_Availability>
+      <Warehouse_Offering>No</Warehouse_Offering>
+      <Listing_Date>2020-06-30</Listing_Date>
+   </Product>
+   <Product>
+      <Product_ID>4</Product_ID>
+      <Order_ID>4</Order_ID>
+      <Department>Electronics</Department>
+      <Subscription_Option>No</Subscription_Option>
+      <Product_Name>SAMSUNG 27-inch M5 Smart Monitor</Product_Name>
+      <Product_Description>Monitor with Mobile Connectivity, FHD, Remote Access, Office 365 (LS27AM500NNXZA), Black</Product_Description>
+      <Product_Avg_Ratings>5.0</Product_Avg_Ratings>
+      <Product_Company>Samsung</Product_Company>
+      <Product_Availability>No</Product_Availability>
+      <Warehouse_Offering>Yes</Warehouse_Offering>
+      <Listing_Date>2020-08-04</Listing_Date>
+   </Product>
+   <Product>
+      <Product_ID>5</Product_ID>
+      <Order_ID>5</Order_ID>
+      <Department>Health &amp; Beauty</Department>
+      <Subscription_Option>Yes</Subscription_Option>
+      <Product_Name>CALVIN KLEIN CKIN2U</Product_Name>
+      <Product_Description>Eau De Toilette For Him 50Ml</Product_Description>
+      <Product_Avg_Ratings>4.0</Product_Avg_Ratings>
+      <Product_Company>Calvin Klein</Product_Company>
+      <Product_Availability>Yes</Product_Availability>
+      <Warehouse_Offering>No</Warehouse_Offering>
+      <Listing_Date>2020-08-05</Listing_Date>
+   </Product>
+   <Product>
+      <Product_ID>6</Product_ID>
+      <Order_ID>6</Order_ID>
+      <Department>Grocery</Department>
+      <Subscription_Option>Yes</Subscription_Option>
+      <Product_Name>McCafe K-Cup pod</Product_Name>
+      <Product_Description>McCafe Premium Roast Medium Dark Single Serve Keurig Certified Recyclable K-Cup pods for Keurig Brewers, 48 Count</Product_Description>
+      <Product_Avg_Ratings>5.0</Product_Avg_Ratings>
+      <Product_Company>McDonalds</Product_Company>
+      <Product_Availability>No</Product_Availability>
+      <Warehouse_Offering>No</Warehouse_Offering>
+      <Listing_Date>2020-08-08</Listing_Date>
+   </Product>
+   <Product>
+      <Product_ID>7</Product_ID>
+      <Order_ID>7</Order_ID>
+      <Department>Men's Clothing</Department>
+      <Subscription_Option>No</Subscription_Option>
+      <Product_Name>Flannel Shirt</Product_Name>
+      <Product_Description>Amazon Essentials Men's Slim-Fit Long-Sleeve Plaid Flannel Shirt</Product_Description>
+      <Product_Avg_Ratings>3.0</Product_Avg_Ratings>
+      <Product_Company>Amazon Essentials</Product_Company>
+      <Product_Availability>Yes</Product_Availability>
+      <Warehouse_Offering>Yes</Warehouse_Offering>
+      <Listing_Date>2020-08-09</Listing_Date>
+   </Product>
+   <Product>
+      <Product_ID>8</Product_ID>
+      <Order_ID>8</Order_ID>
+      <Department>Sports</Department>
+      <Subscription_Option>No</Subscription_Option>
+      <Product_Name>Golf Balls</Product_Name>
+      <Product_Description>PrideSports Practice Golf Balls, Foam, 12-Count, Yellow</Product_Description>
+      <Product_Avg_Ratings>3.0</Product_Avg_Ratings>
+      <Product_Company>PrideSports</Product_Company>
+      <Product_Availability>Yes</Product_Availability>
+      <Warehouse_Offering>Yes</Warehouse_Offering>
+      <Listing_Date>2020-08-10</Listing_Date>
+   </Product>
+   <Product>
+      <Product_ID>9</Product_ID>
+      <Order_ID>9</Order_ID>
+      <Department>Automotive</Department>
+      <Subscription_Option>No</Subscription_Option>
+      <Product_Name>Michelin Tires</Product_Name>
+      <Product_Description>Michelin Anakee III Radial Tire - 120/70R19 60V</Product_Description>
+      <Product_Avg_Ratings>5.0</Product_Avg_Ratings>
+      <Product_Company>Michelin</Product_Company>
+      <Product_Availability>No</Product_Availability>
+      <Warehouse_Offering>No</Warehouse_Offering>
+      <Listing_Date>2020-08-01</Listing_Date>
+   </Product>
+   <Product>
+      <Product_ID>10</Product_ID>
+      <Order_ID>10</Order_ID>
+      <Department>Electronics</Department>
+      <Subscription_Option>No</Subscription_Option>
+      <Product_Name>Samsung Ear Buds</Product_Name>
+      <Product_Description>Samsung Galaxy Buds Live - Black, SM-R180NZKAXAC</Product_Description>
+      <Product_Avg_Ratings>5.0</Product_Avg_Ratings>
+      <Product_Company>Samsung</Product_Company>
+      <Product_Availability>Yes</Product_Availability>
+      <Warehouse_Offering>No</Warehouse_Offering>
+      <Listing_Date>2020-08-06</Listing_Date>
+   </Product>
+
+  
+
+<!--        Review      -->
+
+   <Review>
+      <Review_ID>1</Review_ID>
+      <Customer_ID>1</Customer_ID>
+      <Product_ID>1</Product_ID>
+      <Rating_Stars>4.0</Rating_Stars>
+      <Comment_Sentiment>Good</Comment_Sentiment>
+   </Review>
+   <Review>
+      <Review_ID>2</Review_ID>
+      <Customer_ID>2</Customer_ID>
+      <Product_ID>2</Product_ID>
+      <Rating_Stars>4.0</Rating_Stars>
+      <Comment_Sentiment>Moderate</Comment_Sentiment>
+   </Review>
+   <Review>
+      <Review_ID>3</Review_ID>
+      <Customer_ID>3</Customer_ID>
+      <Product_ID>3</Product_ID>
+      <Rating_Stars>5.0</Rating_Stars>
+      <Comment_Sentiment>Good</Comment_Sentiment>
+   </Review>
+   <Review>
+      <Review_ID>4</Review_ID>
+      <Customer_ID>4</Customer_ID>
+      <Product_ID>4</Product_ID>
+      <Rating_Stars>5.0</Rating_Stars>
+      <Comment_Sentiment>Good</Comment_Sentiment>
+   </Review>
+   <Review>
+      <Review_ID>5</Review_ID>
+      <Customer_ID>5</Customer_ID>
+      <Product_ID>5</Product_ID>
+      <Rating_Stars>4.0</Rating_Stars>
+      <Comment_Sentiment>Moderate</Comment_Sentiment>
+   </Review>
+   <Review>
+      <Review_ID>6</Review_ID>
+      <Customer_ID>6</Customer_ID>
+      <Product_ID>6</Product_ID>
+      <Rating_Stars>5.0</Rating_Stars>
+      <Comment_Sentiment>Good</Comment_Sentiment>
+   </Review>
+   <Review>
+      <Review_ID>7</Review_ID>
+      <Customer_ID>7</Customer_ID>
+      <Product_ID>7</Product_ID>
+      <Rating_Stars>3.0</Rating_Stars>
+      <Comment_Sentiment>Moderate</Comment_Sentiment>
+   </Review>
+   <Review>
+      <Review_ID>8</Review_ID>
+      <Customer_ID>8</Customer_ID>
+      <Product_ID>8</Product_ID>
+      <Rating_Stars>3.0</Rating_Stars>
+      <Comment_Sentiment>Bad</Comment_Sentiment>
+   </Review>
+   <Review>
+      <Review_ID>9</Review_ID>
+      <Customer_ID>9</Customer_ID>
+      <Product_ID>9</Product_ID>
+      <Rating_Stars>5.0</Rating_Stars>
+      <Comment_Sentiment>Good</Comment_Sentiment>
+   </Review>
+
+   <Review>
+      <Review_ID>10</Review_ID>
+      <Customer_ID>10</Customer_ID>
+      <Product_ID>10</Product_ID>
+      <Rating_Stars>3.0</Rating_Stars>
+      <Comment_Sentiment>Moderate</Comment_Sentiment>
+   </Review>
+<!--        Contains      -->
+
+<Contains>
+   <Order_ID>1</Order_ID>
+   <Product_ID>1</Product_ID>
+</Contains>
+
+<Contains>
+<Order_ID>2</Order_ID>
+<Product_ID>2</Product_ID>
+</Contains>
+<Contains>
+<Order_ID>3</Order_ID>
+<Product_ID>3</Product_ID>
+</Contains>
+<Contains>
+<Order_ID>4</Order_ID>
+<Product_ID>4</Product_ID>
+</Contains>
+<Contains>
+<Order_ID>5</Order_ID>
+<Product_ID>5</Product_ID>
+</Contains>
+<Contains>
+<Order_ID>6</Order_ID>
+<Product_ID>6</Product_ID>
+</Contains>
+<Contains>
+<Order_ID>7</Order_ID>
+<Product_ID>7</Product_ID>
+</Contains>
+<Contains>
+<Order_ID>8</Order_ID>
+<Product_ID>8</Product_ID>
+</Contains>
+<Contains>
+<Order_ID>9</Order_ID>
+<Product_ID>9</Product_ID>
+</Contains>
+<Contains>
+<Order_ID>10</Order_ID>
+<Product_ID>10</Product_ID>
+</Contains>
+
+<!--        Display      -->
+<Display>
+<Deal_ID>1</Deal_ID>
+<Product_ID>1</Product_ID>
+</Display>
+<Display>
+<Deal_ID>2</Deal_ID>
+<Product_ID>2</Product_ID>
+</Display>
+<Display>
+<Deal_ID>3</Deal_ID>
+<Product_ID>3</Product_ID>
+</Display>
+<Display>
+<Deal_ID>4</Deal_ID>
+<Product_ID>4</Product_ID>
+</Display>
+<Display>
+<Deal_ID>5</Deal_ID>
+<Product_ID>5</Product_ID>
+</Display>
+<Display>
+<Deal_ID>6</Deal_ID>
+<Product_ID>6</Product_ID>
+</Display>
+<Display>
+<Deal_ID>7</Deal_ID>
+<Product_ID>7</Product_ID>
+</Display>
+<Display>
+<Deal_ID>8</Deal_ID>
+<Product_ID>8</Product_ID>
+</Display>
+<Display>
+<Deal_ID>9</Deal_ID>
+<Product_ID>9</Product_ID>
+</Display>
+<Display>
+<Deal_ID>10</Deal_ID>
+<Product_ID>10</Product_ID>
+</Display>
+
+<!--        Has      -->
+
+<Has>
+<Product_ID>1</Product_ID>
+<Review_ID>1</Review_ID>
+</Has>
+<Has>
+<Product_ID>2</Product_ID>
+<Review_ID>2</Review_ID>
+</Has>
+<Has>
+<Product_ID>3</Product_ID>
+<Review_ID>3</Review_ID>
+</Has>
+<Has>
+<Product_ID>4</Product_ID>
+<Review_ID>4</Review_ID>
+</Has>
+<Has>
+<Product_ID>5</Product_ID>
+<Review_ID>5</Review_ID>
+</Has>
+<Has>
+<Product_ID>6</Product_ID>
+<Review_ID>6</Review_ID>
+</Has>
+<Has>
+<Product_ID>7</Product_ID>
+<Review_ID>7</Review_ID>
+</Has>
+<Has>
+<Product_ID>8</Product_ID>
+<Review_ID>8</Review_ID>
+</Has>
+<Has>
+<Product_ID>9</Product_ID>
+<Review_ID>9</Review_ID>
+</Has>
+<Has>
+<Product_ID>10</Product_ID>
+<Review_ID>10</Review_ID>
+</Has>
+
+<!--        Places      -->
+
+<Places>
+<Customer_ID>1</Customer_ID>
+<Order_ID>1</Order_ID>
+<Num_Of_Orders>2</Num_Of_Orders>
+<Order_Date>2020-12-07</Order_Date>
+</Places>
+<Places>
+<Customer_ID>2</Customer_ID>
+<Order_ID>2</Order_ID>
+<Num_Of_Orders>4</Num_Of_Orders>
+<Order_Date>2020-11-02</Order_Date>
+</Places>
+<Places>
+<Customer_ID>3</Customer_ID>
+<Order_ID>3</Order_ID>
+<Num_Of_Orders>6</Num_Of_Orders>
+<Order_Date>2020-07-28</Order_Date>
+</Places>
+<Places>
+<Customer_ID>4</Customer_ID>
+<Order_ID>4</Order_ID>
+<Num_Of_Orders>8</Num_Of_Orders>
+<Order_Date>2021-03-08</Order_Date>
+</Places>
+<Places>
+<Customer_ID>5</Customer_ID>
+<Order_ID>5</Order_ID>
+<Num_Of_Orders>10</Num_Of_Orders>
+<Order_Date>2021-02-14</Order_Date>
+</Places>
+<Places>
+<Customer_ID>6</Customer_ID>
+<Order_ID>6</Order_ID>
+<Num_Of_Orders>12</Num_Of_Orders>
+<Order_Date>2021-01-19</Order_Date>
+</Places>
+<Places>
+<Customer_ID>7</Customer_ID>
+<Order_ID>7</Order_ID>
+<Num_Of_Orders>14</Num_Of_Orders>
+<Order_Date>2020-10-13</Order_Date>
+</Places>
+<Places>
+<Customer_ID>8</Customer_ID>
+<Order_ID>8</Order_ID>
+<Num_Of_Orders>16</Num_Of_Orders>
+<Order_Date>2020-09-11</Order_Date>
+</Places>
+<Places>
+<Customer_ID>9</Customer_ID>
+<Order_ID>9</Order_ID>
+<Num_Of_Orders>18</Num_Of_Orders>
+<Order_Date>2021-03-11</Order_Date>
+</Places>
+<Places>
+<Customer_ID>10</Customer_ID>
+<Order_ID>10</Order_ID>
+<Num_Of_Orders>20</Num_Of_Orders>
+<Order_Date>2021-03-01</Order_Date>
+</Places>
+
+<!--        Write      -->
+
+<Write>
+<Review_ID>1</Review_ID>
+<Customer_ID>1</Customer_ID>
+</Write>
+<Write>
+<Review_ID>2</Review_ID>
+<Customer_ID>2</Customer_ID>
+</Write>
+<Write>
+<Review_ID>3</Review_ID>
+<Customer_ID>3</Customer_ID>
+</Write>
+<Write>
+<Review_ID>4</Review_ID>
+<Customer_ID>4</Customer_ID>
+</Write>
+<Write>
+<Review_ID>5</Review_ID>
+<Customer_ID>5</Customer_ID>
+</Write>
+<Write>
+<Review_ID>6</Review_ID>
+<Customer_ID>6</Customer_ID>
+</Write>
+<Write>
+<Review_ID>7</Review_ID>
+<Customer_ID>7</Customer_ID>
+</Write>
+<Write>
+<Review_ID>8</Review_ID>
+<Customer_ID>8</Customer_ID>
+</Write>
+<Write>
+<Review_ID>9</Review_ID>
+<Customer_ID>9</Customer_ID>
+</Write>
+<Write>
+<Review_ID>10</Review_ID>
+<Customer_ID>10</Customer_ID>
+</Write>
+
+</document>

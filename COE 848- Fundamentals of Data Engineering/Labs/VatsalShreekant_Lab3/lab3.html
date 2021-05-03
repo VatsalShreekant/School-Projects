@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>SQL 1.sql</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: monospace}
+pre {color: #000000; background-color: #ffffff; font-family: monospace}
+table {color: #000000; background-color: #e9e8e2; font-family: monospace}
+.sql-identifier {color: #009900}
+.sql-block-comment {color: #969696}
+.sql-keyword {color: #0000e6}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">/home/student/.netbeans/12.0/config/Databases/SQLCommands/SQL 1.sql</td></tr></table>
+<pre>
+  1 
+  2 <span class="sql-identifier">PRAGMA</span> <span class="sql-identifier">foreign_keys</span> = <span class="sql-keyword">OFF</span>;
+  3 <span class="sql-keyword">BEGIN</span> <span class="sql-keyword">TRANSACTION</span>;
+  4 
+  5 <span class="sql-block-comment">-- ENTITY Table: Customer</span>
+  6 <span class="sql-keyword">CREATE</span> <span class="sql-keyword">TABLE</span> <span class="sql-identifier">Customer</span> (
+  7     <span class="sql-identifier">Customer_ID</span> <span class="sql-keyword">SMALLINT</span> <span class="sql-identifier">UNSIGNED</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span> <span class="sql-identifier">AUTO_INCREMENT</span>,
+  8     <span class="sql-identifier">Customer_First_Name</span> <span class="sql-keyword">VARCHAR</span> (50),
+  9     <span class="sql-identifier">Customer_Last_Name</span> <span class="sql-keyword">VARCHAR</span> (50),
+ 10     <span class="sql-keyword">PRIMARY</span> <span class="sql-keyword">KEY</span> (<span class="sql-identifier">Customer_ID</span>)
+ 11             );
+ 12 
+ 13 <span class="sql-block-comment">-- ENTITY Table: Order</span>
+ 14 <span class="sql-keyword">CREATE</span> <span class="sql-keyword">TABLE</span> <span class="sql-identifier">Order_Des</span> (
+ 15     <span class="sql-identifier">Order_ID</span> <span class="sql-keyword">SMALLINT</span> <span class="sql-identifier">UNSIGNED</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>,
+ 16     <span class="sql-identifier">Customer_ID</span> <span class="sql-keyword">INTEGER</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>,
+ 17     <span class="sql-identifier">Order_Cost</span> <span class="sql-keyword">INTEGER</span>,
+ 18     <span class="sql-identifier">Order_Status</span> <span class="sql-keyword">VARCHAR</span> (50),
+ 19     <span class="sql-keyword">PRIMARY</span> <span class="sql-keyword">KEY</span> (<span class="sql-identifier">Order_ID</span>),
+ 20     <span class="sql-keyword">CONSTRAINT</span> <span class="sql-identifier">fk_order_des</span> <span class="sql-keyword">FOREIGN</span> <span class="sql-keyword">KEY</span> (<span class="sql-identifier">Customer_ID</span>) <span class="sql-keyword">REFERENCES</span> <span class="sql-identifier">Customer</span> (<span class="sql-identifier">Customer_ID</span>)
+ 21 
+ 22      );
+ 23 
+ 24 <span class="sql-block-comment">--ENTITY Table: Product</span>
+ 25 <span class="sql-keyword">CREATE</span> <span class="sql-keyword">TABLE</span> <span class="sql-identifier">Product</span> (
+ 26     <span class="sql-identifier">Product_ID</span> <span class="sql-keyword">SMALLINT</span> <span class="sql-identifier">UNSIGNED</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span> <span class="sql-identifier">AUTO_INCREMENT</span>,
+ 27     <span class="sql-identifier">Order_ID</span> <span class="sql-keyword">INTEGER</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>,
+ 28     <span class="sql-identifier">Department</span> <span class="sql-keyword">VARCHAR</span> (50),
+ 29     <span class="sql-identifier">Subscription_Option</span> <span class="sql-keyword">BOOLEAN</span>,
+ 30     <span class="sql-identifier">Product_Name</span> <span class="sql-keyword">VARCHAR</span> (100),
+ 31     <span class="sql-identifier">Product_Description</span> <span class="sql-keyword">VARCHAR</span> (255),
+ 32     <span class="sql-identifier">Product_Avg_Ratings</span> <span class="sql-keyword">INTEGER</span>,
+ 33     <span class="sql-identifier">Product_Company</span> <span class="sql-keyword">VARCHAR</span> (50),
+ 34     <span class="sql-identifier">Product_Availability</span> <span class="sql-keyword">BOOLEAN</span>,
+ 35     <span class="sql-keyword">PRIMARY</span> <span class="sql-keyword">KEY</span> (<span class="sql-identifier">Product_ID</span>),
+ 36     <span class="sql-keyword">CONSTRAINT</span> <span class="sql-identifier">fk_product</span> <span class="sql-keyword">FOREIGN</span> <span class="sql-keyword">KEY</span> (<span class="sql-identifier">Order_ID</span>) <span class="sql-keyword">REFERENCES</span> <span class="sql-identifier">Order_Des</span> (<span class="sql-identifier">Order_ID</span>)
+ 37 
+ 38             );
+ 39 
+ 40 <span class="sql-block-comment">-- ENTITY Table: Deals</span>
+ 41 <span class="sql-keyword">CREATE</span> <span class="sql-keyword">TABLE</span> <span class="sql-identifier">Deals</span> (
+ 42     <span class="sql-identifier">Deal_ID</span> <span class="sql-keyword">SMALLINT</span> <span class="sql-identifier">UNSIGNED</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>,
+ 43     <span class="sql-identifier">Product_ID</span> <span class="sql-keyword">INTEGER</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>,
+ 44     <span class="sql-identifier">Product_Sell_Performance</span> <span class="sql-keyword">VARCHAR</span> (255),    
+ 45     <span class="sql-identifier">Price</span> <span class="sql-keyword">INTEGER</span>,
+ 46     <span class="sql-identifier">Dicount_Rates</span> <span class="sql-keyword">INTEGER</span>,
+ 47     <span class="sql-keyword">PRIMARY</span> <span class="sql-keyword">KEY</span> (<span class="sql-identifier">Deal_ID</span>),
+ 48     <span class="sql-keyword">CONSTRAINT</span> <span class="sql-identifier">fk_deal</span> <span class="sql-keyword">FOREIGN</span> <span class="sql-keyword">KEY</span> (<span class="sql-identifier">Product_ID</span>) <span class="sql-keyword">REFERENCES</span> <span class="sql-identifier">Product</span> (<span class="sql-identifier">Product_ID</span>)
+ 49 
+ 50      );
+ 51 
+ 52 <span class="sql-block-comment">-- ENTITY Table: Review</span>
+ 53 <span class="sql-keyword">CREATE</span> <span class="sql-keyword">TABLE</span> <span class="sql-identifier">Review</span> (
+ 54     <span class="sql-identifier">Review_ID</span> <span class="sql-keyword">SMALLINT</span> <span class="sql-identifier">UNSIGNED</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>,
+ 55     <span class="sql-identifier">Customer_ID</span> <span class="sql-keyword">INTEGER</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>,
+ 56     <span class="sql-identifier">Rating_Stars</span> <span class="sql-keyword">INTEGER</span>,    
+ 57     <span class="sql-identifier">Comment_Sentiment</span> <span class="sql-keyword">VARCHAR</span> (50),
+ 58     <span class="sql-keyword">PRIMARY</span> <span class="sql-keyword">KEY</span> (<span class="sql-identifier">Review_ID</span>),
+ 59     <span class="sql-keyword">CONSTRAINT</span> <span class="sql-identifier">fk_review</span> <span class="sql-keyword">FOREIGN</span> <span class="sql-keyword">KEY</span> (<span class="sql-identifier">Customer_ID</span>) <span class="sql-keyword">REFERENCES</span> <span class="sql-identifier">Customer</span> (<span class="sql-identifier">Customer_ID</span>)
+ 60 
+ 61      );
+ 62 
+ 63  
+ 64 
+ 65 <span class="sql-block-comment">-- MULTIVALUED Table: Billing_Detail</span>
+ 66 <span class="sql-keyword">CREATE</span> <span class="sql-keyword">TABLE</span> <span class="sql-identifier">Billing_Detail</span> (
+ 67     <span class="sql-identifier">Billing_ID</span> <span class="sql-keyword">SMALLINT</span> <span class="sql-identifier">UNSIGNED</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>,
+ 68     <span class="sql-identifier">Customer_ID</span> <span class="sql-keyword">INTEGER</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>,
+ 69     <span class="sql-identifier">Street_Num</span> <span class="sql-keyword">INTEGER</span>,   
+ 70     <span class="sql-identifier">Street_Name</span> <span class="sql-keyword">VARCHAR</span> (50),
+ 71     <span class="sql-identifier">Postal_Code</span> <span class="sql-keyword">VARCHAR</span> (50),
+ 72     <span class="sql-identifier">City</span> <span class="sql-keyword">VARCHAR</span> (50),
+ 73     <span class="sql-identifier">Province</span> <span class="sql-keyword">VARCHAR</span> (50),
+ 74     <span class="sql-identifier">Country</span> <span class="sql-keyword">VARCHAR</span> (50),
+ 75     <span class="sql-keyword">PRIMARY</span> <span class="sql-keyword">KEY</span> (<span class="sql-identifier">Billing_ID</span>),
+ 76     <span class="sql-keyword">CONSTRAINT</span> <span class="sql-identifier">fk_bill</span> <span class="sql-keyword">FOREIGN</span> <span class="sql-keyword">KEY</span> (<span class="sql-identifier">Customer_ID</span>) <span class="sql-keyword">REFERENCES</span> <span class="sql-identifier">Customer</span> (<span class="sql-identifier">Customer_ID</span>)
+ 77      );            
+ 78 
+ 79 
+ 80 <span class="sql-block-comment">-- MULTIVALUED Table: Product_Description</span>
+ 81 <span class="sql-keyword">CREATE</span> <span class="sql-keyword">TABLE</span> <span class="sql-identifier">Product_Description</span> (
+ 82     <span class="sql-identifier">Description_ID</span> <span class="sql-keyword">SMALLINT</span> <span class="sql-identifier">UNSIGNED</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>,
+ 83     <span class="sql-identifier">Product_ID</span> <span class="sql-keyword">INTEGER</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>,
+ 84     <span class="sql-identifier">Product_Description</span> <span class="sql-keyword">VARCHAR</span> (255),
+ 85     <span class="sql-keyword">PRIMARY</span> <span class="sql-keyword">KEY</span> (<span class="sql-identifier">Description_ID</span>),
+ 86     <span class="sql-keyword">CONSTRAINT</span> <span class="sql-identifier">fk_Product_ID</span> <span class="sql-keyword">FOREIGN</span> <span class="sql-keyword">KEY</span> (<span class="sql-identifier">Product_ID</span>) <span class="sql-keyword">REFERENCES</span> <span class="sql-identifier">Product</span> (<span class="sql-identifier">Product_ID</span>)
+ 87      );
+ 88 
+ 89 
+ 90 <span class="sql-block-comment">-- RELATIONSHIP Table: Places</span>
+ 91 <span class="sql-keyword">CREATE</span> <span class="sql-keyword">TABLE</span> <span class="sql-identifier">Places</span> (
+ 92     <span class="sql-identifier">Customer_ID</span> <span class="sql-keyword">INTEGER</span> <span class="sql-keyword">REFERENCES</span> <span class="sql-identifier">Customer</span> (<span class="sql-identifier">Customer_ID</span>) <span class="sql-keyword">ON</span> <span class="sql-keyword">UPDATE</span> <span class="sql-keyword">RESTRICT</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>,
+ 93     <span class="sql-identifier">Order_ID</span> <span class="sql-keyword">INTEGER</span> <span class="sql-keyword">REFERENCES</span> <span class="sql-identifier">Orders_Des</span> (<span class="sql-identifier">Order_ID</span>) <span class="sql-keyword">ON</span> <span class="sql-keyword">UPDATE</span> <span class="sql-keyword">RESTRICT</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>,
+ 94     <span class="sql-identifier">Num_Of_Orders</span> <span class="sql-keyword">INTeger</span> <span class="sql-keyword">UNIQUE</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>,
+ 95     <span class="sql-identifier">Order_date</span> <span class="sql-keyword">INTeger</span> <span class="sql-keyword">UNIQUE</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>
+ 96      );
+ 97 
+ 98 <span class="sql-block-comment">-- RELATIONSHIP Table: Contains</span>
+ 99 <span class="sql-keyword">CREATE</span> <span class="sql-keyword">TABLE</span> <span class="sql-identifier">Contains_</span> (
+100     <span class="sql-identifier">Order_ID</span> <span class="sql-keyword">INTEGER</span> <span class="sql-keyword">REFERENCES</span> <span class="sql-identifier">Orders_Des</span> (<span class="sql-identifier">Order_ID</span>) <span class="sql-keyword">ON</span> <span class="sql-keyword">UPDATE</span> <span class="sql-keyword">RESTRICT</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>,
+101     <span class="sql-identifier">Product_ID</span> <span class="sql-keyword">INTEGER</span> <span class="sql-keyword">REFERENCES</span> <span class="sql-identifier">Product</span> (<span class="sql-identifier">Product_ID</span>) <span class="sql-keyword">ON</span> <span class="sql-keyword">UPDATE</span> <span class="sql-keyword">RESTRICT</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>
+102      );
+103 
+104 <span class="sql-block-comment">-- RELATIONSHIP Table: Display</span>
+105 <span class="sql-keyword">CREATE</span> <span class="sql-keyword">TABLE</span> <span class="sql-identifier">Display_</span> (
+106     <span class="sql-identifier">Deal_ID</span> <span class="sql-keyword">INTEGER</span> <span class="sql-keyword">REFERENCES</span> <span class="sql-identifier">Deals</span> (<span class="sql-identifier">Deal_ID</span>) <span class="sql-keyword">ON</span> <span class="sql-keyword">UPDATE</span> <span class="sql-keyword">RESTRICT</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>,
+107     <span class="sql-identifier">Product_ID</span> <span class="sql-keyword">INTEGER</span> <span class="sql-keyword">REFERENCES</span> <span class="sql-identifier">Product</span> (<span class="sql-identifier">Product_ID</span>) <span class="sql-keyword">ON</span> <span class="sql-keyword">UPDATE</span> <span class="sql-keyword">RESTRICT</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>
+108      );
+109 
+110 <span class="sql-block-comment">-- RELATIONSHIP Table: Has</span>
+111 <span class="sql-keyword">CREATE</span> <span class="sql-keyword">TABLE</span> <span class="sql-identifier">Has_</span> (
+112     <span class="sql-identifier">Product_ID</span> <span class="sql-keyword">INTEGER</span> <span class="sql-keyword">REFERENCES</span> <span class="sql-identifier">Product</span> (<span class="sql-identifier">Product_ID</span>) <span class="sql-keyword">ON</span> <span class="sql-keyword">UPDATE</span> <span class="sql-keyword">RESTRICT</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>,
+113     <span class="sql-identifier">Review</span> <span class="sql-identifier">_ID</span> <span class="sql-keyword">INTEGER</span> <span class="sql-keyword">REFERENCES</span> <span class="sql-identifier">Review</span> (<span class="sql-identifier">Review_ID</span>) <span class="sql-keyword">ON</span> <span class="sql-keyword">UPDATE</span> <span class="sql-keyword">RESTRICT</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>
+114     );
+115 
+116 <span class="sql-block-comment">-- RELATIONSHIP Table: Write</span>
+117 <span class="sql-keyword">CREATE</span> <span class="sql-keyword">TABLE</span> <span class="sql-identifier">Write_</span> (
+118     <span class="sql-identifier">Review</span> <span class="sql-identifier">_ID</span> <span class="sql-keyword">INTEGER</span> <span class="sql-keyword">REFERENCES</span> <span class="sql-identifier">Review</span> (<span class="sql-identifier">Review_ID</span>) <span class="sql-keyword">ON</span> <span class="sql-keyword">UPDATE</span> <span class="sql-keyword">RESTRICT</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>,
+119     <span class="sql-identifier">Customer_ID</span> <span class="sql-keyword">INTEGER</span> <span class="sql-keyword">REFERENCES</span> <span class="sql-identifier">Customer</span> (<span class="sql-identifier">Customer_ID</span>) <span class="sql-keyword">ON</span> <span class="sql-keyword">UPDATE</span> <span class="sql-keyword">RESTRICT</span> <span class="sql-keyword">NOT</span> <span class="sql-keyword">NULL</span>
+120  );
+121 
+122 
+123 <span class="sql-keyword">COMMIT</span> <span class="sql-keyword">TRANSACTION</span>;
+124 <span class="sql-identifier">PRAGMA</span> <span class="sql-identifier">foreign_keys</span> = <span class="sql-keyword">off</span>;
+125 
+126 
+</pre></body>
+</html>

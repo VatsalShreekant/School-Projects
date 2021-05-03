@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="qry_4.xslt" type="text/xsl" ?>
+<document>
+<qry_4>
+<Product_ID>1</Product_ID>
+<Product_Name>Greenlights</Product_Name>
+<Subscription_Option>Yes</Subscription_Option>
+</qry_4>
+<qry_4>
+<Product_ID>3</Product_ID>
+<Product_Name>After Hours</Product_Name>
+<Subscription_Option>Yes</Subscription_Option>
+</qry_4>
+<qry_4>
+<Product_ID>5</Product_ID>
+<Product_Name>CALVIN KLEIN CKIN2U</Product_Name>
+<Subscription_Option>Yes</Subscription_Option>
+</qry_4>
+<qry_4>
+<Product_ID>6</Product_ID>
+<Product_Name>McCafe K-Cup pod</Product_Name>
+<Subscription_Option>Yes</Subscription_Option>
+</qry_4>
+</document>

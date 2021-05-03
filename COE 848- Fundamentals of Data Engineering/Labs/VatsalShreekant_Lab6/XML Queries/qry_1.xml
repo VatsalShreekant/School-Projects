@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="qry_1.xslt" type="text/xsl" ?>
+<document>
+<qry_1>
+<Product_ID>1</Product_ID>
+<Product_Name>Greenlights</Product_Name>
+<Product_Description>From the Academy Award®–winning actor, an unconventional memoir filled with raucous stories, outlaw wisdom, and lessons learned the hard way about living with greater satisfaction.</Product_Description>
+<Department>Books</Department>
+<Product_Company>Matthew McConaughey</Product_Company>
+</qry_1>
+<qry_1>
+<Product_ID>2</Product_ID>
+<Product_Name>Grand Theft Auto V</Product_Name>
+<Product_Description>Grand Theft Auto V Premium Online Edition - PlayStation 4 Standard Edition</Product_Description>
+<Department>Video Games</Department>
+<Product_Company>Rockstar Games</Product_Company>
+</qry_1>
+<qry_1>
+<Product_ID>3</Product_ID>
+<Product_Name>After Hours</Product_Name>
+<Product_Description>The Weeknd&apos;s latest chapter, After Hours which features the global hits &quot;Heartless&quot; and &quot;Blinding Lights&quot;.</Product_Description>
+<Department>Music</Department>
+<Product_Company>The Weeknd</Product_Company>
+</qry_1>
+<qry_1>
+<Product_ID>4</Product_ID>
+<Product_Name>SAMSUNG 27-inch M5 Smart Monitor</Product_Name>
+<Product_Description>Monitor with Mobile Connectivity, FHD, Remote Access, Office 365 (LS27AM500NNXZA), Black</Product_Description>
+<Department>Electronics</Department>
+<Product_Company>Samsung</Product_Company>
+</qry_1>
+<qry_1>
+<Product_ID>5</Product_ID>
+<Product_Name>CALVIN KLEIN CKIN2U</Product_Name>
+<Product_Description>Eau De Toilette For Him 50Ml</Product_Description>
+<Department>Health &amp; Beauty</Department>
+<Product_Company>Calvin Klein</Product_Company>
+</qry_1>
+<qry_1>
+<Product_ID>6</Product_ID>
+<Product_Name>McCafe K-Cup pod</Product_Name>
+<Product_Description>McCafe Premium Roast Medium Dark Single Serve Keurig Certified Recyclable K-Cup pods for Keurig Brewers, 48 Count</Product_Description>
+<Department>Grocery</Department>
+<Product_Company>McDonalds</Product_Company>
+</qry_1>
+<qry_1>
+<Product_ID>7</Product_ID>
+<Product_Name>Flannel Shirt</Product_Name>
+<Product_Description>Amazon Essentials Men&apos;s Slim-Fit Long-Sleeve Plaid Flannel Shirt</Product_Description>
+<Department>Men&apos;s Clothing</Department>
+<Product_Company>Amazon Essentials</Product_Company>
+</qry_1>
+<qry_1>
+<Product_ID>8</Product_ID>
+<Product_Name>Golf Balls</Product_Name>
+<Product_Description>PrideSports Practice Golf Balls, Foam, 12-Count, Yellow</Product_Description>
+<Department>Sports</Department>
+<Product_Company>PrideSports</Product_Company>
+</qry_1>
+<qry_1>
+<Product_ID>9</Product_ID>
+<Product_Name>Michelin Tires</Product_Name>
+<Product_Description>Michelin Anakee III Radial Tire - 120/70R19 60V</Product_Description>
+<Department>Automotive</Department>
+<Product_Company>Michelin</Product_Company>
+</qry_1>
+<qry_1>
+<Product_ID>10</Product_ID>
+<Product_Name>Samsung Ear Buds</Product_Name>
+<Product_Description>Samsung Galaxy Buds Live - Black, SM-R180NZKAXAC</Product_Description>
+<Department>Electronics</Department>
+<Product_Company>Samsung</Product_Company>
+</qry_1>
+</document>

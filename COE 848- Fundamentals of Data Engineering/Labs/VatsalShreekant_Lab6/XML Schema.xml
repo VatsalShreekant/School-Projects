@@ -1,0 +1,245 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<xs:schema xmlns:xs = "http://www.w3.org/2001/XMLSchema">
+	<xs:element name = "Document">
+		
+		<xs:element name = "Billing_Detail">
+	    	<xs:complexType>
+	        	<xs:sequence>
+	            	<xs:element name = "Billing_ID" type = "xs:int" />
+	            	<xs:element name = "Customer_ID" type = "xs:int" />
+	            	<xs:element name = "Street_Num" type = "xs:int" />
+	            	<xs:element name = "Street_Name" type = "xs:int" />					
+	            	<xs:element name = "Postal_Code" type = "xs:string" />
+	            	<xs:element name = "City" type = "xs:string" />		
+	            	<xs:element name = "Province" type = "xs:string" />
+	            	<xs:element name = "Country" type = "xs:string" />										
+	        	</xs:sequence>
+	        </xs:complexType>
+	   </xs:element>
+
+	    <xs:element name = "Customer">
+	        <xs:complexType>
+	        	<xs:sequence>
+	            	<xs:element name = "Customer_ID" type = "xs:int" />
+	            	<xs:element name = "Customer_First_Name" type = "xs:string" />
+	            	<xs:element name = "Customer_Last_Name" type = "xs:string" />
+	            	<xs:element name = "Num_Of_Orders" type = "xs:int" />					
+	        	</xs:sequence>
+	        </xs:complexType>
+	    </xs:element>
+
+	    <xs:element name = "Deals">
+	      	<xs:complexType>
+	         	<xs:sequence>
+	            	<xs:element name = "Deal_ID" type = "xs:int" />
+	            	<xs:element name = "Product_ID" type = "xs:int" />
+	         		<xs:element name = "Product_Sell_Performance" type = "xs:string" />
+	         		<xs:element name = "Price" type = "xs:int" />
+	         	</xs:sequence>
+	      	</xs:complexType>
+	   </xs:element>
+
+		<xs:element name = "Order_Des">
+	      	<xs:complexType>
+	         	<xs:sequence>
+	            	<xs:element name = "Order_ID" type = "xs:int" />
+	            	<xs:element name = "Customer_ID" type = "xs:int" />
+	         		<xs:element name = "Order_Cost" type = "xs:int" />
+	            	<xs:element name = "Order_Status" type = "xs:string" />
+	         		<xs:element name = "Order_Date" type = "xs:int" />					 
+	         	</xs:sequence>
+	      	</xs:complexType>
+		</xs:element>
+
+		<xs:element name = "Product">
+	      	<xs:complexType>
+	         	<xs:sequence>
+	            	<xs:element name = "Product_ID" type = "xs:int" />
+	            	<xs:element name = "Order_ID" type = "xs:int" />
+	            	<xs:element name = "Department" type = "xs:string" />
+	            	<xs:element name = "Subscription_Option" type = "xs:string" />	
+	            	<xs:element name = "Product_Name" type = "xs:string" />
+	            	<xs:element name = "Product_Description" type = "xs:string" />
+	            	<xs:element name = "Product_Avg_Ratings" type = "xs:int" />
+	            	<xs:element name = "Product_Company" type = "xs:string" />		
+	            	<xs:element name = "Product_Availability" type = "xs:string" />
+	            	<xs:element name = "Warehouse_Offering" type = "xs:string" />
+	            	<xs:element name = "Listing_Date" type = "xs:int" />																
+	         	</xs:sequence>
+	      	</xs:complexType>
+		</xs:element>
+
+		<xs:element name = "Review">
+	      	<xs:complexType>
+	         	<xs:sequence>
+	            	<xs:element name = "Review_ID" type = "xs:int" />
+	            	<xs:element name = "Customer_ID" type = "xs:int" />
+	         		<xs:element name = "Product_ID" type = "xs:int" />
+	         		<xs:element name = "Rating_Stars" type = "xs:int" />
+	         		<xs:element name = "Comment_Sentiment" type = "xs:string" />
+	         	</xs:sequence>
+	      	</xs:complexType>
+	    </xs:element>
+
+<xs:element name = "Contains">
+	      	<xs:complexType>
+	         	<xs:sequence>
+	            	<xs:element name = "Order_ID" type = "xs:int" />
+	            	<xs:element name = "Product_ID" type = "xs:int" />
+	         	</xs:sequence>
+	      	</xs:complexType>
+	    </xs:element>
+
+<xs:element name = "Display">
+	      	<xs:complexType>
+	         	<xs:sequence>
+	            	<xs:element name = "Deal_ID" type = "xs:int" />
+	            	<xs:element name = "Product_ID" type = "xs:int" />
+	         	</xs:sequence>
+	      	</xs:complexType>
+	    </xs:element>		
+
+<xs:element name = "Has">
+	      	<xs:complexType>
+	         	<xs:sequence>
+	            	<xs:element name = "Product_ID" type = "xs:int" />
+	            	<xs:element name = "Review_ID" type = "xs:int" />
+	         	</xs:sequence>
+	      	</xs:complexType>
+	    </xs:element>			
+
+
+<xs:element name = "Places">
+	      	<xs:complexType>
+	         	<xs:sequence>
+	            	<xs:element name = "Customer_ID" type = "xs:int" />
+	            	<xs:element name = "Order_ID" type = "xs:int" />
+	            	<xs:element name = "Num_Of_Orders" type = "xs:int" />
+	            	<xs:element name = "Order_Date" type = "xs:int" />					
+	         	</xs:sequence>
+	      	</xs:complexType>
+	    </xs:element>	
+
+
+<xs:element name = "Write">
+	      	<xs:complexType>
+	         	<xs:sequence>
+	            	<xs:element name = "Review_ID" type = "xs:int" />
+	            	<xs:element name = "Customer_ID" type = "xs:int" />
+	         	</xs:sequence>
+	      	</xs:complexType>
+	    </xs:element>	
+
+<xs:element name = "qry_1">
+	      	<xs:complexType>
+	         	<xs:sequence>
+	            	<xs:element name = "Product_ID" type = "xs:int" />
+	            	<xs:element name = "Product_Name" type = "xs:string" />
+	            	<xs:element name = "Product_Description" type = "xs:string" />
+	            	<xs:element name = "Department" type = "xs:string" />
+	            	<xs:element name = "Product_Company" type = "xs:string" />					
+										
+	         	</xs:sequence>
+	      	</xs:complexType>
+	    </xs:element>			
+
+<xs:element name = "qry_2">
+	      	<xs:complexType>
+	         	<xs:sequence>
+	            	<xs:element name = "Product_ID" type = "xs:int" />
+	            	<xs:element name = "Product_Name" type = "xs:string" />
+	            	<xs:element name = "Product_Avg_Ratings" type = "xs:int" />
+	         	</xs:sequence>
+	      	</xs:complexType>
+	    </xs:element>				
+
+<xs:element name = "qry_3">
+	      	<xs:complexType>
+	         	<xs:sequence>
+	            	<xs:element name = "Product_ID" type = "xs:int" />
+	            	<xs:element name = "Product_Name" type = "xs:string" />
+	            	<xs:element name = "Product_Company" type = "xs:string" />
+	            	<xs:element name = "Product_Avg_Ratings" type = "xs:int" />
+					
+	         	</xs:sequence>
+	      	</xs:complexType>
+	    </xs:element>			
+	   	
+<xs:element name = "qry_4">
+	      	<xs:complexType>
+	         	<xs:sequence>
+	            	<xs:element name = "Product_ID" type = "xs:int" />
+	            	<xs:element name = "Product_Name" type = "xs:string" />
+	            	<xs:element name = "Subscription_Option" type = "xs:string" />
+	         	</xs:sequence>
+	      	</xs:complexType>
+	    </xs:element>					
+
+
+<xs:element name = "qry_5">
+	      	<xs:complexType>
+	         	<xs:sequence>
+	            	<xs:element name = "Product_ID" type = "xs:int" />
+	            	<xs:element name = "Product_Name" type = "xs:string" />
+	            	<xs:element name = "Warehouse_Offering" type = "xs:string" />
+	         	</xs:sequence>
+	      	</xs:complexType>
+	    </xs:element>	
+
+<xs:element name = "qry_6">
+	      	<xs:complexType>
+	         	<xs:sequence>
+	            	<xs:element name = "Product_ID" type = "xs:int" />
+	            	<xs:element name = "Product_Name" type = "xs:string" />
+	            	<xs:element name = "Warehouse_Offering" type = "xs:string" />
+	         	</xs:sequence>
+	      	</xs:complexType>
+	    </xs:element>		
+
+<xs:element name = "qry_7">
+	      	<xs:complexType>
+	         	<xs:sequence>
+	            	<xs:element name = "Product_ID" type = "xs:int" />
+	            	<xs:element name = "Product_Name" type = "xs:string" />
+	            	<xs:element name = "Product_Availability" type = "xs:string" />
+	            	<xs:element name = "Rating_Stars" type = "xs:int" />
+	            	<xs:element name = "Comment_Sentiment" type = "xs:string" />					
+	         	</xs:sequence>
+	      	</xs:complexType>
+	    </xs:element>		
+
+<xs:element name = "qry_8">
+	      	<xs:complexType>
+	         	<xs:sequence>
+	            	<xs:element name = "Product_ID" type = "xs:int" />
+	            	<xs:element name = "Product_Name" type = "xs:string" />
+	            	<xs:element name = "Subscription_Option" type = "xs:string" />
+				
+	         	</xs:sequence>
+	      	</xs:complexType>
+	    </xs:element>	
+
+<xs:element name = "qry_9">
+	      	<xs:complexType>
+	         	<xs:sequence>
+	            	<xs:element name = "Product_ID" type = "xs:int" />
+	            	<xs:element name = "Product_Name" type = "xs:string" />
+	            	<xs:element name = "Listing_Date" type = "xs:string" />
+				
+	         	</xs:sequence>
+	      	</xs:complexType>
+	    </xs:element>	
+
+<xs:element name = "qry_10">
+	      	<xs:complexType>
+	         	<xs:sequence>
+	            	<xs:element name = "Product_ID" type = "xs:int" />
+	            	<xs:element name = "Product_Name" type = "xs:string" />
+	            	<xs:element name = "Rating_Stars" type = "xs:int" />
+	            	<xs:element name = "Comment_Sentiment" type = "xs:string" />
+				
+	         	</xs:sequence>
+	      	</xs:complexType>
+	    </xs:element>						
+				   
+</xs:schema>
