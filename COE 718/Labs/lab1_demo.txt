@@ -1,0 +1,15 @@
+The physical joystick is hardwired into Port 1 to pins
+20,23,24,25 and 26 as outlined in the documentation for the development board being used for
+this course.
+
+The FIODIR register controls GPIO as input or output.
+As described in the lab manual
+FIODIR must configure pins 20,23,24,25 and 26 as input pins from the Joystick by
+setting each of these register values to zero using the code described in the lab manual.
+
+* Joystick pins:
+   - center: P1_20 = GPIO1[20]
+   - up:     P1_23 = GPIO1[23]
+   - down:   P1_25 = GPIO1[25]
+   - left:   P1_26 = GPIO1[26]
+   - right:  P1_24 = GPIO1[24] *

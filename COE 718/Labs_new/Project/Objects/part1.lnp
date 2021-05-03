@@ -1,0 +1,15 @@
+--cpu Cortex-M3
+".\objects\part1_c.o"
+".\objects\joystick_mcb1700.o"
+".\objects\led_mcb1700.o"
+"..\..\..\..\..\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\LIB\ARM\RTX_CM3.lib"
+".\objects\rtx_conf_cm.o"
+".\objects\eventrecorder.o"
+".\objects\retarget_io.o"
+".\objects\gpio_lpc17xx.o"
+".\objects\pin_lpc17xx.o"
+".\objects\startup_lpc17xx.o"
+".\objects\system_lpc17xx.o"
+--library_type=microlib --ro-base 0x00000000 --entry 0x00000000 --rw-base 0x10000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\part1.map" -o .\Objects\part1.axf

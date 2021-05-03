@@ -1,0 +1,25 @@
+
+   Problem Set for ARM7, ARM Cortex M3 CPU and Real-time Scheduling 
+
+  Solution to these Problems will not be posted on the Webpage.
+  Selected problems will be attempted in the class when corresponding topics are covered.
+   Rest of the problems will be solved by the students themselves.
+ 
+1. Embedded CPUs: ARM7 and ARM Cortex M3
+     D. Lewis's Text Book - Fundamental of Embedded Software ARM Cortex M3
+
+  Chapter 5: Problems: 1 to 12,  18 to 28.
+  Chapter 6: Problems: 1 to 6, 8(c), 8(g), 8(h).
+  Chapter 7: Problems: 1 to 5, 6(f), 6(h), 6(l).
+  Chapter 8: Problems: 1 to 4, 7, 8, 10 to 18.
+
+   Additional ARM CPU related Problems (Link)
+
+ 
+ 2. Processes, Multitasking and Real-time Scheduling 
+
+   D. Lewis's Text Book - Fundamental of Embedded Software ARM Cortex M3
+
+  Chapter 9: Problems: 1 to 4,  6 to 15.
+  Chapter 10: All the Problems i.e. 1 to 19. 
+   Additional Real-time Scheduling related Problems (Link)

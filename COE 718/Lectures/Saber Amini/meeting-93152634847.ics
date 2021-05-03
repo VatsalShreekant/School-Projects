@@ -1,0 +1,61 @@
+BEGIN:VCALENDAR
+PRODID:-//zoom.us//iCalendar Event//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+CLASS:PUBLIC
+BEGIN:VTIMEZONE
+TZID:America/New_York
+TZURL:http://tzurl.org/zoneinfo-outlook/America/New_York
+X-LIC-LOCATION:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20200923T155915Z
+DTSTART;TZID=America/New_York:20200923T120000
+DTEND;TZID=America/New_York:20200923T140000
+SUMMARY:GEO 702 Sec. 1 Meeting 12:10 to 1:30 PM Sept. 23
+RRULE:FREQ=WEEKLY;WKST=SU;UNTIL=20201202T190000;INTERVAL=1;BYDAY=WE
+UID:ZOOM93152634847
+TZID:America/New_York
+DESCRIPTION:Jeanne Maurer is inviting you to a scheduled Zoom meeting.\n\
+ nJoin Zoom Meeting\nhttps://ryerson.zoom.us/j/93152634847?pwd=RlhRT2haTD
+ A1T242ZWNZS0Vyc091UT09\n\nMeeting ID: 931 5263 4847\nPasscode: 787566\nO
+ ne tap mobile\n+17789072071\,\,93152634847#\,\,\,\,\,\,0#\,\,787566# Can
+ ada\n+12042727920\,\,93152634847#\,\,\,\,\,\,0#\,\,787566# Canada\n\nDia
+ l by your location\n        +1 778 907 2071 Canada\n        +1 204 272 7
+ 920 Canada\n        +1 438 809 7799 Canada\n        +1 587 328 1099 Cana
+ da\n        +1 647 374 4685 Canada\n        +1 647 558 0588 Canada\n    
+     +1 669 900 6833 US (San Jose)\n        +1 253 215 8782 US (Tacoma)\n
+         +1 301 715 8592 US (Germantown)\n        +1 312 626 6799 US (Chi
+ cago)\n        +1 346 248 7799 US (Houston)\n        +1 646 558 8656 US 
+ (New York)\nMeeting ID: 931 5263 4847\nPasscode: 787566\nFind your local
+  number: https://ryerson.zoom.us/u/acmeFjaXzB\n\nJoin by SIP\n9315263484
+ 7@zoomcrc.com\n\nJoin by H.323\n162.255.37.11 (US West)\n162.255.36.11 (
+ US East)\n115.114.131.7 (India Mumbai)\n115.114.115.7 (India Hyderabad)\
+ n213.19.144.110 (Amsterdam Netherlands)\n213.244.140.110 (Germany)\n103.
+ 122.166.55 (Australia)\n149.137.40.110 (Singapore)\n64.211.144.160 (Braz
+ il)\n69.174.57.160 (Canada)\n207.226.132.110 (Japan)\nMeeting ID: 931 52
+ 63 4847\nPasscode: 787566\n\n
+LOCATION:https://ryerson.zoom.us/j/93152634847?pwd=RlhRT2haTDA1T242ZWNZS0
+ Vyc091UT09
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR

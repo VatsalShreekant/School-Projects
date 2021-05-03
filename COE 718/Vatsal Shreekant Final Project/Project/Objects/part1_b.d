@@ -1,0 +1,10 @@
+.\objects\part1_b.o: part1_b.c
+.\objects\part1_b.o: osObjects.h
+.\objects\part1_b.o: C:\Users\Owner\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC\cmsis_os.h
+.\objects\part1_b.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\part1_b.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\part1_b.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\part1_b.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\objects\part1_b.o: C:\Users\Owner\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.11.1\Board\Board_LED.h
+.\objects\part1_b.o: .\RTE\_Target_1\RTE_Components.h
+.\objects\part1_b.o: C:\Users\Owner\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.11.1\Board\Board_joystick.h
