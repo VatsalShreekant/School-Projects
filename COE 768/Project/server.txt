@@ -1,0 +1,336 @@
+/* Index Server 
+
+Message types:
+R - used for registration
+A - used by the server to acknowledge the success of registration
+Q - used by chat users for de-registration
+D - download content between peers (not used here)
+C - Content (not used here)
+S - Search content
+L - Location of the content server peer
+E - Error messages from the Server
+
+*/
+
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <stdlib.h>
+#include <string.h>
+#include <netdb.h>
+#include <stdio.h>
+#include <arpa/inet.h>
+
+#define MSG1 "Cannot find content"
+#define BUFLEN	100
+#define NAMESIZ	10
+#define MAX_NUM_CON	200
+                                                                                
+typedef struct entry{
+	char	usr[NAMESIZ];
+	struct sockaddr_in addr;
+	short	token;		
+	struct entry *next;
+} ENTRY; 
+
+typedef struct{
+	char name[NAMESIZ];
+	ENTRY	*head;
+} LIST;
+LIST	list[MAX_NUM_CON];
+int	max_index=0;
+
+typedef struct{
+	char type;
+	char data[BUFLEN];
+} PDU;
+PDU 	tpdu;
+
+void search(int, char *, struct sockaddr_in *);
+void registration(int, char *, struct sockaddr_in *); 
+void deregistration(int, char *, struct sockaddr_in *);
+
+/*
+ *------------------------------------------------------------------------
+ * main - Iterative UDP server for Content Indexing service
+ *------------------------------------------------------------------------
+ */
+
+int
+main(int argc, char *argv[])
+{
+	struct sockaddr_in sin, p_addr;	/ the from address of a client	*/
+	ENTRY	*p_entry;
+	char	service = "10000";	/ service name or port number	*/
+	char	name[NAMESIZ], usr[NAMESIZ];
+	int	alen = sizeof(struct sockaddr_in);	/* from-address length		*/
+        int     s, n, i, len,p_sock;        /* socket descriptor and socket type    */
+	int	pdulen=sizeof(PDU);
+	struct  hostent         *hp;
+	PDU	rpdu;
+	struct sockaddr_in fsin;	/* the from address of a client	*/
+
+
+	for(n=0; n<MAX_NUM_CON; n++)
+		list[n].head = NULL;
+                                                                                
+	switch (argc) {
+	case	1:
+		break;
+	case	2:
+		service = argv[1];
+		break;
+	default:
+		fprintf(stderr, "usage: chat_server [host [port]]\n");
+
+	}
+
+                                                                                
+        memset(&sin, 0, sizeof(sin));
+        sin.sin_family = AF_INET;
+        sin.sin_addr.s_addr = INADDR_ANY;
+
+   /* Map service name to port number */
+        sin.sin_port = htons((u_short)atoi(service));
+                                                                                
+    /* Allocate a socket */
+        s = socket(AF_INET, SOCK_DGRAM, 0);
+        if (s < 0){
+		fprintf(stderr, "can't creat socket\n");
+		exit(1);
+	}
+                                                                                
+    /* Bind the socket */
+        if (bind(s, (struct sockaddr *)&sin, sizeof(sin)) < 0)
+		fprintf(stderr, "can't bind to %s port\n", service);
+
+	while (1) {
+		if ( (n=recvfrom(s, &rpdu, pdulen, 0,(struct sockaddr *)&fsin, &alen)) < 0)
+		  printf("recvfrom error: n=%d\n",n);
+
+
+	/*	Content Registration Request			*/
+		if(rpdu.type == 'R'){
+		  registration(s, rpdu.data, &fsin);
+		  continue;
+		}
+
+	/* Search Content		*/
+		if(rpdu.type == 'S'){ 
+		  search(s, rpdu.data, &fsin);
+		  continue;
+		}
+
+	/*	List current Content */
+		if(rpdu.type == 'O'){
+		  printf("Request to list all the Content\n");
+		  len = 0;
+		  tpdu.type = 'O';
+		  for(n=0; n<max_index; n++){
+		    if(list[n].head != NULL){
+		      strcpy(&tpdu.data[len], list[n].name);
+		      len = len + strlen(list[n].name);
+		      tpdu.data[len] = '\n';
+		      len = len+1;
+		    }
+		  }
+		  tpdu.data[len] = '\0';
+		  sendto(s, &tpdu, sizeof(tpdu), 0,(struct sockaddr *) &fsin, sizeof(fsin));
+		  continue;
+		}
+			
+	/*	De-registration		*/
+		if(rpdu.type == 'T'){
+		  deregistration(s, rpdu.data, &fsin);
+		  continue;
+		}
+
+	/*	Receive unregonized PDU type	*/
+	  	printf("protocol error\n");
+
+	}
+	return(0);
+}
+
+void search(int s, char *data, struct sockaddr_in *addr)
+{
+	int n,find=-1;
+	char name[NAMESIZ];
+	ENTRY	*head, *curr;
+	PDU	tpdu;
+
+        strcpy(name, data);
+
+	for(n=0; n<max_index; n++){
+	  if((strcmp(name,list[n].name)==0) && (list[n].head!=NULL) ){
+		find= n;
+		break;
+	  }
+	}
+	if(find == -1){
+		tpdu.type= 'E';
+		printf("Search Unsuccessful\n");
+ 		sendto(s, &tpdu, sizeof(tpdu),0, (struct sockaddr *)addr, sizeof(struct sockaddr));
+		return;
+	}
+	else{
+	  head = list[find].head;
+	  curr = head;
+	  while(curr != NULL){
+		if(curr->token == 1){
+		  printf("Search: Find peer %s port number %d\n", curr->usr,ntohs(curr->addr.sin_port));
+		  curr->token = 0;
+		  if(curr->next == NULL) head->token=1;
+		  else curr->next->token = 1;;
+		  tpdu.type = 'S';
+		  memcpy(tpdu.data, &curr->addr, sizeof(struct sockaddr));
+		  n = sendto(s, &tpdu, sizeof(tpdu),0, (struct sockaddr *)addr, sizeof(struct sockaddr));
+		  printf("Search: n= %d\n",n);
+		  return;
+
+		}
+  	  	curr = curr->next;
+	  }
+	}
+}
+
+void deregistration(int s, char *data, struct sockaddr_in *addr)
+{
+	ENTRY 	*curr, *head, *prev;
+	int	n, find=-1, findu=-1;
+	char	name[NAMESIZ], usr[NAMESIZ];
+	PDU	tpdu;
+
+	printf("Entering the deregisration routine\n");
+	strcpy(name, data);
+	strcpy(usr, &data[NAMESIZ]);
+	for(n=0; n<max_index; n++){
+          if((strcmp(name,list[n].name)==0) && (list[n].head!=NULL) ){
+                find= n;
+                break;
+          }
+	}
+
+	printf("deregisration: find %d\n",find);
+	printf("deregistration: usr name %s\n", usr);
+
+ 	if(find == -1){ 
+		tpdu.type = 'E';
+		sendto(s, &tpdu, sizeof(tpdu), 0, (struct sockaddr *)addr, sizeof(struct sockaddr));
+		return;
+	}
+        else{
+          	head = curr = prev = list[find].head;
+          	while(curr != NULL){
+	    	  if(strcmp(curr->usr,usr) == 0){
+			findu = 1;
+		  	printf("deregistration: find the entry\n");
+		  	printf("deregistration: remove the entry: %d\n", ntohs(curr->addr.sin_port));
+	    	  	if(curr == head)
+		    	list[find].head = curr->next;
+		  	else{
+		    		prev->next = curr->next;
+                    		if(curr->token == 1){
+                    		if(curr->next == NULL) list[find].head->token=1;
+                    		else curr->next->token = 1;;
+		  		}
+	        	}
+			free(curr);
+                	break;
+            	  }
+	    	  prev = curr;
+           	  curr = curr->next;
+        	}
+        }
+	if(findu == -1)
+		tpdu.type = 'E';
+	else{
+		if(list[find].head == NULL && find == max_index-1) max_index--;
+		tpdu.type='T';
+	}
+	sendto(s, &tpdu, sizeof(tpdu), 0, (struct sockaddr *)addr, sizeof(struct sockaddr));
+	return;
+}
+
+void registration(int s, char *data, struct sockaddr_in *addr)
+{
+	ENTRY *curr, *tmp;
+	int n, dup = -1, find=-1;
+	int p_sock;
+	char name[NAMESIZ], usr[NAMESIZ];
+	struct sockaddr_in p_addr;
+	PDU	tpdu;
+
+ 	memcpy(&p_addr, addr, sizeof(struct sockaddr));
+        strcpy(name, &data[NAMESIZ]);
+	strcpy(usr, data);
+        memcpy(&p_addr.sin_port, &data[NAMESIZ+NAMESIZ], sizeof(p_addr.sin_port));
+
+	tmp = (ENTRY *) malloc(sizeof(ENTRY));
+
+        memcpy(&tmp->addr, &p_addr, sizeof(struct sockaddr_in));
+	strcpy(tmp->usr, usr);
+        tmp->next = NULL;
+                                                                                
+                /*  Serach for the record	*/
+                                                                                
+	for(n=0; n<max_index; n++){
+          if((strcmp(name,list[n].name)==0) && (list[n].head!=NULL)){
+                find= n;
+		break;
+	  }
+	}
+
+	if(find==-1){  //First peer that registers the content
+	  for(n=0; n<=max_index; n++){
+          	if(list[n].head==NULL){
+			list[n].head = tmp;
+		  	strcpy(list[n].name, name);
+		  	tmp->token = 1;
+		  	if(n == max_index) ++max_index;
+		  	tpdu.type = 'A';
+			printf("Registration: Content %s  registered:\n",name);
+			printf("Registration: Content peer name: %s\n",usr);
+			printf("Registration: IP Address %s\n", inet_ntoa(p_addr.sin_addr));
+			printf("registration: peer port number %d\n", ntohs(p_addr.sin_port));
+		  	break;
+		}
+	  }
+          sendto(s, &tpdu, sizeof(tpdu), 0, (struct sockaddr *) addr, sizeof(struct sockaddr));
+	}
+	else{  
+          curr = list[find].head;
+	  while(curr != NULL){
+		if(strcmp(curr->usr, usr) == 0){ // duplicated user name
+			dup = 1;
+			break;
+		}
+		else{
+            		curr = curr->next;
+	  	}
+	  }
+
+	  if(dup == 1){
+		free(tmp);
+		tpdu.type = 'E';
+		printf("Registration: Duplicate Usrname %s\n", usr);
+	  }
+	  else{
+		curr = list[find].head;
+		curr->token = 0;
+		while(curr->next != NULL){
+			curr = curr->next;
+			curr->token = 0;
+		}
+          	curr->next = tmp;
+	  	tmp->token=1;
+		tpdu.type = 'A';
+		printf("Registration: Content %s  registered\n",name);
+		printf("Registration: Content peer name: %s\n",usr);
+		printf("Registration: IP Address %s\n", inet_ntoa(p_addr.sin_addr));
+		printf("registration: peer port number %d\n", ntohs(p_addr.sin_port));
+          }
+          sendto(s, &tpdu, sizeof(tpdu), 0, (struct sockaddr *)addr, sizeof(struct sockaddr));
+	}
+	return;
+}

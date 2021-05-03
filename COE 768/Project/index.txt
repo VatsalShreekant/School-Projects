@@ -1,0 +1,372 @@
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <stdlib.h>
+#include <string.h>
+#include <netdb.h>
+#include <stdio.h>
+#include <time.h>
+
+#define DBUSER 5
+#define	DBSIZE 5
+/*------------------------------------------------------------------------
+ * main - Iterative UDP server for TIME service
+ *------------------------------------------------------------------------
+ */
+ struct contentreg{
+ 	char type;
+ 	char user [10];
+ 	char contentName[10];
+ 	struct sockaddr_in address;
+ 	char data[10];
+ };
+ 
+ struct contentDest{
+ 	char type;
+ 	char user [10];
+	char contentName[10];
+ 	struct sockaddr_in address;
+ 	char data[100];
+ };
+ 
+ struct error{
+ 	char type;
+ 	char data [100];
+ };
+ 
+  struct pdu{
+ 	char type;
+ 	char data[100];
+ 	int cutoff;
+ };
+ 
+  struct UserRegistry{
+ 	char type;
+ 	char user [10];
+ 	char contentName[DBSIZE][10];
+ 	struct sockaddr_in address;
+ 	char data[10];
+ };
+ 
+ struct contentreg peers[DBUSER];
+ struct UserRegistry userDir[DBUSER];
+ 
+ int checkUser(struct contentreg userReg) {
+	 for(int i = 0; i < DBUSER; i ++ ) {
+		 if (strcmp(userDir[i].user,userReg.user)==0) {
+			 printf("Check user: %s with %s\n", userReg.user,userDir[i].user);
+			 return 1; //match
+		 }
+	 }
+	 return 0;
+ }
+ 
+  int checkContent(struct contentreg userReg) {
+	 int eval = 0 ;
+     for(int i = 0; i < DBUSER; i ++ ) {
+         if (strcmp(userReg.user,userDir[i].user)==0) {
+			 for (int j =0; j< DBSIZE; j++) {
+				 eval = strcmp(userDir[i].contentName[j],userReg.contentName);
+				 if (eval == 0) {
+					 return 1; //match
+				 }
+			 }
+         }
+     }
+	 return 0;
+ }
+ 
+  struct searchResult {
+	 struct UserRegistry catalog[DBUSER];
+	 int total;
+ };
+ 
+ int checkUserSearch(struct searchResult results, struct contentreg userReg) {
+     int eval = 0 ;
+     for(int i = 0; i < DBUSER; i ++ ) {
+         eval = strcmp(userReg.user,results.catalog[i].user);
+         if (eval == 0) {
+             return 1;
+         }
+     }
+     return 0;
+ }
+ 
+ 
+ void removeContent(struct contentreg userReg) {
+     for(int i = 0; i < DBUSER; i ++ ) {
+         if (strcmp(userReg.user,userDir[i].user) == 0) {
+			 for (int j =0; j< DBSIZE; j++) {
+				 if (strcmp(userReg.contentName,userDir[i].contentName[j]) == 0){
+					strcpy(userDir[i].contentName[j],"");
+					break;
+				 }
+			 }
+			 break;
+         }
+     }
+ }
+ 
+ void removeUser(struct contentreg user) {
+	 for(int i = 0; i < DBUSER; i ++ ) {
+		if (strcmp(userDir[i].user,user.user) == 0) {
+			strcpy(userDir[i].user, "");
+			for (int j =0; j< DBSIZE; j++) {
+				strcpy(userDir[i].contentName[j],"");
+			}
+			break;
+		}
+	 }
+ }
+ 
+ struct searchResult listContents() {
+	 struct searchResult results;
+	 int usrCount = 0;
+	int cnCount = 0;
+	printf("\nListing all contents...\n");
+	for (int i=0;i<DBUSER;i++) {
+		if (userDir[i].user != NULL && strcmp(userDir[i].user, "")!=0) {
+			printf("Registered user: %s\n", userDir[i].user);
+			results.catalog[usrCount] = userDir[i];
+			 for (int j=0;j<DBSIZE; j++) {
+				if (userDir[i].contentName[j] != NULL && strcmp(userDir[i].contentName[j], "")!=0) {
+					printf("--Registered content: %s\n", userDir[i].contentName[j]);
+					strcpy(results.catalog[usrCount].contentName[j], userDir[i].contentName[j]);
+					cnCount++;
+				}
+			 }
+			usrCount++;
+		}
+	}
+	results.total = cnCount;
+	return results;
+ }
+ 
+struct contentreg searchContent(char user[10], char contentName [10]){
+	struct contentreg result;
+	 printf("\nSearching for contents from user: %s\n", user);
+	 result.type = 0;
+	 for (int i=0;i<DBUSER;i++) {
+		 if ((strcmp(userDir[i].user, user) == 0)) {
+			strcpy(result.user, userDir[i].user);
+			result.address = userDir[i].address;
+			for (int j=0;j<DBSIZE; j++) {
+				if ((strcmp(userDir[i].contentName[j], contentName) == 0)) {
+					strcpy(result.contentName, userDir[i].contentName[j]);
+					printf("[user: %s] [%d] - content: %s\n",result.user,j, result.contentName);
+					result.type = 1;
+					break;
+				}
+			}
+		 }
+	 }
+	return result;
+ }
+ 
+ void registerUser (struct contentreg user) {
+	for (int i = 0;i <DBUSER; i++){
+		if (userDir[i].user == NULL || strcmp(userDir[i].user, "")==0 || strcmp(userDir[i].user, user.user)==0) {
+			strcpy(userDir[i].user, user.user);
+			userDir[i].address = user.address;
+			printf("Registered user: %s\n", userDir[i].user);
+			printf("Registered address port: %d\n", userDir[i].address.sin_port);
+			for (int j = 0; j < DBSIZE; j++) {
+				if (userDir[i].contentName[j] == NULL || strcmp(userDir[i].contentName[j], "") == 0) {
+					strcpy(userDir[i].contentName[j], user.contentName);
+					printf("Registered Content: %s\n",userDir[i].contentName[j]);
+					break;
+				}
+			}
+			break;
+		}
+	}
+ }
+ 
+ void deRegisterUser (struct contentreg user) {
+	 if (checkUser(user)) {
+		removeUser(user);
+	 }	 
+ }
+ 
+  void deRegisterContent(struct contentreg user) {
+	 if (checkContent(user)) {
+		removeContent(user);
+	 }	 
+ }
+ 
+int
+main(int argc, char *argv[])
+{
+	struct  sockaddr_in fsin;	/* the from address of a client	*/
+	char	buf[100], file[100];		/* "input" buffer; any size > 0	*/
+	char    *pts;
+	int	sock;			/* server socket		*/
+	time_t	now;			/* current time			*/
+	int	alen;			/* from-address length		*/
+	struct  sockaddr_in sin; /* an Internet endpoint address         */
+        int     s, type;        /* socket descriptor and socket type    */
+	int 	port=3000;
+                                                                                
+
+	switch(argc){
+		case 1:
+			break;
+		case 2:
+			port = atoi(argv[1]);
+			break;
+		default:
+			fprintf(stderr, "Usage: %s [port]\n", argv[0]);
+			exit(1);
+	}
+
+        memset(&sin, 0, sizeof(sin));
+        sin.sin_family = AF_INET;
+        sin.sin_addr.s_addr = INADDR_ANY;
+        sin.sin_port = htons(port);
+                                                                                                 
+    /* Allocate a socket */
+        s = socket(AF_INET, SOCK_DGRAM, 0);
+        if (s < 0)
+		fprintf(stderr, "can't creat socket\n");
+                                                                                
+    /* Bind the socket */
+        if (bind(s, (struct sockaddr *)&sin, sizeof(sin)) < 0)
+		fprintf(stderr, "can't bind to %d port\n",port);
+        listen(s, DBSIZE);	
+	alen = sizeof(fsin);
+	
+	int i, n, nread, j = 0, peerCount = 0;
+	
+	struct contentreg receivedReg;
+	struct error message;
+	struct pdu serverT, serverO, client;
+	struct contentDest serverS;
+	char type1 ='R';
+	
+	while (1) {		
+		n = recvfrom(s, &receivedReg, sizeof(receivedReg), 0,
+				(struct sockaddr *)&fsin, &alen);
+		if(n<0)
+			fprintf(stderr, "recvfrom error\n");
+		
+		switch(receivedReg.type){
+		case 'R':
+		{
+			if (peerCount == DBUSER) {
+				message.type ='E';
+				strcpy(message.data, "Max number of users registered. Please try another time!\n");
+				sendto(s, &message, sizeof(message), 0,(struct sockaddr *)&fsin, sizeof(fsin));
+			}
+			if(checkContent(receivedReg) == 1 && checkUser(receivedReg) == 1) {
+				message.type = 'E';
+				strcpy(message.data, "Content already exists of the same user! Please pick a different filename: \n");
+				sendto(s, &message, sizeof(message), 0,(struct sockaddr *)&fsin, sizeof(fsin));
+				break;
+			}
+			else{
+				message.type ='A';
+				registerUser(receivedReg);
+				printf("The file %s is registered to port %d\n",receivedReg.contentName, receivedReg.address.sin_port);
+				sendto(s, &message, sizeof(message), 0,(struct sockaddr *)&fsin, sizeof(fsin));
+				peerCount++;
+				break;
+			}
+			break;
+		}
+		case 'T':{
+			struct contentreg result = searchContent(receivedReg.user, receivedReg.contentName);
+			char returnMsg[100] = "";
+			printf("De-reg: name: %s user: %s", receivedReg.contentName, receivedReg.user);
+			fflush(stdout);
+			
+			if (result.type != 1) {
+				message.type = 'E';
+				strcpy(serverT.data, "Requested content not found!");
+			}
+			else {
+				removeContent(receivedReg);
+				peerCount--;
+				message.type = 'A';
+				strcpy(message.data, "Content has been deregistered!");
+				sendto(s, &message, sizeof(message), 0,(struct sockaddr *)&fsin, sizeof(fsin));
+				break;
+			}			
+			sendto(s, &serverT, sizeof(serverT), 0,(struct sockaddr *)&fsin, sizeof(fsin));
+			fflush(stdout);
+			break;
+		}
+		case 'O':
+		{
+			char returnMsg[100] = "";
+			struct searchResult results = listContents();
+			int pollcounter = 0;
+			if (results.total == 0) {
+				serverO.type = 0;
+				strcpy(serverO.data, "No content found!");
+				sendto(s, &serverO, sizeof(serverO), 0,(struct sockaddr *)&fsin, sizeof(fsin));	
+			}
+			else {
+				serverO.type = 1; //start polling
+				printf("Search result total: %d\n", results.total);
+				
+				 for (int i=0;i<results.total;i++) {
+					 if (strlen(results.catalog[i].user) > 0 && strcmp(results.catalog[i].user, "")!= 0) {
+						 for (int j=0;j<DBSIZE; j++) {
+							 if(strlen(results.catalog[i].contentName[j]) > 0 && strcmp(results.catalog[i].contentName[j], "")!= 0 ) {
+								sprintf(serverO.data,"%d: [Filename: %s][User: %s][Port: %d]",i, results.catalog[i].contentName[j], results.catalog[i].user, results.catalog[i].address.sin_port);
+								//strcpy(serverO.data, returnMsg);
+								pollcounter++;
+								if (pollcounter == results.total) serverO.type = 0;//stop polling
+								sendto(s, &serverO, sizeof(serverO), 0,(struct sockaddr *)&fsin, sizeof(fsin));
+								if (serverO.type == 0) {
+									break;
+								}
+							}
+						}
+					 }
+					if (pollcounter >= results.total) {
+						pollcounter = 0;
+						break;
+					}
+				 }
+			}	
+			fflush(stdout);
+			break;
+		}
+
+		case 'S':{
+			char returnMsg[100] = "";
+			printf("Requested Username %s Content Name %s \n", receivedReg.user, receivedReg.contentName);
+			struct contentreg result = searchContent(receivedReg.user, receivedReg.contentName);
+			if (checkContent(receivedReg)==0 || checkUser(receivedReg)==0 || result.type != 1) {
+				serverS.type == 'E';
+				strcpy(serverS.data, "Requested content not found!");
+				sendto(s, &serverS, sizeof(serverS), 0,(struct sockaddr *)&fsin, sizeof(fsin));
+			}
+			else {
+				 serverS.type = 'S';					
+				 sprintf(returnMsg, "Server: [User: %s][Port: %d]", result.user, result.address.sin_port);
+				 strcpy(serverS.data, returnMsg);
+				 strcpy(serverS.user, result.user);
+				 strcpy(serverS.contentName, result.contentName);
+				 serverS.address = result.address;
+				 //sprintf(returnMsg, "	Sent: %d: [Filename: %s][User: %s][Port: %d]",i, serverS.contentName, serverS.user, serverS.address.sin_port);
+				 sendto(s, &serverS, sizeof(serverS), 0,(struct sockaddr *)&fsin, sizeof(fsin));
+			}			
+			fflush(stdout);
+			break;
+		}
+		case 'Q': {
+			printf("De-registering user: %s\n", receivedReg.user);
+			deRegisterUser(receivedReg);
+			break;
+		}
+		default:{
+			printf("Failure!");
+		break;
+		}
+		}	
+	}
+}
+

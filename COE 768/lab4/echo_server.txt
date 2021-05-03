@@ -1,0 +1,144 @@
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/unistd.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <sys/signal.h>
+#include <sys/wait.h>
+#include <stdlib.h>
+#include <strings.h>
+
+
+#define SERVER_TCP_PORT 5000	/* port number */
+#define BUFLEN		100	/* length of the buffer */
+
+char *file_name(int sd_0);
+int read_file(int);
+void reaper(int);
+
+int main(int argc, char **argv)
+{
+	int 	sd_0, sd_1, client_len, port;
+	struct	sockaddr_in server, client;
+
+	switch(argc)
+	{
+	case 1:
+		port = SERVER_TCP_PORT;
+		break;
+	case 2:
+		port = atoi(argv[1]);
+		break;
+	default:
+		fprintf(stderr, "Usage: %s [port]\n", argv[0]);
+		exit(1);
+	}
+
+	/* Creation of the socket */	
+	if ((sd_0 = socket(AF_INET, SOCK_STREAM, 0)) == -1) 
+	{
+		fprintf(stderr, "The socket can't be created.\n");
+		exit(1);
+	}
+
+	/* Address bind to the socket */
+	bzero((char *)&server, sizeof(struct sockaddr_in));
+	server.sin_family = AF_INET;
+	server.sin_port = htons(port);
+	server.sin_addr.s_addr = htonl(INADDR_ANY);
+	if (bind(sd_0, (struct sockaddr *)&server, sizeof(server)) == -1)
+	{
+		fprintf(stderr, "Can't bind name to socket\n");
+		exit(1);
+	}
+
+	/* Queue for 7 requests */
+	listen(sd_0, 7);
+
+	(void) signal(SIGCHLD, reaper);
+
+	while(1) 
+	{
+	client_len = sizeof(client);
+	sd_1 = accept(sd_0, (struct sockaddr *)&client, &client_len);
+	if(sd_1 < 0)
+		{
+	    		fprintf(stderr, "Can't accept client \n");
+	    		exit(1);
+	  	}
+	
+	//Forking
+	switch (fork())
+	{
+		//Child Process
+		case 0:		
+		(void) close(sd_0);
+		exit(read_file(sd_1));
+		
+		//Parent Process
+		default:		
+		(void) close(sd_1);
+		break;
+
+		case -1:
+		fprintf(stderr, "fork: error\n");
+	}
+	
+	}
+}
+
+
+/* Q-3. a. How the server transfers the data from the file to the client. */
+int read_file(int sd_0) 
+{
+	char	buf[BUFLEN];
+	
+	//Pointer file_pointer assigned with 'File' as the object type
+	FILE * file_pointer;
+
+	//User assigns the file name
+	read(sd_0, buf, BUFLEN);
+	
+	//Opens the file entered by the user in the client terminal
+	file_pointer = fopen(buf, "r");
+	
+	//If the file does not exist in server side(Null value)
+	//Q-3. b. The condition that the server stops transmitting
+	if (file_pointer == NULL) 
+	{
+		
+		//Name the file the same as the user input in the client terminal
+		//and store it in the same file directory that the client is in.
+		write(sd_0, "0", 1);
+		
+		//Write the error message below in the file
+		write(sd_0, "The file was not found.", BUFLEN);
+	} 
+	
+	//If the file exists in server side
+	else 
+	{
+		write(sd_0, "1", 1);
+		
+		//Send the contents of the file to the client side
+		//with characters not exceeding the 100 byte restriction.
+		while (fgets(buf, BUFLEN, file_pointer) != NULL) 
+		{
+			write(sd_0, buf, BUFLEN);
+		}
+	}
+
+	fclose(file_pointer);
+	//Q-3. b. The condition that the server terminates the connection
+	close(sd_0);
+
+	return 0;
+}
+
+
+/*	reaper		*/
+void	reaper(int sig)
+{
+	int	status;
+	while(wait3(&status, WNOHANG, (struct rusage *)0) >= 0);
+}

@@ -1,0 +1,346 @@
+/* time_client.c - main */
+
+#include <sys/types.h>
+
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <sys/socket.h>                                                                            
+#include <netinet/in.h>
+#include <arpa/inet.h>
+                                                                                
+#include <netdb.h>
+
+#define	BUFSIZE 64
+
+#define	MSG		"Any Message \n"
+
+ struct pdu{
+ 	char type;
+ 	char data[100];
+ 	int cutoff;
+ };
+ 
+  struct pduDL{
+ 	char type;
+ 	char data[1460];
+ 	int cutoff;
+ };
+ 
+ struct contentReg{
+ 	char type;
+ 	char user [10];
+ 	char contentName[10];
+ 	struct sockaddr_in address;
+	char data [100];
+ };
+ struct error{
+ 	char type;
+ 	char data [100];
+ };
+/*------------------------------------------------------------------------
+ * main - UDP client for TIME service that prints the resulting time
+ *------------------------------------------------------------------------
+ */
+
+int
+main(int argc, char **argv)
+{
+	char	*host = "localhost";
+	int	port = 3000; 
+	char	now[100], rPacket[100];		/* 32-bit integer to hold time	*/ 
+	struct hostent	*phe;	/* pointer to host information entry	*/
+	struct sockaddr_in sin, tcpSockAddr;	/* an Internet endpoint address		*/
+	int	sUDP,sTCP_ul, sTCP_dl, n, type, tcpAlen;	/* socket descriptor and socket type	*/
+	
+	
+	switch (argc) {
+	case 1:
+		break;
+	case 2:
+		host = argv[1];
+	case 3:
+		host = argv[1];
+		port = atoi(argv[2]);
+		break;
+	default:
+		fprintf(stderr, "usage: UDPtime [host [port]]\n");
+		exit(1);
+	}
+
+	memset(&sin, 0, sizeof(sin));
+	sin.sin_family = AF_INET;                                                                
+	sin.sin_port = htons(port);
+                                                                                        
+    /* Map host name to IP address, allowing for dotted decimal */
+        if ( phe = gethostbyname(host) ){
+                memcpy(&sin.sin_addr, phe->h_addr, phe->h_length);
+        }
+        else if ( (sin.sin_addr.s_addr = inet_addr(host)) == INADDR_NONE )
+		fprintf(stderr, "Can't get host entry \n");
+                                
+	/* Create a TCP socket for file transfer*/	
+		if ((sTCP_ul = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
+			fprintf(stderr, "Can't create a new TCP socket\n");
+			exit(1);
+		}								
+    /* Allocate a UDP socket for Index Server*/
+        sUDP = socket(AF_INET, SOCK_DGRAM, 0);
+        if (sUDP < 0)
+		fprintf(stderr, "Can't create UDP socket \n");                                                             
+    /* Connect the UDP socket */	
+        if (connect(sUDP, (struct sockaddr *)&sin, sizeof(sin)) < 0)
+		fprintf(stderr, "Can't connect to %s %s \n", host, "Time");
+	
+	struct contentReg peer, downloadRequest;
+	struct error message;		
+	int input, alen, i, peerRegistrated =0;	
+	char response;
+	struct pdu client, server;	
+	fd_set rfds, afds;
+	
+	printf("Choose a user name: \n");
+	scanf(" %s", peer.user);
+	//printf("%s", peer.user);
+	//fflush(stdout);
+	peer.user[strlen(peer.user)] = '\0';
+	printf("\nCommand: ");
+
+	while(1){
+		//int sock = socket(AF_INET, SOCK_STREAM,0);
+		FD_ZERO(&afds);
+		FD_SET(sTCP_ul,&afds);
+		FD_SET(0,&afds);
+		memcpy(&rfds, &afds, sizeof(rfds));
+		select(FD_SETSIZE, &rfds, NULL, NULL, NULL);	
+	
+		if(FD_ISSET(0, &rfds)){
+			scanf(" %c", &response);
+
+			switch(response){
+			case '?':
+			{
+				printf("R- Content Registeration; T-Content Deregisteration; C-Download content\nD -Download Content Request; O-List all the On-line Content; Q-Quit\n");
+				break;
+			}
+			case 'R':
+			{
+				if (peerRegistrated == 1) {
+					printf("You already registered!");
+					break;
+				}	/* Create a TCP socket for file transfer*/	
+				if ((sTCP_ul = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
+					fprintf(stderr, "Can't create a new TCP socket\n");
+					exit(1);
+				}
+				
+				/* Bind an address to the socket	*/
+				bzero((char *)&tcpSockAddr, sizeof(struct sockaddr_in));
+				tcpSockAddr.sin_family = AF_INET;
+				tcpSockAddr.sin_port = htons(0); // random port
+				tcpSockAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+				if (bind(sTCP_ul, (struct sockaddr *)&tcpSockAddr, sizeof(tcpSockAddr)) == -1){
+					fprintf(stderr, "Can't bind name to socket\n");
+					exit(1);
+				}
+				/* queue up to 2 connect requests  */
+				listen(sTCP_ul, 2);
+				tcpAlen = sizeof(struct sockaddr_in);
+				getsockname(sTCP_ul, (struct sockaddr*) &peer.address, &tcpAlen);
+				
+				//peer.address = tcpSockAddr;
+				
+				peer.type = 'R';
+				printf("Enter file name to be registered: \n");
+				n=read(0,peer.contentName,10);
+				peer.contentName[n-1] = '\0';
+				
+				(void)write(sUDP, &peer,sizeof(peer));
+				
+				while((i=read(sUDP, &message, sizeof(message)))>0){
+					if(message.type == 'E'){
+						printf("Server: %s\n", message.data);
+						scanf(" %s", peer.user);
+						printf("Enter file name: \n");
+						scanf(" %s", peer.contentName);
+						peer.type = 'R';
+						write(sUDP, &peer, sizeof(peer));
+					}
+					else if (message.type == 'A')
+					{
+						printf("Content Registeration Completed!");
+						peerRegistrated = 1;
+						break;
+					}
+				}
+				break;
+			}
+			case 'T':
+			{
+				if(peerRegistrated == 0){
+					printf("No Files Registered!");
+					break;
+					}
+				
+				peer.type = 'T';
+				
+				(void)write(sUDP, &peer,sizeof(peer));
+				
+				while((i=read(sUDP, &message, sizeof(message)))>0){
+					if(message.type == 'E'){
+						printf("Server: %s\n", message.data);
+						
+					}
+					else if (message.type == 'A')
+					{
+						printf("Content Deregisteration Completed!");
+						peerRegistrated = 0;
+						break;
+					}
+				}
+				
+				break;
+				
+			}
+			case 'O':
+			{
+				printf("Requested content listing...\n");
+				client.type = 'O';
+				(void) write(sUDP, &client, 100);
+		
+				while((i=read(sUDP, &server, sizeof(server)))>0){
+					printf("%s\n", server.data);
+					if (server.type == 0) break;
+				}
+			
+				if(i<0)
+					printf("Failed to read file or recieve data.\n");
+		
+				break;
+			}
+			case 'S':{
+				peer.type = 'S';
+				printf(" Enter user name: \n");
+				n=read(0, peer.user, 11);
+				peer.user[n-1] = '\0';
+				
+				printf(" Enter content name: \n");
+				n=read(0, peer.contentName, 11);
+				peer.contentName[n-1] = '\0';
+				
+				printf("Requested content searching...\n");
+				(void) write(sUDP, &peer, 100);
+		
+				while((i=read(sUDP, &downloadRequest, sizeof(downloadRequest)))>0){
+					printf("%s\n", downloadRequest.data);
+					break;
+				}
+				printf("Download request info: %s, %d\n", downloadRequest.contentName, downloadRequest.address.sin_port);
+				if(i<0)
+					printf("Failed to read file or recieve data.\n");
+				break;
+			}
+			case 'D':{
+				FILE *fp;
+				struct pduDL buffer;
+				
+				int d;
+				printf("Download request info: %s, %d\n", downloadRequest.contentName, downloadRequest.address.sin_port);
+				/* Create a TCP socket for file transfer*/	
+				if ((sTCP_dl = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
+					fprintf(stderr, "Can't create a sTCP_dl socket\n");
+					printf("Can't create a sTCP_dl socket\n");
+					exit(1);
+				}
+				printf("Created a sTCP_dl socket\n");
+				fflush(stdout);
+				if (connect(sTCP_dl, (struct sockaddr *)&downloadRequest.address, sizeof(downloadRequest.address)) == -1){
+					fprintf(stderr, "Can't bind name to sTCP_dl socket\n");
+					printf("Can't bind name to sTCP_dl socket\n");
+					fflush(stdout);
+					exit(1);
+				}
+				printf("Requested content download...\n");
+				
+				(void) write(sTCP_dl, &downloadRequest, sizeof(downloadRequest));
+				
+				fp=fopen(downloadRequest.contentName, "w");
+				while((d = read(sTCP_dl,&buffer, (int) sizeof(buffer)))>0){
+					printf("Bytes recieved: %d\n", d);
+					if (buffer.type == 'C') fwrite(buffer.data,d,1,fp);
+					else {
+						printf("Error: Failed during download\n");
+						break;
+					}
+				}
+
+				if(d<0)
+				printf("\nFailed to read file or recieve data.\n");
+				fclose(fp);
+				close(sTCP_dl);
+				printf("Download connection terminated.\n");
+			}
+			case 'Q':{
+				break;
+				}
+			}
+		}
+		
+		if(FD_ISSET(sTCP_ul, &rfds)){
+			int new_sd = accept(sTCP_ul, (struct sockaddr *)&tcpSockAddr, (int*)sizeof(tcpSockAddr));
+			//if (new_sd < 0) printf("Failed to accept connection\n");
+			if (new_sd > 0) {
+				printf("Start uploading...\n");
+				int BUFLEN = 10;
+				char buffer[BUFLEN], requestedFileName[BUFLEN], file[100], msg[BUFLEN];
+				char errorMsg[10] = "!";
+				int n, bytes_to_read, i, nread;
+				struct contentReg downloadResponse;
+
+				n = read(new_sd,&downloadResponse, sizeof(downloadResponse));
+
+				fflush(stdout);
+				sprintf(requestedFileName,"%s", downloadResponse.contentName);
+				strtok(requestedFileName, "\n");
+
+				FILE *f = fopen(("%s",requestedFileName), "r");
+
+				if (f == NULL) {
+					write(new_sd, errorMsg, BUFLEN);
+					perror("Error");
+				}
+				else {
+					//Count number of bytes of the file
+					fseek(f, 0, SEEK_END); //Moves file pointer to the last byte of the file
+					unsigned long fileSize = ftell(f); // Store the position of the FilePointer
+					fseek(f, 0, SEEK_SET); //Moves FilePointer back to the beginning of file
+				
+					unsigned long sizeCounter = 0;
+					unsigned long chunkSize = 1460;
+					
+					while(1) {
+						//printf("Chunk read.\n");
+						sizeCounter += 1460;
+						//Get the last chunk size precisely
+						if(sizeCounter > fileSize)
+							chunkSize = fileSize + 1460 - sizeCounter;
+						nread = fread(file,1,chunkSize,f);
+						if (nread>0){
+							write(new_sd, file, chunkSize);
+							printf("Chunk sent. Pointer position: %lu. Chunk Size: %lu\n",ftell(f), chunkSize);
+						}
+						else {
+							printf("EOF\n");
+							break;
+						}
+					}
+					fclose(f);
+				}
+			}
+			close(new_sd);
+		}
+	}
+	exit(0);
+}
+

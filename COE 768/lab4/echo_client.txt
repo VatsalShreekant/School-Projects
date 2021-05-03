@@ -1,0 +1,87 @@
+#include <stdio.h>
+#include <netdb.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <strings.h>
+#include <string.h>
+
+#define SERVER_TCP_PORT 5000	/* port number */
+#define BUFLEN		100	/* length of the buffer */
+
+int main(int argc, char **argv)
+{
+	int 	n, i, bytes_to_read;
+	int 	sd_0, port;
+	struct	host *host_pointer;
+	struct	sockaddr_in server;
+	char	*host, *buffer_pointer, rbuf[BUFLEN], sbuf[BUFLEN];
+	FILE *file_pointer;
+	char buf[BUFLEN];
+
+	switch(argc){
+	case 2:
+		host = argv[1];
+		port = SERVER_TCP_PORT;
+		break;
+	case 3:
+		host = argv[1];
+		port = atoi(argv[2]);
+		break;
+	default:
+		fprintf(stderr, "Usage: %s host [port]\n", argv[0]);
+		exit(1);
+	}
+
+	/* Creation of the socket */	
+	if ((sd_0 = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
+		fprintf(stderr, "The socket can't be created.\n");
+		exit(1);
+	}
+	
+	/* Address bind to the socket */
+	bzero((char *)&server, sizeof(struct sockaddr_in));
+	server.sin_family = AF_INET;
+	server.sin_port = htons(port);
+	if (hp = gethostbyname(host)) 
+	  bcopy(hp->h_addr, (char *)&server.sin_addr, hp->h_length);
+	else if ( inet_aton(host, (struct in_addr *) &server.sin_addr) ){
+	  fprintf(stderr, "Can't get server's address\n");
+	  exit(1);
+	}
+
+	/* Establishing the server connection */
+	if (connect(sd_0, (struct sockaddr *)&server, sizeof(server)) == -1){
+	  fprintf(stderr, "Can't connect \n");
+	  exit(1);
+	}
+
+
+	char file_name[BUFLEN];
+	printf("Enter a file name\n");
+	scanf("%s", file_name);
+	strtok(file_name, "\n");
+	
+	//Sending the name of the requested file server side
+	write(sd_0, file_name, sizeof(file_name));
+
+	read(sd_0, buf, 1);
+	//Q-3. c. The condition where the client stops receiving and exits.
+	if (strcmp(buf, "0") == 0) {
+		read(sd_0, buf, BUFLEN);
+		printf("%s\n", buf);
+	} else {
+		// Open a file with the same file name for writing
+		file_pointer = fopen(file_name, "w");
+		// Copy contents line by line and write it to the file
+		while (read(sd_0, buf, BUFLEN)) {
+			fputs(buf, file_pointer);
+		}
+	}
+
+	close(sd_0);
+	return(0);
+}
