@@ -1,0 +1,64 @@
+# do CPU_TEST_Sim.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 15:59:22 on Apr 04,2019
+# vlog -work work CPU_TEST_Sim.vo 
+# -- Compiling module CPU_TEST_Sim
+# 
+# Top level modules:
+# 	CPU_TEST_Sim
+# End time: 15:59:23 on Apr 04,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 15:59:23 on Apr 04,2019
+# vlog -work work CPU_TEST_Sim.vwf.vt 
+# -- Compiling module CPU_TEST_Sim_vlg_vec_tst
+# 
+# Top level modules:
+# 	CPU_TEST_Sim_vlg_vec_tst
+# End time: 15:59:24 on Apr 04,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.CPU_TEST_Sim_vlg_vec_tst -voptargs=""+acc"" 
+# Start time: 15:59:24 on Apr 04,2019
+# //  ModelSim ALTERA 10.4d Dec 30 2015 Linux 2.6.32-754.3.5.el6.x86_64
+# //
+# //  Copyright 1991-2015 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# Loading work.CPU_TEST_Sim_vlg_vec_tst
+# Loading work.CPU_TEST_Sim
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_ram_block
+# Loading cycloneive_ver.cycloneive_ram_register
+# Loading cycloneive_ver.cycloneive_ram_pulse_generator
+# SDF 10.4d Compiler 2015.12 Dec 30 2015
+# Loading instances from CPU_TEST_Sim_v.sdo
+# Loading altera_ver.PRIM_GDFF_LOW
+# Loading timing data from CPU_TEST_Sim_v.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /CPU_TEST_Sim_vlg_vec_tst File: CPU_TEST_Sim.vwf.vt
+# ** Error: /build/swbuild/SJ/nightly/16.0/211/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4543): $hold( posedge clk &&& reset:2696 ps, d[0]:2762 ps, 222 ps );
+#    Time: 2762 ps  Iteration: 0  Instance: /CPU_TEST_Sim_vlg_vec_tst/i1/\main_processor|Dpth|D1|mem_rtl_0|auto_generated|ram_block1a0 /we_a_register
+# ** Error: /build/swbuild/SJ/nightly/16.0/211/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4543): $hold( posedge clk &&& reset:2700 ps, d:2780 ps, 222 ps );
+#    Time: 2780 ps  Iteration: 1  Instance: /CPU_TEST_Sim_vlg_vec_tst/i1/\main_processor|Dpth|D1|mem_rtl_0|auto_generated|ram_block1a0 /datain_a_register
+# ** Error: /build/swbuild/SJ/nightly/16.0/211/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4543): $hold( posedge clk &&& reset:2700 ps, d:2900 ps, 222 ps );
+#    Time: 2900 ps  Iteration: 0  Instance: /CPU_TEST_Sim_vlg_vec_tst/i1/\main_processor|Dpth|D1|mem_rtl_0|auto_generated|ram_block1a0 /datain_a_register
+# ** Note: $finish    : CPU_TEST_Sim.vwf.vt(73)
+#    Time: 2 us  Iteration: 0  Instance: /CPU_TEST_Sim_vlg_vec_tst
+# End time: 15:59:24 on Apr 04,2019, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0

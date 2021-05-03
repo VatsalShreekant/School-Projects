@@ -1,0 +1,989 @@
+Simulator report for pc_qsim
+Thu Jan 31 16:39:06 2019
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 100.0 ns     ;
+; Simulation Netlist Size     ; 285 nodes    ;
+; Simulation Coverage         ;       0.63 % ;
+; Total Number of Transitions ; 107          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone III  ;
++-----------------------------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                             ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                           ; Default Value ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                        ; Timing        ;
+; Start time                                                                                 ; 0 ns                                              ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                               ;               ;
+; Vector input source                                                                        ; /home/student1/vshreeka/coe608/lab2/Waveform6.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                ; On            ;
+; Check outputs                                                                              ; Off                                               ; Off           ;
+; Report simulation coverage                                                                 ; On                                                ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                               ; Off           ;
+; Detect glitches                                                                            ; Off                                               ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                               ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                               ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                               ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                               ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                        ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                               ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                               ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                              ; Auto          ;
+; Interconnect Delay Model Type                                                              ; Transport                                         ; Transport     ;
+; Cell Delay Model Type                                                                      ; Transport                                         ; Transport     ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 32-bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;       0.63 % ;
+; Total nodes checked                                 ; 285          ;
+; Total output ports checked                          ; 317          ;
+; Total output ports with complete 1/0-value coverage ; 2            ;
+; Total output ports with no 1/0-value coverage       ; 283          ;
+; Total output ports with no 1-value coverage         ; 315          ;
+; Total output ports with no 0-value coverage         ; 283          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++-------------------------------------------------+
+; Complete 1/0-Value Coverage                     ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
+; |pc|clr   ; |pc|clr          ; out              ;
+; |pc|clk   ; |pc|clk          ; out              ;
++-----------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------+
+; Missing 1-Value Coverage                               ;
++------------------+------------------+------------------+
+; Node Name        ; Output Port Name ; Output Port Type ;
++------------------+------------------+------------------+
+; |pc|q~32         ; |pc|q~32         ; out              ;
+; |pc|q~33         ; |pc|q~33         ; out              ;
+; |pc|q[0]~direct  ; |pc|q[0]~direct  ; out0             ;
+; |pc|q[1]~direct  ; |pc|q[1]~direct  ; out0             ;
+; |pc|q[2]~direct  ; |pc|q[2]~direct  ; out0             ;
+; |pc|q[3]~direct  ; |pc|q[3]~direct  ; out0             ;
+; |pc|q[4]~direct  ; |pc|q[4]~direct  ; out0             ;
+; |pc|q[5]~direct  ; |pc|q[5]~direct  ; out0             ;
+; |pc|q[6]~direct  ; |pc|q[6]~direct  ; out0             ;
+; |pc|q[7]~direct  ; |pc|q[7]~direct  ; out0             ;
+; |pc|q[8]~direct  ; |pc|q[8]~direct  ; out0             ;
+; |pc|q[9]~direct  ; |pc|q[9]~direct  ; out0             ;
+; |pc|q[10]~direct ; |pc|q[10]~direct ; out0             ;
+; |pc|q[11]~direct ; |pc|q[11]~direct ; out0             ;
+; |pc|q[12]~direct ; |pc|q[12]~direct ; out0             ;
+; |pc|q[13]~direct ; |pc|q[13]~direct ; out0             ;
+; |pc|q[14]~direct ; |pc|q[14]~direct ; out0             ;
+; |pc|q[15]~direct ; |pc|q[15]~direct ; out0             ;
+; |pc|q[16]~direct ; |pc|q[16]~direct ; out0             ;
+; |pc|q[17]~direct ; |pc|q[17]~direct ; out0             ;
+; |pc|q[18]~direct ; |pc|q[18]~direct ; out0             ;
+; |pc|q[19]~direct ; |pc|q[19]~direct ; out0             ;
+; |pc|q[20]~direct ; |pc|q[20]~direct ; out0             ;
+; |pc|q[21]~direct ; |pc|q[21]~direct ; out0             ;
+; |pc|q[22]~direct ; |pc|q[22]~direct ; out0             ;
+; |pc|q[23]~direct ; |pc|q[23]~direct ; out0             ;
+; |pc|q[24]~direct ; |pc|q[24]~direct ; out0             ;
+; |pc|q[25]~direct ; |pc|q[25]~direct ; out0             ;
+; |pc|q[26]~direct ; |pc|q[26]~direct ; out0             ;
+; |pc|q[27]~direct ; |pc|q[27]~direct ; out0             ;
+; |pc|q[28]~direct ; |pc|q[28]~direct ; out0             ;
+; |pc|q[29]~direct ; |pc|q[29]~direct ; out0             ;
+; |pc|q[30]~direct ; |pc|q[30]~direct ; out0             ;
+; |pc|q[31]~direct ; |pc|q[31]~direct ; out0             ;
+; |pc|q[0]~reg0    ; |pc|q[0]~reg0    ; regout           ;
+; |pc|q[31]~reg0   ; |pc|q[31]~reg0   ; regout           ;
+; |pc|q[30]~reg0   ; |pc|q[30]~reg0   ; regout           ;
+; |pc|q[29]~reg0   ; |pc|q[29]~reg0   ; regout           ;
+; |pc|q[28]~reg0   ; |pc|q[28]~reg0   ; regout           ;
+; |pc|q[27]~reg0   ; |pc|q[27]~reg0   ; regout           ;
+; |pc|q[26]~reg0   ; |pc|q[26]~reg0   ; regout           ;
+; |pc|q[25]~reg0   ; |pc|q[25]~reg0   ; regout           ;
+; |pc|q[24]~reg0   ; |pc|q[24]~reg0   ; regout           ;
+; |pc|q[23]~reg0   ; |pc|q[23]~reg0   ; regout           ;
+; |pc|q[22]~reg0   ; |pc|q[22]~reg0   ; regout           ;
+; |pc|q[21]~reg0   ; |pc|q[21]~reg0   ; regout           ;
+; |pc|q[20]~reg0   ; |pc|q[20]~reg0   ; regout           ;
+; |pc|q[19]~reg0   ; |pc|q[19]~reg0   ; regout           ;
+; |pc|q[18]~reg0   ; |pc|q[18]~reg0   ; regout           ;
+; |pc|q[17]~reg0   ; |pc|q[17]~reg0   ; regout           ;
+; |pc|q[16]~reg0   ; |pc|q[16]~reg0   ; regout           ;
+; |pc|q[15]~reg0   ; |pc|q[15]~reg0   ; regout           ;
+; |pc|q[14]~reg0   ; |pc|q[14]~reg0   ; regout           ;
+; |pc|q[13]~reg0   ; |pc|q[13]~reg0   ; regout           ;
+; |pc|q[12]~reg0   ; |pc|q[12]~reg0   ; regout           ;
+; |pc|q[11]~reg0   ; |pc|q[11]~reg0   ; regout           ;
+; |pc|q[10]~reg0   ; |pc|q[10]~reg0   ; regout           ;
+; |pc|q[9]~reg0    ; |pc|q[9]~reg0    ; regout           ;
+; |pc|q[8]~reg0    ; |pc|q[8]~reg0    ; regout           ;
+; |pc|q[7]~reg0    ; |pc|q[7]~reg0    ; regout           ;
+; |pc|q[6]~reg0    ; |pc|q[6]~reg0    ; regout           ;
+; |pc|q[5]~reg0    ; |pc|q[5]~reg0    ; regout           ;
+; |pc|q[4]~reg0    ; |pc|q[4]~reg0    ; regout           ;
+; |pc|q[3]~reg0    ; |pc|q[3]~reg0    ; regout           ;
+; |pc|q[2]~reg0    ; |pc|q[2]~reg0    ; regout           ;
+; |pc|q[1]~reg0    ; |pc|q[1]~reg0    ; regout           ;
+; |pc|q~34         ; |pc|q~34         ; out              ;
+; |pc|q~35         ; |pc|q~35         ; out              ;
+; |pc|q~36         ; |pc|q~36         ; out              ;
+; |pc|q~37         ; |pc|q~37         ; out              ;
+; |pc|q~38         ; |pc|q~38         ; out              ;
+; |pc|q~39         ; |pc|q~39         ; out              ;
+; |pc|q~40         ; |pc|q~40         ; out              ;
+; |pc|q~41         ; |pc|q~41         ; out              ;
+; |pc|q~42         ; |pc|q~42         ; out              ;
+; |pc|q~43         ; |pc|q~43         ; out              ;
+; |pc|q~44         ; |pc|q~44         ; out              ;
+; |pc|q~45         ; |pc|q~45         ; out              ;
+; |pc|q~46         ; |pc|q~46         ; out              ;
+; |pc|q~47         ; |pc|q~47         ; out              ;
+; |pc|q~48         ; |pc|q~48         ; out              ;
+; |pc|q~49         ; |pc|q~49         ; out              ;
+; |pc|q~50         ; |pc|q~50         ; out              ;
+; |pc|q~51         ; |pc|q~51         ; out              ;
+; |pc|q~52         ; |pc|q~52         ; out              ;
+; |pc|q~53         ; |pc|q~53         ; out              ;
+; |pc|q~54         ; |pc|q~54         ; out              ;
+; |pc|q~55         ; |pc|q~55         ; out              ;
+; |pc|q~56         ; |pc|q~56         ; out              ;
+; |pc|q~57         ; |pc|q~57         ; out              ;
+; |pc|q~58         ; |pc|q~58         ; out              ;
+; |pc|q~59         ; |pc|q~59         ; out              ;
+; |pc|q~60         ; |pc|q~60         ; out              ;
+; |pc|q~61         ; |pc|q~61         ; out              ;
+; |pc|q~62         ; |pc|q~62         ; out              ;
+; |pc|q~63         ; |pc|q~63         ; out              ;
+; |pc|q~64         ; |pc|q~64         ; out              ;
+; |pc|q~65         ; |pc|q~65         ; out              ;
+; |pc|q~66         ; |pc|q~66         ; out              ;
+; |pc|q~67         ; |pc|q~67         ; out              ;
+; |pc|q~68         ; |pc|q~68         ; out              ;
+; |pc|q~69         ; |pc|q~69         ; out              ;
+; |pc|q~70         ; |pc|q~70         ; out              ;
+; |pc|q~71         ; |pc|q~71         ; out              ;
+; |pc|q~72         ; |pc|q~72         ; out              ;
+; |pc|q~73         ; |pc|q~73         ; out              ;
+; |pc|q~74         ; |pc|q~74         ; out              ;
+; |pc|q~75         ; |pc|q~75         ; out              ;
+; |pc|q~76         ; |pc|q~76         ; out              ;
+; |pc|q~77         ; |pc|q~77         ; out              ;
+; |pc|q~78         ; |pc|q~78         ; out              ;
+; |pc|q~79         ; |pc|q~79         ; out              ;
+; |pc|q~80         ; |pc|q~80         ; out              ;
+; |pc|q~81         ; |pc|q~81         ; out              ;
+; |pc|q~82         ; |pc|q~82         ; out              ;
+; |pc|q~83         ; |pc|q~83         ; out              ;
+; |pc|q~84         ; |pc|q~84         ; out              ;
+; |pc|q~85         ; |pc|q~85         ; out              ;
+; |pc|q~86         ; |pc|q~86         ; out              ;
+; |pc|q~87         ; |pc|q~87         ; out              ;
+; |pc|q~88         ; |pc|q~88         ; out              ;
+; |pc|q~89         ; |pc|q~89         ; out              ;
+; |pc|q~90         ; |pc|q~90         ; out              ;
+; |pc|q~91         ; |pc|q~91         ; out              ;
+; |pc|q~92         ; |pc|q~92         ; out              ;
+; |pc|q~93         ; |pc|q~93         ; out              ;
+; |pc|q~94         ; |pc|q~94         ; out              ;
+; |pc|q~95         ; |pc|q~95         ; out              ;
+; |pc|ld           ; |pc|ld           ; out              ;
+; |pc|inc          ; |pc|inc          ; out              ;
+; |pc|d[0]         ; |pc|d[0]         ; out              ;
+; |pc|d[1]         ; |pc|d[1]         ; out              ;
+; |pc|d[2]         ; |pc|d[2]         ; out              ;
+; |pc|d[3]         ; |pc|d[3]         ; out              ;
+; |pc|d[4]         ; |pc|d[4]         ; out              ;
+; |pc|d[5]         ; |pc|d[5]         ; out              ;
+; |pc|d[6]         ; |pc|d[6]         ; out              ;
+; |pc|d[7]         ; |pc|d[7]         ; out              ;
+; |pc|d[8]         ; |pc|d[8]         ; out              ;
+; |pc|d[9]         ; |pc|d[9]         ; out              ;
+; |pc|d[10]        ; |pc|d[10]        ; out              ;
+; |pc|d[11]        ; |pc|d[11]        ; out              ;
+; |pc|d[12]        ; |pc|d[12]        ; out              ;
+; |pc|d[13]        ; |pc|d[13]        ; out              ;
+; |pc|d[14]        ; |pc|d[14]        ; out              ;
+; |pc|d[15]        ; |pc|d[15]        ; out              ;
+; |pc|d[16]        ; |pc|d[16]        ; out              ;
+; |pc|d[17]        ; |pc|d[17]        ; out              ;
+; |pc|d[18]        ; |pc|d[18]        ; out              ;
+; |pc|d[19]        ; |pc|d[19]        ; out              ;
+; |pc|d[20]        ; |pc|d[20]        ; out              ;
+; |pc|d[21]        ; |pc|d[21]        ; out              ;
+; |pc|d[22]        ; |pc|d[22]        ; out              ;
+; |pc|d[23]        ; |pc|d[23]        ; out              ;
+; |pc|d[24]        ; |pc|d[24]        ; out              ;
+; |pc|d[25]        ; |pc|d[25]        ; out              ;
+; |pc|d[26]        ; |pc|d[26]        ; out              ;
+; |pc|d[27]        ; |pc|d[27]        ; out              ;
+; |pc|d[28]        ; |pc|d[28]        ; out              ;
+; |pc|d[29]        ; |pc|d[29]        ; out              ;
+; |pc|d[30]        ; |pc|d[30]        ; out              ;
+; |pc|d[31]        ; |pc|d[31]        ; out              ;
+; |pc|q[0]         ; |pc|q[0]         ; out              ;
+; |pc|q[0]         ; |pc|q[0]~result  ; pin_out          ;
+; |pc|q[1]         ; |pc|q[1]         ; out              ;
+; |pc|q[1]         ; |pc|q[1]~result  ; pin_out          ;
+; |pc|q[2]         ; |pc|q[2]         ; out              ;
+; |pc|q[2]         ; |pc|q[2]~result  ; pin_out          ;
+; |pc|q[3]         ; |pc|q[3]         ; out              ;
+; |pc|q[3]         ; |pc|q[3]~result  ; pin_out          ;
+; |pc|q[4]         ; |pc|q[4]         ; out              ;
+; |pc|q[4]         ; |pc|q[4]~result  ; pin_out          ;
+; |pc|q[5]         ; |pc|q[5]         ; out              ;
+; |pc|q[5]         ; |pc|q[5]~result  ; pin_out          ;
+; |pc|q[6]         ; |pc|q[6]         ; out              ;
+; |pc|q[6]         ; |pc|q[6]~result  ; pin_out          ;
+; |pc|q[7]         ; |pc|q[7]         ; out              ;
+; |pc|q[7]         ; |pc|q[7]~result  ; pin_out          ;
+; |pc|q[8]         ; |pc|q[8]         ; out              ;
+; |pc|q[8]         ; |pc|q[8]~result  ; pin_out          ;
+; |pc|q[9]         ; |pc|q[9]         ; out              ;
+; |pc|q[9]         ; |pc|q[9]~result  ; pin_out          ;
+; |pc|q[10]        ; |pc|q[10]        ; out              ;
+; |pc|q[10]        ; |pc|q[10]~result ; pin_out          ;
+; |pc|q[11]        ; |pc|q[11]        ; out              ;
+; |pc|q[11]        ; |pc|q[11]~result ; pin_out          ;
+; |pc|q[12]        ; |pc|q[12]        ; out              ;
+; |pc|q[12]        ; |pc|q[12]~result ; pin_out          ;
+; |pc|q[13]        ; |pc|q[13]        ; out              ;
+; |pc|q[13]        ; |pc|q[13]~result ; pin_out          ;
+; |pc|q[14]        ; |pc|q[14]        ; out              ;
+; |pc|q[14]        ; |pc|q[14]~result ; pin_out          ;
+; |pc|q[15]        ; |pc|q[15]        ; out              ;
+; |pc|q[15]        ; |pc|q[15]~result ; pin_out          ;
+; |pc|q[16]        ; |pc|q[16]        ; out              ;
+; |pc|q[16]        ; |pc|q[16]~result ; pin_out          ;
+; |pc|q[17]        ; |pc|q[17]        ; out              ;
+; |pc|q[17]        ; |pc|q[17]~result ; pin_out          ;
+; |pc|q[18]        ; |pc|q[18]        ; out              ;
+; |pc|q[18]        ; |pc|q[18]~result ; pin_out          ;
+; |pc|q[19]        ; |pc|q[19]        ; out              ;
+; |pc|q[19]        ; |pc|q[19]~result ; pin_out          ;
+; |pc|q[20]        ; |pc|q[20]        ; out              ;
+; |pc|q[20]        ; |pc|q[20]~result ; pin_out          ;
+; |pc|q[21]        ; |pc|q[21]        ; out              ;
+; |pc|q[21]        ; |pc|q[21]~result ; pin_out          ;
+; |pc|q[22]        ; |pc|q[22]        ; out              ;
+; |pc|q[22]        ; |pc|q[22]~result ; pin_out          ;
+; |pc|q[23]        ; |pc|q[23]        ; out              ;
+; |pc|q[23]        ; |pc|q[23]~result ; pin_out          ;
+; |pc|q[24]        ; |pc|q[24]        ; out              ;
+; |pc|q[24]        ; |pc|q[24]~result ; pin_out          ;
+; |pc|q[25]        ; |pc|q[25]        ; out              ;
+; |pc|q[25]        ; |pc|q[25]~result ; pin_out          ;
+; |pc|q[26]        ; |pc|q[26]        ; out              ;
+; |pc|q[26]        ; |pc|q[26]~result ; pin_out          ;
+; |pc|q[27]        ; |pc|q[27]        ; out              ;
+; |pc|q[27]        ; |pc|q[27]~result ; pin_out          ;
+; |pc|q[28]        ; |pc|q[28]        ; out              ;
+; |pc|q[28]        ; |pc|q[28]~result ; pin_out          ;
+; |pc|q[29]        ; |pc|q[29]        ; out              ;
+; |pc|q[29]        ; |pc|q[29]~result ; pin_out          ;
+; |pc|q[30]        ; |pc|q[30]        ; out              ;
+; |pc|q[30]        ; |pc|q[30]~result ; pin_out          ;
+; |pc|q[31]        ; |pc|q[31]        ; out              ;
+; |pc|q[31]        ; |pc|q[31]~result ; pin_out          ;
+; |pc|q[31]~0      ; |pc|q[31]~0      ; out0             ;
+; |pc|q[30]~1      ; |pc|q[30]~1      ; out0             ;
+; |pc|q[29]~2      ; |pc|q[29]~2      ; out0             ;
+; |pc|q[28]~3      ; |pc|q[28]~3      ; out0             ;
+; |pc|q[27]~4      ; |pc|q[27]~4      ; out0             ;
+; |pc|q[26]~5      ; |pc|q[26]~5      ; out0             ;
+; |pc|q[25]~6      ; |pc|q[25]~6      ; out0             ;
+; |pc|q[24]~7      ; |pc|q[24]~7      ; out0             ;
+; |pc|q[23]~8      ; |pc|q[23]~8      ; out0             ;
+; |pc|q[22]~9      ; |pc|q[22]~9      ; out0             ;
+; |pc|q[21]~10     ; |pc|q[21]~10     ; out0             ;
+; |pc|q[20]~11     ; |pc|q[20]~11     ; out0             ;
+; |pc|q[19]~12     ; |pc|q[19]~12     ; out0             ;
+; |pc|q[18]~13     ; |pc|q[18]~13     ; out0             ;
+; |pc|q[17]~14     ; |pc|q[17]~14     ; out0             ;
+; |pc|q[16]~15     ; |pc|q[16]~15     ; out0             ;
+; |pc|q[15]~16     ; |pc|q[15]~16     ; out0             ;
+; |pc|q[14]~17     ; |pc|q[14]~17     ; out0             ;
+; |pc|q[13]~18     ; |pc|q[13]~18     ; out0             ;
+; |pc|q[12]~19     ; |pc|q[12]~19     ; out0             ;
+; |pc|q[11]~20     ; |pc|q[11]~20     ; out0             ;
+; |pc|q[10]~21     ; |pc|q[10]~21     ; out0             ;
+; |pc|q[9]~22      ; |pc|q[9]~22      ; out0             ;
+; |pc|q[8]~23      ; |pc|q[8]~23      ; out0             ;
+; |pc|q[7]~24      ; |pc|q[7]~24      ; out0             ;
+; |pc|q[6]~25      ; |pc|q[6]~25      ; out0             ;
+; |pc|q[5]~26      ; |pc|q[5]~26      ; out0             ;
+; |pc|q[4]~27      ; |pc|q[4]~27      ; out0             ;
+; |pc|q[3]~28      ; |pc|q[3]~28      ; out0             ;
+; |pc|q[2]~29      ; |pc|q[2]~29      ; out0             ;
+; |pc|q[1]~30      ; |pc|q[1]~30      ; out0             ;
+; |pc|q[0]~31      ; |pc|q[0]~31      ; out0             ;
+; |pc|Add0~0       ; |pc|Add0~0       ; out0             ;
+; |pc|Add0~1       ; |pc|Add0~1       ; out0             ;
+; |pc|Add0~2       ; |pc|Add0~2       ; out0             ;
+; |pc|Add0~3       ; |pc|Add0~3       ; out0             ;
+; |pc|Add0~4       ; |pc|Add0~4       ; out0             ;
+; |pc|Add0~5       ; |pc|Add0~5       ; out0             ;
+; |pc|Add0~6       ; |pc|Add0~6       ; out0             ;
+; |pc|Add0~7       ; |pc|Add0~7       ; out0             ;
+; |pc|Add0~8       ; |pc|Add0~8       ; out0             ;
+; |pc|Add0~9       ; |pc|Add0~9       ; out0             ;
+; |pc|Add0~10      ; |pc|Add0~10      ; out0             ;
+; |pc|Add0~11      ; |pc|Add0~11      ; out0             ;
+; |pc|Add0~12      ; |pc|Add0~12      ; out0             ;
+; |pc|Add0~13      ; |pc|Add0~13      ; out0             ;
+; |pc|Add0~14      ; |pc|Add0~14      ; out0             ;
+; |pc|Add0~15      ; |pc|Add0~15      ; out0             ;
+; |pc|Add0~16      ; |pc|Add0~16      ; out0             ;
+; |pc|Add0~17      ; |pc|Add0~17      ; out0             ;
+; |pc|Add0~18      ; |pc|Add0~18      ; out0             ;
+; |pc|Add0~19      ; |pc|Add0~19      ; out0             ;
+; |pc|Add0~20      ; |pc|Add0~20      ; out0             ;
+; |pc|Add0~21      ; |pc|Add0~21      ; out0             ;
+; |pc|Add0~22      ; |pc|Add0~22      ; out0             ;
+; |pc|Add0~23      ; |pc|Add0~23      ; out0             ;
+; |pc|Add0~24      ; |pc|Add0~24      ; out0             ;
+; |pc|Add0~25      ; |pc|Add0~25      ; out0             ;
+; |pc|Add0~26      ; |pc|Add0~26      ; out0             ;
+; |pc|Add0~27      ; |pc|Add0~27      ; out0             ;
+; |pc|Add0~28      ; |pc|Add0~28      ; out0             ;
+; |pc|Add0~29      ; |pc|Add0~29      ; out0             ;
+; |pc|Add0~30      ; |pc|Add0~30      ; out0             ;
+; |pc|Add0~31      ; |pc|Add0~31      ; out0             ;
+; |pc|Add0~32      ; |pc|Add0~32      ; out0             ;
+; |pc|Add0~33      ; |pc|Add0~33      ; out0             ;
+; |pc|Add0~34      ; |pc|Add0~34      ; out0             ;
+; |pc|Add0~35      ; |pc|Add0~35      ; out0             ;
+; |pc|Add0~36      ; |pc|Add0~36      ; out0             ;
+; |pc|Add0~37      ; |pc|Add0~37      ; out0             ;
+; |pc|Add0~38      ; |pc|Add0~38      ; out0             ;
+; |pc|Add0~39      ; |pc|Add0~39      ; out0             ;
+; |pc|Add0~40      ; |pc|Add0~40      ; out0             ;
+; |pc|Add0~41      ; |pc|Add0~41      ; out0             ;
+; |pc|Add0~42      ; |pc|Add0~42      ; out0             ;
+; |pc|Add0~43      ; |pc|Add0~43      ; out0             ;
+; |pc|Add0~44      ; |pc|Add0~44      ; out0             ;
+; |pc|Add0~45      ; |pc|Add0~45      ; out0             ;
+; |pc|Add0~46      ; |pc|Add0~46      ; out0             ;
+; |pc|Add0~47      ; |pc|Add0~47      ; out0             ;
+; |pc|Add0~48      ; |pc|Add0~48      ; out0             ;
+; |pc|Add0~49      ; |pc|Add0~49      ; out0             ;
+; |pc|Add0~50      ; |pc|Add0~50      ; out0             ;
+; |pc|Add0~51      ; |pc|Add0~51      ; out0             ;
+; |pc|Add0~52      ; |pc|Add0~52      ; out0             ;
+; |pc|Add0~53      ; |pc|Add0~53      ; out0             ;
+; |pc|Add0~54      ; |pc|Add0~54      ; out0             ;
+; |pc|Add0~55      ; |pc|Add0~55      ; out0             ;
+; |pc|Add0~56      ; |pc|Add0~56      ; out0             ;
++------------------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------+
+; Missing 0-Value Coverage                               ;
++------------------+------------------+------------------+
+; Node Name        ; Output Port Name ; Output Port Type ;
++------------------+------------------+------------------+
+; |pc|q~32         ; |pc|q~32         ; out              ;
+; |pc|q~33         ; |pc|q~33         ; out              ;
+; |pc|q[0]~direct  ; |pc|q[0]~direct  ; out0             ;
+; |pc|q[1]~direct  ; |pc|q[1]~direct  ; out0             ;
+; |pc|q[2]~direct  ; |pc|q[2]~direct  ; out0             ;
+; |pc|q[3]~direct  ; |pc|q[3]~direct  ; out0             ;
+; |pc|q[4]~direct  ; |pc|q[4]~direct  ; out0             ;
+; |pc|q[5]~direct  ; |pc|q[5]~direct  ; out0             ;
+; |pc|q[6]~direct  ; |pc|q[6]~direct  ; out0             ;
+; |pc|q[7]~direct  ; |pc|q[7]~direct  ; out0             ;
+; |pc|q[8]~direct  ; |pc|q[8]~direct  ; out0             ;
+; |pc|q[9]~direct  ; |pc|q[9]~direct  ; out0             ;
+; |pc|q[10]~direct ; |pc|q[10]~direct ; out0             ;
+; |pc|q[11]~direct ; |pc|q[11]~direct ; out0             ;
+; |pc|q[12]~direct ; |pc|q[12]~direct ; out0             ;
+; |pc|q[13]~direct ; |pc|q[13]~direct ; out0             ;
+; |pc|q[14]~direct ; |pc|q[14]~direct ; out0             ;
+; |pc|q[15]~direct ; |pc|q[15]~direct ; out0             ;
+; |pc|q[16]~direct ; |pc|q[16]~direct ; out0             ;
+; |pc|q[17]~direct ; |pc|q[17]~direct ; out0             ;
+; |pc|q[18]~direct ; |pc|q[18]~direct ; out0             ;
+; |pc|q[19]~direct ; |pc|q[19]~direct ; out0             ;
+; |pc|q[20]~direct ; |pc|q[20]~direct ; out0             ;
+; |pc|q[21]~direct ; |pc|q[21]~direct ; out0             ;
+; |pc|q[22]~direct ; |pc|q[22]~direct ; out0             ;
+; |pc|q[23]~direct ; |pc|q[23]~direct ; out0             ;
+; |pc|q[24]~direct ; |pc|q[24]~direct ; out0             ;
+; |pc|q[25]~direct ; |pc|q[25]~direct ; out0             ;
+; |pc|q[26]~direct ; |pc|q[26]~direct ; out0             ;
+; |pc|q[27]~direct ; |pc|q[27]~direct ; out0             ;
+; |pc|q[28]~direct ; |pc|q[28]~direct ; out0             ;
+; |pc|q[29]~direct ; |pc|q[29]~direct ; out0             ;
+; |pc|q[30]~direct ; |pc|q[30]~direct ; out0             ;
+; |pc|q[31]~direct ; |pc|q[31]~direct ; out0             ;
+; |pc|q~34         ; |pc|q~34         ; out              ;
+; |pc|q~35         ; |pc|q~35         ; out              ;
+; |pc|q~36         ; |pc|q~36         ; out              ;
+; |pc|q~37         ; |pc|q~37         ; out              ;
+; |pc|q~38         ; |pc|q~38         ; out              ;
+; |pc|q~39         ; |pc|q~39         ; out              ;
+; |pc|q~40         ; |pc|q~40         ; out              ;
+; |pc|q~41         ; |pc|q~41         ; out              ;
+; |pc|q~42         ; |pc|q~42         ; out              ;
+; |pc|q~43         ; |pc|q~43         ; out              ;
+; |pc|q~44         ; |pc|q~44         ; out              ;
+; |pc|q~45         ; |pc|q~45         ; out              ;
+; |pc|q~46         ; |pc|q~46         ; out              ;
+; |pc|q~47         ; |pc|q~47         ; out              ;
+; |pc|q~48         ; |pc|q~48         ; out              ;
+; |pc|q~49         ; |pc|q~49         ; out              ;
+; |pc|q~50         ; |pc|q~50         ; out              ;
+; |pc|q~51         ; |pc|q~51         ; out              ;
+; |pc|q~52         ; |pc|q~52         ; out              ;
+; |pc|q~53         ; |pc|q~53         ; out              ;
+; |pc|q~54         ; |pc|q~54         ; out              ;
+; |pc|q~55         ; |pc|q~55         ; out              ;
+; |pc|q~56         ; |pc|q~56         ; out              ;
+; |pc|q~57         ; |pc|q~57         ; out              ;
+; |pc|q~58         ; |pc|q~58         ; out              ;
+; |pc|q~59         ; |pc|q~59         ; out              ;
+; |pc|q~60         ; |pc|q~60         ; out              ;
+; |pc|q~61         ; |pc|q~61         ; out              ;
+; |pc|q~62         ; |pc|q~62         ; out              ;
+; |pc|q~63         ; |pc|q~63         ; out              ;
+; |pc|q~64         ; |pc|q~64         ; out              ;
+; |pc|q~65         ; |pc|q~65         ; out              ;
+; |pc|q~66         ; |pc|q~66         ; out              ;
+; |pc|q~67         ; |pc|q~67         ; out              ;
+; |pc|q~68         ; |pc|q~68         ; out              ;
+; |pc|q~69         ; |pc|q~69         ; out              ;
+; |pc|q~70         ; |pc|q~70         ; out              ;
+; |pc|q~71         ; |pc|q~71         ; out              ;
+; |pc|q~72         ; |pc|q~72         ; out              ;
+; |pc|q~73         ; |pc|q~73         ; out              ;
+; |pc|q~74         ; |pc|q~74         ; out              ;
+; |pc|q~75         ; |pc|q~75         ; out              ;
+; |pc|q~76         ; |pc|q~76         ; out              ;
+; |pc|q~77         ; |pc|q~77         ; out              ;
+; |pc|q~78         ; |pc|q~78         ; out              ;
+; |pc|q~79         ; |pc|q~79         ; out              ;
+; |pc|q~80         ; |pc|q~80         ; out              ;
+; |pc|q~81         ; |pc|q~81         ; out              ;
+; |pc|q~82         ; |pc|q~82         ; out              ;
+; |pc|q~83         ; |pc|q~83         ; out              ;
+; |pc|q~84         ; |pc|q~84         ; out              ;
+; |pc|q~85         ; |pc|q~85         ; out              ;
+; |pc|q~86         ; |pc|q~86         ; out              ;
+; |pc|q~87         ; |pc|q~87         ; out              ;
+; |pc|q~88         ; |pc|q~88         ; out              ;
+; |pc|q~89         ; |pc|q~89         ; out              ;
+; |pc|q~90         ; |pc|q~90         ; out              ;
+; |pc|q~91         ; |pc|q~91         ; out              ;
+; |pc|q~92         ; |pc|q~92         ; out              ;
+; |pc|q~93         ; |pc|q~93         ; out              ;
+; |pc|q~94         ; |pc|q~94         ; out              ;
+; |pc|q~95         ; |pc|q~95         ; out              ;
+; |pc|ld           ; |pc|ld           ; out              ;
+; |pc|inc          ; |pc|inc          ; out              ;
+; |pc|d[0]         ; |pc|d[0]         ; out              ;
+; |pc|d[1]         ; |pc|d[1]         ; out              ;
+; |pc|d[2]         ; |pc|d[2]         ; out              ;
+; |pc|d[3]         ; |pc|d[3]         ; out              ;
+; |pc|d[4]         ; |pc|d[4]         ; out              ;
+; |pc|d[5]         ; |pc|d[5]         ; out              ;
+; |pc|d[6]         ; |pc|d[6]         ; out              ;
+; |pc|d[7]         ; |pc|d[7]         ; out              ;
+; |pc|d[8]         ; |pc|d[8]         ; out              ;
+; |pc|d[9]         ; |pc|d[9]         ; out              ;
+; |pc|d[10]        ; |pc|d[10]        ; out              ;
+; |pc|d[11]        ; |pc|d[11]        ; out              ;
+; |pc|d[12]        ; |pc|d[12]        ; out              ;
+; |pc|d[13]        ; |pc|d[13]        ; out              ;
+; |pc|d[14]        ; |pc|d[14]        ; out              ;
+; |pc|d[15]        ; |pc|d[15]        ; out              ;
+; |pc|d[16]        ; |pc|d[16]        ; out              ;
+; |pc|d[17]        ; |pc|d[17]        ; out              ;
+; |pc|d[18]        ; |pc|d[18]        ; out              ;
+; |pc|d[19]        ; |pc|d[19]        ; out              ;
+; |pc|d[20]        ; |pc|d[20]        ; out              ;
+; |pc|d[21]        ; |pc|d[21]        ; out              ;
+; |pc|d[22]        ; |pc|d[22]        ; out              ;
+; |pc|d[23]        ; |pc|d[23]        ; out              ;
+; |pc|d[24]        ; |pc|d[24]        ; out              ;
+; |pc|d[25]        ; |pc|d[25]        ; out              ;
+; |pc|d[26]        ; |pc|d[26]        ; out              ;
+; |pc|d[27]        ; |pc|d[27]        ; out              ;
+; |pc|d[28]        ; |pc|d[28]        ; out              ;
+; |pc|d[29]        ; |pc|d[29]        ; out              ;
+; |pc|d[30]        ; |pc|d[30]        ; out              ;
+; |pc|d[31]        ; |pc|d[31]        ; out              ;
+; |pc|q[0]         ; |pc|q[0]         ; out              ;
+; |pc|q[0]         ; |pc|q[0]~result  ; pin_out          ;
+; |pc|q[1]         ; |pc|q[1]         ; out              ;
+; |pc|q[1]         ; |pc|q[1]~result  ; pin_out          ;
+; |pc|q[2]         ; |pc|q[2]         ; out              ;
+; |pc|q[2]         ; |pc|q[2]~result  ; pin_out          ;
+; |pc|q[3]         ; |pc|q[3]         ; out              ;
+; |pc|q[3]         ; |pc|q[3]~result  ; pin_out          ;
+; |pc|q[4]         ; |pc|q[4]         ; out              ;
+; |pc|q[4]         ; |pc|q[4]~result  ; pin_out          ;
+; |pc|q[5]         ; |pc|q[5]         ; out              ;
+; |pc|q[5]         ; |pc|q[5]~result  ; pin_out          ;
+; |pc|q[6]         ; |pc|q[6]         ; out              ;
+; |pc|q[6]         ; |pc|q[6]~result  ; pin_out          ;
+; |pc|q[7]         ; |pc|q[7]         ; out              ;
+; |pc|q[7]         ; |pc|q[7]~result  ; pin_out          ;
+; |pc|q[8]         ; |pc|q[8]         ; out              ;
+; |pc|q[8]         ; |pc|q[8]~result  ; pin_out          ;
+; |pc|q[9]         ; |pc|q[9]         ; out              ;
+; |pc|q[9]         ; |pc|q[9]~result  ; pin_out          ;
+; |pc|q[10]        ; |pc|q[10]        ; out              ;
+; |pc|q[10]        ; |pc|q[10]~result ; pin_out          ;
+; |pc|q[11]        ; |pc|q[11]        ; out              ;
+; |pc|q[11]        ; |pc|q[11]~result ; pin_out          ;
+; |pc|q[12]        ; |pc|q[12]        ; out              ;
+; |pc|q[12]        ; |pc|q[12]~result ; pin_out          ;
+; |pc|q[13]        ; |pc|q[13]        ; out              ;
+; |pc|q[13]        ; |pc|q[13]~result ; pin_out          ;
+; |pc|q[14]        ; |pc|q[14]        ; out              ;
+; |pc|q[14]        ; |pc|q[14]~result ; pin_out          ;
+; |pc|q[15]        ; |pc|q[15]        ; out              ;
+; |pc|q[15]        ; |pc|q[15]~result ; pin_out          ;
+; |pc|q[16]        ; |pc|q[16]        ; out              ;
+; |pc|q[16]        ; |pc|q[16]~result ; pin_out          ;
+; |pc|q[17]        ; |pc|q[17]        ; out              ;
+; |pc|q[17]        ; |pc|q[17]~result ; pin_out          ;
+; |pc|q[18]        ; |pc|q[18]        ; out              ;
+; |pc|q[18]        ; |pc|q[18]~result ; pin_out          ;
+; |pc|q[19]        ; |pc|q[19]        ; out              ;
+; |pc|q[19]        ; |pc|q[19]~result ; pin_out          ;
+; |pc|q[20]        ; |pc|q[20]        ; out              ;
+; |pc|q[20]        ; |pc|q[20]~result ; pin_out          ;
+; |pc|q[21]        ; |pc|q[21]        ; out              ;
+; |pc|q[21]        ; |pc|q[21]~result ; pin_out          ;
+; |pc|q[22]        ; |pc|q[22]        ; out              ;
+; |pc|q[22]        ; |pc|q[22]~result ; pin_out          ;
+; |pc|q[23]        ; |pc|q[23]        ; out              ;
+; |pc|q[23]        ; |pc|q[23]~result ; pin_out          ;
+; |pc|q[24]        ; |pc|q[24]        ; out              ;
+; |pc|q[24]        ; |pc|q[24]~result ; pin_out          ;
+; |pc|q[25]        ; |pc|q[25]        ; out              ;
+; |pc|q[25]        ; |pc|q[25]~result ; pin_out          ;
+; |pc|q[26]        ; |pc|q[26]        ; out              ;
+; |pc|q[26]        ; |pc|q[26]~result ; pin_out          ;
+; |pc|q[27]        ; |pc|q[27]        ; out              ;
+; |pc|q[27]        ; |pc|q[27]~result ; pin_out          ;
+; |pc|q[28]        ; |pc|q[28]        ; out              ;
+; |pc|q[28]        ; |pc|q[28]~result ; pin_out          ;
+; |pc|q[29]        ; |pc|q[29]        ; out              ;
+; |pc|q[29]        ; |pc|q[29]~result ; pin_out          ;
+; |pc|q[30]        ; |pc|q[30]        ; out              ;
+; |pc|q[30]        ; |pc|q[30]~result ; pin_out          ;
+; |pc|q[31]        ; |pc|q[31]        ; out              ;
+; |pc|q[31]        ; |pc|q[31]~result ; pin_out          ;
+; |pc|q[31]~0      ; |pc|q[31]~0      ; out0             ;
+; |pc|q[30]~1      ; |pc|q[30]~1      ; out0             ;
+; |pc|q[29]~2      ; |pc|q[29]~2      ; out0             ;
+; |pc|q[28]~3      ; |pc|q[28]~3      ; out0             ;
+; |pc|q[27]~4      ; |pc|q[27]~4      ; out0             ;
+; |pc|q[26]~5      ; |pc|q[26]~5      ; out0             ;
+; |pc|q[25]~6      ; |pc|q[25]~6      ; out0             ;
+; |pc|q[24]~7      ; |pc|q[24]~7      ; out0             ;
+; |pc|q[23]~8      ; |pc|q[23]~8      ; out0             ;
+; |pc|q[22]~9      ; |pc|q[22]~9      ; out0             ;
+; |pc|q[21]~10     ; |pc|q[21]~10     ; out0             ;
+; |pc|q[20]~11     ; |pc|q[20]~11     ; out0             ;
+; |pc|q[19]~12     ; |pc|q[19]~12     ; out0             ;
+; |pc|q[18]~13     ; |pc|q[18]~13     ; out0             ;
+; |pc|q[17]~14     ; |pc|q[17]~14     ; out0             ;
+; |pc|q[16]~15     ; |pc|q[16]~15     ; out0             ;
+; |pc|q[15]~16     ; |pc|q[15]~16     ; out0             ;
+; |pc|q[14]~17     ; |pc|q[14]~17     ; out0             ;
+; |pc|q[13]~18     ; |pc|q[13]~18     ; out0             ;
+; |pc|q[12]~19     ; |pc|q[12]~19     ; out0             ;
+; |pc|q[11]~20     ; |pc|q[11]~20     ; out0             ;
+; |pc|q[10]~21     ; |pc|q[10]~21     ; out0             ;
+; |pc|q[9]~22      ; |pc|q[9]~22      ; out0             ;
+; |pc|q[8]~23      ; |pc|q[8]~23      ; out0             ;
+; |pc|q[7]~24      ; |pc|q[7]~24      ; out0             ;
+; |pc|q[6]~25      ; |pc|q[6]~25      ; out0             ;
+; |pc|q[5]~26      ; |pc|q[5]~26      ; out0             ;
+; |pc|q[4]~27      ; |pc|q[4]~27      ; out0             ;
+; |pc|q[3]~28      ; |pc|q[3]~28      ; out0             ;
+; |pc|q[2]~29      ; |pc|q[2]~29      ; out0             ;
+; |pc|q[1]~30      ; |pc|q[1]~30      ; out0             ;
+; |pc|q[0]~31      ; |pc|q[0]~31      ; out0             ;
+; |pc|Add0~0       ; |pc|Add0~0       ; out0             ;
+; |pc|Add0~1       ; |pc|Add0~1       ; out0             ;
+; |pc|Add0~2       ; |pc|Add0~2       ; out0             ;
+; |pc|Add0~3       ; |pc|Add0~3       ; out0             ;
+; |pc|Add0~4       ; |pc|Add0~4       ; out0             ;
+; |pc|Add0~5       ; |pc|Add0~5       ; out0             ;
+; |pc|Add0~6       ; |pc|Add0~6       ; out0             ;
+; |pc|Add0~7       ; |pc|Add0~7       ; out0             ;
+; |pc|Add0~8       ; |pc|Add0~8       ; out0             ;
+; |pc|Add0~9       ; |pc|Add0~9       ; out0             ;
+; |pc|Add0~10      ; |pc|Add0~10      ; out0             ;
+; |pc|Add0~11      ; |pc|Add0~11      ; out0             ;
+; |pc|Add0~12      ; |pc|Add0~12      ; out0             ;
+; |pc|Add0~13      ; |pc|Add0~13      ; out0             ;
+; |pc|Add0~14      ; |pc|Add0~14      ; out0             ;
+; |pc|Add0~15      ; |pc|Add0~15      ; out0             ;
+; |pc|Add0~16      ; |pc|Add0~16      ; out0             ;
+; |pc|Add0~17      ; |pc|Add0~17      ; out0             ;
+; |pc|Add0~18      ; |pc|Add0~18      ; out0             ;
+; |pc|Add0~19      ; |pc|Add0~19      ; out0             ;
+; |pc|Add0~20      ; |pc|Add0~20      ; out0             ;
+; |pc|Add0~21      ; |pc|Add0~21      ; out0             ;
+; |pc|Add0~22      ; |pc|Add0~22      ; out0             ;
+; |pc|Add0~23      ; |pc|Add0~23      ; out0             ;
+; |pc|Add0~24      ; |pc|Add0~24      ; out0             ;
+; |pc|Add0~25      ; |pc|Add0~25      ; out0             ;
+; |pc|Add0~26      ; |pc|Add0~26      ; out0             ;
+; |pc|Add0~27      ; |pc|Add0~27      ; out0             ;
+; |pc|Add0~28      ; |pc|Add0~28      ; out0             ;
+; |pc|Add0~29      ; |pc|Add0~29      ; out0             ;
+; |pc|Add0~30      ; |pc|Add0~30      ; out0             ;
+; |pc|Add0~31      ; |pc|Add0~31      ; out0             ;
+; |pc|Add0~32      ; |pc|Add0~32      ; out0             ;
+; |pc|Add0~33      ; |pc|Add0~33      ; out0             ;
+; |pc|Add0~34      ; |pc|Add0~34      ; out0             ;
+; |pc|Add0~35      ; |pc|Add0~35      ; out0             ;
+; |pc|Add0~36      ; |pc|Add0~36      ; out0             ;
+; |pc|Add0~37      ; |pc|Add0~37      ; out0             ;
+; |pc|Add0~38      ; |pc|Add0~38      ; out0             ;
+; |pc|Add0~39      ; |pc|Add0~39      ; out0             ;
+; |pc|Add0~40      ; |pc|Add0~40      ; out0             ;
+; |pc|Add0~41      ; |pc|Add0~41      ; out0             ;
+; |pc|Add0~42      ; |pc|Add0~42      ; out0             ;
+; |pc|Add0~43      ; |pc|Add0~43      ; out0             ;
+; |pc|Add0~44      ; |pc|Add0~44      ; out0             ;
+; |pc|Add0~45      ; |pc|Add0~45      ; out0             ;
+; |pc|Add0~46      ; |pc|Add0~46      ; out0             ;
+; |pc|Add0~47      ; |pc|Add0~47      ; out0             ;
+; |pc|Add0~48      ; |pc|Add0~48      ; out0             ;
+; |pc|Add0~49      ; |pc|Add0~49      ; out0             ;
+; |pc|Add0~50      ; |pc|Add0~50      ; out0             ;
+; |pc|Add0~51      ; |pc|Add0~51      ; out0             ;
+; |pc|Add0~52      ; |pc|Add0~52      ; out0             ;
+; |pc|Add0~53      ; |pc|Add0~53      ; out0             ;
+; |pc|Add0~54      ; |pc|Add0~54      ; out0             ;
+; |pc|Add0~55      ; |pc|Add0~55      ; out0             ;
+; |pc|Add0~56      ; |pc|Add0~56      ; out0             ;
++------------------+------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Thu Jan 31 16:39:06 2019
+Info: Command: quartus_sim --simulation_results_format=VWF pc -c pc_qsim
+Info (324025): Using vector source file "/home/student1/vshreeka/coe608/lab2/Waveform6.vwf"
+Warning (328017): Wrong node type for node "q[0]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[1]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[2]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[3]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[4]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[5]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[6]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[7]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[8]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[9]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[10]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[11]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[12]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[13]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[14]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[15]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[16]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[17]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[18]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[19]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[20]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[21]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[22]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[23]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[24]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[25]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[26]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[27]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[28]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[29]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[30]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328017): Wrong node type for node "q[31]" in vector source file. Design node is of type Input, but signal in vector source file is of type Output.
+Warning (328012): Can't find signal in vector source file for input pin "|pc|inc"
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[0]~31"
+    Info (324033): Node "q[0]" has logic level of X
+    Info (324033): Node "q[0]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[1]~30"
+    Info (324033): Node "q[1]" has logic level of X
+    Info (324033): Node "q[1]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[2]~29"
+    Info (324033): Node "q[2]" has logic level of X
+    Info (324033): Node "q[2]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[3]~28"
+    Info (324033): Node "q[3]" has logic level of X
+    Info (324033): Node "q[3]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[4]~27"
+    Info (324033): Node "q[4]" has logic level of X
+    Info (324033): Node "q[4]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[5]~26"
+    Info (324033): Node "q[5]" has logic level of X
+    Info (324033): Node "q[5]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[6]~25"
+    Info (324033): Node "q[6]" has logic level of X
+    Info (324033): Node "q[6]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[7]~24"
+    Info (324033): Node "q[7]" has logic level of X
+    Info (324033): Node "q[7]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[8]~23"
+    Info (324033): Node "q[8]" has logic level of X
+    Info (324033): Node "q[8]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[9]~22"
+    Info (324033): Node "q[9]" has logic level of X
+    Info (324033): Node "q[9]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[10]~21"
+    Info (324033): Node "q[10]" has logic level of X
+    Info (324033): Node "q[10]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[11]~20"
+    Info (324033): Node "q[11]" has logic level of X
+    Info (324033): Node "q[11]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[12]~19"
+    Info (324033): Node "q[12]" has logic level of X
+    Info (324033): Node "q[12]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[13]~18"
+    Info (324033): Node "q[13]" has logic level of X
+    Info (324033): Node "q[13]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[14]~17"
+    Info (324033): Node "q[14]" has logic level of X
+    Info (324033): Node "q[14]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[15]~16"
+    Info (324033): Node "q[15]" has logic level of X
+    Info (324033): Node "q[15]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[16]~15"
+    Info (324033): Node "q[16]" has logic level of X
+    Info (324033): Node "q[16]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[17]~14"
+    Info (324033): Node "q[17]" has logic level of X
+    Info (324033): Node "q[17]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[18]~13"
+    Info (324033): Node "q[18]" has logic level of X
+    Info (324033): Node "q[18]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[19]~12"
+    Info (324033): Node "q[19]" has logic level of X
+    Info (324033): Node "q[19]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[20]~11"
+    Info (324033): Node "q[20]" has logic level of X
+    Info (324033): Node "q[20]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[21]~10"
+    Info (324033): Node "q[21]" has logic level of X
+    Info (324033): Node "q[21]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[22]~9"
+    Info (324033): Node "q[22]" has logic level of X
+    Info (324033): Node "q[22]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[23]~8"
+    Info (324033): Node "q[23]" has logic level of X
+    Info (324033): Node "q[23]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[24]~7"
+    Info (324033): Node "q[24]" has logic level of X
+    Info (324033): Node "q[24]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[25]~6"
+    Info (324033): Node "q[25]" has logic level of X
+    Info (324033): Node "q[25]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[26]~5"
+    Info (324033): Node "q[26]" has logic level of X
+    Info (324033): Node "q[26]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[27]~4"
+    Info (324033): Node "q[27]" has logic level of X
+    Info (324033): Node "q[27]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[28]~3"
+    Info (324033): Node "q[28]" has logic level of X
+    Info (324033): Node "q[28]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[29]~2"
+    Info (324033): Node "q[29]" has logic level of X
+    Info (324033): Node "q[29]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[30]~1"
+    Info (324033): Node "q[30]" has logic level of X
+    Info (324033): Node "q[30]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 0 ps on bus node "|pc|q[31]~0"
+    Info (324033): Node "q[31]" has logic level of X
+    Info (324033): Node "q[31]~reg0" has logic level of 0
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[0]~31"
+    Info (324033): Node "q[0]" has logic level of X
+    Info (324033): Node "q[0]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[31]~0"
+    Info (324033): Node "q[31]" has logic level of X
+    Info (324033): Node "q[31]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[30]~1"
+    Info (324033): Node "q[30]" has logic level of X
+    Info (324033): Node "q[30]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[29]~2"
+    Info (324033): Node "q[29]" has logic level of X
+    Info (324033): Node "q[29]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[28]~3"
+    Info (324033): Node "q[28]" has logic level of X
+    Info (324033): Node "q[28]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[27]~4"
+    Info (324033): Node "q[27]" has logic level of X
+    Info (324033): Node "q[27]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[26]~5"
+    Info (324033): Node "q[26]" has logic level of X
+    Info (324033): Node "q[26]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[25]~6"
+    Info (324033): Node "q[25]" has logic level of X
+    Info (324033): Node "q[25]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[24]~7"
+    Info (324033): Node "q[24]" has logic level of X
+    Info (324033): Node "q[24]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[23]~8"
+    Info (324033): Node "q[23]" has logic level of X
+    Info (324033): Node "q[23]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[22]~9"
+    Info (324033): Node "q[22]" has logic level of X
+    Info (324033): Node "q[22]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[21]~10"
+    Info (324033): Node "q[21]" has logic level of X
+    Info (324033): Node "q[21]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[20]~11"
+    Info (324033): Node "q[20]" has logic level of X
+    Info (324033): Node "q[20]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[19]~12"
+    Info (324033): Node "q[19]" has logic level of X
+    Info (324033): Node "q[19]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[18]~13"
+    Info (324033): Node "q[18]" has logic level of X
+    Info (324033): Node "q[18]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[17]~14"
+    Info (324033): Node "q[17]" has logic level of X
+    Info (324033): Node "q[17]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[16]~15"
+    Info (324033): Node "q[16]" has logic level of X
+    Info (324033): Node "q[16]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[15]~16"
+    Info (324033): Node "q[15]" has logic level of X
+    Info (324033): Node "q[15]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[14]~17"
+    Info (324033): Node "q[14]" has logic level of X
+    Info (324033): Node "q[14]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[13]~18"
+    Info (324033): Node "q[13]" has logic level of X
+    Info (324033): Node "q[13]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[12]~19"
+    Info (324033): Node "q[12]" has logic level of X
+    Info (324033): Node "q[12]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[11]~20"
+    Info (324033): Node "q[11]" has logic level of X
+    Info (324033): Node "q[11]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[10]~21"
+    Info (324033): Node "q[10]" has logic level of X
+    Info (324033): Node "q[10]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[9]~22"
+    Info (324033): Node "q[9]" has logic level of X
+    Info (324033): Node "q[9]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[8]~23"
+    Info (324033): Node "q[8]" has logic level of X
+    Info (324033): Node "q[8]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[7]~24"
+    Info (324033): Node "q[7]" has logic level of X
+    Info (324033): Node "q[7]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[6]~25"
+    Info (324033): Node "q[6]" has logic level of X
+    Info (324033): Node "q[6]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[5]~26"
+    Info (324033): Node "q[5]" has logic level of X
+    Info (324033): Node "q[5]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[4]~27"
+    Info (324033): Node "q[4]" has logic level of X
+    Info (324033): Node "q[4]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[3]~28"
+    Info (324033): Node "q[3]" has logic level of X
+    Info (324033): Node "q[3]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[2]~29"
+    Info (324033): Node "q[2]" has logic level of X
+    Info (324033): Node "q[2]~reg0" has logic level of 0
+Warning (324031): Found logic contention at time 20.0 ns on bus node "|pc|q[1]~30"
+    Info (324033): Node "q[1]" has logic level of X
+    Info (324033): Node "q[1]~reg0" has logic level of 0
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is       0.63 %
+Info (328052): Number of transitions in simulation is 107
+Info (324045): Vector file pc_qsim.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 32-bit Simulator was successful. 0 errors, 97 warnings
+    Info: Peak virtual memory: 273 megabytes
+    Info: Processing ended: Thu Jan 31 16:39:06 2019
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

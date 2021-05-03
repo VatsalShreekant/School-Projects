@@ -1,0 +1,374 @@
+Simulator report for reset_circuit
+Tue Apr  8 16:33:20 2014
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 85 nodes     ;
+; Simulation Coverage         ;      18.97 % ;
+; Total Number of Transitions ; 310          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C35F672C6 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      18.97 % ;
+; Total nodes checked                                 ; 85           ;
+; Total output ports checked                          ; 116          ;
+; Total output ports with complete 1/0-value coverage ; 22           ;
+; Total output ports with no 1/0-value coverage       ; 94           ;
+; Total output ports with no 1-value coverage         ; 94           ;
+; Total output ports with no 0-value coverage         ; 94           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                      ;
++-------------------------------+-------------------------------+------------------+
+; Node Name                     ; Output Port Name              ; Output Port Type ;
++-------------------------------+-------------------------------+------------------+
+; |reset_circuit|Add0~0         ; |reset_circuit|Add0~0         ; combout          ;
+; |reset_circuit|Add0~0         ; |reset_circuit|Add0~1         ; cout             ;
+; |reset_circuit|Add0~2         ; |reset_circuit|Add0~2         ; combout          ;
+; |reset_circuit|Add0~2         ; |reset_circuit|Add0~3         ; cout             ;
+; |reset_circuit|Add0~4         ; |reset_circuit|Add0~4         ; combout          ;
+; |reset_circuit|Enable_PD~reg0 ; |reset_circuit|Enable_PD~reg0 ; regout           ;
+; |reset_circuit|Clr_PC~reg0    ; |reset_circuit|Clr_PC~reg0    ; regout           ;
+; |reset_circuit|counter[2]     ; |reset_circuit|counter[2]     ; regout           ;
+; |reset_circuit|LessThan0~0    ; |reset_circuit|LessThan0~0    ; combout          ;
+; |reset_circuit|LessThan0~4    ; |reset_circuit|LessThan0~4    ; combout          ;
+; |reset_circuit|LessThan0~9    ; |reset_circuit|LessThan0~9    ; combout          ;
+; |reset_circuit|counter[1]     ; |reset_circuit|counter[1]     ; regout           ;
+; |reset_circuit|counter[0]     ; |reset_circuit|counter[0]     ; regout           ;
+; |reset_circuit|counter~64     ; |reset_circuit|counter~64     ; combout          ;
+; |reset_circuit|Enable_PD~0    ; |reset_circuit|Enable_PD~0    ; combout          ;
+; |reset_circuit|counter[2]~65  ; |reset_circuit|counter[2]~65  ; combout          ;
+; |reset_circuit|counter[0]~66  ; |reset_circuit|counter[0]~66  ; combout          ;
+; |reset_circuit|Enable_PD      ; |reset_circuit|Enable_PD      ; padio            ;
+; |reset_circuit|Clr_PC         ; |reset_circuit|Clr_PC         ; padio            ;
+; |reset_circuit|Reset          ; |reset_circuit|Reset~corein   ; combout          ;
+; |reset_circuit|Clk            ; |reset_circuit|Clk~corein     ; combout          ;
+; |reset_circuit|Clk~clkctrl    ; |reset_circuit|Clk~clkctrl    ; outclk           ;
++-------------------------------+-------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                   ;
++----------------------------+----------------------------+------------------+
+; Node Name                  ; Output Port Name           ; Output Port Type ;
++----------------------------+----------------------------+------------------+
+; |reset_circuit|Add0~4      ; |reset_circuit|Add0~5      ; cout             ;
+; |reset_circuit|Add0~6      ; |reset_circuit|Add0~6      ; combout          ;
+; |reset_circuit|Add0~6      ; |reset_circuit|Add0~7      ; cout             ;
+; |reset_circuit|Add0~8      ; |reset_circuit|Add0~8      ; combout          ;
+; |reset_circuit|Add0~8      ; |reset_circuit|Add0~9      ; cout             ;
+; |reset_circuit|Add0~10     ; |reset_circuit|Add0~10     ; combout          ;
+; |reset_circuit|Add0~10     ; |reset_circuit|Add0~11     ; cout             ;
+; |reset_circuit|Add0~12     ; |reset_circuit|Add0~12     ; combout          ;
+; |reset_circuit|Add0~12     ; |reset_circuit|Add0~13     ; cout             ;
+; |reset_circuit|Add0~14     ; |reset_circuit|Add0~14     ; combout          ;
+; |reset_circuit|Add0~14     ; |reset_circuit|Add0~15     ; cout             ;
+; |reset_circuit|Add0~16     ; |reset_circuit|Add0~16     ; combout          ;
+; |reset_circuit|Add0~16     ; |reset_circuit|Add0~17     ; cout             ;
+; |reset_circuit|Add0~18     ; |reset_circuit|Add0~18     ; combout          ;
+; |reset_circuit|Add0~18     ; |reset_circuit|Add0~19     ; cout             ;
+; |reset_circuit|Add0~20     ; |reset_circuit|Add0~20     ; combout          ;
+; |reset_circuit|Add0~20     ; |reset_circuit|Add0~21     ; cout             ;
+; |reset_circuit|Add0~22     ; |reset_circuit|Add0~22     ; combout          ;
+; |reset_circuit|Add0~22     ; |reset_circuit|Add0~23     ; cout             ;
+; |reset_circuit|Add0~24     ; |reset_circuit|Add0~24     ; combout          ;
+; |reset_circuit|Add0~24     ; |reset_circuit|Add0~25     ; cout             ;
+; |reset_circuit|Add0~26     ; |reset_circuit|Add0~26     ; combout          ;
+; |reset_circuit|Add0~26     ; |reset_circuit|Add0~27     ; cout             ;
+; |reset_circuit|Add0~28     ; |reset_circuit|Add0~28     ; combout          ;
+; |reset_circuit|Add0~28     ; |reset_circuit|Add0~29     ; cout             ;
+; |reset_circuit|Add0~30     ; |reset_circuit|Add0~30     ; combout          ;
+; |reset_circuit|Add0~30     ; |reset_circuit|Add0~31     ; cout             ;
+; |reset_circuit|Add0~32     ; |reset_circuit|Add0~32     ; combout          ;
+; |reset_circuit|Add0~32     ; |reset_circuit|Add0~33     ; cout             ;
+; |reset_circuit|Add0~34     ; |reset_circuit|Add0~34     ; combout          ;
+; |reset_circuit|Add0~34     ; |reset_circuit|Add0~35     ; cout             ;
+; |reset_circuit|Add0~36     ; |reset_circuit|Add0~36     ; combout          ;
+; |reset_circuit|Add0~36     ; |reset_circuit|Add0~37     ; cout             ;
+; |reset_circuit|Add0~38     ; |reset_circuit|Add0~38     ; combout          ;
+; |reset_circuit|Add0~38     ; |reset_circuit|Add0~39     ; cout             ;
+; |reset_circuit|Add0~40     ; |reset_circuit|Add0~40     ; combout          ;
+; |reset_circuit|Add0~40     ; |reset_circuit|Add0~41     ; cout             ;
+; |reset_circuit|Add0~42     ; |reset_circuit|Add0~42     ; combout          ;
+; |reset_circuit|Add0~42     ; |reset_circuit|Add0~43     ; cout             ;
+; |reset_circuit|Add0~44     ; |reset_circuit|Add0~44     ; combout          ;
+; |reset_circuit|Add0~44     ; |reset_circuit|Add0~45     ; cout             ;
+; |reset_circuit|Add0~46     ; |reset_circuit|Add0~46     ; combout          ;
+; |reset_circuit|Add0~46     ; |reset_circuit|Add0~47     ; cout             ;
+; |reset_circuit|Add0~48     ; |reset_circuit|Add0~48     ; combout          ;
+; |reset_circuit|Add0~48     ; |reset_circuit|Add0~49     ; cout             ;
+; |reset_circuit|Add0~50     ; |reset_circuit|Add0~50     ; combout          ;
+; |reset_circuit|Add0~50     ; |reset_circuit|Add0~51     ; cout             ;
+; |reset_circuit|Add0~52     ; |reset_circuit|Add0~52     ; combout          ;
+; |reset_circuit|Add0~52     ; |reset_circuit|Add0~53     ; cout             ;
+; |reset_circuit|Add0~54     ; |reset_circuit|Add0~54     ; combout          ;
+; |reset_circuit|Add0~54     ; |reset_circuit|Add0~55     ; cout             ;
+; |reset_circuit|Add0~56     ; |reset_circuit|Add0~56     ; combout          ;
+; |reset_circuit|Add0~56     ; |reset_circuit|Add0~57     ; cout             ;
+; |reset_circuit|Add0~58     ; |reset_circuit|Add0~58     ; combout          ;
+; |reset_circuit|Add0~58     ; |reset_circuit|Add0~59     ; cout             ;
+; |reset_circuit|Add0~60     ; |reset_circuit|Add0~60     ; combout          ;
+; |reset_circuit|Add0~60     ; |reset_circuit|Add0~61     ; cout             ;
+; |reset_circuit|Add0~62     ; |reset_circuit|Add0~62     ; combout          ;
+; |reset_circuit|counter[31] ; |reset_circuit|counter[31] ; regout           ;
+; |reset_circuit|counter[3]  ; |reset_circuit|counter[3]  ; regout           ;
+; |reset_circuit|counter[6]  ; |reset_circuit|counter[6]  ; regout           ;
+; |reset_circuit|counter[5]  ; |reset_circuit|counter[5]  ; regout           ;
+; |reset_circuit|counter[4]  ; |reset_circuit|counter[4]  ; regout           ;
+; |reset_circuit|counter[10] ; |reset_circuit|counter[10] ; regout           ;
+; |reset_circuit|counter[9]  ; |reset_circuit|counter[9]  ; regout           ;
+; |reset_circuit|counter[8]  ; |reset_circuit|counter[8]  ; regout           ;
+; |reset_circuit|LessThan0~1 ; |reset_circuit|LessThan0~1 ; combout          ;
+; |reset_circuit|counter[7]  ; |reset_circuit|counter[7]  ; regout           ;
+; |reset_circuit|counter[14] ; |reset_circuit|counter[14] ; regout           ;
+; |reset_circuit|counter[13] ; |reset_circuit|counter[13] ; regout           ;
+; |reset_circuit|counter[12] ; |reset_circuit|counter[12] ; regout           ;
+; |reset_circuit|LessThan0~2 ; |reset_circuit|LessThan0~2 ; combout          ;
+; |reset_circuit|counter[11] ; |reset_circuit|counter[11] ; regout           ;
+; |reset_circuit|counter[18] ; |reset_circuit|counter[18] ; regout           ;
+; |reset_circuit|counter[17] ; |reset_circuit|counter[17] ; regout           ;
+; |reset_circuit|counter[16] ; |reset_circuit|counter[16] ; regout           ;
+; |reset_circuit|LessThan0~3 ; |reset_circuit|LessThan0~3 ; combout          ;
+; |reset_circuit|counter[15] ; |reset_circuit|counter[15] ; regout           ;
+; |reset_circuit|counter[22] ; |reset_circuit|counter[22] ; regout           ;
+; |reset_circuit|counter[21] ; |reset_circuit|counter[21] ; regout           ;
+; |reset_circuit|counter[20] ; |reset_circuit|counter[20] ; regout           ;
+; |reset_circuit|LessThan0~5 ; |reset_circuit|LessThan0~5 ; combout          ;
+; |reset_circuit|counter[19] ; |reset_circuit|counter[19] ; regout           ;
+; |reset_circuit|counter[26] ; |reset_circuit|counter[26] ; regout           ;
+; |reset_circuit|counter[25] ; |reset_circuit|counter[25] ; regout           ;
+; |reset_circuit|counter[24] ; |reset_circuit|counter[24] ; regout           ;
+; |reset_circuit|LessThan0~6 ; |reset_circuit|LessThan0~6 ; combout          ;
+; |reset_circuit|counter[23] ; |reset_circuit|counter[23] ; regout           ;
+; |reset_circuit|counter[30] ; |reset_circuit|counter[30] ; regout           ;
+; |reset_circuit|counter[29] ; |reset_circuit|counter[29] ; regout           ;
+; |reset_circuit|counter[28] ; |reset_circuit|counter[28] ; regout           ;
+; |reset_circuit|LessThan0~7 ; |reset_circuit|LessThan0~7 ; combout          ;
+; |reset_circuit|counter[27] ; |reset_circuit|counter[27] ; regout           ;
+; |reset_circuit|LessThan0~8 ; |reset_circuit|LessThan0~8 ; combout          ;
++----------------------------+----------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                   ;
++----------------------------+----------------------------+------------------+
+; Node Name                  ; Output Port Name           ; Output Port Type ;
++----------------------------+----------------------------+------------------+
+; |reset_circuit|Add0~4      ; |reset_circuit|Add0~5      ; cout             ;
+; |reset_circuit|Add0~6      ; |reset_circuit|Add0~6      ; combout          ;
+; |reset_circuit|Add0~6      ; |reset_circuit|Add0~7      ; cout             ;
+; |reset_circuit|Add0~8      ; |reset_circuit|Add0~8      ; combout          ;
+; |reset_circuit|Add0~8      ; |reset_circuit|Add0~9      ; cout             ;
+; |reset_circuit|Add0~10     ; |reset_circuit|Add0~10     ; combout          ;
+; |reset_circuit|Add0~10     ; |reset_circuit|Add0~11     ; cout             ;
+; |reset_circuit|Add0~12     ; |reset_circuit|Add0~12     ; combout          ;
+; |reset_circuit|Add0~12     ; |reset_circuit|Add0~13     ; cout             ;
+; |reset_circuit|Add0~14     ; |reset_circuit|Add0~14     ; combout          ;
+; |reset_circuit|Add0~14     ; |reset_circuit|Add0~15     ; cout             ;
+; |reset_circuit|Add0~16     ; |reset_circuit|Add0~16     ; combout          ;
+; |reset_circuit|Add0~16     ; |reset_circuit|Add0~17     ; cout             ;
+; |reset_circuit|Add0~18     ; |reset_circuit|Add0~18     ; combout          ;
+; |reset_circuit|Add0~18     ; |reset_circuit|Add0~19     ; cout             ;
+; |reset_circuit|Add0~20     ; |reset_circuit|Add0~20     ; combout          ;
+; |reset_circuit|Add0~20     ; |reset_circuit|Add0~21     ; cout             ;
+; |reset_circuit|Add0~22     ; |reset_circuit|Add0~22     ; combout          ;
+; |reset_circuit|Add0~22     ; |reset_circuit|Add0~23     ; cout             ;
+; |reset_circuit|Add0~24     ; |reset_circuit|Add0~24     ; combout          ;
+; |reset_circuit|Add0~24     ; |reset_circuit|Add0~25     ; cout             ;
+; |reset_circuit|Add0~26     ; |reset_circuit|Add0~26     ; combout          ;
+; |reset_circuit|Add0~26     ; |reset_circuit|Add0~27     ; cout             ;
+; |reset_circuit|Add0~28     ; |reset_circuit|Add0~28     ; combout          ;
+; |reset_circuit|Add0~28     ; |reset_circuit|Add0~29     ; cout             ;
+; |reset_circuit|Add0~30     ; |reset_circuit|Add0~30     ; combout          ;
+; |reset_circuit|Add0~30     ; |reset_circuit|Add0~31     ; cout             ;
+; |reset_circuit|Add0~32     ; |reset_circuit|Add0~32     ; combout          ;
+; |reset_circuit|Add0~32     ; |reset_circuit|Add0~33     ; cout             ;
+; |reset_circuit|Add0~34     ; |reset_circuit|Add0~34     ; combout          ;
+; |reset_circuit|Add0~34     ; |reset_circuit|Add0~35     ; cout             ;
+; |reset_circuit|Add0~36     ; |reset_circuit|Add0~36     ; combout          ;
+; |reset_circuit|Add0~36     ; |reset_circuit|Add0~37     ; cout             ;
+; |reset_circuit|Add0~38     ; |reset_circuit|Add0~38     ; combout          ;
+; |reset_circuit|Add0~38     ; |reset_circuit|Add0~39     ; cout             ;
+; |reset_circuit|Add0~40     ; |reset_circuit|Add0~40     ; combout          ;
+; |reset_circuit|Add0~40     ; |reset_circuit|Add0~41     ; cout             ;
+; |reset_circuit|Add0~42     ; |reset_circuit|Add0~42     ; combout          ;
+; |reset_circuit|Add0~42     ; |reset_circuit|Add0~43     ; cout             ;
+; |reset_circuit|Add0~44     ; |reset_circuit|Add0~44     ; combout          ;
+; |reset_circuit|Add0~44     ; |reset_circuit|Add0~45     ; cout             ;
+; |reset_circuit|Add0~46     ; |reset_circuit|Add0~46     ; combout          ;
+; |reset_circuit|Add0~46     ; |reset_circuit|Add0~47     ; cout             ;
+; |reset_circuit|Add0~48     ; |reset_circuit|Add0~48     ; combout          ;
+; |reset_circuit|Add0~48     ; |reset_circuit|Add0~49     ; cout             ;
+; |reset_circuit|Add0~50     ; |reset_circuit|Add0~50     ; combout          ;
+; |reset_circuit|Add0~50     ; |reset_circuit|Add0~51     ; cout             ;
+; |reset_circuit|Add0~52     ; |reset_circuit|Add0~52     ; combout          ;
+; |reset_circuit|Add0~52     ; |reset_circuit|Add0~53     ; cout             ;
+; |reset_circuit|Add0~54     ; |reset_circuit|Add0~54     ; combout          ;
+; |reset_circuit|Add0~54     ; |reset_circuit|Add0~55     ; cout             ;
+; |reset_circuit|Add0~56     ; |reset_circuit|Add0~56     ; combout          ;
+; |reset_circuit|Add0~56     ; |reset_circuit|Add0~57     ; cout             ;
+; |reset_circuit|Add0~58     ; |reset_circuit|Add0~58     ; combout          ;
+; |reset_circuit|Add0~58     ; |reset_circuit|Add0~59     ; cout             ;
+; |reset_circuit|Add0~60     ; |reset_circuit|Add0~60     ; combout          ;
+; |reset_circuit|Add0~60     ; |reset_circuit|Add0~61     ; cout             ;
+; |reset_circuit|Add0~62     ; |reset_circuit|Add0~62     ; combout          ;
+; |reset_circuit|counter[31] ; |reset_circuit|counter[31] ; regout           ;
+; |reset_circuit|counter[3]  ; |reset_circuit|counter[3]  ; regout           ;
+; |reset_circuit|counter[6]  ; |reset_circuit|counter[6]  ; regout           ;
+; |reset_circuit|counter[5]  ; |reset_circuit|counter[5]  ; regout           ;
+; |reset_circuit|counter[4]  ; |reset_circuit|counter[4]  ; regout           ;
+; |reset_circuit|counter[10] ; |reset_circuit|counter[10] ; regout           ;
+; |reset_circuit|counter[9]  ; |reset_circuit|counter[9]  ; regout           ;
+; |reset_circuit|counter[8]  ; |reset_circuit|counter[8]  ; regout           ;
+; |reset_circuit|LessThan0~1 ; |reset_circuit|LessThan0~1 ; combout          ;
+; |reset_circuit|counter[7]  ; |reset_circuit|counter[7]  ; regout           ;
+; |reset_circuit|counter[14] ; |reset_circuit|counter[14] ; regout           ;
+; |reset_circuit|counter[13] ; |reset_circuit|counter[13] ; regout           ;
+; |reset_circuit|counter[12] ; |reset_circuit|counter[12] ; regout           ;
+; |reset_circuit|LessThan0~2 ; |reset_circuit|LessThan0~2 ; combout          ;
+; |reset_circuit|counter[11] ; |reset_circuit|counter[11] ; regout           ;
+; |reset_circuit|counter[18] ; |reset_circuit|counter[18] ; regout           ;
+; |reset_circuit|counter[17] ; |reset_circuit|counter[17] ; regout           ;
+; |reset_circuit|counter[16] ; |reset_circuit|counter[16] ; regout           ;
+; |reset_circuit|LessThan0~3 ; |reset_circuit|LessThan0~3 ; combout          ;
+; |reset_circuit|counter[15] ; |reset_circuit|counter[15] ; regout           ;
+; |reset_circuit|counter[22] ; |reset_circuit|counter[22] ; regout           ;
+; |reset_circuit|counter[21] ; |reset_circuit|counter[21] ; regout           ;
+; |reset_circuit|counter[20] ; |reset_circuit|counter[20] ; regout           ;
+; |reset_circuit|LessThan0~5 ; |reset_circuit|LessThan0~5 ; combout          ;
+; |reset_circuit|counter[19] ; |reset_circuit|counter[19] ; regout           ;
+; |reset_circuit|counter[26] ; |reset_circuit|counter[26] ; regout           ;
+; |reset_circuit|counter[25] ; |reset_circuit|counter[25] ; regout           ;
+; |reset_circuit|counter[24] ; |reset_circuit|counter[24] ; regout           ;
+; |reset_circuit|LessThan0~6 ; |reset_circuit|LessThan0~6 ; combout          ;
+; |reset_circuit|counter[23] ; |reset_circuit|counter[23] ; regout           ;
+; |reset_circuit|counter[30] ; |reset_circuit|counter[30] ; regout           ;
+; |reset_circuit|counter[29] ; |reset_circuit|counter[29] ; regout           ;
+; |reset_circuit|counter[28] ; |reset_circuit|counter[28] ; regout           ;
+; |reset_circuit|LessThan0~7 ; |reset_circuit|LessThan0~7 ; combout          ;
+; |reset_circuit|counter[27] ; |reset_circuit|counter[27] ; regout           ;
+; |reset_circuit|LessThan0~8 ; |reset_circuit|LessThan0~8 ; combout          ;
++----------------------------+----------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Tue Apr  8 16:33:20 2014
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off reset_circuit -c reset_circuit
+Info: Using vector source file "/home/student1/glicenji/coe608/labs/reset/reset_circuit.vwf"
+Info: Inverted registers were found during simulation
+    Info: Register: |reset_circuit|counter[2]
+    Info: Register: |reset_circuit|counter[0]
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      18.97 %
+Info: Number of transitions in simulation is 310
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 152 megabytes
+    Info: Processing ended: Tue Apr  8 16:33:20 2014
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

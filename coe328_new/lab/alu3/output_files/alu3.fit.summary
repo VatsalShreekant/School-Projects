@@ -1,0 +1,16 @@
+Fitter Status : Successful - Wed Nov 29 17:49:25 2017
+Quartus II 32-bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : alu3
+Top-level Entity Name : alu3
+Family : Cyclone II
+Device : EP2C5F256C7
+Timing Models : Final
+Total logic elements : 5 / 4,608 ( < 1 % )
+    Total combinational functions : 5 / 4,608 ( < 1 % )
+    Dedicated logic registers : 1 / 4,608 ( < 1 % )
+Total registers : 1
+Total pins : 46 / 158 ( 29 % )
+Total virtual pins : 0
+Total memory bits : 0 / 119,808 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 26 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

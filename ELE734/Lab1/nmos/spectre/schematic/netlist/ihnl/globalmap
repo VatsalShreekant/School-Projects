@@ -1,0 +1,11 @@
+CADENCE IHNL01060
+$model
+Lab1/nmos/schematic nmos
+$endmodel
+$net
+gnd! 0
+$endnet
+$param
+v1 v1
+v2 v2
+$endparam

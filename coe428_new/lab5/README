@@ -1,0 +1,43 @@
+Summarize your lab:
+
+  Part 1:
+     Works  Yes 
+     
+  Part 2:
+     Works  Yes 
+     
+  Part 3:
+     Works  No
+     
+***ANSWERS TO QUESTIONS***
+ Question 1:
+     Which hash table collision resolution method did you use
+     (eg. chaining or open addressing)? Explain your choice
+     briefly (less than 25 words).
+ YOUR ANSWER:Chaining. It works effectively with a load factor of more than 1. Whereas, tables with open addressing require load factor not to exceed 0.7. 
+
+ 
+ 
+ 
+ 
+ Question 2:
+       Which hash function (division or multiplication) did you use?
+       How did you convert a string into a number?
+ YOUR ANSWER:Division. I converted the string to a number by the means of concatenation. 
+
+ 
+ 
+ 
+ Question 3:
+       Another legal XML tag not used in this lab is the
+       stand-alone tag.  This kind of tag
+       combines both a start-tag and end-tag in one.
+       It is identified with a '/' (slash) preceding the
+       final >.  (For example, the <foo/>
+       is a stand-alone tag that is self balancing.
+       
+       Describe briefly how
+       you would modify Part 3 to allow this kind of tag.
+       
+ YOUR ANSWER:My part 3 wouldnt work hence I wouldn't know how to answer this question.
+  

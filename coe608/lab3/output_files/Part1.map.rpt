@@ -1,0 +1,518 @@
+Analysis & Synthesis report for Part1
+Thu Feb 14 16:21:32 2019
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                          ;
++------------------------------------+--------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Feb 14 16:21:32 2019            ;
+; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; Part1                                            ;
+; Top-level Entity Name              ; ALU                                              ;
+; Family                             ; Cyclone IV E                                     ;
+; Total logic elements               ; 170                                              ;
+;     Total combinational functions  ; 170                                              ;
+;     Dedicated logic registers      ; 0                                                ;
+; Total registers                    ; 0                                                ;
+; Total pins                         ; 101                                              ;
+; Total virtual pins                 ; 0                                                ;
+; Total memory bits                  ; 0                                                ;
+; Embedded Multiplier 9-bit elements ; 0                                                ;
+; Total PLLs                         ; 0                                                ;
++------------------------------------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE6E22C7        ;                    ;
+; Top-level entity name                                                      ; ALU                ; Part1              ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                    ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                             ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
+; adder_32bit.vhd                  ; yes             ; User VHDL File  ; /home/student1/vshreeka/coe608/lab3/adder_32bit.vhd      ;         ;
+; fulladder.vhd                    ; yes             ; User VHDL File  ; /home/student1/vshreeka/coe608/lab3/fulladder.vhd        ;         ;
+; and_32bit.vhd                    ; yes             ; User VHDL File  ; /home/student1/vshreeka/coe608/lab3/and_32bit.vhd        ;         ;
+; leftshift_32bit.vhd              ; yes             ; User VHDL File  ; /home/student1/vshreeka/coe608/lab3/leftshift_32bit.vhd  ;         ;
+; mux_2to1.vhd                     ; yes             ; User VHDL File  ; /home/student1/vshreeka/coe608/lab3/mux_2to1.vhd         ;         ;
+; mux_8to1.vhd                     ; yes             ; User VHDL File  ; /home/student1/vshreeka/coe608/lab3/mux_8to1.vhd         ;         ;
+; not_32bit.vhd                    ; yes             ; User VHDL File  ; /home/student1/vshreeka/coe608/lab3/not_32bit.vhd        ;         ;
+; or_32bit.vhd                     ; yes             ; User VHDL File  ; /home/student1/vshreeka/coe608/lab3/or_32bit.vhd         ;         ;
+; rightshift_32bit.vhd             ; yes             ; User VHDL File  ; /home/student1/vshreeka/coe608/lab3/rightshift_32bit.vhd ;         ;
+; ALU.vhd                          ; yes             ; User VHDL File  ; /home/student1/vshreeka/coe608/lab3/ALU.vhd              ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Estimated Total logic elements              ; 170                ;
+;                                             ;                    ;
+; Total combinational functions               ; 170                ;
+; Logic element usage by number of LUT inputs ;                    ;
+;     -- 4 input functions                    ; 109                ;
+;     -- 3 input functions                    ; 61                 ;
+;     -- <=2 input functions                  ; 0                  ;
+;                                             ;                    ;
+; Logic elements by mode                      ;                    ;
+;     -- normal mode                          ; 170                ;
+;     -- arithmetic mode                      ; 0                  ;
+;                                             ;                    ;
+; Total registers                             ; 0                  ;
+;     -- Dedicated logic registers            ; 0                  ;
+;     -- I/O registers                        ; 0                  ;
+;                                             ;                    ;
+; I/O pins                                    ; 101                ;
+; Embedded Multiplier 9-bit elements          ; 0                  ;
+; Maximum fan-out node                        ; operation[1]~input ;
+; Maximum fan-out                             ; 91                 ;
+; Total fan-out                               ; 786                ;
+; Average fan-out                             ; 1.95               ;
++---------------------------------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                           ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                   ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+--------------+
+; |ALU                       ; 170 (11)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 101  ; 0            ; |ALU                                  ; work         ;
+;    |adder_32bit:adder1|    ; 34 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1               ; work         ;
+;       |fulladder:p10|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p10 ; work         ;
+;       |fulladder:p11|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p11 ; work         ;
+;       |fulladder:p12|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p12 ; work         ;
+;       |fulladder:p13|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p13 ; work         ;
+;       |fulladder:p14|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p14 ; work         ;
+;       |fulladder:p15|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p15 ; work         ;
+;       |fulladder:p16|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p16 ; work         ;
+;       |fulladder:p17|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p17 ; work         ;
+;       |fulladder:p18|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p18 ; work         ;
+;       |fulladder:p19|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p19 ; work         ;
+;       |fulladder:p1|       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p1  ; work         ;
+;       |fulladder:p20|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p20 ; work         ;
+;       |fulladder:p21|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p21 ; work         ;
+;       |fulladder:p22|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p22 ; work         ;
+;       |fulladder:p23|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p23 ; work         ;
+;       |fulladder:p24|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p24 ; work         ;
+;       |fulladder:p25|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p25 ; work         ;
+;       |fulladder:p26|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p26 ; work         ;
+;       |fulladder:p27|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p27 ; work         ;
+;       |fulladder:p28|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p28 ; work         ;
+;       |fulladder:p29|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p29 ; work         ;
+;       |fulladder:p2|       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p2  ; work         ;
+;       |fulladder:p30|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p30 ; work         ;
+;       |fulladder:p31|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p31 ; work         ;
+;       |fulladder:p32|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p32 ; work         ;
+;       |fulladder:p3|       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p3  ; work         ;
+;       |fulladder:p4|       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p4  ; work         ;
+;       |fulladder:p5|       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p5  ; work         ;
+;       |fulladder:p6|       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p6  ; work         ;
+;       |fulladder:p7|       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p7  ; work         ;
+;       |fulladder:p8|       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p8  ; work         ;
+;       |fulladder:p9|       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|adder_32bit:adder1|fulladder:p9  ; work         ;
+;    |mux_8to1:mux1|         ; 125 (125)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|mux_8to1:mux1                    ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 6:1                ; 30 bits   ; 120 LEs       ; 90 LEs               ; 30 LEs                 ; No         ; |ALU|mux_8to1:mux1|Mux30   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Thu Feb 14 16:21:27 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Part1 -c Part1
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 2 design units, including 1 entities, in source file adder_32bit.vhd
+    Info (12022): Found design unit 1: adder_32bit-adder_32bitImpl
+    Info (12023): Found entity 1: adder_32bit
+Info (12021): Found 2 design units, including 1 entities, in source file fulladder.vhd
+    Info (12022): Found design unit 1: fulladder-fulladderImpl
+    Info (12023): Found entity 1: fulladder
+Info (12021): Found 2 design units, including 1 entities, in source file and_32bit.vhd
+    Info (12022): Found design unit 1: and_32bit-and_32bitImpl
+    Info (12023): Found entity 1: and_32bit
+Info (12021): Found 2 design units, including 1 entities, in source file leftshift_32bit.vhd
+    Info (12022): Found design unit 1: leftshift_32bit-leftshift_32bitImpl
+    Info (12023): Found entity 1: leftshift_32bit
+Info (12021): Found 2 design units, including 1 entities, in source file mux_2to1.vhd
+    Info (12022): Found design unit 1: mux_2to1-mux_2to1Impl
+    Info (12023): Found entity 1: mux_2to1
+Info (12021): Found 2 design units, including 1 entities, in source file mux_8to1.vhd
+    Info (12022): Found design unit 1: mux_8to1-mux_8to1Impl
+    Info (12023): Found entity 1: mux_8to1
+Info (12021): Found 2 design units, including 1 entities, in source file not_32bit.vhd
+    Info (12022): Found design unit 1: not_32bit-not_32bitImpl
+    Info (12023): Found entity 1: not_32bit
+Info (12021): Found 2 design units, including 1 entities, in source file or_32bit.vhd
+    Info (12022): Found design unit 1: or_32bit-or_32bitImpl
+    Info (12023): Found entity 1: or_32bit
+Info (12021): Found 2 design units, including 1 entities, in source file rightshift_32bit.vhd
+    Info (12022): Found design unit 1: rightshift_32bit-rightshift_32bitImpl
+    Info (12023): Found entity 1: rightshift_32bit
+Info (12021): Found 2 design units, including 1 entities, in source file ALU.vhd
+    Info (12022): Found design unit 1: ALU-ALUImplementation
+    Info (12023): Found entity 1: ALU
+Info (12127): Elaborating entity "ALU" for the top level hierarchy
+Info (12128): Elaborating entity "mux_8to1" for hierarchy "mux_8to1:mux1"
+Info (12128): Elaborating entity "adder_32bit" for hierarchy "adder_32bit:adder1"
+Info (12128): Elaborating entity "fulladder" for hierarchy "adder_32bit:adder1|fulladder:p1"
+Info (12128): Elaborating entity "and_32bit" for hierarchy "and_32bit:and1"
+Info (12128): Elaborating entity "or_32bit" for hierarchy "or_32bit:or1"
+Info (12128): Elaborating entity "rightshift_32bit" for hierarchy "rightshift_32bit:lsr1"
+Info (12128): Elaborating entity "leftshift_32bit" for hierarchy "leftshift_32bit:lsl1"
+Info (12128): Elaborating entity "mux_2to1" for hierarchy "mux_2to1:negMux"
+Info (12128): Elaborating entity "not_32bit" for hierarchy "not_32bit:notber"
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "comb~synth" feeding internal logic into a wire
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[0]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[1]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[2]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[3]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[4]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[5]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[6]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[7]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[8]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[9]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[10]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[11]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[12]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[13]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[14]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[15]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[16]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[17]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[18]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[19]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[20]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[21]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[22]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[23]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[24]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[25]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[26]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[27]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[28]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[29]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[30]" and its non-tri-state driver.
+    Warning (13035): Inserted always-enabled tri-state buffer between "result[31]" and its non-tri-state driver.
+Info (13060): One or more bidirs are fed by always enabled tri-state buffers
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[0]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[1]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[2]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[3]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[4]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[5]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[6]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[7]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[8]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[9]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[10]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[11]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[12]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[13]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[14]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[15]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[16]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[17]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[18]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[19]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[20]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[21]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[22]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[23]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[24]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[25]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[26]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[27]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[28]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[29]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[30]" is moved to its source
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidir "result[31]" is moved to its source
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "result[0]~synth"
+    Warning (13010): Node "result[1]~synth"
+    Warning (13010): Node "result[2]~synth"
+    Warning (13010): Node "result[3]~synth"
+    Warning (13010): Node "result[4]~synth"
+    Warning (13010): Node "result[5]~synth"
+    Warning (13010): Node "result[6]~synth"
+    Warning (13010): Node "result[7]~synth"
+    Warning (13010): Node "result[8]~synth"
+    Warning (13010): Node "result[9]~synth"
+    Warning (13010): Node "result[10]~synth"
+    Warning (13010): Node "result[11]~synth"
+    Warning (13010): Node "result[12]~synth"
+    Warning (13010): Node "result[13]~synth"
+    Warning (13010): Node "result[14]~synth"
+    Warning (13010): Node "result[15]~synth"
+    Warning (13010): Node "result[16]~synth"
+    Warning (13010): Node "result[17]~synth"
+    Warning (13010): Node "result[18]~synth"
+    Warning (13010): Node "result[19]~synth"
+    Warning (13010): Node "result[20]~synth"
+    Warning (13010): Node "result[21]~synth"
+    Warning (13010): Node "result[22]~synth"
+    Warning (13010): Node "result[23]~synth"
+    Warning (13010): Node "result[24]~synth"
+    Warning (13010): Node "result[25]~synth"
+    Warning (13010): Node "result[26]~synth"
+    Warning (13010): Node "result[27]~synth"
+    Warning (13010): Node "result[28]~synth"
+    Warning (13010): Node "result[29]~synth"
+    Warning (13010): Node "result[30]~synth"
+    Warning (13010): Node "result[31]~synth"
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 271 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 67 input pins
+    Info (21059): Implemented 2 output pins
+    Info (21060): Implemented 32 bidirectional pins
+    Info (21061): Implemented 170 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 131 warnings
+    Info: Peak virtual memory: 393 megabytes
+    Info: Processing ended: Thu Feb 14 16:21:32 2019
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:03
+
+

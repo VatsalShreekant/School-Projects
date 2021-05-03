@@ -1,0 +1,22 @@
+#
+lab3 NAND2 symbol
+I29
+I8
+I7
+I6
+I5
+I4
+I3
+I0
+I2
+#ISCELL
+basic ipin symbol
+PIN9
+PIN11
+PIN10
+PIN8
+PIN7
+#ISCELL
+basic opin symbol
+PIN1
+PIN0

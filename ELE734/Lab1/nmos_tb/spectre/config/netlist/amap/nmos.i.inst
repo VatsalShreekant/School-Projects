@@ -1,0 +1,8 @@
+HEADER
+"PSFversion" "1.00"
+"mosfetv" "mosfet"
+"mosfetn" "cmosp18_nfet_spectre"
+":1v" "B"
+":2v" "D"
+":3v" "G"
+":4v" "S"

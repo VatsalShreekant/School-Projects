@@ -1,0 +1,381 @@
+
+Cadence (R) Virtuoso (R) Spectre (R) Circuit Simulator
+Version 11.1.0.366.isr7 32bit -- 20 Mar 2012
+Copyright (C) 1989-2012 Cadence Design Systems, Inc. All rights reserved worldwide. Cadence, Virtuoso and Spectre are registered trademarks of Cadence Design Systems, Inc. All others are the property of their respective holders.
+
+Protected by U.S. Patents: 
+        5,610,847; 5,790,436; 5,812,431; 5,859,785; 5,949,992; 5,987,238; 
+        6,088,523; 6,101,323; 6,151,698; 6,181,754; 6,260,176; 6,278,964; 
+        6,349,272; 6,374,390; 6,493,849; 6,504,885; 6,618,837; 6,636,839; 
+        6,778,025; 6,832,358; 6,851,097; 6,928,626; 7,024,652; 7,035,782; 
+        7,085,700; 7,143,021; 7,493,240; 7,571,401.
+
+Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
+
+User: gcascian   Host: baroque.ee.ryerson.ca   HostID: 10AC0436   PID: 32232
+Memory  available: 9.3314 GB  physical: 16.7409 GB
+CPU Type: Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz
+          Processor PhysicalID CoreID Frequency
+              0         0        0     3392.5
+              1         0        1     3392.5
+              2         0        2     3392.5
+              3         0        3     3392.5
+              4         0        0     3392.5
+              5         0        1     3392.5
+              6         0        2     3392.5
+              7         0        3     3392.5
+
+
+Simulating `input.scs' on baroque.ee.ryerson.ca at 12:38:49 AM, Fri Oct 11, 2019 (process id: 32232).
+Current working directory: /home/student1/gcascian/ELE734/Lab1/nmos_tb/spectre/config/netlist.
+Environment variable:
+    SPECTRE_DEFAULTS=/CMC/kits/cmosp18/models/spectre -f psfbin
+Command line:
+     \
+        /CMC/tools/cadence/MMSIM11.10.366_lnx86/tools.lnx86/spectre/bin/32bit/spectre  \
+        -env artist5.1.0 +escchars +log ../psf/spectre.out +inter=mpsc  \
+        +mpssession=spectre17_26866_8 -format sst2 -raw ../psf  \
+        -I/CMC/kits/cmosp18.5.2/models/spectre +lqtimeout 900 -maxw 5  \
+        -maxn 5 input.scs
+spectre pid = 32232
+
+Loading /CMC/tools/cadence/MMSIM11.10.366_lnx86/tools.lnx86/cmi/lib/5.0/libinfineon_sh.so ...
+Loading /CMC/tools/cadence/MMSIM11.10.366_lnx86/tools.lnx86/cmi/lib/5.0/libphilips_sh.so ...
+Loading /CMC/tools/cadence/MMSIM11.10.366_lnx86/tools.lnx86/cmi/lib/5.0/libsparam_sh.so ...
+Loading /CMC/tools/cadence/MMSIM11.10.366_lnx86/tools.lnx86/cmi/lib/5.0/libstmodels_sh.so ...
+
+Time for NDB Parsing: CPU = 77.987 ms, elapsed = 537.276 ms.
+Time accumulated: CPU = 77.987 ms, elapsed = 537.276 ms.
+Peak resident memory used = 25.5 Mbytes.
+
+
+Time for Elaboration: CPU = 15.998 ms, elapsed = 17.926 ms.
+Time accumulated: CPU = 93.985 ms, elapsed = 555.394 ms.
+Peak resident memory used = 27.8 Mbytes.
+
+
+Time for EDB Visiting: CPU = 1 ms, elapsed = 402.927 us.
+Time accumulated: CPU = 94.985 ms, elapsed = 555.956 ms.
+Peak resident memory used = 28.1 Mbytes.
+
+
+Notice from spectre during initial setup.
+    Multithreading device evaluation is not applied for primitive `bsim3v3' since the number of instances for this primitive is not large enough (i.e. no more than 256 instances).
+
+
+Circuit inventory:
+              nodes 6
+             iprobe 26    
+            bsim3v3 2     
+          capacitor 2     
+           quantity 9     
+            vsource 6     
+
+
+Notice from spectre during initial setup.
+    Multithreading Enabled: 4 threads on system with 8 available processors.
+        
+
+
+Time for parsing: CPU = 2.999 ms, elapsed = 36.907 ms.
+Time accumulated: CPU = 97.984 ms, elapsed = 592.995 ms.
+Peak resident memory used = 29 Mbytes.
+
+Entering remote command mode using MPSC service (spectre, ipi, v0.0, spectre17_26866_8, ).
+
+******************
+DC Analysis `dcOp'
+******************
+Important parameter values:
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    gmindc = 1 pS
+Convergence achieved in 2 iterations.
+Total time required for dc analysis `dcOp': CPU = 2.999 ms, elapsed = 25.5499 ms.
+Time accumulated: CPU = 102.983 ms, elapsed = 709.051 ms.
+Peak resident memory used = 29.8 Mbytes.
+
+dcOpInfo: writing operating point information to rawfile.
+
+*********************************
+DC Analysis `dc': v2 = (0 -> 1.8)
+*********************************
+Important parameter values:
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    gmindc = 1 pS
+    dc: v2 = 100e-03     (5.56 %), step = 100e-03      (5.56 %)
+    dc: v2 = 200e-03     (11.1 %), step = 100e-03      (5.56 %)
+    dc: v2 = 300e-03     (16.7 %), step = 100e-03      (5.56 %)
+    dc: v2 = 400e-03     (22.2 %), step = 100e-03      (5.56 %)
+    dc: v2 = 500e-03     (27.8 %), step = 100e-03      (5.56 %)
+    dc: v2 = 600e-03     (33.3 %), step = 100e-03      (5.56 %)
+    dc: v2 = 700e-03     (38.9 %), step = 100e-03      (5.56 %)
+    dc: v2 = 800e-03     (44.4 %), step = 100e-03      (5.56 %)
+    dc: v2 = 900e-03       (50 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1           (55.6 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.1         (61.1 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.2         (66.7 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.3         (72.2 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.4         (77.8 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.5         (83.3 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.6         (88.9 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.7         (94.4 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.8          (100 %), step = 100e-03      (5.56 %)
+Total time required for dc analysis `dc': CPU = 12.998 ms, elapsed = 34.761 ms.
+Time accumulated: CPU = 119.981 ms, elapsed = 814.482 ms.
+Peak resident memory used = 30.2 Mbytes.
+
+modelParameter: writing model parameter values to rawfile.
+element: writing instance parameter values to rawfile.
+outputParameter: writing output parameter values to rawfile.
+designParamVals: writing netlist parameters to rawfile.
+primitives: writing primitives to rawfile.
+subckts: writing subcircuits to rawfile.
+
+******************
+DC Analysis `dcOp'
+******************
+Important parameter values:
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    gmindc = 1 pS
+Convergence achieved in 2 iterations.
+Total time required for dc analysis `dcOp': CPU = 3.999 ms, elapsed = 24.8671 ms.
+Time accumulated: CPU = 147.976 ms, elapsed = 1.35388 s.
+Peak resident memory used = 30.2 Mbytes.
+
+dcOpInfo: writing operating point information to rawfile.
+
+*********************************
+DC Analysis `dc': v2 = (0 -> 1.8)
+*********************************
+Important parameter values:
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    gmindc = 1 pS
+    dc: v2 = 100e-03     (5.56 %), step = 100e-03      (5.56 %)
+    dc: v2 = 200e-03     (11.1 %), step = 100e-03      (5.56 %)
+    dc: v2 = 300e-03     (16.7 %), step = 100e-03      (5.56 %)
+    dc: v2 = 400e-03     (22.2 %), step = 100e-03      (5.56 %)
+    dc: v2 = 500e-03     (27.8 %), step = 100e-03      (5.56 %)
+    dc: v2 = 600e-03     (33.3 %), step = 100e-03      (5.56 %)
+    dc: v2 = 700e-03     (38.9 %), step = 100e-03      (5.56 %)
+    dc: v2 = 800e-03     (44.4 %), step = 100e-03      (5.56 %)
+    dc: v2 = 900e-03       (50 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1           (55.6 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.1         (61.1 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.2         (66.7 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.3         (72.2 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.4         (77.8 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.5         (83.3 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.6         (88.9 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.7         (94.4 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.8          (100 %), step = 100e-03      (5.56 %)
+Total time required for dc analysis `dc': CPU = 12.998 ms, elapsed = 36.2229 ms.
+Time accumulated: CPU = 164.974 ms, elapsed = 1.45719 s.
+Peak resident memory used = 30.4 Mbytes.
+
+modelParameter: writing model parameter values to rawfile.
+element: writing instance parameter values to rawfile.
+outputParameter: writing output parameter values to rawfile.
+designParamVals: writing netlist parameters to rawfile.
+primitives: writing primitives to rawfile.
+subckts: writing subcircuits to rawfile.
+
+******************
+DC Analysis `dcOp'
+******************
+Important parameter values:
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    gmindc = 1 pS
+Convergence achieved in 2 iterations.
+Total time required for dc analysis `dcOp': CPU = 3 ms, elapsed = 24.936 ms.
+Time accumulated: CPU = 192.969 ms, elapsed = 2.3071 s.
+Peak resident memory used = 30.4 Mbytes.
+
+dcOpInfo: writing operating point information to rawfile.
+
+*********************************
+DC Analysis `dc': v2 = (0 -> 1.8)
+*********************************
+Important parameter values:
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    gmindc = 1 pS
+    dc: v2 = 100e-03     (5.56 %), step = 100e-03      (5.56 %)
+    dc: v2 = 200e-03     (11.1 %), step = 100e-03      (5.56 %)
+    dc: v2 = 300e-03     (16.7 %), step = 100e-03      (5.56 %)
+    dc: v2 = 400e-03     (22.2 %), step = 100e-03      (5.56 %)
+    dc: v2 = 500e-03     (27.8 %), step = 100e-03      (5.56 %)
+    dc: v2 = 600e-03     (33.3 %), step = 100e-03      (5.56 %)
+    dc: v2 = 700e-03     (38.9 %), step = 100e-03      (5.56 %)
+    dc: v2 = 800e-03     (44.4 %), step = 100e-03      (5.56 %)
+    dc: v2 = 900e-03       (50 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1           (55.6 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.1         (61.1 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.2         (66.7 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.3         (72.2 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.4         (77.8 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.5         (83.3 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.6         (88.9 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.7         (94.4 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.8          (100 %), step = 100e-03      (5.56 %)
+Total time required for dc analysis `dc': CPU = 12.998 ms, elapsed = 39.9539 ms.
+Time accumulated: CPU = 209.967 ms, elapsed = 2.41415 s.
+Peak resident memory used = 30.4 Mbytes.
+
+modelParameter: writing model parameter values to rawfile.
+element: writing instance parameter values to rawfile.
+outputParameter: writing output parameter values to rawfile.
+designParamVals: writing netlist parameters to rawfile.
+primitives: writing primitives to rawfile.
+subckts: writing subcircuits to rawfile.
+
+******************
+DC Analysis `dcOp'
+******************
+Important parameter values:
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    gmindc = 1 pS
+Convergence achieved in 2 iterations.
+Total time required for dc analysis `dcOp': CPU = 3 ms, elapsed = 24.941 ms.
+Time accumulated: CPU = 236.963 ms, elapsed = 2.98953 s.
+Peak resident memory used = 30.4 Mbytes.
+
+dcOpInfo: writing operating point information to rawfile.
+
+*********************************
+DC Analysis `dc': v2 = (0 -> 1.8)
+*********************************
+Important parameter values:
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    gmindc = 1 pS
+    dc: v2 = 100e-03     (5.56 %), step = 100e-03      (5.56 %)
+    dc: v2 = 200e-03     (11.1 %), step = 100e-03      (5.56 %)
+    dc: v2 = 300e-03     (16.7 %), step = 100e-03      (5.56 %)
+    dc: v2 = 400e-03     (22.2 %), step = 100e-03      (5.56 %)
+    dc: v2 = 500e-03     (27.8 %), step = 100e-03      (5.56 %)
+    dc: v2 = 600e-03     (33.3 %), step = 100e-03      (5.56 %)
+    dc: v2 = 700e-03     (38.9 %), step = 100e-03      (5.56 %)
+    dc: v2 = 800e-03     (44.4 %), step = 100e-03      (5.56 %)
+    dc: v2 = 900e-03       (50 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1           (55.6 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.1         (61.1 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.2         (66.7 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.3         (72.2 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.4         (77.8 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.5         (83.3 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.6         (88.9 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.7         (94.4 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.8          (100 %), step = 100e-03      (5.56 %)
+Total time required for dc analysis `dc': CPU = 12.998 ms, elapsed = 36.18 ms.
+Time accumulated: CPU = 253.96 ms, elapsed = 3.08405 s.
+Peak resident memory used = 30.4 Mbytes.
+
+modelParameter: writing model parameter values to rawfile.
+element: writing instance parameter values to rawfile.
+outputParameter: writing output parameter values to rawfile.
+designParamVals: writing netlist parameters to rawfile.
+primitives: writing primitives to rawfile.
+subckts: writing subcircuits to rawfile.
+
+******************
+DC Analysis `dcOp'
+******************
+Important parameter values:
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    gmindc = 1 pS
+Convergence achieved in 2 iterations.
+Total time required for dc analysis `dcOp': CPU = 3 ms, elapsed = 26.4771 ms.
+Time accumulated: CPU = 281.957 ms, elapsed = 3.63744 s.
+Peak resident memory used = 30.4 Mbytes.
+
+dcOpInfo: writing operating point information to rawfile.
+
+*********************************
+DC Analysis `dc': v2 = (0 -> 1.8)
+*********************************
+Important parameter values:
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    gmindc = 1 pS
+    dc: v2 = 100e-03     (5.56 %), step = 100e-03      (5.56 %)
+    dc: v2 = 200e-03     (11.1 %), step = 100e-03      (5.56 %)
+    dc: v2 = 300e-03     (16.7 %), step = 100e-03      (5.56 %)
+    dc: v2 = 400e-03     (22.2 %), step = 100e-03      (5.56 %)
+    dc: v2 = 500e-03     (27.8 %), step = 100e-03      (5.56 %)
+    dc: v2 = 600e-03     (33.3 %), step = 100e-03      (5.56 %)
+    dc: v2 = 700e-03     (38.9 %), step = 100e-03      (5.56 %)
+    dc: v2 = 800e-03     (44.4 %), step = 100e-03      (5.56 %)
+    dc: v2 = 900e-03       (50 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1           (55.6 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.1         (61.1 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.2         (66.7 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.3         (72.2 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.4         (77.8 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.5         (83.3 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.6         (88.9 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.7         (94.4 %), step = 100e-03      (5.56 %)
+    dc: v2 = 1.8          (100 %), step = 100e-03      (5.56 %)
+Total time required for dc analysis `dc': CPU = 13.997 ms, elapsed = 36.242 ms.
+Time accumulated: CPU = 298.953 ms, elapsed = 3.73732 s.
+Peak resident memory used = 30.5 Mbytes.
+
+modelParameter: writing model parameter values to rawfile.
+element: writing instance parameter values to rawfile.
+outputParameter: writing output parameter values to rawfile.
+designParamVals: writing netlist parameters to rawfile.
+primitives: writing primitives to rawfile.
+subckts: writing subcircuits to rawfile.
+
+Aggregate audit (12:38:55 AM, Fri Oct 11, 2019):
+Time used: CPU = 326 ms, elapsed = 5.37 s, util. = 6.07%.
+Time spent in licensing: elapsed = 461 ms, percentage of total = 8.59%.
+Peak memory used = 30.5 Mbytes.
+Simulation started at: 12:38:49 AM, Fri Oct 11, 2019, ended at: 12:38:55 AM, Fri Oct 11, 2019, with elapsed time (wall clock): 5.37 s.
+spectre completes with 0 errors, 1 warning, and 2 notices.

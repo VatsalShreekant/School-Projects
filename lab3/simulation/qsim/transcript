@@ -1,0 +1,9 @@
+# do lab.do 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# ** Error: (vlog-42) Unsupported ModelSim library format for "C:/Users/sahib/OneDrive/Documents/coe608/lab3n/lab3/simulation/qsim/work". (Format: 4)
+# 
+# ** Error: Verilog Compiler exiting
+# ** Error: c:/altera/13.1/modelsim_ase/win32aloem/vlog failed.
+# Executing ONERROR command at macro ./lab.do line 3

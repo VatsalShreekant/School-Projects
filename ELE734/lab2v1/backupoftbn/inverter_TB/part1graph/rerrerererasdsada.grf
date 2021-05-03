@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JavaBean CLASS="COM.cadence.awd.graph.GraphFrame">
+  <Properties>
+    <Property NAME="graph">
+      <JavaBean CLASS="COM.cadence.awd.graph.Rect2DGraph">
+        <Properties>
+          <Property NAME="backgroundName">black</Property>
+          <Property NAME="cursorOn">True</Property>
+          <Property NAME="dataSnapOn">False</Property>
+          <Property NAME="dependentAxis">
+            <JavaBean CLASS="COM.cadence.awd.graph.DepAxis">
+              <Properties>
+                <Property NAME="baseUnit">V</Property>
+                <Property NAME="defaultTitle">V</Property>
+                <Property NAME="forceOrigin">False</Property>
+                <Property NAME="foregroundName">black</Property>
+                <Property NAME="logScale">False</Property>
+                <Property NAME="majDivisions">0</Property>
+                <Property NAME="majGridsOn">True</Property>
+                <Property NAME="minDivisions">0</Property>
+                <Property NAME="minGridsOn">True</Property>
+                <Property NAME="minorForegroundName">0x272727</Property>
+                <Property NAME="nameId">0</Property>
+                <Property NAME="scaleMode">1</Property>
+                <Property NAME="sigDigits">3</Property>
+                <Property NAME="sigDigitsDefault">True</Property>
+                <Property NAME="tempStripFlag">False</Property>
+                <Property NAME="title">Vout V</Property>
+                <Property NAME="useDefaultTitle">False</Property>
+                <Property NAME="userMax">2.0000002</Property>
+                <Property NAME="userMin">0.0</Property>
+                <Property NAME="zoomState">False</Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="displayDate">True</Property>
+          <Property NAME="displayType">5</Property>
+          <Property NAME="eyeDiagram">False</Property>
+          <Property NAME="fontName">Dialog</Property>
+          <Property NAME="fontSize">12</Property>
+          <Property NAME="fontStyle">0</Property>
+          <Property NAME="forceCommonLimits">False</Property>
+          <Property NAME="forceSquareAspect">False</Property>
+          <Property NAME="foregroundName">black</Property>
+          <Property NAME="freeze">False</Property>
+          <Property NAME="independentAxis">
+            <JavaBean CLASS="COM.cadence.awd.graph.IndepAxis">
+              <Properties>
+                <Property NAME="baseUnit">V</Property>
+                <Property NAME="defaultTitle">dc</Property>
+                <Property NAME="forceOrigin">False</Property>
+                <Property NAME="foregroundName">black</Property>
+                <Property NAME="logScale">False</Property>
+                <Property NAME="majDivisions">0</Property>
+                <Property NAME="majGridsOn">True</Property>
+                <Property NAME="minDivisions">0</Property>
+                <Property NAME="minGridsOn">True</Property>
+                <Property NAME="minorForegroundName">0x272727</Property>
+                <Property NAME="nameId">0</Property>
+                <Property NAME="scaleMode">1</Property>
+                <Property NAME="sigDigits">3</Property>
+                <Property NAME="sigDigitsDefault">True</Property>
+                <Property NAME="title">Vinput V</Property>
+                <Property NAME="useDefaultTitle">False</Property>
+                <Property NAME="userMax">2.0000002</Property>
+                <Property NAME="userMin">0.0</Property>
+                <Property NAME="zoomState">False</Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="labeledMarker">
+            <JavaBean CLASS="COM.cadence.awd.graph.LabeledMarker">
+              <Properties>
+                <Property NAME="arrowOn">True</Property>
+                <Property NAME="fontName">Dialog</Property>
+                <Property NAME="fontSize">12</Property>
+                <Property NAME="fontStyle">0</Property>
+                <Property NAME="foregroundName">white</Property>
+                <Property NAME="labelString">n=0.5</Property>
+                <Property NAME="nameId">0</Property>
+                <Property NAME="traceAttached">True</Property>
+                <Property NAME="traceId">0</Property>
+                <Property NAME="type">7</Property>
+                <Property NAME="xLabelOffset">-130</Property>
+                <Property NAME="xPosition">0.6354018092782584</Property>
+                <Property NAME="yLabelOffset">7</Property>
+                <Property NAME="yPosition">1.1419196943671817</Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="labeledMarker">
+            <JavaBean CLASS="COM.cadence.awd.graph.LabeledMarker">
+              <Properties>
+                <Property NAME="arrowOn">True</Property>
+                <Property NAME="fontName">Dialog</Property>
+                <Property NAME="fontSize">12</Property>
+                <Property NAME="fontStyle">0</Property>
+                <Property NAME="foregroundName">white</Property>
+                <Property NAME="labelString">n=1</Property>
+                <Property NAME="nameId">1</Property>
+                <Property NAME="traceAttached">True</Property>
+                <Property NAME="traceId">1</Property>
+                <Property NAME="type">7</Property>
+                <Property NAME="xLabelOffset">-48</Property>
+                <Property NAME="xPosition">0.7219954411516679</Property>
+                <Property NAME="yLabelOffset">-40</Property>
+                <Property NAME="yPosition">1.1658017588350427</Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="labeledMarker">
+            <JavaBean CLASS="COM.cadence.awd.graph.LabeledMarker">
+              <Properties>
+                <Property NAME="arrowOn">True</Property>
+                <Property NAME="fontName">Dialog</Property>
+                <Property NAME="fontSize">12</Property>
+                <Property NAME="fontStyle">0</Property>
+                <Property NAME="foregroundName">white</Property>
+                <Property NAME="labelString">n=2</Property>
+                <Property NAME="nameId">2</Property>
+                <Property NAME="traceAttached">True</Property>
+                <Property NAME="traceId">2</Property>
+                <Property NAME="type">7</Property>
+                <Property NAME="xLabelOffset">-23</Property>
+                <Property NAME="xPosition">0.818398699717121</Property>
+                <Property NAME="yLabelOffset">-46</Property>
+                <Property NAME="yPosition">1.1424517682229356</Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="labeledMarker">
+            <JavaBean CLASS="COM.cadence.awd.graph.LabeledMarker">
+              <Properties>
+                <Property NAME="arrowOn">True</Property>
+                <Property NAME="fontName">Dialog</Property>
+                <Property NAME="fontSize">12</Property>
+                <Property NAME="fontStyle">0</Property>
+                <Property NAME="foregroundName">white</Property>
+                <Property NAME="labelString">n=4</Property>
+                <Property NAME="nameId">3</Property>
+                <Property NAME="traceAttached">True</Property>
+                <Property NAME="traceId">3</Property>
+                <Property NAME="type">7</Property>
+                <Property NAME="xLabelOffset">75</Property>
+                <Property NAME="xPosition">0.9050371483866011</Property>
+                <Property NAME="yLabelOffset">40</Property>
+                <Property NAME="yPosition">1.2918949296004787</Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="labeledMarker">
+            <JavaBean CLASS="COM.cadence.awd.graph.LabeledMarker">
+              <Properties>
+                <Property NAME="arrowOn">True</Property>
+                <Property NAME="fontName">Dialog</Property>
+                <Property NAME="fontSize">12</Property>
+                <Property NAME="fontStyle">0</Property>
+                <Property NAME="foregroundName">white</Property>
+                <Property NAME="labelString">n=8</Property>
+                <Property NAME="nameId">4</Property>
+                <Property NAME="traceAttached">True</Property>
+                <Property NAME="traceId">4</Property>
+                <Property NAME="type">7</Property>
+                <Property NAME="xLabelOffset">36</Property>
+                <Property NAME="xPosition">0.9975506754224809</Property>
+                <Property NAME="yLabelOffset">-21</Property>
+                <Property NAME="yPosition">1.2687748304347828</Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="majorGridsForegroundName">verydarkgray</Property>
+          <Property NAME="majorGridsOn">True</Property>
+          <Property NAME="minorGridsForegroundName">0x272727</Property>
+          <Property NAME="minorGridsOn">True</Property>
+          <Property NAME="nameId">-1</Property>
+          <Property NAME="peakSnapOn">False</Property>
+          <Property NAME="runVarName">sweep:dc</Property>
+          <Property NAME="stripChartOn">False</Property>
+          <Property NAME="subTitle"></Property>
+          <Property NAME="sweepList">
+            <JavaBean CLASS="COM.cadence.awd.graph.SweepObject">
+              <Properties>
+                <Property NAME="consumer">6</Property>
+                <Property NAME="dataSetName">dc-dc</Property>
+                <Property NAME="dated">False</Property>
+                <Property NAME="dimension">2</Property>
+                <Property NAME="directoryName">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                <Property NAME="innerSweepName">dc</Property>
+                <Property NAME="name">Y</Property>
+                <Property NAME="selectionTable">
+                  <JavaBean CLASS="COM.cadence.awd.graph.SelectionList">
+                    <Properties>
+                      <Property NAME="list">0</Property>
+                      <Property NAME="list">1</Property>
+                      <Property NAME="list">2</Property>
+                      <Property NAME="list">3</Property>
+                      <Property NAME="list">4</Property>
+                      <Property NAME="name">n</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+                <Property NAME="selectionTable">
+                  <JavaBean CLASS="COM.cadence.awd.graph.SelectionList">
+                    <Properties>
+                      <Property NAME="name">dc</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+                <Property NAME="sweepSwapped">False</Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="sweepList">
+            <JavaBean CLASS="COM.cadence.awd.graph.SweepObject">
+              <Properties>
+                <Property NAME="consumer">6</Property>
+                <Property NAME="dataSetName">dc-dc</Property>
+                <Property NAME="dated">False</Property>
+                <Property NAME="dimension">2</Property>
+                <Property NAME="directoryName">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                <Property NAME="innerSweepName">dc</Property>
+                <Property NAME="name">A</Property>
+                <Property NAME="selectionTable">
+                  <JavaBean CLASS="COM.cadence.awd.graph.SelectionList">
+                    <Properties>
+                      <Property NAME="list">0</Property>
+                      <Property NAME="list">1</Property>
+                      <Property NAME="list">2</Property>
+                      <Property NAME="list">3</Property>
+                      <Property NAME="list">4</Property>
+                      <Property NAME="name">n</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+                <Property NAME="selectionTable">
+                  <JavaBean CLASS="COM.cadence.awd.graph.SelectionList">
+                    <Properties>
+                      <Property NAME="name">dc</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+                <Property NAME="sweepSwapped">False</Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="title">Vout vs Vin for different N</Property>
+          <Property NAME="trace">
+            <JavaBean CLASS="COM.cadence.awd.graph.RectTrace">
+              <Properties>
+                <Property NAME="dataSetName">dc-dc</Property>
+                <Property NAME="defaultTitle">Y (n=5.00e-01)</Property>
+                <Property NAME="defaultTitleOn">True</Property>
+                <Property NAME="depAxisId">0</Property>
+                <Property NAME="depUnit">V</Property>
+                <Property NAME="directoryName">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                <Property NAME="eyeEnd">1.8</Property>
+                <Property NAME="eyeInterval">1.8</Property>
+                <Property NAME="eyeMode">False</Property>
+                <Property NAME="eyeStart">0.0</Property>
+                <Property NAME="foregroundName">red</Property>
+                <Property NAME="indepAxisId">0</Property>
+                <Property NAME="indepUnit">V</Property>
+                <Property NAME="name">Y (n=5.00e-01)</Property>
+                <Property NAME="nameId">0</Property>
+                <Property NAME="stripIndex">0</Property>
+                <Property NAME="sweepName">Y</Property>
+                <Property NAME="sweepPath">n=0.5</Property>
+                <Property NAME="symbolCount">20</Property>
+                <Property NAME="symbolStyle">7</Property>
+                <Property NAME="symbolsOnFlag">False</Property>
+                <Property NAME="title">Y (n=5.00e-01)</Property>
+                <Property NAME="traceStyle">36</Property>
+                <Property NAME="traceToken">
+                  <JavaBean CLASS="COM.cadence.awd.graph.TraceToken">
+                    <Properties>
+                      <Property NAME="compound">False</Property>
+                      <Property NAME="convertedName">Y</Property>
+                      <Property NAME="convertedRootName">/Y</Property>
+                      <Property NAME="dataDirectory">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                      <Property NAME="dataSet">dc-dc</Property>
+                      <Property NAME="index">0</Property>
+                      <Property NAME="name">Y</Property>
+                      <Property NAME="rootName">/Y</Property>
+                      <Property NAME="type">SWEPT</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+                <Property NAME="traceType">31</Property>
+                <Property NAME="zoomAgent">
+                  <JavaBean CLASS="COM.cadence.awd.graph.ZoomAgent">
+                    <Properties>
+                      <Property NAME="traceId">trc:4552697.131</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="trace">
+            <JavaBean CLASS="COM.cadence.awd.graph.RectTrace">
+              <Properties>
+                <Property NAME="dataSetName">dc-dc</Property>
+                <Property NAME="defaultTitle">Y (n=1.00e+00)</Property>
+                <Property NAME="defaultTitleOn">True</Property>
+                <Property NAME="depAxisId">0</Property>
+                <Property NAME="depUnit">V</Property>
+                <Property NAME="directoryName">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                <Property NAME="eyeEnd">1.8</Property>
+                <Property NAME="eyeInterval">1.8</Property>
+                <Property NAME="eyeMode">False</Property>
+                <Property NAME="eyeStart">0.0</Property>
+                <Property NAME="foregroundName">blue</Property>
+                <Property NAME="indepAxisId">0</Property>
+                <Property NAME="indepUnit">V</Property>
+                <Property NAME="name">Y (n=1.00e+00)</Property>
+                <Property NAME="nameId">1</Property>
+                <Property NAME="stripIndex">1</Property>
+                <Property NAME="sweepName">Y</Property>
+                <Property NAME="sweepPath">n=1.0</Property>
+                <Property NAME="symbolCount">20</Property>
+                <Property NAME="symbolStyle">7</Property>
+                <Property NAME="symbolsOnFlag">False</Property>
+                <Property NAME="title">Y (n=1.00e+00)</Property>
+                <Property NAME="traceStyle">36</Property>
+                <Property NAME="traceToken">
+                  <JavaBean CLASS="COM.cadence.awd.graph.TraceToken">
+                    <Properties>
+                      <Property NAME="compound">False</Property>
+                      <Property NAME="convertedName">Y</Property>
+                      <Property NAME="convertedRootName">/Y</Property>
+                      <Property NAME="dataDirectory">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                      <Property NAME="dataSet">dc-dc</Property>
+                      <Property NAME="index">0</Property>
+                      <Property NAME="name">Y</Property>
+                      <Property NAME="rootName">/Y</Property>
+                      <Property NAME="type">SWEPT</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+                <Property NAME="traceType">31</Property>
+                <Property NAME="zoomAgent">
+                  <JavaBean CLASS="COM.cadence.awd.graph.ZoomAgent">
+                    <Properties>
+                      <Property NAME="traceId">trc:6440356.134</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="trace">
+            <JavaBean CLASS="COM.cadence.awd.graph.RectTrace">
+              <Properties>
+                <Property NAME="dataSetName">dc-dc</Property>
+                <Property NAME="defaultTitle">Y (n=2.00e+00)</Property>
+                <Property NAME="defaultTitleOn">True</Property>
+                <Property NAME="depAxisId">0</Property>
+                <Property NAME="depUnit">V</Property>
+                <Property NAME="directoryName">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                <Property NAME="eyeEnd">1.8</Property>
+                <Property NAME="eyeInterval">1.8</Property>
+                <Property NAME="eyeMode">False</Property>
+                <Property NAME="eyeStart">0.0</Property>
+                <Property NAME="foregroundName">magenta</Property>
+                <Property NAME="indepAxisId">0</Property>
+                <Property NAME="indepUnit">V</Property>
+                <Property NAME="name">Y (n=2.00e+00)</Property>
+                <Property NAME="nameId">2</Property>
+                <Property NAME="stripIndex">2</Property>
+                <Property NAME="sweepName">Y</Property>
+                <Property NAME="sweepPath">n=2.0</Property>
+                <Property NAME="symbolCount">20</Property>
+                <Property NAME="symbolStyle">7</Property>
+                <Property NAME="symbolsOnFlag">False</Property>
+                <Property NAME="title">Y (n=2.00e+00)</Property>
+                <Property NAME="traceStyle">36</Property>
+                <Property NAME="traceToken">
+                  <JavaBean CLASS="COM.cadence.awd.graph.TraceToken">
+                    <Properties>
+                      <Property NAME="compound">False</Property>
+                      <Property NAME="convertedName">Y</Property>
+                      <Property NAME="convertedRootName">/Y</Property>
+                      <Property NAME="dataDirectory">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                      <Property NAME="dataSet">dc-dc</Property>
+                      <Property NAME="index">0</Property>
+                      <Property NAME="name">Y</Property>
+                      <Property NAME="rootName">/Y</Property>
+                      <Property NAME="type">SWEPT</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+                <Property NAME="traceType">31</Property>
+                <Property NAME="zoomAgent">
+                  <JavaBean CLASS="COM.cadence.awd.graph.ZoomAgent">
+                    <Properties>
+                      <Property NAME="traceId">trc:30035636.135</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="trace">
+            <JavaBean CLASS="COM.cadence.awd.graph.RectTrace">
+              <Properties>
+                <Property NAME="dataSetName">dc-dc</Property>
+                <Property NAME="defaultTitle">Y (n=4.00e+00)</Property>
+                <Property NAME="defaultTitleOn">True</Property>
+                <Property NAME="depAxisId">0</Property>
+                <Property NAME="depUnit">V</Property>
+                <Property NAME="directoryName">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                <Property NAME="eyeEnd">1.8</Property>
+                <Property NAME="eyeInterval">1.8</Property>
+                <Property NAME="eyeMode">False</Property>
+                <Property NAME="eyeStart">0.0</Property>
+                <Property NAME="foregroundName">orange</Property>
+                <Property NAME="indepAxisId">0</Property>
+                <Property NAME="indepUnit">V</Property>
+                <Property NAME="name">Y (n=4.00e+00)</Property>
+                <Property NAME="nameId">3</Property>
+                <Property NAME="stripIndex">3</Property>
+                <Property NAME="sweepName">Y</Property>
+                <Property NAME="sweepPath">n=4.0</Property>
+                <Property NAME="symbolCount">20</Property>
+                <Property NAME="symbolStyle">7</Property>
+                <Property NAME="symbolsOnFlag">False</Property>
+                <Property NAME="title">Y (n=4.00e+00)</Property>
+                <Property NAME="traceStyle">36</Property>
+                <Property NAME="traceToken">
+                  <JavaBean CLASS="COM.cadence.awd.graph.TraceToken">
+                    <Properties>
+                      <Property NAME="compound">False</Property>
+                      <Property NAME="convertedName">Y</Property>
+                      <Property NAME="convertedRootName">/Y</Property>
+                      <Property NAME="dataDirectory">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                      <Property NAME="dataSet">dc-dc</Property>
+                      <Property NAME="index">0</Property>
+                      <Property NAME="name">Y</Property>
+                      <Property NAME="rootName">/Y</Property>
+                      <Property NAME="type">SWEPT</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+                <Property NAME="traceType">31</Property>
+                <Property NAME="zoomAgent">
+                  <JavaBean CLASS="COM.cadence.awd.graph.ZoomAgent">
+                    <Properties>
+                      <Property NAME="traceId">trc:16065256.136</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="trace">
+            <JavaBean CLASS="COM.cadence.awd.graph.RectTrace">
+              <Properties>
+                <Property NAME="dataSetName">dc-dc</Property>
+                <Property NAME="defaultTitle">Y (n=8.00e+00)</Property>
+                <Property NAME="defaultTitleOn">True</Property>
+                <Property NAME="depAxisId">0</Property>
+                <Property NAME="depUnit">V</Property>
+                <Property NAME="directoryName">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                <Property NAME="eyeEnd">1.8</Property>
+                <Property NAME="eyeInterval">1.8</Property>
+                <Property NAME="eyeMode">False</Property>
+                <Property NAME="eyeStart">0.0</Property>
+                <Property NAME="foregroundName">cyan</Property>
+                <Property NAME="indepAxisId">0</Property>
+                <Property NAME="indepUnit">V</Property>
+                <Property NAME="name">Y (n=8.00e+00)</Property>
+                <Property NAME="nameId">4</Property>
+                <Property NAME="stripIndex">4</Property>
+                <Property NAME="sweepName">Y</Property>
+                <Property NAME="sweepPath">n=8.0</Property>
+                <Property NAME="symbolCount">20</Property>
+                <Property NAME="symbolStyle">7</Property>
+                <Property NAME="symbolsOnFlag">False</Property>
+                <Property NAME="title">Y (n=8.00e+00)</Property>
+                <Property NAME="traceStyle">36</Property>
+                <Property NAME="traceToken">
+                  <JavaBean CLASS="COM.cadence.awd.graph.TraceToken">
+                    <Properties>
+                      <Property NAME="compound">False</Property>
+                      <Property NAME="convertedName">Y</Property>
+                      <Property NAME="convertedRootName">/Y</Property>
+                      <Property NAME="dataDirectory">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                      <Property NAME="dataSet">dc-dc</Property>
+                      <Property NAME="index">0</Property>
+                      <Property NAME="name">Y</Property>
+                      <Property NAME="rootName">/Y</Property>
+                      <Property NAME="type">SWEPT</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+                <Property NAME="traceType">31</Property>
+                <Property NAME="zoomAgent">
+                  <JavaBean CLASS="COM.cadence.awd.graph.ZoomAgent">
+                    <Properties>
+                      <Property NAME="traceId">trc:29805724.137</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="trace">
+            <JavaBean CLASS="COM.cadence.awd.graph.RectTrace">
+              <Properties>
+                <Property NAME="dataSetName">dc-dc</Property>
+                <Property NAME="defaultTitle">A (n=5.00e-01)</Property>
+                <Property NAME="defaultTitleOn">True</Property>
+                <Property NAME="depAxisId">0</Property>
+                <Property NAME="depUnit">V</Property>
+                <Property NAME="directoryName">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                <Property NAME="eyeEnd">1.8</Property>
+                <Property NAME="eyeInterval">1.8</Property>
+                <Property NAME="eyeMode">False</Property>
+                <Property NAME="eyeStart">0.0</Property>
+                <Property NAME="foregroundName">purple</Property>
+                <Property NAME="indepAxisId">0</Property>
+                <Property NAME="indepUnit">V</Property>
+                <Property NAME="name">A (n=5.00e-01)</Property>
+                <Property NAME="nameId">5</Property>
+                <Property NAME="stripIndex">5</Property>
+                <Property NAME="sweepName">A</Property>
+                <Property NAME="sweepPath">n=0.5</Property>
+                <Property NAME="symbolCount">20</Property>
+                <Property NAME="symbolStyle">6</Property>
+                <Property NAME="symbolsOnFlag">False</Property>
+                <Property NAME="title">A (n=5.00e-01)</Property>
+                <Property NAME="traceStyle">36</Property>
+                <Property NAME="traceToken">
+                  <JavaBean CLASS="COM.cadence.awd.graph.TraceToken">
+                    <Properties>
+                      <Property NAME="compound">False</Property>
+                      <Property NAME="convertedName">A</Property>
+                      <Property NAME="convertedRootName">/A</Property>
+                      <Property NAME="dataDirectory">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                      <Property NAME="dataSet">dc-dc</Property>
+                      <Property NAME="index">0</Property>
+                      <Property NAME="name">A</Property>
+                      <Property NAME="rootName">/A</Property>
+                      <Property NAME="type">SWEPT</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+                <Property NAME="traceType">31</Property>
+                <Property NAME="zoomAgent">
+                  <JavaBean CLASS="COM.cadence.awd.graph.ZoomAgent">
+                    <Properties>
+                      <Property NAME="traceId">trc:10688173.138</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="trace">
+            <JavaBean CLASS="COM.cadence.awd.graph.RectTrace">
+              <Properties>
+                <Property NAME="dataSetName">dc-dc</Property>
+                <Property NAME="defaultTitle">A (n=1.00e+00)</Property>
+                <Property NAME="defaultTitleOn">True</Property>
+                <Property NAME="depAxisId">0</Property>
+                <Property NAME="depUnit">V</Property>
+                <Property NAME="directoryName">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                <Property NAME="eyeEnd">1.8</Property>
+                <Property NAME="eyeInterval">1.8</Property>
+                <Property NAME="eyeMode">False</Property>
+                <Property NAME="eyeStart">0.0</Property>
+                <Property NAME="foregroundName">aquamarine</Property>
+                <Property NAME="indepAxisId">0</Property>
+                <Property NAME="indepUnit">V</Property>
+                <Property NAME="name">A (n=1.00e+00)</Property>
+                <Property NAME="nameId">6</Property>
+                <Property NAME="stripIndex">6</Property>
+                <Property NAME="sweepName">A</Property>
+                <Property NAME="sweepPath">n=1.0</Property>
+                <Property NAME="symbolCount">20</Property>
+                <Property NAME="symbolStyle">6</Property>
+                <Property NAME="symbolsOnFlag">False</Property>
+                <Property NAME="title">A (n=1.00e+00)</Property>
+                <Property NAME="traceStyle">36</Property>
+                <Property NAME="traceToken">
+                  <JavaBean CLASS="COM.cadence.awd.graph.TraceToken">
+                    <Properties>
+                      <Property NAME="compound">False</Property>
+                      <Property NAME="convertedName">A</Property>
+                      <Property NAME="convertedRootName">/A</Property>
+                      <Property NAME="dataDirectory">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                      <Property NAME="dataSet">dc-dc</Property>
+                      <Property NAME="index">0</Property>
+                      <Property NAME="name">A</Property>
+                      <Property NAME="rootName">/A</Property>
+                      <Property NAME="type">SWEPT</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+                <Property NAME="traceType">31</Property>
+                <Property NAME="zoomAgent">
+                  <JavaBean CLASS="COM.cadence.awd.graph.ZoomAgent">
+                    <Properties>
+                      <Property NAME="traceId">trc:19253663.139</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="trace">
+            <JavaBean CLASS="COM.cadence.awd.graph.RectTrace">
+              <Properties>
+                <Property NAME="dataSetName">dc-dc</Property>
+                <Property NAME="defaultTitle">A (n=2.00e+00)</Property>
+                <Property NAME="defaultTitleOn">True</Property>
+                <Property NAME="depAxisId">0</Property>
+                <Property NAME="depUnit">V</Property>
+                <Property NAME="directoryName">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                <Property NAME="eyeEnd">1.8</Property>
+                <Property NAME="eyeInterval">1.8</Property>
+                <Property NAME="eyeMode">False</Property>
+                <Property NAME="eyeStart">0.0</Property>
+                <Property NAME="foregroundName">gold</Property>
+                <Property NAME="indepAxisId">0</Property>
+                <Property NAME="indepUnit">V</Property>
+                <Property NAME="name">A (n=2.00e+00)</Property>
+                <Property NAME="nameId">7</Property>
+                <Property NAME="stripIndex">7</Property>
+                <Property NAME="sweepName">A</Property>
+                <Property NAME="sweepPath">n=2.0</Property>
+                <Property NAME="symbolCount">20</Property>
+                <Property NAME="symbolStyle">6</Property>
+                <Property NAME="symbolsOnFlag">False</Property>
+                <Property NAME="title">A (n=2.00e+00)</Property>
+                <Property NAME="traceStyle">36</Property>
+                <Property NAME="traceToken">
+                  <JavaBean CLASS="COM.cadence.awd.graph.TraceToken">
+                    <Properties>
+                      <Property NAME="compound">False</Property>
+                      <Property NAME="convertedName">A</Property>
+                      <Property NAME="convertedRootName">/A</Property>
+                      <Property NAME="dataDirectory">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                      <Property NAME="dataSet">dc-dc</Property>
+                      <Property NAME="index">0</Property>
+                      <Property NAME="name">A</Property>
+                      <Property NAME="rootName">/A</Property>
+                      <Property NAME="type">SWEPT</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+                <Property NAME="traceType">31</Property>
+                <Property NAME="zoomAgent">
+                  <JavaBean CLASS="COM.cadence.awd.graph.ZoomAgent">
+                    <Properties>
+                      <Property NAME="traceId">trc:30926415.140</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="trace">
+            <JavaBean CLASS="COM.cadence.awd.graph.RectTrace">
+              <Properties>
+                <Property NAME="dataSetName">dc-dc</Property>
+                <Property NAME="defaultTitle">A (n=4.00e+00)</Property>
+                <Property NAME="defaultTitleOn">True</Property>
+                <Property NAME="depAxisId">0</Property>
+                <Property NAME="depUnit">V</Property>
+                <Property NAME="directoryName">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                <Property NAME="eyeEnd">1.8</Property>
+                <Property NAME="eyeInterval">1.8</Property>
+                <Property NAME="eyeMode">False</Property>
+                <Property NAME="eyeStart">0.0</Property>
+                <Property NAME="foregroundName">yellowgreen</Property>
+                <Property NAME="indepAxisId">0</Property>
+                <Property NAME="indepUnit">V</Property>
+                <Property NAME="name">A (n=4.00e+00)</Property>
+                <Property NAME="nameId">8</Property>
+                <Property NAME="stripIndex">8</Property>
+                <Property NAME="sweepName">A</Property>
+                <Property NAME="sweepPath">n=4.0</Property>
+                <Property NAME="symbolCount">20</Property>
+                <Property NAME="symbolStyle">6</Property>
+                <Property NAME="symbolsOnFlag">False</Property>
+                <Property NAME="title">A (n=4.00e+00)</Property>
+                <Property NAME="traceStyle">36</Property>
+                <Property NAME="traceToken">
+                  <JavaBean CLASS="COM.cadence.awd.graph.TraceToken">
+                    <Properties>
+                      <Property NAME="compound">False</Property>
+                      <Property NAME="convertedName">A</Property>
+                      <Property NAME="convertedRootName">/A</Property>
+                      <Property NAME="dataDirectory">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                      <Property NAME="dataSet">dc-dc</Property>
+                      <Property NAME="index">0</Property>
+                      <Property NAME="name">A</Property>
+                      <Property NAME="rootName">/A</Property>
+                      <Property NAME="type">SWEPT</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+                <Property NAME="traceType">31</Property>
+                <Property NAME="zoomAgent">
+                  <JavaBean CLASS="COM.cadence.awd.graph.ZoomAgent">
+                    <Properties>
+                      <Property NAME="traceId">trc:22116759.141</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="trace">
+            <JavaBean CLASS="COM.cadence.awd.graph.RectTrace">
+              <Properties>
+                <Property NAME="dataSetName">dc-dc</Property>
+                <Property NAME="defaultTitle">A (n=8.00e+00)</Property>
+                <Property NAME="defaultTitleOn">True</Property>
+                <Property NAME="depAxisId">0</Property>
+                <Property NAME="depUnit">V</Property>
+                <Property NAME="directoryName">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                <Property NAME="eyeEnd">1.8</Property>
+                <Property NAME="eyeInterval">1.8</Property>
+                <Property NAME="eyeMode">False</Property>
+                <Property NAME="eyeStart">0.0</Property>
+                <Property NAME="foregroundName">red</Property>
+                <Property NAME="indepAxisId">0</Property>
+                <Property NAME="indepUnit">V</Property>
+                <Property NAME="name">A (n=8.00e+00)</Property>
+                <Property NAME="nameId">9</Property>
+                <Property NAME="stripIndex">9</Property>
+                <Property NAME="sweepName">A</Property>
+                <Property NAME="sweepPath">n=8.0</Property>
+                <Property NAME="symbolCount">20</Property>
+                <Property NAME="symbolStyle">6</Property>
+                <Property NAME="symbolsOnFlag">False</Property>
+                <Property NAME="title">A (n=8.00e+00)</Property>
+                <Property NAME="traceStyle">36</Property>
+                <Property NAME="traceToken">
+                  <JavaBean CLASS="COM.cadence.awd.graph.TraceToken">
+                    <Properties>
+                      <Property NAME="compound">False</Property>
+                      <Property NAME="convertedName">A</Property>
+                      <Property NAME="convertedRootName">/A</Property>
+                      <Property NAME="dataDirectory">/tmp/a29yang/inverter_TB/spectre/schematic/psf</Property>
+                      <Property NAME="dataSet">dc-dc</Property>
+                      <Property NAME="index">0</Property>
+                      <Property NAME="name">A</Property>
+                      <Property NAME="rootName">/A</Property>
+                      <Property NAME="type">SWEPT</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+                <Property NAME="traceType">31</Property>
+                <Property NAME="zoomAgent">
+                  <JavaBean CLASS="COM.cadence.awd.graph.ZoomAgent">
+                    <Properties>
+                      <Property NAME="traceId">trc:374929.142</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="useDefaultSubTitle">True</Property>
+          <Property NAME="useDefaultTitle">False</Property>
+          <Property NAME="visible">True</Property>
+          <Property NAME="visibleDigitalRows">4</Property>
+          <Property NAME="visibleStripChartRows">6</Property>
+          <Property NAME="zoomManager">
+            <JavaBean CLASS="COM.cadence.awd.graph.ZoomManager">
+              <Properties>
+                <Property NAME="xStartMax">0.0</Property>
+                <Property NAME="xStartMin">0.0</Property>
+                <Property NAME="yStartMax">0.0</Property>
+                <Property NAME="yStartMin">0.0</Property>
+                <Property NAME="zoomRow">0</Property>
+                <Property NAME="zoomType">0</Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="zoomState">False</Property>
+        </Properties>
+      </JavaBean>
+    </Property>
+    <Property NAME="height">500</Property>
+    <Property NAME="labelText">%M(%X, %Y)</Property>
+    <Property NAME="stripChartState">False</Property>
+    <Property NAME="width">611</Property>
+    <Property NAME="xLocation">951</Property>
+    <Property NAME="yLocation">97</Property>
+  </Properties>
+</JavaBean>
+

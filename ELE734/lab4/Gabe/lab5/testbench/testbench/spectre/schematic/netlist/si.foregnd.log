@@ -1,0 +1,5 @@
+Begin Incremental Netlisting Nov 20 21:07:05 2019
+ERROR: Netlister: the cellview lab4/fulladder/schematic was modified since last
+extraction.
+	 For schematic cell-views, use the "Design->Check and Save" menu.
+End netlisting Nov 20 21:07:05 2019

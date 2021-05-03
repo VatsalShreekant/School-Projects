@@ -1,0 +1,27 @@
+#
+lab3 NAND2 symbol
+I8
+I7
+I6
+I5
+I4
+I3
+I2
+I1
+I0
+#ISCELL
+basic ipin symbol
+PIN3
+PIN2
+PIN1
+PIN0
+#ISCELL
+basic opin symbol
+PIN5
+PIN4
+#ISCELL
+basic iopin symbolr
+PIN6
+#ISCELL
+US_10ths Csize symbol
+I9

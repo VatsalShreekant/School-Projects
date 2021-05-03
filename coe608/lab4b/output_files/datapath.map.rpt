@@ -1,0 +1,861 @@
+Analysis & Synthesis report for datapath
+Tue Mar 19 14:37:10 2019
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Source assignments for data_mem:dataMem|altsyncram:matrix_rtl_0|altsyncram_hie1:auto_generated
+ 13. Parameter Settings for Inferred Entity Instance: data_mem:dataMem|altsyncram:matrix_rtl_0
+ 14. altsyncram Parameter Settings by Entity Instance
+ 15. Port Connectivity Checks: "pc:pcComp"
+ 16. Port Connectivity Checks: "mux_3to1:aluMux2"
+ 17. Port Connectivity Checks: "mux2to1:aluMux1"
+ 18. Port Connectivity Checks: "mux2to1:bMux"
+ 19. Port Connectivity Checks: "mux2to1:aMux"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Mar 19 14:37:10 2019           ;
+; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Standard Edition ;
+; Revision Name                      ; datapath                                        ;
+; Top-level Entity Name              ; datapath                                        ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 507                                             ;
+;     Total combinational functions  ; 490                                             ;
+;     Dedicated logic registers      ; 191                                             ;
+; Total registers                    ; 191                                             ;
+; Total pins                         ; 326                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 8,192                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; datapath           ; datapath           ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+; mux8to1.vhd                      ; yes             ; User VHDL File               ; /home/student1/vshreeka/coe608/lab4b/mux8to1.vhd                             ;         ;
+; datapath.vhd                     ; yes             ; User VHDL File               ; /home/student1/vshreeka/coe608/lab4b/datapath.vhd                            ;         ;
+; ror32.vhd                        ; yes             ; User VHDL File               ; /home/student1/vshreeka/coe608/lab4b/ror32.vhd                               ;         ;
+; rol32.vhd                        ; yes             ; User VHDL File               ; /home/student1/vshreeka/coe608/lab4b/rol32.vhd                               ;         ;
+; register32.vhd                   ; yes             ; User VHDL File               ; /home/student1/vshreeka/coe608/lab4b/register32.vhd                          ;         ;
+; pc.vhd                           ; yes             ; User VHDL File               ; /home/student1/vshreeka/coe608/lab4b/pc.vhd                                  ;         ;
+; or32.vhd                         ; yes             ; User VHDL File               ; /home/student1/vshreeka/coe608/lab4b/or32.vhd                                ;         ;
+; not32.vhd                        ; yes             ; User VHDL File               ; /home/student1/vshreeka/coe608/lab4b/not32.vhd                               ;         ;
+; mux_3to1.vhd                     ; yes             ; User VHDL File               ; /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd                            ;         ;
+; mux2to1.vhd                      ; yes             ; User VHDL File               ; /home/student1/vshreeka/coe608/lab4b/mux2to1.vhd                             ;         ;
+; fulladder.vhd                    ; yes             ; User VHDL File               ; /home/student1/vshreeka/coe608/lab4b/fulladder.vhd                           ;         ;
+; data_mem.vhd                     ; yes             ; User VHDL File               ; /home/student1/vshreeka/coe608/lab4b/data_mem.vhd                            ;         ;
+; and32.vhd                        ; yes             ; User VHDL File               ; /home/student1/vshreeka/coe608/lab4b/and32.vhd                               ;         ;
+; alu.vhd                          ; yes             ; User VHDL File               ; /home/student1/vshreeka/coe608/lab4b/alu.vhd                                 ;         ;
+; adder32.vhd                      ; yes             ; User VHDL File               ; /home/student1/vshreeka/coe608/lab4b/adder32.vhd                             ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; /usr/local/Quartus16.0/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; /usr/local/Quartus16.0/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; /usr/local/Quartus16.0/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; /usr/local/Quartus16.0/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal160.inc                   ; yes             ; Megafunction                 ; /usr/local/Quartus16.0/quartus/libraries/megafunctions/aglobal160.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; /usr/local/Quartus16.0/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; /usr/local/Quartus16.0/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; /usr/local/Quartus16.0/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; /usr/local/Quartus16.0/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_hie1.tdf           ; yes             ; Auto-Generated Megafunction  ; /home/student1/vshreeka/coe608/lab4b/db/altsyncram_hie1.tdf                  ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 507       ;
+;                                             ;           ;
+; Total combinational functions               ; 490       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 262       ;
+;     -- 3 input functions                    ; 166       ;
+;     -- <=2 input functions                  ; 62        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 461       ;
+;     -- arithmetic mode                      ; 29        ;
+;                                             ;           ;
+; Total registers                             ; 191       ;
+;     -- Dedicated logic registers            ; 191       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 326       ;
+; Total memory bits                           ; 8192      ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; Clk~input ;
+; Maximum fan-out                             ; 159       ;
+; Total fan-out                               ; 3560      ;
+; Average fan-out                             ; 2.61      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                        ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                               ; Entity Name     ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------+-----------------+--------------+
+; |datapath                                 ; 490 (0)           ; 191 (0)      ; 8192        ; 0            ; 0       ; 0         ; 326  ; 0            ; |datapath                                                                         ; datapath        ; work         ;
+;    |alu:aluComp|                          ; 97 (5)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp                                                             ; alu             ; work         ;
+;       |adder32:adder1|                    ; 40 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1                                              ; adder32         ; work         ;
+;          |fulladder:fa0|                  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa0                                ; fulladder       ; work         ;
+;          |fulladder:fa10|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa10                               ; fulladder       ; work         ;
+;          |fulladder:fa11|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa11                               ; fulladder       ; work         ;
+;          |fulladder:fa12|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa12                               ; fulladder       ; work         ;
+;          |fulladder:fa13|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa13                               ; fulladder       ; work         ;
+;          |fulladder:fa14|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa14                               ; fulladder       ; work         ;
+;          |fulladder:fa15|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa15                               ; fulladder       ; work         ;
+;          |fulladder:fa16|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa16                               ; fulladder       ; work         ;
+;          |fulladder:fa17|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa17                               ; fulladder       ; work         ;
+;          |fulladder:fa18|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa18                               ; fulladder       ; work         ;
+;          |fulladder:fa19|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa19                               ; fulladder       ; work         ;
+;          |fulladder:fa1|                  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa1                                ; fulladder       ; work         ;
+;          |fulladder:fa20|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa20                               ; fulladder       ; work         ;
+;          |fulladder:fa21|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa21                               ; fulladder       ; work         ;
+;          |fulladder:fa22|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa22                               ; fulladder       ; work         ;
+;          |fulladder:fa23|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa23                               ; fulladder       ; work         ;
+;          |fulladder:fa24|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa24                               ; fulladder       ; work         ;
+;          |fulladder:fa25|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa25                               ; fulladder       ; work         ;
+;          |fulladder:fa26|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa26                               ; fulladder       ; work         ;
+;          |fulladder:fa27|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa27                               ; fulladder       ; work         ;
+;          |fulladder:fa28|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa28                               ; fulladder       ; work         ;
+;          |fulladder:fa29|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa29                               ; fulladder       ; work         ;
+;          |fulladder:fa2|                  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa2                                ; fulladder       ; work         ;
+;          |fulladder:fa30|                 ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa30                               ; fulladder       ; work         ;
+;          |fulladder:fa31|                 ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa31                               ; fulladder       ; work         ;
+;          |fulladder:fa3|                  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa3                                ; fulladder       ; work         ;
+;          |fulladder:fa4|                  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa4                                ; fulladder       ; work         ;
+;          |fulladder:fa5|                  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa5                                ; fulladder       ; work         ;
+;          |fulladder:fa6|                  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa6                                ; fulladder       ; work         ;
+;          |fulladder:fa7|                  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa7                                ; fulladder       ; work         ;
+;          |fulladder:fa8|                  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa8                                ; fulladder       ; work         ;
+;          |fulladder:fa9|                  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|adder32:adder1|fulladder:fa9                                ; fulladder       ; work         ;
+;       |and32:and1|                        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|and32:and1                                                  ; and32           ; work         ;
+;       |mux8to1:mux1|                      ; 50 (50)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|mux8to1:mux1                                                ; mux8to1         ; work         ;
+;       |or32:or1|                          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|alu:aluComp|or32:or1                                                    ; or32            ; work         ;
+;    |data_mem:dataMem|                     ; 37 (37)           ; 65 (65)      ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|data_mem:dataMem                                                        ; data_mem        ; work         ;
+;       |altsyncram:matrix_rtl_0|           ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|data_mem:dataMem|altsyncram:matrix_rtl_0                                ; altsyncram      ; work         ;
+;          |altsyncram_hie1:auto_generated| ; 0 (0)             ; 0 (0)        ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|data_mem:dataMem|altsyncram:matrix_rtl_0|altsyncram_hie1:auto_generated ; altsyncram_hie1 ; work         ;
+;    |mux2to1:MemMux|                       ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|mux2to1:MemMux                                                          ; mux2to1         ; work         ;
+;    |mux2to1:aMux|                         ; 29 (29)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|mux2to1:aMux                                                            ; mux2to1         ; work         ;
+;    |mux2to1:aluMux1|                      ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|mux2to1:aluMux1                                                         ; mux2to1         ; work         ;
+;    |mux2to1:bMux|                         ; 40 (40)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|mux2to1:bMux                                                            ; mux2to1         ; work         ;
+;    |mux_3to1:aluMux2|                     ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|mux_3to1:aluMux2                                                        ; mux_3to1        ; work         ;
+;    |mux_3to1:dataMux|                     ; 82 (82)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|mux_3to1:dataMux                                                        ; mux_3to1        ; work         ;
+;    |pc:pcComp|                            ; 60 (60)           ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|pc:pcComp                                                               ; pc              ; work         ;
+;    |register32:regA|                      ; 49 (49)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register32:regA                                                         ; register32      ; work         ;
+;    |register32:regB|                      ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register32:regB                                                         ; register32      ; work         ;
+;    |register32:regIR|                     ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |datapath|register32:regIR                                                        ; register32      ; work         ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                       ;
++------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                               ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; data_mem:dataMem|altsyncram:matrix_rtl_0|altsyncram_hie1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 256          ; 32           ; 256          ; 32           ; 8192 ; None ;
++------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; pc:pcComp|q[0]~reg0                   ; Stuck at GND due to stuck port data_in ;
+; pc:pcComp|q[1]~reg0                   ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 2 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 191   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 32    ;
+; Number of registers using Asynchronous Clear ; 127   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 129   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; Yes        ; |datapath|pc:pcComp|q[14]~reg0           ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |datapath|pc:pcComp|q[28]~reg0           ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |datapath|data_mem:dataMem|data_out[17]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |datapath|mux_3to1:aluMux2|Mux0          ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |datapath|mux_3to1:aluMux2|Mux17         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |datapath|mux_3to1:dataMux|Mux15         ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 90 LEs               ; 30 LEs                 ; No         ; |datapath|alu:aluComp|mux8to1:mux1|Mux22 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Source assignments for data_mem:dataMem|altsyncram:matrix_rtl_0|altsyncram_hie1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------+
+; Assignment                      ; Value              ; From ; To                               ;
++---------------------------------+--------------------+------+----------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                ;
++---------------------------------+--------------------+------+----------------------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: data_mem:dataMem|altsyncram:matrix_rtl_0 ;
++------------------------------------+----------------------+-------------------------------+
+; Parameter Name                     ; Value                ; Type                          ;
++------------------------------------+----------------------+-------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                       ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                    ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                  ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                  ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                       ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                       ;
+; WIDTH_A                            ; 32                   ; Untyped                       ;
+; WIDTHAD_A                          ; 8                    ; Untyped                       ;
+; NUMWORDS_A                         ; 256                  ; Untyped                       ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                       ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                       ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                       ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                       ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                       ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                       ;
+; WIDTH_B                            ; 32                   ; Untyped                       ;
+; WIDTHAD_B                          ; 8                    ; Untyped                       ;
+; NUMWORDS_B                         ; 256                  ; Untyped                       ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                       ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                       ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                       ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                       ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                       ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                       ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                       ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                       ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                       ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                       ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                       ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                       ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                       ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                       ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                       ;
+; BYTE_SIZE                          ; 8                    ; Untyped                       ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                       ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                       ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                       ;
+; INIT_FILE                          ; UNUSED               ; Untyped                       ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                       ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                       ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                       ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                       ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                       ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                       ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                       ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                       ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                       ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                       ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                       ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                       ;
+; CBXI_PARAMETER                     ; altsyncram_hie1      ; Untyped                       ;
++------------------------------------+----------------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                     ;
++-------------------------------------------+------------------------------------------+
+; Name                                      ; Value                                    ;
++-------------------------------------------+------------------------------------------+
+; Number of entity instances                ; 1                                        ;
+; Entity Instance                           ; data_mem:dataMem|altsyncram:matrix_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                ;
+;     -- WIDTH_A                            ; 32                                       ;
+;     -- NUMWORDS_A                         ; 256                                      ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                             ;
+;     -- WIDTH_B                            ; 32                                       ;
+;     -- NUMWORDS_B                         ; 256                                      ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                   ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                             ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                     ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                ;
++-------------------------------------------+------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pc:pcComp"                                                                                                     ;
++----------+-------+------------------+-----------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity         ; Details                                                                                             ;
++----------+-------+------------------+-----------------------------------------------------------------------------------------------------+
+; d[15..0] ; Input ; Info             ; Stuck at GND                                                                                        ;
+; q        ; Bidir ; Critical Warning ; Port on prototype, e.g. VHDL component, declared as "Output" but port on entity declared as "Bidir" ;
++----------+-------+------------------+-----------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "mux_3to1:aluMux2"  ;
++-------------+-------+----------+--------------+
+; Port        ; Type  ; Severity ; Details      ;
++-------------+-------+----------+--------------+
+; sig1[15..0] ; Input ; Info     ; Stuck at GND ;
+; sig2        ; Input ; Info     ; Stuck at VCC ;
++-------------+-------+----------+--------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "mux2to1:aluMux1"   ;
++-------------+-------+----------+--------------+
+; Port        ; Type  ; Severity ; Details      ;
++-------------+-------+----------+--------------+
+; in1[31..16] ; Input ; Info     ; Stuck at GND ;
++-------------+-------+----------+--------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "mux2to1:bMux"     ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; in1[15..0] ; Input ; Info     ; Stuck at GND ;
++------------+-------+----------+--------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "mux2to1:aMux"     ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; in1[15..0] ; Input ; Info     ; Stuck at GND ;
++------------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 326                         ;
+; cycloneiii_ff         ; 191                         ;
+;     CLR               ; 14                          ;
+;     CLR SLD           ; 16                          ;
+;     ENA               ; 32                          ;
+;     ENA CLR           ; 81                          ;
+;     ENA CLR SLD       ; 16                          ;
+;     plain             ; 32                          ;
+; cycloneiii_lcell_comb ; 492                         ;
+;     arith             ; 29                          ;
+;         2 data inputs ; 29                          ;
+;     normal            ; 463                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 32                          ;
+;         3 data inputs ; 166                         ;
+;         4 data inputs ; 262                         ;
+; cycloneiii_ram_block  ; 32                          ;
+;                       ;                             ;
+; Max LUT depth         ; 34.00                       ;
+; Average LUT depth     ; 9.88                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
+    Info: Processing started: Tue Mar 19 14:36:54 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off datapath -c datapath
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file mux8to1.vhd
+    Info (12022): Found design unit 1: mux8to1-description File: /home/student1/vshreeka/coe608/lab4b/mux8to1.vhd Line: 11
+    Info (12023): Found entity 1: mux8to1 File: /home/student1/vshreeka/coe608/lab4b/mux8to1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file datapath.vhd
+    Info (12022): Found design unit 1: datapath-description File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 42
+    Info (12023): Found entity 1: datapath File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file ror32.vhd
+    Info (12022): Found design unit 1: ror32-description File: /home/student1/vshreeka/coe608/lab4b/ror32.vhd Line: 10
+    Info (12023): Found entity 1: ror32 File: /home/student1/vshreeka/coe608/lab4b/ror32.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file rol32.vhd
+    Info (12022): Found design unit 1: rol32-description File: /home/student1/vshreeka/coe608/lab4b/rol32.vhd Line: 10
+    Info (12023): Found entity 1: rol32 File: /home/student1/vshreeka/coe608/lab4b/rol32.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file register32.vhd
+    Info (12022): Found design unit 1: register32-description File: /home/student1/vshreeka/coe608/lab4b/register32.vhd Line: 15
+    Info (12023): Found entity 1: register32 File: /home/student1/vshreeka/coe608/lab4b/register32.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file pc.vhd
+    Info (12022): Found design unit 1: pc-description File: /home/student1/vshreeka/coe608/lab4b/pc.vhd Line: 16
+    Info (12023): Found entity 1: pc File: /home/student1/vshreeka/coe608/lab4b/pc.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file or32.vhd
+    Info (12022): Found design unit 1: or32-description File: /home/student1/vshreeka/coe608/lab4b/or32.vhd Line: 11
+    Info (12023): Found entity 1: or32 File: /home/student1/vshreeka/coe608/lab4b/or32.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file not32.vhd
+    Info (12022): Found design unit 1: not32-description File: /home/student1/vshreeka/coe608/lab4b/not32.vhd Line: 10
+    Info (12023): Found entity 1: not32 File: /home/student1/vshreeka/coe608/lab4b/not32.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file mux_3to1.vhd
+    Info (12022): Found design unit 1: mux_3to1-mux_3to1 File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 11
+    Info (12023): Found entity 1: mux_3to1 File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file mux2to1.vhd
+    Info (12022): Found design unit 1: mux2to1-description File: /home/student1/vshreeka/coe608/lab4b/mux2to1.vhd Line: 11
+    Info (12023): Found entity 1: mux2to1 File: /home/student1/vshreeka/coe608/lab4b/mux2to1.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file fulladder.vhd
+    Info (12022): Found design unit 1: fulladder-description File: /home/student1/vshreeka/coe608/lab4b/fulladder.vhd Line: 13
+    Info (12023): Found entity 1: fulladder File: /home/student1/vshreeka/coe608/lab4b/fulladder.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file data_mem.vhd
+    Info (12022): Found design unit 1: data_mem-Description File: /home/student1/vshreeka/coe608/lab4b/data_mem.vhd Line: 14
+    Info (12023): Found entity 1: data_mem File: /home/student1/vshreeka/coe608/lab4b/data_mem.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file and32.vhd
+    Info (12022): Found design unit 1: and32-description File: /home/student1/vshreeka/coe608/lab4b/and32.vhd Line: 11
+    Info (12023): Found entity 1: and32 File: /home/student1/vshreeka/coe608/lab4b/and32.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: alu-description File: /home/student1/vshreeka/coe608/lab4b/alu.vhd Line: 14
+    Info (12023): Found entity 1: alu File: /home/student1/vshreeka/coe608/lab4b/alu.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file adder32.vhd
+    Info (12022): Found design unit 1: adder32-description File: /home/student1/vshreeka/coe608/lab4b/adder32.vhd Line: 13
+    Info (12023): Found entity 1: adder32 File: /home/student1/vshreeka/coe608/lab4b/adder32.vhd Line: 5
+Info (12127): Elaborating entity "datapath" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(23): used implicit default value for signal "Out_PC" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(30): used implicit default value for signal "DATA_OUT" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(31): used implicit default value for signal "MEM_ADDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 31
+Info (12128): Elaborating entity "mux2to1" for hierarchy "mux2to1:aMux" File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 116
+Info (12128): Elaborating entity "mux_3to1" for hierarchy "mux_3to1:aluMux2" File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 141
+Info (12128): Elaborating entity "register32" for hierarchy "register32:regA" File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 155
+Info (12128): Elaborating entity "alu" for hierarchy "alu:aluComp" File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 177
+Info (12128): Elaborating entity "mux8to1" for hierarchy "alu:aluComp|mux8to1:mux1" File: /home/student1/vshreeka/coe608/lab4b/alu.vhd Line: 81
+Info (12128): Elaborating entity "adder32" for hierarchy "alu:aluComp|adder32:adder1" File: /home/student1/vshreeka/coe608/lab4b/alu.vhd Line: 92
+Info (12128): Elaborating entity "fulladder" for hierarchy "alu:aluComp|adder32:adder1|fulladder:fa0" File: /home/student1/vshreeka/coe608/lab4b/adder32.vhd Line: 24
+Info (12128): Elaborating entity "and32" for hierarchy "alu:aluComp|and32:and1" File: /home/student1/vshreeka/coe608/lab4b/alu.vhd Line: 98
+Info (12128): Elaborating entity "or32" for hierarchy "alu:aluComp|or32:or1" File: /home/student1/vshreeka/coe608/lab4b/alu.vhd Line: 99
+Info (12128): Elaborating entity "ror32" for hierarchy "alu:aluComp|ror32:ror1" File: /home/student1/vshreeka/coe608/lab4b/alu.vhd Line: 100
+Info (12128): Elaborating entity "rol32" for hierarchy "alu:aluComp|rol32:rol1" File: /home/student1/vshreeka/coe608/lab4b/alu.vhd Line: 101
+Info (12128): Elaborating entity "not32" for hierarchy "alu:aluComp|not32:not1" File: /home/student1/vshreeka/coe608/lab4b/alu.vhd Line: 106
+Info (12128): Elaborating entity "pc" for hierarchy "pc:pcComp" File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 186
+Info (12128): Elaborating entity "data_mem" for hierarchy "data_mem:dataMem" File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 195
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "alu:aluComp|comb~synth" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[0]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[1]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[2]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[3]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[4]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[5]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[6]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[7]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[8]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[9]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[10]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[11]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[12]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[13]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[14]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[15]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[16]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[17]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[18]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[19]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[20]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[21]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[22]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[23]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[24]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[25]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[26]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[27]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[28]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[29]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[30]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:dataMux|output[31]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[0]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[1]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[2]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[3]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[4]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[5]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[6]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[7]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[8]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[9]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[10]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[11]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[12]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[13]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[14]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[15]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[16]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[17]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[18]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[19]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[20]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[21]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[22]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[23]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[24]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[25]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[26]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[27]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[28]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[29]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[30]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+    Warning (13049): Converted tri-state buffer "mux_3to1:aluMux2|output[31]" feeding internal logic into a wire File: /home/student1/vshreeka/coe608/lab4b/mux_3to1.vhd Line: 9
+Warning (276027): Inferred dual-clock RAM node "data_mem:dataMem|matrix_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "data_mem:dataMem|matrix_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 8
+        Info (286033): Parameter NUMWORDS_A set to 256
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 8
+        Info (286033): Parameter NUMWORDS_B set to 256
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+Info (12130): Elaborated megafunction instantiation "data_mem:dataMem|altsyncram:matrix_rtl_0"
+Info (12133): Instantiated megafunction "data_mem:dataMem|altsyncram:matrix_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "8"
+    Info (12134): Parameter "NUMWORDS_A" = "256"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "8"
+    Info (12134): Parameter "NUMWORDS_B" = "256"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_hie1.tdf
+    Info (12023): Found entity 1: altsyncram_hie1 File: /home/student1/vshreeka/coe608/lab4b/db/altsyncram_hie1.tdf Line: 28
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Out_PC[0]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[1]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[2]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[3]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[4]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[5]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[6]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[7]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[8]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[9]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[10]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[11]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[12]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[13]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[14]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[15]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[16]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[17]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[18]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[19]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[20]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[21]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[22]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[23]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[24]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[25]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[26]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[27]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[28]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[29]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[30]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "Out_PC[31]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 23
+    Warning (13410): Pin "ADDR_OUT[0]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 28
+    Warning (13410): Pin "ADDR_OUT[1]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 28
+    Warning (13410): Pin "DATA_OUT[0]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[1]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[2]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[3]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[4]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[5]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[6]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[7]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[8]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[9]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[10]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[11]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[12]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[13]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[14]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[15]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[16]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[17]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[18]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[19]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[20]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[21]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[22]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[23]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[24]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[25]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[26]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[27]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[28]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[29]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[30]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "DATA_OUT[31]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 30
+    Warning (13410): Pin "MEM_ADDR[0]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 31
+    Warning (13410): Pin "MEM_ADDR[1]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 31
+    Warning (13410): Pin "MEM_ADDR[2]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 31
+    Warning (13410): Pin "MEM_ADDR[3]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 31
+    Warning (13410): Pin "MEM_ADDR[4]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 31
+    Warning (13410): Pin "MEM_ADDR[5]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 31
+    Warning (13410): Pin "MEM_ADDR[6]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 31
+    Warning (13410): Pin "MEM_ADDR[7]" is stuck at GND File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 31
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "Clr_C" File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 14
+    Warning (15610): No output dependent on input pin "Ld_C" File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 14
+    Warning (15610): No output dependent on input pin "Clr_Z" File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 15
+    Warning (15610): No output dependent on input pin "Ld_Z" File: /home/student1/vshreeka/coe608/lab4b/datapath.vhd Line: 15
+Info (21057): Implemented 921 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 60 input pins
+    Info (21059): Implemented 266 output pins
+    Info (21061): Implemented 563 logic cells
+    Info (21064): Implemented 32 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 215 warnings
+    Info: Peak virtual memory: 1396 megabytes
+    Info: Processing ended: Tue Mar 19 14:37:11 2019
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:28
+
+

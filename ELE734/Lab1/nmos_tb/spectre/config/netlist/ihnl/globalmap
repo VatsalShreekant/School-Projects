@@ -1,0 +1,13 @@
+CADENCE IHNL01060
+$model
+Lab1/nmos_tb/schematic spectre_cmos_sch_cmos.sch_schematic_veriloga_ahdl nmos_tb
+Lab1/nmos/extracted spectre_cmos_sch_cmos.sch_schematic_veriloga_ahdl nmos_extracted
+Lab1/nmos/schematic spectre_cmos_sch_cmos.sch_schematic_veriloga_ahdl nmos
+$endmodel
+$net
+gnd! 0
+$endnet
+$param
+v1 v1
+v2 v2
+$endparam

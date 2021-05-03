@@ -1,0 +1,26 @@
+#
+cmosp18 pcapacitor ivpcell
++12
++11
++10
++9
++8
++7
++6
++5
++4
+#
+cmosp18 pfet ivpcell
++2
++3
+#
+cmosp18 nfet ivpcell
++0
++1
+#ISCELL
+cmosp18 metal1_T symbolic
+I7
+I5
+I6
+I4
+I3

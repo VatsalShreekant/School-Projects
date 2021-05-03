@@ -1,0 +1,8 @@
+// Generated for: spectre
+// Generated on: Oct 11 00:38:48 2019
+// Design library name: Lab1
+// Design cell name: nmos_tb
+// Design view name: config
+simulator lang=spectre
+global 0
+include "/CMC/tools/cadence/IC5141USR6_lnx86/tools/dfII/samples/artist/ahdlLib/quantity.spectre"

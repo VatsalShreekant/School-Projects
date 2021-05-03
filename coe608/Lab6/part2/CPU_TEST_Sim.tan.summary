@@ -1,0 +1,76 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.604 ns
+From           : rst
+To             : cpu1:main_processor|reset_circuit:R1|counter[31]
+From Clock     : --
+To Clock       : cpuClk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 20.300 ns
+From           : cpu1:main_processor|datapath:Dpth|alu32:ALU|result[12]
+To             : memDataOut[12]
+From Clock     : cpuClk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 1.006 ns
+From           : rst
+To             : cpu1:main_processor|reset_circuit:R1|Clr_PC
+From Clock     : --
+To Clock       : cpuClk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'cpuClk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 35.72 MHz ( period = 27.998 ns )
+From           : cpu1:main_processor|control:C1|inc_PC
+To             : cpu1:main_processor|datapath:Dpth|pc:ProgCount|q[31]~reg0
+From Clock     : cpuClk
+To Clock       : cpuClk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'memClk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 106.47 MHz ( period = 9.392 ns )
+From           : system_memory:main_memory|altsyncram:altsyncram_component|altsyncram_3md1:auto_generated|ram_block1a14~porta_address_reg5
+To             : cpu1:main_processor|control:C1|en
+From Clock     : memClk
+To Clock       : memClk
+Failed Paths   : 0
+
+Type           : Clock Hold: 'cpuClk'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : cpu1:main_processor|datapath:Dpth|reg32:A|Q32[2]
+To             : cpu1:main_processor|datapath:Dpth|alu32:ALU|cOut[2]
+From Clock     : cpuClk
+To Clock       : cpuClk
+Failed Paths   : 809
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 809
+
+--------------------------------------------------------------------------------------
+

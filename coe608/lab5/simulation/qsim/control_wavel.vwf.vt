@@ -1,0 +1,328 @@
+// Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus Prime License Agreement,
+// the Altera MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Altera and sold by Altera or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "03/21/2019 16:52:00"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          control
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module control_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clk;
+reg enable;
+reg [31:0] INST;
+reg mclk;
+reg statusC;
+reg statusZ;
+// wires                                               
+wire [2:0] ALU_op;
+wire clr_A;
+wire clr_B;
+wire clr_C;
+wire clr_IR;
+wire clr_Z;
+wire [1:0] DATA_Mux;
+wire en;
+wire IM_MUX1;
+wire [1:0] IM_MUX2;
+wire inc_PC;
+wire ld_A;
+wire ld_B;
+wire ld_C;
+wire ld_IR;
+wire ld_PC;
+wire ld_Z;
+wire PC_Mux;
+wire REG_Mux;
+wire [2:0] T;
+wire wen;
+
+// assign statements (if any)                          
+control i1 (
+// port map - connection between master ports and signals/registers   
+	.ALU_op(ALU_op),
+	.clk(clk),
+	.clr_A(clr_A),
+	.clr_B(clr_B),
+	.clr_C(clr_C),
+	.clr_IR(clr_IR),
+	.clr_Z(clr_Z),
+	.DATA_Mux(DATA_Mux),
+	.en(en),
+	.enable(enable),
+	.IM_MUX1(IM_MUX1),
+	.IM_MUX2(IM_MUX2),
+	.inc_PC(inc_PC),
+	.INST(INST),
+	.ld_A(ld_A),
+	.ld_B(ld_B),
+	.ld_C(ld_C),
+	.ld_IR(ld_IR),
+	.ld_PC(ld_PC),
+	.ld_Z(ld_Z),
+	.mclk(mclk),
+	.PC_Mux(PC_Mux),
+	.REG_Mux(REG_Mux),
+	.statusC(statusC),
+	.statusZ(statusZ),
+	.T(T),
+	.wen(wen)
+);
+initial 
+begin 
+#500000 $finish;
+end 
+
+// clk
+initial
+begin
+	repeat(3)
+	begin
+		clk = 1'b0;
+		clk = #20000 1'b1;
+		# 20000;
+	end
+	clk = 1'b0;
+	clk = #60000 1'b1;
+	# 20000;
+	repeat(2)
+	begin
+		clk = 1'b0;
+		clk = #20000 1'b1;
+		# 20000;
+	end
+	clk = 1'b0;
+end 
+
+// mclk
+initial
+begin
+	repeat(6)
+	begin
+		mclk = 1'b0;
+		mclk = #10000 1'b1;
+		# 10000;
+	end
+	mclk = 1'b0;
+	mclk = #50000 1'b1;
+	# 10000;
+	repeat(5)
+	begin
+		mclk = 1'b0;
+		mclk = #10000 1'b1;
+		# 10000;
+	end
+	mclk = 1'b0;
+end 
+
+// enable
+initial
+begin
+	enable = 1'b1;
+	enable = #300000 1'b0;
+	enable = #190000 1'b1;
+end 
+// INST[ 31 ]
+initial
+begin
+	INST[31] = 1'b0;
+end 
+// INST[ 30 ]
+initial
+begin
+	INST[30] = 1'b1;
+	INST[30] = #300000 1'b0;
+end 
+// INST[ 29 ]
+initial
+begin
+	INST[29] = 1'b1;
+	INST[29] = #300000 1'b0;
+end 
+// INST[ 28 ]
+initial
+begin
+	INST[28] = 1'b1;
+	INST[28] = #300000 1'b0;
+end 
+// INST[ 27 ]
+initial
+begin
+	INST[27] = 1'b1;
+	INST[27] = #300000 1'b0;
+end 
+// INST[ 26 ]
+initial
+begin
+	INST[26] = 1'b1;
+	INST[26] = #300000 1'b0;
+end 
+// INST[ 25 ]
+initial
+begin
+	INST[25] = 1'b1;
+	INST[25] = #300000 1'b0;
+end 
+// INST[ 24 ]
+initial
+begin
+	INST[24] = 1'b0;
+	INST[24] = #150000 1'b1;
+	INST[24] = #150000 1'b0;
+end 
+// INST[ 23 ]
+initial
+begin
+	INST[23] = 1'b0;
+end 
+// INST[ 22 ]
+initial
+begin
+	INST[22] = 1'b0;
+end 
+// INST[ 21 ]
+initial
+begin
+	INST[21] = 1'b0;
+end 
+// INST[ 20 ]
+initial
+begin
+	INST[20] = 1'b0;
+end 
+// INST[ 19 ]
+initial
+begin
+	INST[19] = 1'b0;
+end 
+// INST[ 18 ]
+initial
+begin
+	INST[18] = 1'b0;
+end 
+// INST[ 17 ]
+initial
+begin
+	INST[17] = 1'b0;
+end 
+// INST[ 16 ]
+initial
+begin
+	INST[16] = 1'b0;
+end 
+// INST[ 15 ]
+initial
+begin
+	INST[15] = 1'b0;
+end 
+// INST[ 14 ]
+initial
+begin
+	INST[14] = 1'b0;
+end 
+// INST[ 13 ]
+initial
+begin
+	INST[13] = 1'b0;
+end 
+// INST[ 12 ]
+initial
+begin
+	INST[12] = 1'b0;
+end 
+// INST[ 11 ]
+initial
+begin
+	INST[11] = 1'b0;
+end 
+// INST[ 10 ]
+initial
+begin
+	INST[10] = 1'b0;
+end 
+// INST[ 9 ]
+initial
+begin
+	INST[9] = 1'b0;
+end 
+// INST[ 8 ]
+initial
+begin
+	INST[8] = 1'b0;
+end 
+// INST[ 7 ]
+initial
+begin
+	INST[7] = 1'b0;
+end 
+// INST[ 6 ]
+initial
+begin
+	INST[6] = 1'b0;
+end 
+// INST[ 5 ]
+initial
+begin
+	INST[5] = 1'b0;
+end 
+// INST[ 4 ]
+initial
+begin
+	INST[4] = 1'b0;
+end 
+// INST[ 3 ]
+initial
+begin
+	INST[3] = 1'b0;
+end 
+// INST[ 2 ]
+initial
+begin
+	INST[2] = 1'b0;
+end 
+// INST[ 1 ]
+initial
+begin
+	INST[1] = 1'b0;
+end 
+// INST[ 0 ]
+initial
+begin
+	INST[0] = 1'b0;
+end 
+
+// statusC
+initial
+begin
+	statusC = 1'b0;
+end 
+
+// statusZ
+initial
+begin
+	statusZ = 1'b0;
+end 
+endmodule
+

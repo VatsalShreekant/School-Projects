@@ -1,0 +1,14 @@
+#
+cmosp18 pfet spectre
+M0
+#
+analogLib vdc spectre
+V2
+V1
+V0
+#ISCELL
+basic gnd symbol
+I0
+#ISCELL
+US_10ths Asize symbol
+I1

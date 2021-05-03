@@ -1,0 +1,33 @@
+#
+lab3 nand2 symbol
+I12
+I10
+I11
+I13
+I14
+I7
+#
+analogLib cap spectre
+C3
+C4
+C5
+C6
+C7
+C0
+#
+analogLib vdc spectre
+V5
+V4
+#
+analogLib vpulse spectre
+V6
+V7
+V3
+V0
+#ISCELL
+analogLib gnd symbol
+I16
+I1
+#ISCELL
+US_10ths Asize symbol
+I6

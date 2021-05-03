@@ -1,0 +1,164 @@
+m255
+K3
+z0
+13
+cModel Technology
+d/media/USB30FD/lab6.1/simulation/qsim
+vcpu1
+!s100 iFLX]g=HTeUiIND=fd=ak1
+IU8V0gaSRR=gj95_`Q`8991
+Vc??oNKUN5YhZeei`bOGk:0
+Z0 d/home/student1/minasir/COE608/Lab6/part2/simulation/qsim
+w1554152634
+Z1 8CPU_TEST_Sim.vo
+Z2 FCPU_TEST_Sim.vo
+Z3 L0 32
+Z4 OV;L;10.1e;51
+r1
+31
+Z5 !s90 -work|work|CPU_TEST_Sim.vo|
+Z6 o-work work -O0
+!s108 1554152636.740233
+Z7 !s107 CPU_TEST_Sim.vo|
+!i10b 1
+!s85 0
+!s101 -O0
+vcpu1_vlg_check_tst
+!s100 7>oHb:PFcnEL=ik_iz;<a1
+I:WgXUeFaOBALP_i8=7YDM1
+VO8LVPQ=b4h<f=f5lIG:3z0
+R0
+Z8 w1554152629
+Z9 8CPU1_TEST.vwf.vt
+Z10 FCPU1_TEST.vwf.vt
+L0 64
+R4
+r1
+31
+Z11 !s108 1554152637.191729
+Z12 !s107 CPU1_TEST.vwf.vt|
+Z13 !s90 -work|work|CPU1_TEST.vwf.vt|
+R6
+!i10b 1
+!s85 0
+!s101 -O0
+vcpu1_vlg_sample_tst
+!s100 =Q6PmGPcaBBV71o86aRNj3
+I6Zl24kz;Och=Q9IPhZlnG1
+V:OjkHzK5cd`1SWoTFIV;I1
+R0
+R8
+R9
+R10
+Z14 L0 30
+R4
+r1
+31
+R11
+R12
+R13
+R6
+!i10b 1
+!s85 0
+!s101 -O0
+vcpu1_vlg_vec_tst
+IQhW_VK=Z_IR:Iz2a<]ZJ93
+VQ2EVTC9gkF@HjeDj6RRIE3
+R0
+R8
+R9
+R10
+L0 3833
+R4
+r1
+31
+R11
+R12
+R13
+R6
+!s100 TlI_i^V_QN9LXiSUYU^BD0
+!i10b 1
+!s85 0
+!s101 -O0
+vCPU_TEST_Sim
+!s110 1554407962
+!i10b 1
+!s100 NUkeEnJgbQ@MFR[TOFTI:2
+Iz7[d@Dc]WZ?D5H2YNlSRn2
+Z15 VDg1SIo80bB@j0V0VzS_@n1
+Z16 d/home/student1/vshreeka/coe608/Lab6/part2/simulation/qsim
+w1554407960
+R1
+R2
+R3
+Z17 OV;L;10.4d;61
+r1
+!s85 0
+31
+!s108 1554407962.000000
+R7
+R5
+!i113 1
+Z18 o-work work
+n@c@p@u_@t@e@s@t_@sim
+vCPU_TEST_Sim_vlg_check_tst
+!i10b 1
+!s100 ]dJP2J;eUahznbB8BT^nW2
+IMOm2ngleCb110WMi:hVJi1
+VAN8OL5PC]SYlnbFkPekba3
+R0
+Z19 w1554232050
+Z20 8CPU_TEST_Sim.vwf.vt
+Z21 FCPU_TEST_Sim.vwf.vt
+L0 62
+R4
+r1
+!s85 0
+31
+Z22 !s108 1554232058.574079
+Z23 !s107 CPU_TEST_Sim.vwf.vt|
+Z24 !s90 -work|work|CPU_TEST_Sim.vwf.vt|
+!s101 -O0
+R6
+n@c@p@u_@t@e@s@t_@sim_vlg_check_tst
+vCPU_TEST_Sim_vlg_sample_tst
+!i10b 1
+!s100 U=DL:aIZ^FH[0c5LGcVHh3
+Iee>GS:4<Ub6e`FHTSLJ_e2
+V8I[2ieW7H@BD=24IJ7VZ<3
+R0
+R19
+R20
+R21
+R14
+R4
+r1
+!s85 0
+31
+R22
+R23
+R24
+!s101 -O0
+R6
+n@c@p@u_@t@e@s@t_@sim_vlg_sample_tst
+vCPU_TEST_Sim_vlg_vec_tst
+!s110 1554407963
+!i10b 1
+!s100 LN>AIk2G`GKaRh`^TO:mm2
+I8gRWLnd8BbFYk9fBMjJiK1
+R15
+R16
+w1554407958
+R20
+R21
+R14
+R17
+r1
+!s85 0
+31
+!s108 1554407963.000000
+R23
+R24
+!i113 1
+R18
+n@c@p@u_@t@e@s@t_@sim_vlg_vec_tst

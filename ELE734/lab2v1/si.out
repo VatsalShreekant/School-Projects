@@ -1,0 +1,91 @@
+@(#)$CDS: LVS.exe version 5.1.0 10/28/2008 10:20 (cicln03) $
+
+Command line: /CMC/tools/cadence/IC5141USR6_lnx86/tools.lnx86/dfII/bin/32bit/LVS.exe -dir /home/student1/a29yang/Desktop/ele734/lab2v1 -l -s -x/home/student1/a29yang/Desktop/ele734/lab2v1/xref.out -f -t /home/student1/a29yang/Desktop/ele734/lab2v1/layout /home/student1/a29yang/Desktop/ele734/lab2v1/schematic
+Like matching is enabled.
+Net swapping is enabled.
+Creating cross reference file /home/student1/a29yang/Desktop/ele734/lab2v1/xref.out.
+Fixed device checking is enabled.
+Using terminal names as correspondence points.
+
+    Net-list summary for /home/student1/a29yang/Desktop/ele734/lab2v1/layout/netlist
+       count
+	4		nets
+	4		terminals
+	1		nfet
+	1		pfet
+
+    Net-list summary for /home/student1/a29yang/Desktop/ele734/lab2v1/schematic/netlist
+       count
+	4		nets
+	4		terminals
+	1		nfet
+	1		pfet
+
+
+    Terminal correspondence points
+    N3        N3        A
+    N1        N1        GND
+    N2        N2        VDD
+    N0        N0        Y
+
+Devices in the rules but not in the netlist:
+        pfet_rf nfet_rf 3Vnfet_rf 3Vpfet_rf nmoscap 3Vnmoscap nfet_na 3Vnfet
+        3Vnfet_na 3Vpfet capacitor mimcap resistor
+
+The net-lists match.
+
+			     layout  schematic
+				instances
+	un-matched		0	0
+	rewired			0	0
+	size errors		0	0
+	pruned			0	0
+	active			2	2
+	total			2	2
+
+				  nets
+	un-matched		0	0
+	merged			0	0
+	pruned			0	0
+	active			4	4
+	total			4	4
+
+				terminals
+	un-matched		0	0
+	matched but
+	different type		0	0
+	total			4	4
+
+
+Probe files from /home/student1/a29yang/Desktop/ele734/lab2v1/schematic
+
+devbad.out:
+
+netbad.out:
+
+mergenet.out:
+
+termbad.out:
+
+prunenet.out:
+
+prunedev.out:
+
+audit.out:
+
+
+Probe files from /home/student1/a29yang/Desktop/ele734/lab2v1/layout
+
+devbad.out:
+
+netbad.out:
+
+mergenet.out:
+
+termbad.out:
+
+prunenet.out:
+
+prunedev.out:
+
+audit.out:

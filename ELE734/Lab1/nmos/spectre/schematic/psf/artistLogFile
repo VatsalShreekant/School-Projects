@@ -1,0 +1,23 @@
+HEADER
+"PSFversion" "1.00"
+"Log Generator" "drlLog rev. 1.0"
+"Log Time Stamp" "Thu Oct 10 23:04:30 2019"
+TYPE
+"analysisInst" STRUCT(
+"analysisType" STRING *
+"dataFile" STRING *
+"format" STRING *
+"parent" STRING *
+"sweepVariable" ARRAY ( * ) STRING *
+"description" STRING *
+)
+VALUE
+"variables" "analysisInst" (
+"design_variables"
+"variables_file"
+"PSF"
+""
+()
+""
+)
+END

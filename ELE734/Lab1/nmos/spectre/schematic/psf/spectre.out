@@ -1,0 +1,174 @@
+
+Cadence (R) Virtuoso (R) Spectre (R) Circuit Simulator
+Version 11.1.0.366.isr7 32bit -- 20 Mar 2012
+Copyright (C) 1989-2012 Cadence Design Systems, Inc. All rights reserved worldwide. Cadence, Virtuoso and Spectre are registered trademarks of Cadence Design Systems, Inc. All others are the property of their respective holders.
+
+Protected by U.S. Patents: 
+        5,610,847; 5,790,436; 5,812,431; 5,859,785; 5,949,992; 5,987,238; 
+        6,088,523; 6,101,323; 6,151,698; 6,181,754; 6,260,176; 6,278,964; 
+        6,349,272; 6,374,390; 6,493,849; 6,504,885; 6,618,837; 6,636,839; 
+        6,778,025; 6,832,358; 6,851,097; 6,928,626; 7,024,652; 7,035,782; 
+        7,085,700; 7,143,021; 7,493,240; 7,571,401.
+
+Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
+
+User: gcascian   Host: baroque.ee.ryerson.ca   HostID: 10AC0436   PID: 29954
+Memory  available: 9.7264 GB  physical: 16.7409 GB
+CPU Type: Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz
+          Processor PhysicalID CoreID Frequency
+              0         0        0     3392.5
+              1         0        1     3392.5
+              2         0        2     3392.5
+              3         0        3     3392.5
+              4         0        0     3392.5
+              5         0        1     3392.5
+              6         0        2     3392.5
+              7         0        3     3392.5
+
+
+Simulating `input.scs' on baroque.ee.ryerson.ca at 11:04:36 PM, Thur Oct 10, 2019 (process id: 29954).
+Current working directory: /home/student1/gcascian/ELE734/Lab1/nmos/spectre/schematic/netlist.
+Environment variable:
+    SPECTRE_DEFAULTS=/CMC/kits/cmosp18/models/spectre -f psfbin
+Command line:
+     \
+        /CMC/tools/cadence/MMSIM11.10.366_lnx86/tools.lnx86/spectre/bin/32bit/spectre  \
+        -env artist5.1.0 +escchars +log ../psf/spectre.out +inter=mpsc  \
+        +mpssession=spectre7_26866_7 -format sst2 -raw ../psf  \
+        -I/CMC/kits/cmosp18.5.2/models/spectre +lqtimeout 900 -maxw 5  \
+        -maxn 5 input.scs
+spectre pid = 29954
+
+Loading /CMC/tools/cadence/MMSIM11.10.366_lnx86/tools.lnx86/cmi/lib/5.0/libinfineon_sh.so ...
+Loading /CMC/tools/cadence/MMSIM11.10.366_lnx86/tools.lnx86/cmi/lib/5.0/libphilips_sh.so ...
+Loading /CMC/tools/cadence/MMSIM11.10.366_lnx86/tools.lnx86/cmi/lib/5.0/libsparam_sh.so ...
+Loading /CMC/tools/cadence/MMSIM11.10.366_lnx86/tools.lnx86/cmi/lib/5.0/libstmodels_sh.so ...
+
+Time for NDB Parsing: CPU = 77.987 ms, elapsed = 659.494 ms.
+Time accumulated: CPU = 77.987 ms, elapsed = 659.494 ms.
+Peak resident memory used = 25.5 Mbytes.
+
+
+Time for Elaboration: CPU = 13.998 ms, elapsed = 17.355 ms.
+Time accumulated: CPU = 92.985 ms, elapsed = 677.038 ms.
+Peak resident memory used = 27.8 Mbytes.
+
+
+Time for EDB Visiting: CPU = 1 ms, elapsed = 349.045 us.
+Time accumulated: CPU = 93.985 ms, elapsed = 677.509 ms.
+Peak resident memory used = 28.1 Mbytes.
+
+
+Notice from spectre during initial setup.
+    Multithreading device evaluation is not applied for primitive `bsim3v3' since the number of instances for this primitive is not large enough (i.e. no more than 256 instances).
+Warning from spectre during initial setup.
+    WARNING (SPECTRE-8281): `mosfetd' is not a node nor an instance name.
+    WARNING (SPECTRE-8286): Ignoring invalid item `mosfetd' in save statement.
+
+
+Circuit inventory:
+              nodes 3
+             iprobe 7     
+            bsim3v3 1     
+           quantity 9     
+            vsource 3     
+
+
+Notice from spectre during initial setup.
+    Multithreading Enabled: 4 threads on system with 8 available processors.
+        
+
+
+Time for parsing: CPU = 2.999 ms, elapsed = 34.806 ms.
+Time accumulated: CPU = 96.984 ms, elapsed = 712.421 ms.
+Peak resident memory used = 28.9 Mbytes.
+
+Entering remote command mode using MPSC service (spectre, ipi, v0.0, spectre7_26866_7, ).
+
+******************
+DC Analysis `dcOp'
+******************
+Important parameter values:
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    gmindc = 1 pS
+Convergence achieved in 2 iterations.
+Total time required for dc analysis `dcOp': CPU = 3 ms, elapsed = 155.103 ms.
+Time accumulated: CPU = 100.984 ms, elapsed = 1.04848 s.
+Peak resident memory used = 29.7 Mbytes.
+
+dcOpInfo: writing operating point information to rawfile.
+
+*******************************************
+DC Analysis `dc': V2:dc = (-1.8 V -> 1.8 V)
+*******************************************
+Important parameter values:
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    gmindc = 1 pS
+    dc: dc = -1.7 V      (2.78 %), step = 100 mV       (2.78 %)
+    dc: dc = -1.6 V      (5.56 %), step = 100 mV       (2.78 %)
+    dc: dc = -1.5 V      (8.33 %), step = 100 mV       (2.78 %)
+    dc: dc = -1.4 V      (11.1 %), step = 100 mV       (2.78 %)
+    dc: dc = -1.3 V      (13.9 %), step = 100 mV       (2.78 %)
+    dc: dc = -1.2 V      (16.7 %), step = 100 mV       (2.78 %)
+    dc: dc = -1.1 V      (19.4 %), step = 100 mV       (2.78 %)
+    dc: dc = -1 V        (22.2 %), step = 100 mV       (2.78 %)
+    dc: dc = -900 mV       (25 %), step = 100 mV       (2.78 %)
+    dc: dc = -800 mV     (27.8 %), step = 100 mV       (2.78 %)
+    dc: dc = -700 mV     (30.6 %), step = 100 mV       (2.78 %)
+    dc: dc = -600 mV     (33.3 %), step = 100 mV       (2.78 %)
+    dc: dc = -500 mV     (36.1 %), step = 100 mV       (2.78 %)
+    dc: dc = -400 mV     (38.9 %), step = 100 mV       (2.78 %)
+    dc: dc = -300 mV     (41.7 %), step = 100 mV       (2.78 %)
+    dc: dc = -200 mV     (44.4 %), step = 100 mV       (2.78 %)
+    dc: dc = -100 mV     (47.2 %), step = 100 mV       (2.78 %)
+    dc: dc = 0 V           (50 %), step = 100 mV       (2.78 %)
+    dc: dc = 100 mV      (52.8 %), step = 100 mV       (2.78 %)
+    dc: dc = 200 mV      (55.6 %), step = 100 mV       (2.78 %)
+    dc: dc = 300 mV      (58.3 %), step = 100 mV       (2.78 %)
+    dc: dc = 400 mV      (61.1 %), step = 100 mV       (2.78 %)
+    dc: dc = 500 mV      (63.9 %), step = 100 mV       (2.78 %)
+    dc: dc = 600 mV      (66.7 %), step = 100 mV       (2.78 %)
+    dc: dc = 700 mV      (69.4 %), step = 100 mV       (2.78 %)
+    dc: dc = 800 mV      (72.2 %), step = 100 mV       (2.78 %)
+
+Warning from spectre at dc = 900 mV during DC analysis `dc'.
+    WARNING (CMI-2139): mosfet: The bulk-source junction current exceeds `imelt'.  The results computed by Virtuoso(R) Spectre are now incorrect because the junction current model has been linearized.
+    WARNING (CMI-2144): mosfet: The bulk-source junction current exceeds `imax'.
+
+    dc: dc = 900 mV        (75 %), step = 100 mV       (2.78 %)
+    dc: dc = 1 V         (77.8 %), step = 100 mV       (2.78 %)
+    dc: dc = 1.1 V       (80.6 %), step = 100 mV       (2.78 %)
+    dc: dc = 1.2 V       (83.3 %), step = 100 mV       (2.78 %)
+    dc: dc = 1.3 V       (86.1 %), step = 100 mV       (2.78 %)
+    dc: dc = 1.4 V       (88.9 %), step = 100 mV       (2.78 %)
+    dc: dc = 1.5 V       (91.7 %), step = 100 mV       (2.78 %)
+    dc: dc = 1.6 V       (94.4 %), step = 100 mV       (2.78 %)
+    dc: dc = 1.7 V       (97.2 %), step = 100 mV       (2.78 %)
+    dc: dc = 1.8 V        (100 %), step = 100 mV       (2.78 %)
+Total time required for dc analysis `dc': CPU = 6.999 ms, elapsed = 28.1732 ms.
+Time accumulated: CPU = 111.982 ms, elapsed = 1.12375 s.
+Peak resident memory used = 30 Mbytes.
+
+modelParameter: writing model parameter values to rawfile.
+element: writing instance parameter values to rawfile.
+outputParameter: writing output parameter values to rawfile.
+designParamVals: writing netlist parameters to rawfile.
+primitives: writing primitives to rawfile.
+subckts: writing subcircuits to rawfile.
+
+Aggregate audit (11:10:32 PM, Thur Oct 10, 2019):
+Time used: CPU = 147 ms, elapsed = 356 s (5m  56.0s), util. = 41.3e-03%.
+Time spent in licensing: elapsed = 579 ms.
+Peak memory used = 30.1 Mbytes.
+Simulation started at: 11:04:36 PM, Thur Oct 10, 2019, ended at: 11:10:32 PM, Thur Oct 10, 2019, with elapsed time (wall clock): 356 s (5m  56.0s).
+spectre completes with 0 errors, 5 warnings, and 2 notices.

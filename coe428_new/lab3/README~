@@ -1,0 +1,25 @@
+1. There was no implementation of swaps since the code written was limited to 2 variables instead of 3 . 
+
+
+2.The following are the equations derived from the Best, Average and Worse Case:
+
+Insertion Sort:
+Best: 		y = 5x - 3
+Average: 	y = cn^2
+Worse: 		y = 1.5153x^2 - 172.6x - 9354.6
+
+Merge Sort:
+Best: 		y = 75.341x - 16591
+Average: 	y = nlogn
+Worse: 		y = 75.627x - 16247
+
+The best case of the insertion sort looks graphically identical to the plot of a linear graph. The equation derived from the number of moves for the best case and worse case respectively is:
+T(n) = O(n) 
+T(n) = O(n^2)
+
+The best case of the merge sort looks graphically identical to the plot of nlogn. The equation derived from the number of moves for the best case and worse case respectively is: 
+T(n) = O(nlog(n))
+T(n) = O(nlog(n))
+
+
+To further represent the implementations of insertion sort and merge sort, I have included 2 zipped pictures (image1 & image2). This is done for verification purposes of the 2 algorithms used. Each picture contains a best case, a worst case and the relative algorithm for each comparison. 

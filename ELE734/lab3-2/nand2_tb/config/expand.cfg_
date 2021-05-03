@@ -1,0 +1,22 @@
+//Revision 3
+//NOTE
+// Default template for spectre
+// Note:
+//      Please remember to replace Top Cell Library, Cell, and View
+//      fields with the actual names used by your design.
+//END_NOTE
+
+config nand2_tb;
+design lab3.nand2_tb:schematic;
+liblist myLib;
+
+viewlist spectre, cmos_sch, \cmos.sch , schematic, veriloga, ahdl;
+stoplist spectre;
+
+
+inst (lab3.nand2_tb:schematic).I12 binding :extracted;
+inst (lab3.nand2_tb:schematic).I13 binding :extracted;
+inst (lab3.nand2_tb:schematic).I14 binding :extracted;
+
+
+endconfig

@@ -1,0 +1,62 @@
+// Generated for: spectre
+// Generated on: Oct 11 00:38:48 2019
+// Design library name: Lab1
+// Design cell name: nmos_tb
+// Design view name: config
+simulator lang=spectre
+global 0
+include "/CMC/tools/cadence/IC5141USR6_lnx86/tools/dfII/samples/artist/ahdlLib/quantity.spectre"
+parameters v2=1.8 v1=0.6
+include "$CMOSP18_DIR/models/spectre/rf018.scs" section=tt
+include "/home/student1/gcascian/ELE734/saveop.scs"
+
+// Library name: Lab1
+// Cell name: nmos
+// View name: schematic
+// Inherited view list: spectre cmos_sch cmos.sch schematic veriloga ahdl
+subckt nmos B D G S
+    mosfet (D G S B) nch w=1u l=180.00n as=0.48u*(1u) ad=0.48u*(1u) \
+        ps=0.96u+2*(1u) pd=0.96u+2*(1u) nrd=0.27u/(1u) nrs=0.27u/(1u) m=1 \
+        region=triode
+ends nmos
+// End of subcircuit definition.
+
+// Library name: Lab1
+// Cell name: nmos
+// View name: extracted
+// Inherited view list: spectre cmos_sch cmos.sch schematic veriloga ahdl
+subckt nmos_extracted B D G S
+    \+2 (B G) capacitor c=2.02483e-16 m=1
+    \+1 (D S) capacitor c=2.06715e-16 m=1
+    \+0 (S G D B) nch w=1e-06 l=1.8e-07 as=5.9e-13 ad=5.3e-13 ps=2.18e-06 \
+        pd=2.06e-06 nrd=0.27u/(1e-06) nrs=0.27u/(1e-06) m=1 region=triode
+ends nmos_extracted
+// End of subcircuit definition.
+
+// Library name: Lab1
+// Cell name: nmos_tb
+// View name: schematic
+// Inherited view list: spectre cmos_sch cmos.sch schematic veriloga ahdl
+V0 (net019 0) vsource dc= v1 type=dc
+V1 (net017 0) vsource dc= v2 type=dc
+V2 (net015 0) vsource dc=0 type=dc
+v1 (net5 0) vsource dc= v1 type=dc
+v2 (net3 0) vsource dc= v2 type=dc
+v3 (net1 0) vsource dc=0 type=dc
+I5 (net015 net017 net019 0) nmos
+I1 (net1 net3 net5 0) nmos_extracted
+simulatorOptions options reltol=1e-3 vabstol=1e-6 iabstol=1e-12 temp=27 \
+    tnom=27 multithread=on scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 \
+    maxnotes=5 maxwarns=5 digits=5 cols=80 pivrel=1e-3 \
+    sensfile="../psf/sens.output" checklimitdest=psf 
+dcOp dc write="spectre.dc" maxiters=150 maxsteps=10000 annotate=status
+dcOpInfo info what=oppoint where=rawfile
+dc dc param=v2 start=0 stop=1.8 step=.1 oppoint=rawfile maxiters=150 \
+    maxsteps=10000 annotate=status
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts  where=rawfile
+saveOptions options save=allpub

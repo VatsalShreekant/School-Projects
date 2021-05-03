@@ -1,0 +1,141 @@
+@(#)$CDS: LVS.exe version 5.1.0 10/28/2008 10:20 (cicln03) $
+
+Command line: /CMC/tools/cadence/IC5141USR6_lnx86/tools.lnx86/dfII/bin/32bit/LVS.exe -dir /home/student1/gcascian/ELE734/LVS -l -s -x/home/student1/gcascian/ELE734/LVS/xref.out -f -t /home/student1/gcascian/ELE734/LVS/layout /home/student1/gcascian/ELE734/LVS/schematic
+Like matching is enabled.
+Net swapping is enabled.
+Creating cross reference file /home/student1/gcascian/ELE734/LVS/xref.out.
+Fixed device checking is enabled.
+Using terminal names as correspondence points.
+
+    Net-list summary for /home/student1/gcascian/ELE734/LVS/layout/netlist
+       count
+	23		nets
+	7		terminals
+	18		nfet
+	18		pfet
+
+    Net-list summary for /home/student1/gcascian/ELE734/LVS/schematic/netlist
+       count
+	23		nets
+	7		terminals
+	18		nfet
+	18		pfet
+
+
+    Terminal correspondence points
+    N21       N9        A
+    N22       N12       B
+    N7        N6        C
+    N8        N4        COUT
+    N14       N13       GND
+    N6        N5        S
+    N0        N0        VDD
+
+Devices in the rules but not in the netlist:
+        pfet_rf nfet_rf 3Vnfet_rf 3Vpfet_rf nmoscap 3Vnmoscap nfet_na 3Vnfet
+        3Vnfet_na 3Vpfet capacitor mimcap resistor
+
+
+	Device summary for layout
+		   bad  total
+	nfet	     1     18
+
+
+	Device summary for schematic
+		   bad  total
+	nfet	     1     18
+
+The net-lists failed to match.
+
+			     layout  schematic
+				instances
+	un-matched		1	1
+	rewired			11	0
+	size errors		36	36
+	pruned			0	0
+	active			36	36
+	total			36	36
+
+				  nets
+	un-matched		4	4
+	merged			0	0
+	pruned			0	0
+	active			23	23
+	total			23	23
+
+				terminals
+	un-matched		1	1
+	matched but
+	different type		6	6
+	total			7	7
+
+
+Probe files from /home/student1/gcascian/ELE734/LVS/schematic
+
+devbad.out:
+I /I3/NFET_A
+? Device does not cross-match.
+
+netbad.out:
+N /net035
+? Net does not cross-match. It has 7 connections.
+N /GND
+? Net does not cross-match. It has 28 connections.
+N /net040
+? Net does not cross-match. It has 5 connections.
+N /AB
+? Net does not cross-match. It has 9 connections.
+
+mergenet.out:
+
+termbad.out:
+? Terminal A's type in the schematic: input, in the layout: inputOutput
+? Terminal B's type in the schematic: input, in the layout: inputOutput
+? Terminal C's type in the schematic: input, in the layout: inputOutput
+? Terminal COUT's type in the schematic: output, in the layout: inputOutput
+T -1  GND /GND
+? Terminal GND in the schematic failed to match any terminal in the layout.
+? Terminal S's type in the schematic: output, in the layout: inputOutput
+? Terminal VDD's type in the schematic: input, in the layout: inputOutput
+
+prunenet.out:
+
+prunedev.out:
+
+audit.out:
+The no. of lines exceeded than specified by the variable lvsLimitLinesInOutFile.
+To see the complete information please see the file:
+/home/student1/gcascian/ELE734/LVS/schematic/audit.out
+
+
+Probe files from /home/student1/gcascian/ELE734/LVS/layout
+
+devbad.out:
+I /+11
+? Device does not cross-match.
+
+netbad.out:
+N /11
+? Net does not cross-match. It has 8 connections.
+N /GND
+? Net does not cross-match. It has 29 connections.
+N /9
+? Net does not cross-match. It has 4 connections.
+N /8
+? Net does not cross-match. It has 8 connections.
+
+mergenet.out:
+
+termbad.out:
+The no. of lines exceeded than specified by the variable lvsLimitLinesInOutFile.
+To see the complete information please see the file:
+/home/student1/gcascian/ELE734/LVS/layout/termbad.out
+
+prunenet.out:
+
+prunedev.out:
+
+audit.out:
+The no. of lines exceeded than specified by the variable lvsLimitLinesInOutFile.
+To see the complete information please see the file:
+/home/student1/gcascian/ELE734/LVS/layout/audit.out

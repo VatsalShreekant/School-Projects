@@ -1,0 +1,23 @@
+#
+analogLib vpulse spectre
+V1
+#
+analogLib vdc spectre
+V2
+V0
+#
+analogLib cap spectre
+C4
+C5
+C1
+C0
+#
+lab4 fulladder symbol
+I10
+I0
+#ISCELL
+analogLib gnd symbol
+I4
+#ISCELL
+US_10ths Bsize symbol
+I11

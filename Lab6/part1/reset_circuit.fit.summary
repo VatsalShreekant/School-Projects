@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Apr  9 16:41:58 2017
+Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Standard Edition
+Revision Name : reset_circuit
+Top-level Entity Name : reset_circuit
+Family : Cyclone IV E
+Device : EP4CE6E22C6
+Timing Models : Final
+Total logic elements : 75 / 6,272 ( 1 % )
+    Total combinational functions : 75 / 6,272 ( 1 % )
+    Dedicated logic registers : 34 / 6,272 ( < 1 % )
+Total registers : 34
+Total pins : 4 / 92 ( 4 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

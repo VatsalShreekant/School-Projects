@@ -1,0 +1,165 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "PC_Mux",
+					"strict" : false
+				},
+				{
+					"name" : "IM_MUX1",
+					"strict" : false
+				},
+				{
+					"name" : "REG_Mux",
+					"strict" : false
+				},
+				{
+					"name" : "IM_MUX2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "IM_MUX2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_Mux[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_Mux[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_op[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_op[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ALU_op[2]",
+					"strict" : false
+				},
+				{
+					"name" : "inc_PC",
+					"strict" : false
+				},
+				{
+					"name" : "ld_PC",
+					"strict" : false
+				},
+				{
+					"name" : "ld_IR",
+					"strict" : false
+				},
+				{
+					"name" : "clr_A",
+					"strict" : false
+				},
+				{
+					"name" : "clr_B",
+					"strict" : false
+				},
+				{
+					"name" : "clr_C",
+					"strict" : false
+				},
+				{
+					"name" : "clr_Z",
+					"strict" : false
+				},
+				{
+					"name" : "ld_A",
+					"strict" : false
+				},
+				{
+					"name" : "ld_B",
+					"strict" : false
+				},
+				{
+					"name" : "ld_C",
+					"strict" : false
+				},
+				{
+					"name" : "ld_Z",
+					"strict" : false
+				},
+				{
+					"name" : "T[0]",
+					"strict" : false
+				},
+				{
+					"name" : "T[1]",
+					"strict" : false
+				},
+				{
+					"name" : "T[2]",
+					"strict" : false
+				},
+				{
+					"name" : "wen",
+					"strict" : false
+				},
+				{
+					"name" : "en",
+					"strict" : false
+				},
+				{
+					"name" : "enable",
+					"strict" : false
+				},
+				{
+					"name" : "INST[25]",
+					"strict" : false
+				},
+				{
+					"name" : "INST[27]",
+					"strict" : false
+				},
+				{
+					"name" : "INST[26]",
+					"strict" : false
+				},
+				{
+					"name" : "INST[24]",
+					"strict" : false
+				},
+				{
+					"name" : "INST[31]",
+					"strict" : false
+				},
+				{
+					"name" : "INST[30]",
+					"strict" : false
+				},
+				{
+					"name" : "INST[29]",
+					"strict" : false
+				},
+				{
+					"name" : "INST[28]",
+					"strict" : false
+				},
+				{
+					"name" : "statusZ",
+					"strict" : false
+				},
+				{
+					"name" : "statusC",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "mclk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

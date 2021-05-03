@@ -1,0 +1,93 @@
+|CombinedASU1
+OverFlow <= ASU:inst.Overflow
+Cin => ASU:inst.Cin
+X[0] => ASU:inst.X[0]
+X[1] => ASU:inst.X[1]
+X[2] => ASU:inst.X[2]
+X[3] => ASU:inst.X[3]
+Y[0] => ASU:inst.Y[0]
+Y[1] => ASU:inst.Y[1]
+Y[2] => ASU:inst.Y[2]
+Y[3] => ASU:inst.Y[3]
+display[7] <= SSEG:inst1.leds7
+display[6] <= SSEG:inst1.leds6
+display[5] <= SSEG:inst1.leds5
+display[4] <= SSEG:inst1.leds4
+display[3] <= SSEG:inst1.leds3
+display[2] <= SSEG:inst1.leds2
+display[1] <= SSEG:inst1.leds1
+neg_display[7] <= SSEG:inst1.leds27
+neg_display[6] <= SSEG:inst1.leds26
+neg_display[5] <= SSEG:inst1.leds25
+neg_display[4] <= SSEG:inst1.leds24
+neg_display[3] <= SSEG:inst1.leds23
+neg_display[2] <= SSEG:inst1.leds22
+neg_display[1] <= SSEG:inst1.leds21
+
+
+|CombinedASU1|ASU:inst
+Cin => Add1.IN10
+X[0] => Add0.IN4
+X[1] => Add0.IN3
+X[2] => Add0.IN2
+X[3] => Add0.IN1
+X[3] => Overflow.IN1
+Y[0] => Add0.IN8
+Y[1] => Add0.IN7
+Y[2] => Add0.IN6
+Y[3] => Add0.IN5
+Y[3] => Overflow.IN1
+S[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+Overflow <= Overflow.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CombinedASU1|SSEG:inst1
+bcd[0] => Mux0.IN19
+bcd[0] => Mux1.IN19
+bcd[0] => Mux2.IN19
+bcd[0] => Mux3.IN19
+bcd[0] => Mux4.IN19
+bcd[0] => Mux5.IN19
+bcd[0] => Mux6.IN19
+bcd[1] => Mux0.IN18
+bcd[1] => Mux1.IN18
+bcd[1] => Mux2.IN18
+bcd[1] => Mux3.IN18
+bcd[1] => Mux4.IN18
+bcd[1] => Mux5.IN18
+bcd[1] => Mux6.IN18
+bcd[2] => Mux0.IN17
+bcd[2] => Mux1.IN17
+bcd[2] => Mux2.IN17
+bcd[2] => Mux3.IN17
+bcd[2] => Mux4.IN17
+bcd[2] => Mux5.IN17
+bcd[2] => Mux6.IN17
+bcd[3] => Mux0.IN16
+bcd[3] => Mux1.IN16
+bcd[3] => Mux2.IN16
+bcd[3] => Mux3.IN16
+bcd[3] => Mux4.IN16
+bcd[3] => Mux5.IN16
+bcd[3] => Mux6.IN16
+sign => leds2[7].DATAIN
+leds[7] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+leds[6] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+leds[5] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+leds[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+leds[3] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+leds[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+leds[1] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+leds2[7] <= sign.DB_MAX_OUTPUT_PORT_TYPE
+leds2[6] <= <VCC>
+leds2[5] <= <VCC>
+leds2[4] <= <VCC>
+leds2[3] <= <VCC>
+leds2[2] <= <VCC>
+leds2[1] <= <VCC>
+
+

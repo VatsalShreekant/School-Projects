@@ -1,0 +1,8 @@
+? Terminal A's type in the schematic: input, in the layout: inputOutput
+? Terminal B's type in the schematic: input, in the layout: inputOutput
+? Terminal C's type in the schematic: input, in the layout: inputOutput
+? Terminal COUT's type in the schematic: output, in the layout: inputOutput
+T -1  GND /GND
+? Terminal GND in the schematic failed to match any terminal in the layout.
+? Terminal S's type in the schematic: output, in the layout: inputOutput
+? Terminal VDD's type in the schematic: input, in the layout: inputOutput

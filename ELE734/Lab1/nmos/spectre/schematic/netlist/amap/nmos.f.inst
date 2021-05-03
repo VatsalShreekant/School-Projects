@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"V0v" "V0"
+"V0n" "analogLib_vdc_spectre"
+"V2v" "V2"
+"V2n" "analogLib_vdc_spectre"
+"V1v" "V1"
+"V1n" "analogLib_vdc_spectre"
+"mosfetv" "mosfet"
+"mosfetn" "cmosp18_nfet_spectre"

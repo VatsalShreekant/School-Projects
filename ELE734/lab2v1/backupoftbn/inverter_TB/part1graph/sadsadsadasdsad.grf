@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JavaBean CLASS="COM.cadence.awd.graph.GraphFrame">
+  <Properties>
+    <Property NAME="graph">
+      <JavaBean CLASS="COM.cadence.awd.graph.Rect2DGraph">
+        <Properties>
+          <Property NAME="backgroundName">black</Property>
+          <Property NAME="cursorOn">True</Property>
+          <Property NAME="dataSnapOn">False</Property>
+          <Property NAME="dependentAxis">
+            <JavaBean CLASS="COM.cadence.awd.graph.DepAxis">
+              <Properties>
+                <Property NAME="forceOrigin">False</Property>
+                <Property NAME="foregroundName">black</Property>
+                <Property NAME="logScale">False</Property>
+                <Property NAME="majDivisions">0</Property>
+                <Property NAME="majGridsOn">True</Property>
+                <Property NAME="minDivisions">0</Property>
+                <Property NAME="minGridsOn">True</Property>
+                <Property NAME="minorForegroundName">0x272727</Property>
+                <Property NAME="nameId">0</Property>
+                <Property NAME="scaleMode">1</Property>
+                <Property NAME="sigDigits">3</Property>
+                <Property NAME="sigDigitsDefault">True</Property>
+                <Property NAME="tempStripFlag">False</Property>
+                <Property NAME="title">Time Delay S</Property>
+                <Property NAME="useDefaultTitle">False</Property>
+                <Property NAME="userMax">3.0000003E-10</Property>
+                <Property NAME="userMin">0.0</Property>
+                <Property NAME="zoomState">False</Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="displayDate">True</Property>
+          <Property NAME="displayType">5</Property>
+          <Property NAME="eyeDiagram">False</Property>
+          <Property NAME="fontName">Dialog</Property>
+          <Property NAME="fontSize">12</Property>
+          <Property NAME="fontStyle">0</Property>
+          <Property NAME="forceCommonLimits">False</Property>
+          <Property NAME="forceSquareAspect">False</Property>
+          <Property NAME="foregroundName">black</Property>
+          <Property NAME="freeze">False</Property>
+          <Property NAME="independentAxis">
+            <JavaBean CLASS="COM.cadence.awd.graph.IndepAxis">
+              <Properties>
+                <Property NAME="defaultTitle">Cload</Property>
+                <Property NAME="forceOrigin">False</Property>
+                <Property NAME="foregroundName">black</Property>
+                <Property NAME="logScale">False</Property>
+                <Property NAME="majDivisions">0</Property>
+                <Property NAME="majGridsOn">True</Property>
+                <Property NAME="minDivisions">0</Property>
+                <Property NAME="minGridsOn">True</Property>
+                <Property NAME="minorForegroundName">0x272727</Property>
+                <Property NAME="nameId">0</Property>
+                <Property NAME="scaleMode">1</Property>
+                <Property NAME="sigDigits">3</Property>
+                <Property NAME="sigDigitsDefault">True</Property>
+                <Property NAME="title">Load Capacitance C</Property>
+                <Property NAME="useDefaultTitle">False</Property>
+                <Property NAME="userMax">1.5000001500000002E-13</Property>
+                <Property NAME="userMin">0.0</Property>
+                <Property NAME="zoomState">False</Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="labeledMarker">
+            <JavaBean CLASS="COM.cadence.awd.graph.LabeledMarker">
+              <Properties>
+                <Property NAME="arrowOn">True</Property>
+                <Property NAME="fontName">Dialog</Property>
+                <Property NAME="fontSize">12</Property>
+                <Property NAME="fontStyle">0</Property>
+                <Property NAME="foregroundName">white</Property>
+                <Property NAME="labelString">Falling Time Delay vs Load Capacitance</Property>
+                <Property NAME="nameId">0</Property>
+                <Property NAME="traceAttached">True</Property>
+                <Property NAME="traceId">0</Property>
+                <Property NAME="type">7</Property>
+                <Property NAME="xLabelOffset">-91</Property>
+                <Property NAME="xPosition">6.821917055779348E-14</Property>
+                <Property NAME="yLabelOffset">114</Property>
+                <Property NAME="yPosition">1.2355801063219177E-10</Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="labeledMarker">
+            <JavaBean CLASS="COM.cadence.awd.graph.LabeledMarker">
+              <Properties>
+                <Property NAME="arrowOn">True</Property>
+                <Property NAME="fontName">Dialog</Property>
+                <Property NAME="fontSize">12</Property>
+                <Property NAME="fontStyle">0</Property>
+                <Property NAME="foregroundName">white</Property>
+                <Property NAME="labelString">Rising Time Delay vs Load Capacitance</Property>
+                <Property NAME="nameId">1</Property>
+                <Property NAME="traceAttached">True</Property>
+                <Property NAME="traceId">1</Property>
+                <Property NAME="type">7</Property>
+                <Property NAME="xLabelOffset">-53</Property>
+                <Property NAME="xPosition">7.5E-14</Property>
+                <Property NAME="yLabelOffset">-62</Property>
+                <Property NAME="yPosition">8.081431790234986E-11</Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="majorGridsForegroundName">verydarkgray</Property>
+          <Property NAME="majorGridsOn">True</Property>
+          <Property NAME="minorGridsForegroundName">0x272727</Property>
+          <Property NAME="minorGridsOn">True</Property>
+          <Property NAME="nameId">-1</Property>
+          <Property NAME="peakSnapOn">False</Property>
+          <Property NAME="runVarName">Cload</Property>
+          <Property NAME="stripChartOn">False</Property>
+          <Property NAME="subTitle"></Property>
+          <Property NAME="title">Rise &amp; Fall time as a function of load capacitance</Property>
+          <Property NAME="trace">
+            <JavaBean CLASS="COM.cadence.awd.graph.RectTrace">
+              <Properties>
+                <Property NAME="defaultTitle">Output Falling Delay</Property>
+                <Property NAME="defaultTitleOn">False</Property>
+                <Property NAME="depAxisId">0</Property>
+                <Property NAME="eyeEnd">1.5E-13</Property>
+                <Property NAME="eyeInterval">1.5E-13</Property>
+                <Property NAME="eyeMode">False</Property>
+                <Property NAME="eyeStart">0.0</Property>
+                <Property NAME="foregroundName">red</Property>
+                <Property NAME="indepAxisId">0</Property>
+                <Property NAME="name">Output Falling Delay</Property>
+                <Property NAME="nameId">0</Property>
+                <Property NAME="stripIndex">0</Property>
+                <Property NAME="symbolCount">20</Property>
+                <Property NAME="symbolStyle">14</Property>
+                <Property NAME="symbolsOnFlag">False</Property>
+                <Property NAME="title">Output Falling Delay</Property>
+                <Property NAME="traceStyle">36</Property>
+                <Property NAME="traceToken">
+                  <JavaBean CLASS="COM.cadence.awd.graph.TraceToken">
+                    <Properties>
+                      <Property NAME="compound">False</Property>
+                      <Property NAME="convertedName">delay(VT("/A")::SPC::0.9::SPC::1::SPC::"rising"::SPC::VT("/Y")::SPC::0.9::SPC::1::SPC::"falling"::SPC::0::SPC::0::SPC::nil::SPC::nil)</Property>
+                      <Property NAME="index">0</Property>
+                      <Property NAME="name">delay(VT("/A") 0.9 1 "rising" VT("/Y") 0.9 1 "falling" 0 0 nil nil)</Property>
+                      <Property NAME="type">EXPRESSION</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+                <Property NAME="traceType">31</Property>
+                <Property NAME="zoomAgent">
+                  <JavaBean CLASS="COM.cadence.awd.graph.ZoomAgent">
+                    <Properties>
+                      <Property NAME="traceId">trc:5174563.297</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="trace">
+            <JavaBean CLASS="COM.cadence.awd.graph.RectTrace">
+              <Properties>
+                <Property NAME="defaultTitle">Output Rising Delay</Property>
+                <Property NAME="defaultTitleOn">False</Property>
+                <Property NAME="depAxisId">0</Property>
+                <Property NAME="eyeEnd">1.5E-13</Property>
+                <Property NAME="eyeInterval">1.5E-13</Property>
+                <Property NAME="eyeMode">False</Property>
+                <Property NAME="eyeStart">0.0</Property>
+                <Property NAME="foregroundName">blue</Property>
+                <Property NAME="indepAxisId">0</Property>
+                <Property NAME="name">Output Rising Delay</Property>
+                <Property NAME="nameId">1</Property>
+                <Property NAME="stripIndex">1</Property>
+                <Property NAME="symbolCount">20</Property>
+                <Property NAME="symbolStyle">8</Property>
+                <Property NAME="symbolsOnFlag">False</Property>
+                <Property NAME="title">Output Rising Delay</Property>
+                <Property NAME="traceStyle">36</Property>
+                <Property NAME="traceToken">
+                  <JavaBean CLASS="COM.cadence.awd.graph.TraceToken">
+                    <Properties>
+                      <Property NAME="compound">False</Property>
+                      <Property NAME="convertedName">delay(VT("/A")::SPC::0.9::SPC::1::SPC::"falling"::SPC::VT("/Y")::SPC::0.9::SPC::1::SPC::"rising"::SPC::0::SPC::0::SPC::nil::SPC::nil)</Property>
+                      <Property NAME="index">0</Property>
+                      <Property NAME="name">delay(VT("/A") 0.9 1 "falling" VT("/Y") 0.9 1 "rising" 0 0 nil nil)</Property>
+                      <Property NAME="type">EXPRESSION</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+                <Property NAME="traceType">31</Property>
+                <Property NAME="zoomAgent">
+                  <JavaBean CLASS="COM.cadence.awd.graph.ZoomAgent">
+                    <Properties>
+                      <Property NAME="traceId">trc:15925395.300</Property>
+                    </Properties>
+                  </JavaBean>
+                </Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="useDefaultSubTitle">True</Property>
+          <Property NAME="useDefaultTitle">False</Property>
+          <Property NAME="visible">True</Property>
+          <Property NAME="visibleDigitalRows">4</Property>
+          <Property NAME="visibleStripChartRows">6</Property>
+          <Property NAME="zoomManager">
+            <JavaBean CLASS="COM.cadence.awd.graph.ZoomManager">
+              <Properties>
+                <Property NAME="xStartMax">0.0</Property>
+                <Property NAME="xStartMin">0.0</Property>
+                <Property NAME="yStartMax">0.0</Property>
+                <Property NAME="yStartMin">0.0</Property>
+                <Property NAME="zoomRow">0</Property>
+                <Property NAME="zoomType">0</Property>
+              </Properties>
+            </JavaBean>
+          </Property>
+          <Property NAME="zoomState">False</Property>
+        </Properties>
+      </JavaBean>
+    </Property>
+    <Property NAME="height">870</Property>
+    <Property NAME="labelText"></Property>
+    <Property NAME="stripChartState">False</Property>
+    <Property NAME="width">1446</Property>
+    <Property NAME="xLocation">57</Property>
+    <Property NAME="yLocation">98</Property>
+  </Properties>
+</JavaBean>
+

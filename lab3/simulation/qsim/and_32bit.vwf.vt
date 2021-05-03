@@ -1,0 +1,392 @@
+// Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus Prime License Agreement,
+// the Altera MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Altera and sold by Altera or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "02/06/2018 11:17:06"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          and_32bit
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module and_32bit_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg [31:0] a_in;
+reg [31:0] b_in;
+// wires                                               
+wire [31:0] result;
+
+// assign statements (if any)                          
+and_32bit i1 (
+// port map - connection between master ports and signals/registers   
+	.a_in(a_in),
+	.b_in(b_in),
+	.result(result)
+);
+initial 
+begin 
+#100000 $finish;
+end 
+// a_in[ 31 ]
+initial
+begin
+	a_in[31] = 1'b0;
+end 
+// a_in[ 30 ]
+initial
+begin
+	a_in[30] = 1'b0;
+end 
+// a_in[ 29 ]
+initial
+begin
+	a_in[29] = 1'b0;
+end 
+// a_in[ 28 ]
+initial
+begin
+	a_in[28] = 1'b0;
+end 
+// a_in[ 27 ]
+initial
+begin
+	a_in[27] = 1'b0;
+end 
+// a_in[ 26 ]
+initial
+begin
+	a_in[26] = 1'b0;
+end 
+// a_in[ 25 ]
+initial
+begin
+	a_in[25] = 1'b0;
+end 
+// a_in[ 24 ]
+initial
+begin
+	a_in[24] = 1'b0;
+end 
+// a_in[ 23 ]
+initial
+begin
+	a_in[23] = 1'b0;
+end 
+// a_in[ 22 ]
+initial
+begin
+	a_in[22] = 1'b0;
+end 
+// a_in[ 21 ]
+initial
+begin
+	a_in[21] = 1'b0;
+end 
+// a_in[ 20 ]
+initial
+begin
+	a_in[20] = 1'b0;
+end 
+// a_in[ 19 ]
+initial
+begin
+	a_in[19] = 1'b0;
+end 
+// a_in[ 18 ]
+initial
+begin
+	a_in[18] = 1'b0;
+end 
+// a_in[ 17 ]
+initial
+begin
+	a_in[17] = 1'b0;
+end 
+// a_in[ 16 ]
+initial
+begin
+	a_in[16] = 1'b0;
+end 
+// a_in[ 15 ]
+initial
+begin
+	a_in[15] = 1'b0;
+end 
+// a_in[ 14 ]
+initial
+begin
+	a_in[14] = 1'b0;
+end 
+// a_in[ 13 ]
+initial
+begin
+	a_in[13] = 1'b0;
+end 
+// a_in[ 12 ]
+initial
+begin
+	a_in[12] = 1'b0;
+end 
+// a_in[ 11 ]
+initial
+begin
+	a_in[11] = 1'b0;
+end 
+// a_in[ 10 ]
+initial
+begin
+	a_in[10] = 1'b0;
+end 
+// a_in[ 9 ]
+initial
+begin
+	a_in[9] = 1'b0;
+end 
+// a_in[ 8 ]
+initial
+begin
+	a_in[8] = 1'b0;
+end 
+// a_in[ 7 ]
+initial
+begin
+	a_in[7] = 1'b0;
+end 
+// a_in[ 6 ]
+initial
+begin
+	a_in[6] = 1'b0;
+end 
+// a_in[ 5 ]
+initial
+begin
+	a_in[5] = 1'b0;
+end 
+// a_in[ 4 ]
+initial
+begin
+	a_in[4] = 1'b0;
+end 
+// a_in[ 3 ]
+initial
+begin
+	a_in[3] = 1'b0;
+	a_in[3] = #80000 1'b1;
+end 
+// a_in[ 2 ]
+initial
+begin
+	a_in[2] = 1'b0;
+	a_in[2] = #40000 1'b1;
+	a_in[2] = #40000 1'b0;
+end 
+// a_in[ 1 ]
+initial
+begin
+	repeat(2)
+	begin
+		a_in[1] = 1'b0;
+		a_in[1] = #20000 1'b1;
+		# 20000;
+	end
+	a_in[1] = 1'b0;
+end 
+// a_in[ 0 ]
+always
+begin
+	a_in[0] = 1'b0;
+	a_in[0] = #10000 1'b1;
+	#10000;
+end 
+// b_in[ 31 ]
+initial
+begin
+	b_in[31] = 1'b0;
+end 
+// b_in[ 30 ]
+initial
+begin
+	b_in[30] = 1'b0;
+end 
+// b_in[ 29 ]
+initial
+begin
+	b_in[29] = 1'b0;
+end 
+// b_in[ 28 ]
+initial
+begin
+	b_in[28] = 1'b1;
+end 
+// b_in[ 27 ]
+initial
+begin
+	b_in[27] = 1'b0;
+end 
+// b_in[ 26 ]
+initial
+begin
+	b_in[26] = 1'b0;
+end 
+// b_in[ 25 ]
+initial
+begin
+	b_in[25] = 1'b0;
+end 
+// b_in[ 24 ]
+initial
+begin
+	b_in[24] = 1'b0;
+end 
+// b_in[ 23 ]
+initial
+begin
+	b_in[23] = 1'b0;
+end 
+// b_in[ 22 ]
+initial
+begin
+	b_in[22] = 1'b0;
+end 
+// b_in[ 21 ]
+initial
+begin
+	b_in[21] = 1'b0;
+end 
+// b_in[ 20 ]
+initial
+begin
+	b_in[20] = 1'b0;
+end 
+// b_in[ 19 ]
+initial
+begin
+	b_in[19] = 1'b0;
+end 
+// b_in[ 18 ]
+initial
+begin
+	b_in[18] = 1'b0;
+end 
+// b_in[ 17 ]
+initial
+begin
+	b_in[17] = 1'b0;
+end 
+// b_in[ 16 ]
+initial
+begin
+	b_in[16] = 1'b0;
+end 
+// b_in[ 15 ]
+initial
+begin
+	b_in[15] = 1'b0;
+end 
+// b_in[ 14 ]
+initial
+begin
+	b_in[14] = 1'b0;
+end 
+// b_in[ 13 ]
+initial
+begin
+	b_in[13] = 1'b0;
+end 
+// b_in[ 12 ]
+initial
+begin
+	b_in[12] = 1'b0;
+end 
+// b_in[ 11 ]
+initial
+begin
+	b_in[11] = 1'b0;
+end 
+// b_in[ 10 ]
+initial
+begin
+	b_in[10] = 1'b0;
+end 
+// b_in[ 9 ]
+initial
+begin
+	b_in[9] = 1'b0;
+end 
+// b_in[ 8 ]
+initial
+begin
+	b_in[8] = 1'b0;
+end 
+// b_in[ 7 ]
+initial
+begin
+	b_in[7] = 1'b0;
+end 
+// b_in[ 6 ]
+initial
+begin
+	b_in[6] = 1'b0;
+end 
+// b_in[ 5 ]
+initial
+begin
+	b_in[5] = 1'b0;
+end 
+// b_in[ 4 ]
+initial
+begin
+	b_in[4] = 1'b0;
+end 
+// b_in[ 3 ]
+initial
+begin
+	b_in[3] = 1'b0;
+	b_in[3] = #20000 1'b1;
+end 
+// b_in[ 2 ]
+initial
+begin
+	b_in[2] = 1'b1;
+	b_in[2] = #20000 1'b0;
+	b_in[2] = #40000 1'b1;
+end 
+// b_in[ 1 ]
+initial
+begin
+	repeat(2)
+	begin
+		b_in[1] = 1'b1;
+		b_in[1] = #20000 1'b0;
+		# 20000;
+	end
+	b_in[1] = 1'b1;
+end 
+// b_in[ 0 ]
+always
+begin
+	b_in[0] = 1'b0;
+	b_in[0] = #10000 1'b1;
+	#10000;
+end 
+endmodule
+

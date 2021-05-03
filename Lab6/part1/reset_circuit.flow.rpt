@@ -1,0 +1,161 @@
+Flow report for reset_circuit
+Sun Apr  9 17:34:41 2017
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Flow Summary                                                                         ;
++------------------------------------+-------------------------------------------------+
+; Flow Status                        ; Successful - Sun Apr  9 17:34:41 2017           ;
+; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Standard Edition ;
+; Revision Name                      ; reset_circuit                                   ;
+; Top-level Entity Name              ; reset_circuit                                   ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 75 / 6,272 ( 1 % )                              ;
+;     Total combinational functions  ; 75 / 6,272 ( 1 % )                              ;
+;     Dedicated logic registers      ; 34 / 6,272 ( < 1 % )                            ;
+; Total registers                    ; 34                                              ;
+; Total pins                         ; 4 / 92 ( 4 % )                                  ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0 / 276,480 ( 0 % )                             ;
+; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                                  ;
+; Total PLLs                         ; 0 / 2 ( 0 % )                                   ;
+; Device                             ; EP4CE6E22C6                                     ;
+; Timing Models                      ; Final                                           ;
++------------------------------------+-------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 04/09/2017 16:40:52 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; reset_circuit       ;
++-------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                ;
++-------------------------------------+------------------------------------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                                                      ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+------------------------------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 159090364147528.149177045223915                            ; --            ; --          ; --             ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                                        ; --            ; --          ; eda_simulation ;
+; EDA_NETLIST_WRITER_OUTPUT_DIR       ; /home/student2/sgolabia/coe608/Lab6/part1/simulation/qsim/ ; --            ; --          ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                                ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                                  ; <None>        ; --          ; --             ;
+; EDA_TIME_SCALE                      ; 1 ps                                                       ; --            ; --          ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                         ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                          ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; 16764057                                                   ; --            ; --          ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                      ; --            ; --          ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                                     ; --            ; --          ; Top            ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS  ; Off                                                        ; --            ; --          ; eda_blast_fpga ;
++-------------------------------------+------------------------------------------------------------+---------------+-------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:59     ; 1.0                     ; 1299 MB             ; 00:01:14                           ;
+; Fitter                    ; 00:00:06     ; 1.0                     ; 1589 MB             ; 00:00:05                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 1149 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 1228 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1395 MB             ; 00:00:00                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 1381 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:06     ; 1.0                     ; 1386 MB             ; 00:00:06                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 1381 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:08     ; 1.0                     ; 1389 MB             ; 00:00:07                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1383 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 1389 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 1381 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 1389 MB             ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:07     ; 1.0                     ; 1383 MB             ; 00:00:07                           ;
+; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 1393 MB             ; 00:00:02                           ;
+; Total                     ; 00:01:45     ; --                      ; --                  ; 00:01:56                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                                  ;
++---------------------------+---------------------+------------------+------------+----------------+
+; Module Name               ; Machine Hostname    ; OS Name          ; OS Version ; Processor type ;
++---------------------------+---------------------+------------------+------------+----------------+
+; Analysis & Synthesis      ; canon.ee.ryerson.ca ; Scientific Linux ; 6          ; x86_64         ;
+; Fitter                    ; canon.ee.ryerson.ca ; Scientific Linux ; 6          ; x86_64         ;
+; Assembler                 ; canon.ee.ryerson.ca ; Scientific Linux ; 6          ; x86_64         ;
+; TimeQuest Timing Analyzer ; canon.ee.ryerson.ca ; Scientific Linux ; 6          ; x86_64         ;
+; EDA Netlist Writer        ; canon.ee.ryerson.ca ; Scientific Linux ; 6          ; x86_64         ;
+; EDA Netlist Writer        ; canon.ee.ryerson.ca ; Scientific Linux ; 6          ; x86_64         ;
+; EDA Netlist Writer        ; canon.ee.ryerson.ca ; Scientific Linux ; 6          ; x86_64         ;
+; EDA Netlist Writer        ; canon.ee.ryerson.ca ; Scientific Linux ; 6          ; x86_64         ;
+; EDA Netlist Writer        ; canon.ee.ryerson.ca ; Scientific Linux ; 6          ; x86_64         ;
+; EDA Netlist Writer        ; canon.ee.ryerson.ca ; Scientific Linux ; 6          ; x86_64         ;
+; EDA Netlist Writer        ; canon.ee.ryerson.ca ; Scientific Linux ; 6          ; x86_64         ;
+; EDA Netlist Writer        ; canon.ee.ryerson.ca ; Scientific Linux ; 6          ; x86_64         ;
+; EDA Netlist Writer        ; canon.ee.ryerson.ca ; Scientific Linux ; 6          ; x86_64         ;
+; EDA Netlist Writer        ; canon.ee.ryerson.ca ; Scientific Linux ; 6          ; x86_64         ;
+; EDA Netlist Writer        ; canon.ee.ryerson.ca ; Scientific Linux ; 6          ; x86_64         ;
++---------------------------+---------------------+------------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off reset_circuit -c reset_circuit
+quartus_fit --read_settings_files=off --write_settings_files=off reset_circuit -c reset_circuit
+quartus_asm --read_settings_files=off --write_settings_files=off reset_circuit -c reset_circuit
+quartus_sta reset_circuit -c reset_circuit
+quartus_eda --read_settings_files=off --write_settings_files=off reset_circuit -c reset_circuit
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off reset_circuit -c reset_circuit --vector_source=/home/student2/njegaraj/coe608/past/anu/Lab6/part1/nish_reset_circuit.vwf --testbench_file=/home/student2/njegaraj/coe608/past/anu/Lab6/part1/simulation/qsim/nish_reset_circuit.vwf.vt
+quartus_eda --write_settings_files=off --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=/home/student2/njegaraj/coe608/past/anu/Lab6/part1/simulation/qsim/ reset_circuit -c reset_circuit
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off reset_circuit -c reset_circuit --vector_source=/home/student2/njegaraj/coe608/past/anu/Lab6/part1/nish_reset_circuit.vwf --testbench_file=/home/student2/njegaraj/coe608/past/anu/Lab6/part1/simulation/qsim/nish_reset_circuit.vwf.vt
+quartus_eda --write_settings_files=off --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=/home/student2/njegaraj/coe608/past/anu/Lab6/part1/simulation/qsim/ reset_circuit -c reset_circuit
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off reset_circuit -c reset_circuit --vector_source=/home/student2/njegaraj/coe608/past/anu/Lab6/part1/nish_reset_circuit.vwf --testbench_file=/home/student2/njegaraj/coe608/past/anu/Lab6/part1/simulation/qsim/nish_reset_circuit.vwf.vt
+quartus_eda --write_settings_files=off --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=/home/student2/njegaraj/coe608/past/anu/Lab6/part1/simulation/qsim/ reset_circuit -c reset_circuit
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off reset_circuit -c reset_circuit --vector_source=/home/student2/njegaraj/coe608/past/anu/Lab6/part1/nish_reset_circuit.vwf --testbench_file=/home/student2/njegaraj/coe608/past/anu/Lab6/part1/simulation/qsim/nish_reset_circuit.vwf.vt
+quartus_eda --write_settings_files=off --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=/home/student2/njegaraj/coe608/past/anu/Lab6/part1/simulation/qsim/ reset_circuit -c reset_circuit
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off reset_circuit -c reset_circuit --vector_source=/home/student2/njegaraj/coe608/past/anu/Lab6/part1/nish_reset_circuit.vwf --testbench_file=/home/student2/njegaraj/coe608/past/anu/Lab6/part1/simulation/qsim/nish_reset_circuit.vwf.vt
+quartus_eda --write_settings_files=off --functional=off --flatten_buses=off --timescale=1ps --simulation=on --tool=modelsim_oem --format=verilog --output_directory=/home/student2/njegaraj/coe608/past/anu/Lab6/part1/simulation/qsim/ reset_circuit -c reset_circuit
+
+
+

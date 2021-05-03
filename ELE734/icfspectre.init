@@ -1,0 +1,64 @@
+simulator lang=spectre
+
+//
+//Note: Ensure that one device type is defined only once (i.e. more than
+//      one definition of a single device type is not allowed)    
+//      
+//
+
+
+
+//RF and Baseband Models
+include "/CMC/kits/cmosp18/models/spectre/cor_3m.scs" section=tt_3m
+include "/CMC/kits/cmosp18/models/spectre/cor_3v.scs" section=tt_3v
+include "/CMC/kits/cmosp18/models/spectre/cor_3vna.scs" section=tt_3vna
+include "/CMC/kits/cmosp18/models/spectre/cor_bbmvar.scs" section=tt_bbmvar
+include "/CMC/kits/cmosp18/models/spectre/cor_bip.scs" section=tt_bip
+include "/CMC/kits/cmosp18/models/spectre/cor_bip3.scs" section=tt_bip3
+include "/CMC/kits/cmosp18/models/spectre/cor_dio.scs" section=dio
+include "/CMC/kits/cmosp18/models/spectre/cor_dio3.scs" section=dio3
+include "/CMC/kits/cmosp18/models/spectre/cor_dio_dnw.scs" section=dio_dnw
+include "/CMC/kits/cmosp18/models/spectre/cor_m.scs" section=tt_m
+//include "/CMC/kits/cmosp18/models/spectre/cor_mc.scs" section=mc
+//include "/CMC/kits/cmosp18/models/spectre/cor_mc_3v.scs" section=mc_3v
+//include "/CMC/kits/cmosp18/models/spectre/cor_mc_rfmos.scs" section=mc_rfmos
+//include "/CMC/kits/cmosp18/models/spectre/cor_mc_rfmos33.scs" section=mc_rfmos33
+//TB, CD - mimcap sim //include "/CMC/kits/cmosp18/models/spectre/cor_mim.scs" section=tt_mim
+include "/CMC/kits/cmosp18/models/spectre/cor_na.scs" section=tt_na
+include "/CMC/kits/cmosp18/models/spectre/cor_res.scs" section=tt_res
+include "/CMC/kits/cmosp18/models/spectre/cor_rfesd.scs" section=tt_rfesd
+include "/CMC/kits/cmosp18/models/spectre/cor_rfind.scs" section=tt_rfind
+include "/CMC/kits/cmosp18/models/spectre/cor_rfjvar.scs" section=tt_rfjvar
+//TB, CD - mimcap sim //include "/CMC/kits/cmosp18/models/spectre/cor_rfmim.scs" section=tt_rfmim
+include "/CMC/kits/cmosp18/models/spectre/cor_rfmos.scs" section=tt_rfmos
+include "/CMC/kits/cmosp18/models/spectre/cor_rfmos33.scs" section=tt_rfmos33
+include "/CMC/kits/cmosp18/models/spectre/cor_rfmvar.scs" section=tt_rfmvar
+include "/CMC/kits/cmosp18/models/spectre/cor_rfres_hri.scs" section=tt_rfres_hri
+include "/CMC/kits/cmosp18/models/spectre/cor_rfres_rpo.scs" section=tt_rfres_rpo
+include "/CMC/kits/cmosp18/models/spectre/cor_rfres_sa.scs" section=tt_rfres_sa
+include "/CMC/kits/cmosp18/models/spectre/cor_std_mos.scs" section=tt
+
+
+//Mixed-Signal Models
+//include "/CMC/kits/cmosp18/models/spectre/spectre445_mixed/mm018.scs" section=tt
+//include "/CMC/kits/cmosp18/models/spectre/spectre445_mixed/mm018.scs" section=tt_3v
+//include "/CMC/kits/cmosp18/models/spectre/spectre445_mixed/mm018.scs" section=tt_na
+//include "/CMC/kits/cmosp18/models/spectre/spectre445_mixed/mm018.scs" section=tt_3vna
+//include "/CMC/kits/cmosp18/models/spectre/spectre445_mixed/mm018.scs" section=tt_bip
+//include "/CMC/kits/cmosp18/models/spectre/spectre445_mixed/mm018.scs" section=tt_bip3   
+//include "/CMC/kits/cmosp18/models/spectre/spectre445_mixed/mm018.scs" section=dio
+//include "/CMC/kits/cmosp18/models/spectre/spectre445_mixed/mm018.scs" section=dio3
+
+
+//Logic Models
+//include "/CMC/kits/cmosp18/models/spectre/spectre445_logical/log018.scs" section=res
+//include "/CMC/kits/cmosp18/models/spectre/spectre445_logical/log018.scs" section=tt
+
+
+
+
+
+
+
+
+

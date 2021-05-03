@@ -1,0 +1,670 @@
+library ieee;
+use ieee.std_logic_1164.ALL;
+ENTITY control IS
+PORT(
+clk, mclk: IN STD_LOGIC;
+enable: IN STD_LOGIC;
+statusC, statusZ: IN STD_LOGIC;
+INST: IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+A_Mux, B_Mux: OUT STD_LOGIC;
+IM_MUX1, REG_Mux: OUT STD_LOGIC;
+IM_MUX2, DATA_Mux: OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+ALU_op: OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+inc_PC, ld_PC: OUT STD_LOGIC;
+clr_IR: OUT STD_LOGIC;
+ld_IR: OUT STD_LOGIC;
+clr_A, clr_B, clr_C, clr_Z: OUT STD_LOGIC;
+ld_A, ld_B, ld_C, ld_Z: OUT STD_LOGIC;
+T: OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+wen, en: OUT STD_LOGIC);
+END control;
+
+ARCHITECTURE description OF control IS
+TYPE STATETYPE IS (state_0, state_1, state_2);
+SIGNAL present_state: STATETYPE;
+BEGIN
+
+--------OPERATION DECODER---------
+PROCESS (present_state, INST, statusC, statusZ, enable)
+
+VARIABLE opcode: STD_LOGIC_VECTOR (31 DOWNTO 28);
+VARIABLE funct : STD_LOGIC_VECTOR (27 DOWNTO 24);
+VARIABLE address : STD_LOGIC_VECTOR (15 DOWNTO 0);
+
+BEGIN
+--------YOU FILL IN WHAT GOES IN HERE(DON'T FORGET TO CHECK FOR ENABLE)
+--------OUTPUT ASSIGNMENTS
+if enable = '1' then
+if present_state = state_0 then
+T <= "001";
+clr_IR <= '0';
+ld_IR <= '1';
+ld_PC <= '0';
+inc_PC <= '0';
+clr_A <= '0';
+ld_A <= '0';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '0';
+clr_Z <= '0';
+ld_Z <= '0';
+DATA_Mux <= "00";
+opcode := INST(31 DOWNTO 28);
+funct := INST(27 DOWNTO 24);
+address := INST(15 DOWNTO 0);
+elsif present_state = state_1 then
+if opcode = "0010" then
+	REG_Mux <= '0';
+elsif opcode = "0011" then
+	REG_Mux <= '1';
+end if;
+
+if opcode = "0000" or opcode = "0001" then
+	DATA_Mux <= "01";
+end if;
+T <= "010";
+
+if opcode = "0010" then
+--STA
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '0';
+inc_PC <= '0';
+clr_A <= '0';
+ld_A <= '0';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '0';
+clr_Z <= '0';
+ld_Z <= '0';
+REG_Mux <= '0';
+elsif opcode = "0011" then
+--STB
+clr_IR <= '0';
+ld_IR <= '0';
+
+clr_A <= '0';
+ld_A <= '0';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '0';
+clr_Z <= '0';
+ld_Z <= '0';
+REG_Mux <= '1';
+elsif opcode = "1001" then
+--LDA
+clr_IR <= '0';
+ld_IR <= '0';
+
+clr_A <= '0';
+ld_A <= '1';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '0';
+clr_Z <= '0';
+ld_Z <= '0';
+A_Mux <= '0';
+DATA_Mux <= "01";
+elsif opcode = "1010" then
+--LDB
+clr_IR <= '0';
+ld_IR <= '0';
+
+clr_A <= '0';
+ld_A <= '0';
+clr_B <= '0';
+ld_B <= '1';
+clr_C <= '0';
+ld_C <= '0';
+clr_Z <= '0';
+ld_Z <= '0';
+B_Mux <= '0';
+else 
+clr_IR <= '0';
+ld_IR <= '0';
+
+clr_A <= '0';
+ld_A <= '0';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '0';
+clr_Z <= '0';
+ld_Z <= '0';
+B_Mux <= '0';
+end if;
+DATA_Mux <= "01";
+ld_PC <= '1';
+inc_PC <= '1';
+
+
+elsif present_state = state_2 then
+T <= "100";
+if opcode = "0000" then
+--LDAI
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '0';
+inc_PC <= '0';
+clr_A <= '0';
+ld_A <= '1';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '0';
+clr_Z <= '0';
+ld_Z <= '0';
+A_Mux <= '1';
+elsif opcode = "0001" then
+--LDBI
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '0';
+inc_PC <= '0';
+clr_A <= '0';
+ld_A <= '0';
+clr_B <= '0';
+ld_B <= '1';
+clr_C <= '0';
+ld_C <= '0';
+clr_Z <= '0';
+ld_Z <= '0';
+B_Mux <= '1';
+elsif opcode = "0010" then
+--STA
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '0';
+inc_PC <= '0';
+clr_A <= '0';
+ld_A <= '0';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '0';
+clr_Z <= '0';
+ld_Z <= '0';
+REG_Mux <= '0';
+elsif opcode = "0011" then
+--STB
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '0';
+inc_PC <= '0';
+clr_A <= '0';
+ld_A <= '0';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '0';
+clr_Z <= '0';
+ld_Z <= '0';
+REG_Mux <= '1';
+elsif opcode = "1001" then
+--LDA
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '0';
+inc_PC <= '0';
+clr_A <= '0';
+ld_A <= '1';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '0';
+clr_Z <= '0';
+ld_Z <= '0';
+A_Mux <= '0';
+DATA_Mux <= "01";
+elsif opcode = "1010" then
+--LDB
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '0';
+inc_PC <= '0';
+clr_A <= '0';
+ld_A <= '0';
+clr_B <= '0';
+ld_B <= '1';
+clr_C <= '0';
+ld_C <= '0';
+clr_Z <= '0';
+ld_Z <= '0';
+B_Mux <= '0';
+DATA_Mux <= "01";
+elsif opcode = "0100" then
+--LUI
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '0';
+inc_PC <= '0';
+clr_A <= '0';
+ld_A <= '1';
+clr_B <= '1';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '0';
+clr_Z <= '0';
+ld_Z <= '0';
+ALU_op <= "001";
+A_Mux <= '0';
+DATA_Mux <= "10";
+IM_MUX1 <= '1';
+IM_MUX2 <= "00";
+elsif opcode = "0101" then
+--JMP
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '1';
+inc_PC <= '0';
+clr_A <= '0';
+ld_A <= '0';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '0';
+clr_Z <= '0';
+ld_Z <= '0';	
+elsif opcode = "0110" then -- BEQ
+if(statusZ='1') then
+A_MUX <= 'X'; B_MUX <='X'; 
+IM_MUX1 <='X'; IM_MUX2 <="XX";
+REG_MUX <= 'X'; DATA_MUX<="XX";
+ALU_OP <="XXX"; 
+INC_PC<='0'; LD_pc <='1';
+CLR_IR <= '0'; ld_IR<='0';
+clr_A <='0';ld_A<='0'; 
+clr_B<='0';ld_B<='0';
+clr_C<='0'; ld_C<='0';
+clr_Z<='0'; ld_Z<='0';
+else
+A_MUX <= 'X'; B_MUX <='X'; 
+IM_MUX1 <='X'; IM_MUX2 <="XX";
+REG_MUX <= 'X'; DATA_MUX<="XX";
+ALU_OP <="XXX"; 
+INC_PC<='0'; LD_pc <='0';
+CLR_IR <= '0'; ld_IR<='0';
+clr_A <='0';ld_A<='0'; 
+clr_B<='0';ld_B<='0';
+clr_C<='0'; ld_C<='0';
+clr_Z<='0'; ld_Z<='0';
+end if ;
+elsif opcode = "1000" then  -- BNE
+if(statusZ='0') then
+A_MUX <= 'X'; B_MUX <='X'; 
+IM_MUX1 <='X'; IM_MUX2 <="XX";
+REG_MUX <= 'X'; DATA_MUX<="XX";
+ALU_OP <="XXX"; 
+INC_PC<='0'; LD_pc <='1';
+CLR_IR <= '0'; ld_IR<='0';
+clr_A <='0';ld_A<='0'; 
+clr_B<='0';ld_B<='0';
+clr_C<='0'; ld_C<='0';
+clr_Z<='0'; ld_Z<='0';
+else
+A_MUX <= 'X'; B_MUX <='X'; 
+IM_MUX1 <='X'; IM_MUX2 <="XX";
+REG_MUX <= 'X'; DATA_MUX<="XX";
+ALU_OP <="XXX"; 
+INC_PC<='0'; LD_pc <='0';
+CLR_IR <= '0'; ld_IR<='0';
+clr_A <='0';ld_A<='0'; 
+clr_B<='0';ld_B<='0';
+clr_C<='0'; ld_C<='0';
+clr_Z<='0'; ld_Z<='0';
+end if ;
+
+elsif opcode = "0111" then
+case funct is
+when "0000" =>
+--ADD
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '0';
+inc_PC <= '0';
+clr_A <= '0';
+ld_A <= '1';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '1';
+clr_Z <= '0';
+ld_Z <= '1';
+ALU_op <= "010";
+A_Mux <= '0';
+DATA_Mux <= "10";
+IM_MUX1 <= '0';
+IM_MUX2 <= "00";					
+when "0001" =>
+--ADDI
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '0';
+inc_PC <= '0';
+clr_A <= '0';
+ld_A <= '1';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '1';
+clr_Z <= '0';
+ld_Z <= '1';
+ALU_op <= "010";
+A_Mux <= '0';
+DATA_Mux <= "10";
+IM_MUX1 <= '0';
+IM_MUX2 <= "01";
+when "0010" =>
+--SUB
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '0';
+inc_PC <= '0';
+clr_A <= '0';
+ld_A <= '1';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '1';
+clr_Z <= '0';
+ld_Z <= '1';
+ALU_op <= "110";
+A_Mux <= '0';
+DATA_Mux <= "10";
+IM_MUX1 <= '0';
+IM_MUX2 <= "00";
+when "0011" =>
+--INCA
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '0';
+inc_PC <= '0';
+clr_A <= '0';
+ld_A <= '1';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '1';
+clr_Z <= '0';
+ld_Z <= '1';
+ALU_op <= "010";
+A_Mux <= '0';
+DATA_Mux <= "10";
+IM_MUX1 <= '0';
+IM_MUX2 <= "10";
+									
+								WHEN "0100" => --ROL
+									ALU_OP    <= "100";									
+									CLR_IR   <= '0';
+									LD_IR    <= '0';
+									INC_PC   <= '0';
+									LD_PC    <= '0';
+									CLR_A    <= '0';
+									LD_A     <= '1';
+									CLR_B    <= '0';
+									LD_B     <= '0';
+									CLR_C    <= '0';
+									LD_C     <= '1';
+									CLR_Z    <= '0';
+									LD_Z     <= '1';
+									DATA_MUX <= "10";
+									A_Mux    <= '0';
+									IM_MUX1  <= '0';
+										
+								
+								WHEN "1111" => --ROR
+									ALU_OP    <= "101";									
+									CLR_IR   <= '0';
+									LD_IR    <= '0';
+									INC_PC   <= '0';
+									LD_PC    <= '0';
+									CLR_A    <= '0';
+									LD_A     <= '1';
+									CLR_B    <= '0';
+									LD_B     <= '0';
+									CLR_C    <= '0';
+									LD_C     <= '1';
+									CLR_Z    <= '0';
+									LD_Z     <= '1';
+									DATA_MUX <= "10";
+									A_Mux    <= '0';
+									IM_MUX1  <= '0';
+									
+								WHEN "0101" => --CLRA									
+									CLR_IR   <= '0';
+									LD_IR    <= '0';
+									INC_PC   <= '0';
+									LD_PC    <= '0';
+									CLR_A    <= '1';
+									LD_A     <= '0';
+									CLR_B    <= '0';
+									LD_B     <= '0';
+									CLR_C    <= '0';
+									LD_C     <= '0';
+									CLR_Z    <= '0';
+									LD_Z     <= '0';
+
+									
+								WHEN "0110" => --CLRB									
+									CLR_IR   <= '0';
+									LD_IR    <= '0';
+									INC_PC   <= '0';
+									LD_PC    <= '0';
+									CLR_A    <= '0';
+									LD_A     <= '0';
+									CLR_B    <= '1';
+									LD_B     <= '0';
+									CLR_C    <= '0';
+									LD_C     <= '0';
+									CLR_Z    <= '0';
+									LD_Z     <= '0';
+when "0111" =>
+--CLRC
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '0';
+inc_PC <= '0';
+clr_A <= '0';
+ld_A <= '0';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '1';
+ld_C <= '0';
+clr_Z <= '0';
+ld_Z <= '0';
+when "1000" =>
+--CLRZ
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '0';
+inc_PC <= '0';
+clr_A <= '0';
+ld_A <= '0';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '0';
+clr_Z <= '1';
+ld_Z <= '0';
+when "1001" =>
+--ANDI
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '0';
+inc_PC <= '0';
+clr_A <= '0';
+ld_A <= '1';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '1';
+clr_Z <= '0';
+ld_Z <= '1';
+ALU_op <= "000";
+A_Mux <= '0';
+DATA_Mux <= "10";
+IM_MUX1 <= '0';
+IM_MUX2 <= "01";
+when "1011" =>
+--AND
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '0';
+inc_PC <= '0';
+clr_A <= '0';
+ld_A <= '1';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '1';
+clr_Z <= '0';
+ld_Z <= '1';
+ALU_op <= "000";
+A_Mux <= '0';
+DATA_Mux <= "10";
+IM_MUX1 <= '0';
+IM_MUX2 <= "00";														
+when "1101" =>
+--ORI
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '0';
+inc_PC <= '0';
+clr_A <= '0';
+ld_A <= '1';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '1';
+clr_Z <= '0';
+ld_Z <= '1';
+ALU_op <= "001";
+A_Mux <= '0';
+DATA_Mux <= "10";
+IM_MUX1 <= '0';
+IM_MUX2 <= "01";
+when "1110" =>
+--DECA
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '0';
+inc_PC <= '0';
+clr_A <= '0';
+ld_A <= '1';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '1';
+clr_Z <= '0';
+ld_Z <= '1';
+ALU_op <= "110";
+A_Mux <= '0';
+DATA_Mux <= "10";
+IM_MUX1 <= '0';
+IM_MUX2 <= "10";
+
+when "1100" =>
+--TSTC
+if statusC = '1' then
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '1';
+inc_PC <= '1';
+clr_A <= '0';
+ld_A <= '0';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '0';
+clr_Z <= '0';
+ld_Z <= '0';
+end if;					
+when "1010" =>
+--TSTZ
+if statusZ = '1' then
+clr_IR <= '0';
+ld_IR <= '0';
+ld_PC <= '1';
+inc_PC <= '1';
+clr_A <= '0';
+ld_A <= '0';
+clr_B <= '0';
+ld_B <= '0';
+clr_C <= '0';
+ld_C <= '0';
+clr_Z <= '0';
+ld_Z <= '0';
+end if;									
+end case;
+end if;
+end if;
+elsif enable = '0' then
+T <= "001";
+end if;
+END process;
+
+--------STATE MACHINE---------
+PROCESS (clk, enable) 
+BEGIN
+IF enable = '0' THEN
+present_state <= state_0;
+ELSIF (clk'EVENT AND clk = '1') THEN
+IF present_state = state_0 THEN
+present_state <= state_1;
+ELSIF present_state = state_1 THEN
+present_state <= state_2;
+ELSIF present_state = state_2 THEN
+present_state <= state_0;
+END IF;
+END IF;
+END process;
+
+--------DATA MEMORY INSTRUCTIONS---------
+PROCESS (mclk, clk, INST)
+VARIABLE opcode: STD_LOGIC_VECTOR (31 DOWNTO 28);
+BEGIN
+opcode := INST(31 downto 28);
+IF(mclk'EVENT and mclk = '0') THEN
+	IF(present_state = state_1 AND clk = '0') THEN
+				IF(present_state = state_1 AND clk = '0') THEN
+					case OPCODE is
+					when "1001"|"1010" =>
+					--LDA and LDB Signals
+						en<='1';
+						wen<='0';
+					--STA and STB Signals
+					when "0010"|"0011" =>
+						wen<='1';
+						en<='1';
+					--Default Case Signals
+					when others =>
+						wen<='0';
+						en<='0';
+					end case;
+				ELSIF (present_state = state_2 AND clk = '1') THEN
+				case OPCODE is
+					when "1001"|"1010" =>
+					--LDA and LDB Signals
+						en<='1';
+						wen<='0';
+					--STA and STB Signals
+					when "0010"|"0011" =>
+						wen<='1';
+						en<='1';
+					--Default Case Signals
+					when others =>
+						wen<='0';
+						en<='0';
+					end case;
+								END IF;
+				END IF;	
+	ELSIF(present_state = state_2 AND clk = '0') THEN	
+						wen<='0';
+						en<='0';
+end if;
+END process;
+END description;

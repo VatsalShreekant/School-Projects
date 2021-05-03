@@ -1,0 +1,104 @@
+t 0 VDD inputOutput
+t 6 S inputOutput
+t 14 GND inputOutput
+t 8 COUT inputOutput
+t 7 C inputOutput
+t 22 B inputOutput
+t 21 A inputOutput
+n 0 /VDD
+n 1 /18
+n 2 /15
+n 3 /11
+n 4 /21
+n 5 /17
+n 6 /S
+n 7 /C
+n 8 /COUT
+n 9 /23
+n 10 /19
+n 11 /22
+n 12 /20
+n 13 /14
+n 14 /GND
+n 15 /9
+n 16 /13
+n 17 /10
+n 18 /12
+n 19 /16
+n 20 /8
+n 21 /A
+n 22 /B
+; pfet Instance /+35 = auLvs device Q93
+d pfet D G S B (p D S)
+i 93 pfet 0 13 6 0 " m 1.0 l 180e-9 w 4e-6 "
+; pfet Instance /+34 = auLvs device Q94
+i 94 pfet 6 16 0 0 " m 1.0 l 180e-9 w 4e-6 "
+; pfet Instance /+33 = auLvs device Q95
+i 95 pfet 0 18 13 0 " m 1.0 l 180e-9 w 4e-6 "
+; pfet Instance /+32 = auLvs device Q96
+i 96 pfet 0 18 16 0 " m 1.0 l 180e-9 w 4e-6 "
+; pfet Instance /+31 = auLvs device Q97
+i 97 pfet 13 7 0 0 " m 1.0 l 180e-9 w 4e-6 "
+; pfet Instance /+30 = auLvs device Q98
+i 98 pfet 0 20 8 0 " m 1.0 l 180e-9 w 4e-6 "
+; pfet Instance /+29 = auLvs device Q99
+i 99 pfet 16 3 0 0 " m 1.0 l 180e-9 w 4e-6 "
+; pfet Instance /+28 = auLvs device Q100
+i 100 pfet 8 18 0 0 " m 1.0 l 180e-9 w 4e-6 "
+; pfet Instance /+27 = auLvs device Q101
+i 101 pfet 0 3 18 0 " m 1.0 l 180e-9 w 4e-6 "
+; pfet Instance /+26 = auLvs device Q102
+i 102 pfet 18 7 0 0 " m 1.0 l 180e-9 w 4e-6 "
+; pfet Instance /+25 = auLvs device Q103
+i 103 pfet 0 17 3 0 " m 1.0 l 180e-9 w 4e-6 "
+; pfet Instance /+24 = auLvs device Q104
+i 104 pfet 3 15 0 0 " m 1.0 l 180e-9 w 4e-6 "
+; pfet Instance /+23 = auLvs device Q105
+i 105 pfet 0 22 17 0 " m 1.0 l 180e-9 w 4e-6 "
+; pfet Instance /+22 = auLvs device Q106
+i 106 pfet 0 20 15 0 " m 1.0 l 180e-9 w 4e-6 "
+; pfet Instance /+21 = auLvs device Q107
+i 107 pfet 17 20 0 0 " m 1.0 l 180e-9 w 4e-6 "
+; pfet Instance /+20 = auLvs device Q108
+i 108 pfet 15 21 0 0 " m 1.0 l 180e-9 w 4e-6 "
+; pfet Instance /+19 = auLvs device Q109
+i 109 pfet 0 22 20 0 " m 1.0 l 180e-9 w 4e-6 "
+; pfet Instance /+18 = auLvs device Q110
+i 110 pfet 20 21 0 0 " m 1.0 l 180e-9 w 4e-6 "
+; nfet Instance /+17 = auLvs device Q111
+d nfet D G S B (p D S)
+i 111 nfet 6 13 9 14 " m 1.0 l 180e-9 w 2e-6 "
+; nfet Instance /+16 = auLvs device Q112
+i 112 nfet 9 16 14 14 " m 1.0 l 180e-9 w 2e-6 "
+; nfet Instance /+15 = auLvs device Q113
+i 113 nfet 13 18 11 14 " m 1.0 l 180e-9 w 2e-6 "
+; nfet Instance /+14 = auLvs device Q114
+i 114 nfet 16 18 4 14 " m 1.0 l 180e-9 w 2e-6 "
+; nfet Instance /+13 = auLvs device Q115
+i 115 nfet 11 7 14 14 " m 1.0 l 180e-9 w 2e-6 "
+; nfet Instance /+12 = auLvs device Q116
+i 116 nfet 8 20 12 14 " m 1.0 l 180e-9 w 2e-6 "
+; nfet Instance /+11 = auLvs device Q117
+i 117 nfet 4 3 14 14 " m 1.0 l 180e-9 w 2e-6 "
+; nfet Instance /+10 = auLvs device Q118
+i 118 nfet 12 18 14 14 " m 1.0 l 180e-9 w 2e-6 "
+; nfet Instance /+9 = auLvs device Q119
+i 119 nfet 18 3 10 14 " m 1.0 l 180e-9 w 2e-6 "
+; nfet Instance /+8 = auLvs device Q120
+i 120 nfet 10 7 14 14 " m 1.0 l 180e-9 w 2e-6 "
+; nfet Instance /+7 = auLvs device Q121
+i 121 nfet 3 17 1 14 " m 1.0 l 180e-9 w 2e-6 "
+; nfet Instance /+6 = auLvs device Q122
+i 122 nfet 1 15 14 14 " m 1.0 l 180e-9 w 2e-6 "
+; nfet Instance /+5 = auLvs device Q123
+i 123 nfet 17 22 5 14 " m 1.0 l 180e-9 w 2e-6 "
+; nfet Instance /+4 = auLvs device Q124
+i 124 nfet 14 20 19 14 " m 1.0 l 180e-9 w 2e-6 "
+; nfet Instance /+3 = auLvs device Q125
+i 125 nfet 19 21 15 14 " m 1.0 l 180e-9 w 2e-6 "
+; nfet Instance /+2 = auLvs device Q126
+i 126 nfet 5 20 14 14 " m 1.0 l 180e-9 w 2e-6 "
+; nfet Instance /+1 = auLvs device Q127
+i 127 nfet 14 22 2 14 " m 1.0 l 180e-9 w 2e-6 "
+; nfet Instance /+0 = auLvs device Q128
+i 128 nfet 2 21 20 14 " m 1.0 l 180e-9 w 2e-6 "

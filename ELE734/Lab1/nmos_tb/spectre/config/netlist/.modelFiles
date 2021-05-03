@@ -1,0 +1,2 @@
+include "$CMOSP18_DIR/models/spectre/rf018.scs" section=tt
+include "/home/student1/gcascian/ELE734/saveop.scs"

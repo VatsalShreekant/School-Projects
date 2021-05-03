@@ -1,0 +1,60 @@
+# do datapath.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 14:39:55 on Mar 19,2019
+# vlog -work work datapath.vo 
+# -- Compiling module datapath
+# 
+# Top level modules:
+# 	datapath
+# End time: 14:39:56 on Mar 19,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 14:39:56 on Mar 19,2019
+# vlog -work work datapath.vwf.vt 
+# -- Compiling module datapath_vlg_vec_tst
+# 
+# Top level modules:
+# 	datapath_vlg_vec_tst
+# End time: 14:39:56 on Mar 19,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.datapath_vlg_vec_tst -voptargs=""+acc"" 
+# Start time: 14:39:56 on Mar 19,2019
+# //  ModelSim ALTERA 10.4d Dec 30 2015 Linux 2.6.32-754.3.5.el6.x86_64
+# //
+# //  Copyright 1991-2015 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# Loading work.datapath_vlg_vec_tst
+# Loading work.datapath
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_ram_block
+# Loading cycloneive_ver.cycloneive_ram_register
+# Loading cycloneive_ver.cycloneive_ram_pulse_generator
+# SDF 10.4d Compiler 2015.12 Dec 30 2015
+# Loading instances from datapath_v.sdo
+# Loading altera_ver.PRIM_GDFF_LOW
+# Loading timing data from datapath_v.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /datapath_vlg_vec_tst File: datapath.vwf.vt
+# ** Error: /build/swbuild/SJ/nightly/16.0/211/l64/work/modelsim/eda/sim_lib/cycloneive_atoms.v(4543): $hold( posedge clk &&& reset:2708 ps, d:2800 ps, 222 ps );
+#    Time: 2800 ps  Iteration: 0  Instance: /datapath_vlg_vec_tst/i1/\dataMem|matrix_rtl_0|auto_generated|ram_block1a0 /datain_a_register
+# ** Note: $finish    : datapath.vwf.vt(113)
+#    Time: 1 us  Iteration: 0  Instance: /datapath_vlg_vec_tst
+# End time: 14:39:57 on Mar 19,2019, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0

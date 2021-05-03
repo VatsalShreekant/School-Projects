@@ -1,0 +1,141 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 264 272)
+	(text "cpu1" (rect 5 0 33 12)(font "Arial" ))
+	(text "inst" (rect 8 240 36 252)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 21 12)(font "Arial" ))
+		(text "clk" (rect 21 27 42 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "mem_clk" (rect 0 0 49 12)(font "Arial" ))
+		(text "mem_clk" (rect 21 43 70 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "rst" (rect 0 0 21 12)(font "Arial" ))
+		(text "rst" (rect 21 59 42 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "dataIn[31..0]" (rect 0 0 92 12)(font "Arial" ))
+		(text "dataIn[31..0]" (rect 21 75 113 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 248 32)
+		(output)
+		(text "dataOut[31..0]" (rect 0 0 99 12)(font "Arial" ))
+		(text "dataOut[31..0]" (rect 128 27 227 39)(font "Arial" ))
+		(line (pt 248 32)(pt 232 32)(line_width 3))
+	)
+	(port
+		(pt 248 48)
+		(output)
+		(text "addrOut[31..0]" (rect 0 0 99 12)(font "Arial" ))
+		(text "addrOut[31..0]" (rect 128 43 227 55)(font "Arial" ))
+		(line (pt 248 48)(pt 232 48)(line_width 3))
+	)
+	(port
+		(pt 248 64)
+		(output)
+		(text "wEn" (rect 0 0 21 12)(font "Arial" ))
+		(text "wEn" (rect 206 59 227 71)(font "Arial" ))
+		(line (pt 248 64)(pt 232 64)(line_width 1))
+	)
+	(port
+		(pt 248 80)
+		(output)
+		(text "dOutA[31..0]" (rect 0 0 84 12)(font "Arial" ))
+		(text "dOutA[31..0]" (rect 143 75 227 87)(font "Arial" ))
+		(line (pt 248 80)(pt 232 80)(line_width 3))
+	)
+	(port
+		(pt 248 96)
+		(output)
+		(text "dOutB[31..0]" (rect 0 0 84 12)(font "Arial" ))
+		(text "dOutB[31..0]" (rect 143 91 227 103)(font "Arial" ))
+		(line (pt 248 96)(pt 232 96)(line_width 3))
+	)
+	(port
+		(pt 248 112)
+		(output)
+		(text "dOutC" (rect 0 0 35 12)(font "Arial" ))
+		(text "dOutC" (rect 192 107 227 119)(font "Arial" ))
+		(line (pt 248 112)(pt 232 112)(line_width 1))
+	)
+	(port
+		(pt 248 128)
+		(output)
+		(text "dOutZ" (rect 0 0 35 12)(font "Arial" ))
+		(text "dOutZ" (rect 192 123 227 135)(font "Arial" ))
+		(line (pt 248 128)(pt 232 128)(line_width 1))
+	)
+	(port
+		(pt 248 144)
+		(output)
+		(text "dOutIR[31..0]" (rect 0 0 92 12)(font "Arial" ))
+		(text "dOutIR[31..0]" (rect 135 139 227 151)(font "Arial" ))
+		(line (pt 248 144)(pt 232 144)(line_width 3))
+	)
+	(port
+		(pt 248 160)
+		(output)
+		(text "dOutPC[31..0]" (rect 0 0 92 12)(font "Arial" ))
+		(text "dOutPC[31..0]" (rect 135 155 227 167)(font "Arial" ))
+		(line (pt 248 160)(pt 232 160)(line_width 3))
+	)
+	(port
+		(pt 248 176)
+		(output)
+		(text "outT[2..0]" (rect 0 0 70 12)(font "Arial" ))
+		(text "outT[2..0]" (rect 157 171 227 183)(font "Arial" ))
+		(line (pt 248 176)(pt 232 176)(line_width 3))
+	)
+	(port
+		(pt 248 192)
+		(output)
+		(text "wen_mem" (rect 0 0 49 12)(font "Arial" ))
+		(text "wen_mem" (rect 178 187 227 199)(font "Arial" ))
+		(line (pt 248 192)(pt 232 192)(line_width 1))
+	)
+	(port
+		(pt 248 208)
+		(output)
+		(text "en_mem" (rect 0 0 42 12)(font "Arial" ))
+		(text "en_mem" (rect 185 203 227 215)(font "Arial" ))
+		(line (pt 248 208)(pt 232 208)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 232 240)(line_width 1))
+	)
+)

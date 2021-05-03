@@ -1,0 +1,1 @@
+spectre -env artist5.1.0 +escchars +log ../psf/spectre.out +inter=mpsc +mpssession=spectre17_26866_8 -format sst2 -raw ../psf  -I/CMC/kits/cmosp18.5.2/models/spectre +lqtimeout 900 -maxw 5 -maxn 5 input.scs 

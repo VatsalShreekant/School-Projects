@@ -1,0 +1,12 @@
+HEADER
+"PSFversion" "1.00"
+"+2v" "\\+2"
+"+2n" "cmosp18_pcapacitor_spectre"
+"+1v" "\\+1"
+"+1n" "cmosp18_pcapacitor_spectre"
+"+0v" "\\+0"
+"+0n" "cmosp18_nfet_spectre"
+"Bv" ":1"
+"Dv" ":2"
+"Gv" ":3"
+"Sv" ":4"

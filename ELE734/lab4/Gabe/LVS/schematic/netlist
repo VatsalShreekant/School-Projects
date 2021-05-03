@@ -1,0 +1,104 @@
+t 12 B input
+t 9 A input
+t 6 C input
+t 5 S output
+t 0 VDD input
+t 4 COUT output
+t 13 GND input
+n 0 /VDD
+n 1 /net019
+n 2 /net035
+n 3 /net045
+n 4 /COUT
+n 5 /S
+n 6 /C
+n 7 /AB
+n 8 /net040
+n 9 /A
+n 10 /net030
+n 11 /net010
+n 12 /B
+n 13 /GND
+n 19 /I29/net11
+; nfet Instance /I29/NFET_B = auLvs device Q0
+d nfet D G S B (p D S)
+i 0 nfet 19 6 13 13 " m 1.0 l 180e-9 w 42.2508e-6 "
+; nfet Instance /I29/NFET_A = auLvs device Q1
+i 1 nfet 11 1 19 13 " l 180e-9 w 45.2508e-6 "
+; pfet Instance /I29/PFET_A = auLvs device Q2
+d pfet D G S B (p D S)
+i 2 pfet 11 1 0 0 " l 180e-9 w 84.5017e-6 "
+; pfet Instance /I29/PFET_B = auLvs device Q3
+i 3 pfet 11 6 0 0 " l 180e-9 w 84.5017e-6 "
+n 25 /I8/net11
+; nfet Instance /I8/NFET_B = auLvs device Q4
+i 4 nfet 25 11 13 13 " m 1.0 l 180e-9 w 98.2205e-6 "
+; nfet Instance /I8/NFET_A = auLvs device Q5
+i 5 nfet 5 10 25 13 " l 180e-9 w 98.2205e-6 "
+; pfet Instance /I8/PFET_A = auLvs device Q6
+i 6 pfet 5 10 0 0 " l 180e-9 w 196.441e-6 "
+; pfet Instance /I8/PFET_B = auLvs device Q7
+i 7 pfet 5 11 0 0 " l 180e-9 w 196.441e-6 "
+n 31 /I7/net11
+; nfet Instance /I7/NFET_B = auLvs device Q8
+i 8 nfet 31 7 13 13 " m 1.0 l 180e-9 w 42.2508e-6 "
+; nfet Instance /I7/NFET_A = auLvs device Q9
+i 9 nfet 4 1 31 13 " l 180e-9 w 45.2508e-6 "
+; pfet Instance /I7/PFET_A = auLvs device Q10
+i 10 pfet 4 1 0 0 " l 180e-9 w 84.5017e-6 "
+; pfet Instance /I7/PFET_B = auLvs device Q11
+i 11 pfet 4 7 0 0 " l 180e-9 w 84.5017e-6 "
+n 37 /I6/net11
+; nfet Instance /I6/NFET_B = auLvs device Q12
+i 12 nfet 37 6 13 13 " m 1.0 l 180e-9 w 54.5243e-6 "
+; nfet Instance /I6/NFET_A = auLvs device Q13
+i 13 nfet 1 2 37 13 " l 180e-9 w 54.5243e-6 "
+; pfet Instance /I6/PFET_A = auLvs device Q14
+i 14 pfet 1 2 0 0 " l 180e-9 w 109.048e-6 "
+; pfet Instance /I6/PFET_B = auLvs device Q15
+i 15 pfet 1 6 0 0 " l 180e-9 w 109.048e-6 "
+n 43 /I5/net11
+; nfet Instance /I5/NFET_B = auLvs device Q16
+i 16 nfet 43 1 13 13 " m 1.0 l 180e-9 w 42.2508e-6 "
+; nfet Instance /I5/NFET_A = auLvs device Q17
+i 17 nfet 10 2 43 13 " l 180e-9 w 45.2508e-6 "
+; pfet Instance /I5/PFET_A = auLvs device Q18
+i 18 pfet 10 2 0 0 " l 180e-9 w 84.5017e-6 "
+; pfet Instance /I5/PFET_B = auLvs device Q19
+i 19 pfet 10 1 0 0 " l 180e-9 w 84.5017e-6 "
+n 49 /I4/net11
+; nfet Instance /I4/NFET_B = auLvs device Q20
+i 20 nfet 49 8 13 13 " m 1.0 l 180e-9 w 46.908e-6 "
+; nfet Instance /I4/NFET_A = auLvs device Q21
+i 21 nfet 2 3 49 13 " l 180e-9 w 46.908e-6 "
+; pfet Instance /I4/PFET_A = auLvs device Q22
+i 22 pfet 2 3 0 0 " l 180e-9 w 93.817e-6 "
+; pfet Instance /I4/PFET_B = auLvs device Q23
+i 23 pfet 2 8 0 0 " l 180e-9 w 93.817e-6 "
+n 55 /I3/net11
+; nfet Instance /I3/NFET_B = auLvs device Q24
+i 24 nfet 55 12 13 13 " m 1.0 l 180e-9 w 20.1784e-6 "
+; nfet Instance /I3/NFET_A = auLvs device Q25
+i 25 nfet 8 7 55 13 " l 180e-9 w 20.1784e-6 "
+; pfet Instance /I3/PFET_A = auLvs device Q26
+i 26 pfet 8 7 0 0 " l 180e-9 w 40.3568e-6 "
+; pfet Instance /I3/PFET_B = auLvs device Q27
+i 27 pfet 8 12 0 0 " l 180e-9 w 40.3568e-6 "
+n 61 /I2/net11
+; nfet Instance /I2/NFET_B = auLvs device Q28
+i 28 nfet 61 7 13 13 " m 1.0 l 180e-9 w 20.1784e-6 "
+; nfet Instance /I2/NFET_A = auLvs device Q29
+i 29 nfet 3 9 61 13 " l 180e-9 w 20.1784e-6 "
+; pfet Instance /I2/PFET_A = auLvs device Q30
+i 30 pfet 3 9 0 0 " l 180e-9 w 40.3568e-6 "
+; pfet Instance /I2/PFET_B = auLvs device Q31
+i 31 pfet 3 7 0 0 " l 180e-9 w 40.3568e-6 "
+n 67 /I0/net11
+; nfet Instance /I0/NFET_B = auLvs device Q32
+i 32 nfet 67 12 13 13 " m 1.0 l 180e-9 w 17.36e-6 "
+; nfet Instance /I0/NFET_A = auLvs device Q33
+i 33 nfet 7 9 67 13 " l 180e-9 w 17.36e-6 "
+; pfet Instance /I0/PFET_A = auLvs device Q34
+i 34 pfet 7 9 0 0 " l 180e-9 w 34.72e-6 "
+; pfet Instance /I0/PFET_B = auLvs device Q35
+i 35 pfet 7 12 0 0 " l 180e-9 w 34.72e-6 "

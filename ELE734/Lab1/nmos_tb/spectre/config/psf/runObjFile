@@ -1,0 +1,86 @@
+HEADER
+"PSFversion" "1.00"
+"Run Generator" "drlRun rev. 1.0"
+"Run Time Stamp" "Oct 11 00:38:48 2019"
+"date" "Oct 11 00:38:48 2019"
+"simulator" "spectre"
+"netlistDir" "../netlist"
+"tranSST2Data" "TRUE"
+TYPE
+"runObject" STRUCT(
+"logName" ARRAY( * ) STRING *
+"parent" STRING *
+"sweepVariable" ARRAY( * ) STRING *
+) PROP( "key" "runObject" )
+VALUE
+"Root" "runObject" (
+("")
+""
+("v1")
+)
+"v1=0.6/psf" "runObject" (
+(
+"../v1=0.6/psf/logFile"
+"../v1=0.6/psf/artistLogFile"
+)
+"Root"
+()
+) PROP(
+"netlistDir" "../netlist"
+"dataDir" "../v1=0.6"
+ "v1" 6.000000e-01
+)
+
+"v1=0.9/psf" "runObject" (
+(
+"../v1=0.9/psf/logFile"
+"../v1=0.9/psf/artistLogFile"
+)
+"Root"
+()
+) PROP(
+"netlistDir" "../netlist"
+"dataDir" "../v1=0.9"
+ "v1" 9.000000e-01
+)
+
+"v1=1.2/psf" "runObject" (
+(
+"../v1=1.2/psf/logFile"
+"../v1=1.2/psf/artistLogFile"
+)
+"Root"
+()
+) PROP(
+"netlistDir" "../netlist"
+"dataDir" "../v1=1.2"
+ "v1" 1.200000e+00
+)
+
+"v1=1.5/psf" "runObject" (
+(
+"../v1=1.5/psf/logFile"
+"../v1=1.5/psf/artistLogFile"
+)
+"Root"
+()
+) PROP(
+"netlistDir" "../netlist"
+"dataDir" "../v1=1.5"
+ "v1" 1.500000e+00
+)
+
+"v1=1.8/psf" "runObject" (
+(
+"../v1=1.8/psf/logFile"
+"../v1=1.8/psf/artistLogFile"
+)
+"Root"
+()
+) PROP(
+"netlistDir" "../netlist"
+"dataDir" "../v1=1.8"
+ "v1" 1.800000e+00
+)
+
+END

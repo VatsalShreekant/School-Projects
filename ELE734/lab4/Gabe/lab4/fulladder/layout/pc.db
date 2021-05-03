@@ -1,0 +1,51 @@
+#ISCELL
+cmosp18 M2_M1 symbolic
+I2
+I40
+I43
+I31
+I30
+I29
+I28
+I27
+I26
+I25
+I24
+I23
+I22
+I21
+I20
+I19
+I16
+I17
+I11
+I3
+I1
+I6
+I7
+I8
+I18
+#ISCELL
+cmosp18 M1_POLY1 symbolic
+I4
+#ISCELL
+cmosp18 poly1_T symbolic
+I34
+I33
+I32
+I15
+I14
+I13
+I12
+I10
+I9
+I5
+#ISCELL
+cmosp18 metal1_T symbolic
+I35
+I42
+I41
+I37
+I36
+I39
+I38

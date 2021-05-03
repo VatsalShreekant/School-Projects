@@ -1,0 +1,17 @@
+#
+cmosp18 nfet spectre
+M0
+#
+cmosp18 pfet spectre
+M1
+#ISCELL
+US_10ths Asize symbol
+I0
+#ISCELL
+basic ipin symbol
+PIN2
+PIN5
+PIN3
+#ISCELL
+basic opin symbol
+PIN0

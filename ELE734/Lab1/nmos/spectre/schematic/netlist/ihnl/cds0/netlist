@@ -1,0 +1,10 @@
+
+// Library name: Lab1
+// Cell name: nmos
+// View name: schematic
+V0 (net5 0) vsource dc=v1 type=dc
+V2 (net8 0) vsource dc=0 type=dc
+V1 (net3 0) vsource dc= v2 type=dc
+mosfet (net5 net3 0 net8) nch w=1u l=180.00n as=0.48u*(1u) ad=0.48u*(1u) \
+        ps=0.96u+2*(1u) pd=0.96u+2*(1u) nrd=0.27u/(1u) nrs=0.27u/(1u) m=1 \
+        region=triode

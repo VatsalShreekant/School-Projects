@@ -1,0 +1,2 @@
+simulator lang=spectre
+include "nch.scs"

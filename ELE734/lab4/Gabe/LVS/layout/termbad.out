@@ -1,0 +1,30 @@
+T /+5  D /10
+? Terminal "D" on device /+5 should be connected to /GND instead of /10
+T /+23 S /10
+? Terminal "S" on device /+23 should be connected to /9 instead of /10
+T /+3  S /9
+? Terminal "S" on device /+3 should be connected to /10 instead of /9
+T /+20 D /9
+? Terminal "D" on device /+20 should be connected to /10 instead of /9
+T /+14 D /13
+? Terminal "D" on device /+14 should be connected to /COUT instead of /13
+T /+16 S /GND
+? Terminal "S" on device /+16 should be connected to /S instead of /GND
+T /+17 D /S
+? Terminal "D" on device /+17 should be connected to /GND instead of /S
+T /+12 G /8
+? Terminal "G" on device /+12 should be connected to /11 instead of /8
+T /+12 D /COUT
+? Terminal "D" on device /+12 should be connected to /13 instead of /COUT
+T /+5  S /17
+? Terminal "S" on device /+5 should be connected to /21 instead of /17
+T /+14 S /21
+? Terminal "S" on device /+14 should be connected to /17 instead of /21
+? Terminal A's type in the layout: inputOutput, in the schematic: input
+? Terminal B's type in the layout: inputOutput, in the schematic: input
+? Terminal C's type in the layout: inputOutput, in the schematic: input
+? Terminal COUT's type in the layout: inputOutput, in the schematic: output
+T -1  GND /GND
+? Terminal GND in the layout failed to match any terminal in the schematic.
+? Terminal S's type in the layout: inputOutput, in the schematic: output
+? Terminal VDD's type in the layout: inputOutput, in the schematic: input

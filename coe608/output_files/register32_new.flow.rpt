@@ -1,0 +1,127 @@
+Flow report for register32_new
+Thu Jan 31 16:40:37 2019
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------+
+; Flow Summary                                                                          ;
++------------------------------------+--------------------------------------------------+
+; Flow Status                        ; Successful - Thu Jan 31 16:40:37 2019            ;
+; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; register32_new                                   ;
+; Top-level Entity Name              ; register32                                       ;
+; Family                             ; Cyclone IV E                                     ;
+; Total logic elements               ; 32 / 6,272 ( < 1 % )                             ;
+;     Total combinational functions  ; 0 / 6,272 ( 0 % )                                ;
+;     Dedicated logic registers      ; 32 / 6,272 ( < 1 % )                             ;
+; Total registers                    ; 32                                               ;
+; Total pins                         ; 67 / 180 ( 37 % )                                ;
+; Total virtual pins                 ; 0                                                ;
+; Total memory bits                  ; 0 / 276,480 ( 0 % )                              ;
+; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                                   ;
+; Total PLLs                         ; 0 / 2 ( 0 % )                                    ;
+; Device                             ; EP4CE6F17C6                                      ;
+; Timing Models                      ; Final                                            ;
++------------------------------------+--------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 01/31/2019 16:40:15 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; register32_new      ;
++-------------------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                      ;
++-------------------------------------+---------------------------------+----------------+-------------+----------------+
+; Assignment Name                     ; Value                           ; Default Value  ; Entity Name ; Section Id     ;
++-------------------------------------+---------------------------------+----------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 203178703718160.154897081521373 ; --             ; --          ; --             ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                              ; --             ; --          ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                     ; --             ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)       ; <None>         ; --          ; --             ;
+; PARTITION_COLOR                     ; 16764057                        ; --             ; register32  ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --             ; register32  ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --             ; register32  ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                    ; --             ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; register32                      ; register32_new ; --          ; --             ;
++-------------------------------------+---------------------------------+----------------+-------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 393 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:06     ; 1.0                     ; 578 MB              ; 00:00:05                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 333 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 405 MB              ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 303 MB              ; 00:00:00                           ;
+; Total                     ; 00:00:15     ; --                      ; --                  ; 00:00:10                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                                     ;
++---------------------------+------------------------+------------------+------------+----------------+
+; Module Name               ; Machine Hostname       ; OS Name          ; OS Version ; Processor type ;
++---------------------------+------------------------+------------------+------------+----------------+
+; Analysis & Synthesis      ; acapella.ee.ryerson.ca ; Scientific Linux ; 6          ; x86_64         ;
+; Fitter                    ; acapella.ee.ryerson.ca ; Scientific Linux ; 6          ; x86_64         ;
+; Assembler                 ; acapella.ee.ryerson.ca ; Scientific Linux ; 6          ; x86_64         ;
+; TimeQuest Timing Analyzer ; acapella.ee.ryerson.ca ; Scientific Linux ; 6          ; x86_64         ;
+; EDA Netlist Writer        ; acapella.ee.ryerson.ca ; Scientific Linux ; 6          ; x86_64         ;
++---------------------------+------------------------+------------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off register32_new -c register32_new
+quartus_fit --read_settings_files=off --write_settings_files=off register32_new -c register32_new
+quartus_asm --read_settings_files=off --write_settings_files=off register32_new -c register32_new
+quartus_sta register32_new -c register32_new
+quartus_eda --read_settings_files=off --write_settings_files=off register32_new -c register32_new
+
+
+

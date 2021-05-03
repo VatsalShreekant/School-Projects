@@ -1,0 +1,14 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_arith.ALL;
+USE ieee.std_logic_unsigned.ALL;
+ENTITY ror32 IS
+PORT(
+		a32 :IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+		result :OUT STD_LOGIC_VECTOR(7 DOWNTO 0));
+END ror32;
+ARCHITECTURE description OF ror32 IS 
+BEGIN
+	result(6 DOWNTO 0) <= a32(7 DOWNTO 1);
+	result(7) <= '0';
+END description;

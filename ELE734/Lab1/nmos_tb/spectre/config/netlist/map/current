@@ -1,0 +1,30 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "nmos_tb"
+  repList "spectre cmos_sch cmos.sch schematic veriloga ahdl"
+  stopList "spectre"
+  globalList "gnd!"
+  hierDelim "."
+  netlistDir "/home/student1/gcascian/ELE734/Lab1/nmos_tb/spectre/config/netlist"
+ )
+( instViewTable
+ )
+( net
+ )
+( inst
+ )
+( model
+( "Lab1/nmos/schematic" "nmos" )
+( "Lab1/nmos/extracted" "nmos_extracted" )
+( "gnd!" "0" )
+( "Lab1/nmos_tb/schematic" "nmos_tb" )
+ )
+( term
+ )
+( param
+ )
+( "nmos_extracted" "ihnl/cds1/map" )
+( "nmos_tb" "ihnl/cds2/map" )
+( "nmos" "ihnl/cds0/map" )
+ )

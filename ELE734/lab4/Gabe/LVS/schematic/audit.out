@@ -1,0 +1,72 @@
+I /I8/PFET_B
+? MOS width mismatch: 4e-06(extracted) vs 0.000196441(schematic).
+I /I8/PFET_A
+? MOS width mismatch: 4e-06(extracted) vs 0.000196441(schematic).
+I /I29/PFET_A
+? MOS width mismatch: 4e-06(extracted) vs 8.45017e-05(schematic).
+I /I5/PFET_B
+? MOS width mismatch: 4e-06(extracted) vs 8.45017e-05(schematic).
+I /I29/PFET_B
+? MOS width mismatch: 4e-06(extracted) vs 8.45017e-05(schematic).
+I /I7/PFET_B
+? MOS width mismatch: 4e-06(extracted) vs 8.45017e-05(schematic).
+I /I5/PFET_A
+? MOS width mismatch: 4e-06(extracted) vs 8.45017e-05(schematic).
+I /I7/PFET_A
+? MOS width mismatch: 4e-06(extracted) vs 8.45017e-05(schematic).
+I /I6/PFET_A
+? MOS width mismatch: 4e-06(extracted) vs 0.000109048(schematic).
+I /I6/PFET_B
+? MOS width mismatch: 4e-06(extracted) vs 0.000109048(schematic).
+I /I4/PFET_A
+? MOS width mismatch: 4e-06(extracted) vs 9.3817e-05(schematic).
+I /I4/PFET_B
+? MOS width mismatch: 4e-06(extracted) vs 9.3817e-05(schematic).
+I /I3/PFET_B
+? MOS width mismatch: 4e-06(extracted) vs 4.03568e-05(schematic).
+I /I3/PFET_A
+? MOS width mismatch: 4e-06(extracted) vs 4.03568e-05(schematic).
+I /I2/PFET_B
+? MOS width mismatch: 4e-06(extracted) vs 4.03568e-05(schematic).
+I /I2/PFET_A
+? MOS width mismatch: 4e-06(extracted) vs 4.03568e-05(schematic).
+I /I0/PFET_B
+? MOS width mismatch: 4e-06(extracted) vs 3.472e-05(schematic).
+I /I0/PFET_A
+? MOS width mismatch: 4e-06(extracted) vs 3.472e-05(schematic).
+I /I8/NFET_B
+? MOS width mismatch: 2e-06(extracted) vs 9.82205e-05(schematic).
+I /I8/NFET_A
+? MOS width mismatch: 2e-06(extracted) vs 9.82205e-05(schematic).
+I /I29/NFET_A
+? MOS width mismatch: 2e-06(extracted) vs 4.52508e-05(schematic).
+I /I7/NFET_A
+? MOS width mismatch: 2e-06(extracted) vs 4.52508e-05(schematic).
+I /I29/NFET_B
+? MOS width mismatch: 2e-06(extracted) vs 4.22508e-05(schematic).
+I /I5/NFET_A
+? MOS width mismatch: 2e-06(extracted) vs 4.52508e-05(schematic).
+I /I3/NFET_A
+? MOS width mismatch: 2e-06(extracted) vs 2.01784e-05(schematic).
+I /I5/NFET_B
+? MOS width mismatch: 2e-06(extracted) vs 4.22508e-05(schematic).
+I /I6/NFET_A
+? MOS width mismatch: 2e-06(extracted) vs 5.45243e-05(schematic).
+I /I6/NFET_B
+? MOS width mismatch: 2e-06(extracted) vs 5.45243e-05(schematic).
+I /I4/NFET_A
+? MOS width mismatch: 2e-06(extracted) vs 4.6908e-05(schematic).
+I /I4/NFET_B
+? MOS width mismatch: 2e-06(extracted) vs 4.6908e-05(schematic).
+I /I3/NFET_B
+? MOS width mismatch: 2e-06(extracted) vs 2.01784e-05(schematic).
+I /I2/NFET_B
+? MOS width mismatch: 2e-06(extracted) vs 2.01784e-05(schematic).
+I /I2/NFET_A
+? MOS width mismatch: 2e-06(extracted) vs 2.01784e-05(schematic).
+I /I7/NFET_B
+? MOS width mismatch: 2e-06(extracted) vs 4.22508e-05(schematic).
+I /I0/NFET_B
+? MOS width mismatch: 2e-06(extracted) vs 1.736e-05(schematic).
+I /I0/NFET_A
+? MOS width mismatch: 2e-06(extracted) vs 1.736e-05(schematic).

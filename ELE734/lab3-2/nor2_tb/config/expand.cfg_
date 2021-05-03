@@ -1,0 +1,25 @@
+//Revision 4
+//NOTE
+// Default template for spectre
+// Note:
+//      Please remember to replace Top Cell Library, Cell, and View
+//      fields with the actual names used by your design.
+//END_NOTE
+
+config nor2_tb;
+design lab3.nor2_tb:schematic;
+liblist myLib;
+
+viewlist spectre, cmos_sch, \cmos.sch , schematic, veriloga, ahdl;
+stoplist spectre;
+
+
+inst (lab3.nor2_tb:schematic).I3 binding :schematic;
+inst (lab3.nor2_tb:schematic).I0 binding :schematic;
+inst (lab3.nor2_tb:schematic).I2 binding :schematic;
+inst (lab3.nor2_tb:schematic).I12 binding :extracted;
+inst (lab3.nor2_tb:schematic).I11 binding :extracted;
+inst (lab3.nor2_tb:schematic).I10 binding :extracted;
+
+
+endconfig

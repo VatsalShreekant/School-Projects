@@ -1,0 +1,81 @@
+*WARNING* LIB Lab1 from File /home/student1/gcascian/ELE734/cds.lib Line 33 redefines
+LIB Lab1 from the same file (defined earlier.)
+*WARNING* LIB lab3 from File /home/student1/gcascian/ELE734/cds.lib Line 39 redefines
+LIB lab3 from the same file (defined earlier.)
+*WARNING* LIB lab4 from File /home/student1/gcascian/ELE734/cds.lib Line 41 redefines
+LIB lab4 from the same file (defined earlier.)
+
+Running simulation in directory: "/home/student1/gcascian/ELE734/LVS".
+
+
+
+Begin netlist:    Nov 29 09:33:54 2019
+	view name list	= ("auLvs" "extracted" "schematic")
+	stop name list	= ("auLvs")
+	library name	= "lab5"
+	cell name	= "fulladder"
+	view name	= "extracted"
+	globals lib	= "basic"
+Running Artist Flat Netlisting ...
+End netlist:    Nov 29 09:33:55 2019
+
+Moving original netlist to extNetlist
+Removing parasitic components from netlist
+	presistors removed:  0
+	pcapacitors removed: 0
+	pinductors removed:  0
+	pdiodes removed:     0
+	trans lines removed: 0
+	23 nodes merged into 23 nodes
+
+
+Begin netlist:    Nov 29 09:33:55 2019
+	view name list	= ("auLvs" "schematic")
+	stop name list	= ("auLvs")
+	library name	= "lab5"
+	cell name	= "fulladder"
+	view name	= "schematic"
+	globals lib	= "basic"
+Running Artist Flat Netlisting ...
+End netlist:    Nov 29 09:33:55 2019
+
+Moving original netlist to extNetlist
+Removing parasitic components from netlist
+	presistors removed:  0
+	pcapacitors removed: 0
+	pinductors removed:  0
+	pdiodes removed:     0
+	trans lines removed: 0
+	68 nodes merged into 68 nodes
+
+Running netlist comparison program:  LVS
+Begin comparison:    Nov 29 09:33:55 2019
+@(#)$CDS: LVS.exe version 5.1.0 10/28/2008 10:20 (cicln03) $
+
+The net-lists failed to match.
+
+			     layout  schematic
+				instances
+	un-matched		1	1
+	rewired			11	0
+	size errors		36	36
+	pruned			0	0
+	active			36	36
+	total			36	36
+
+				  nets
+	un-matched		4	4
+	merged			0	0
+	pruned			0	0
+	active			23	23
+	total			23	23
+
+				terminals
+	un-matched		1	1
+	matched but
+	different type		6	6
+	total			7	7
+End comparison:      Nov 29 09:33:56 2019
+
+
+Comparison program completed successfully.

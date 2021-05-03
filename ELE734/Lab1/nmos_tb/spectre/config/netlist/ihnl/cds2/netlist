@@ -1,0 +1,13 @@
+
+// Library name: Lab1
+// Cell name: nmos_tb
+// View name: schematic
+// Inherited view list: spectre cmos_sch cmos.sch schematic veriloga ahdl
+V0 (net019 0) vsource dc= v1 type=dc
+V1 (net017 0) vsource dc= v2 type=dc
+V2 (net015 0) vsource dc=0 type=dc
+v1 (net5 0) vsource dc= v1 type=dc
+v2 (net3 0) vsource dc= v2 type=dc
+v3 (net1 0) vsource dc=0 type=dc
+I5 (net015 net017 net019 0) nmos
+I1 (net1 net3 net5 0) nmos_extracted

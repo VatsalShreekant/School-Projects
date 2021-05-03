@@ -1,0 +1,6 @@
+
+// Library name: Lab1
+// Cell name: nmos
+// View name: extracted
+// Inherited view list: spectre cmos_sch cmos.sch schematic veriloga ahdl
+subckt nmos_extracted B D G S

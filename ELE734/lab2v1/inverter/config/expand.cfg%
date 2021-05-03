@@ -1,0 +1,21 @@
+//Revision 6
+//NOTE
+// Default template for spectre
+// Note:
+//      Please remember to replace Top Cell Library, Cell, and View
+//      fields with the actual names used by your design.
+//END_NOTE
+
+config inverter;
+design lab2v1.inverter_TB:schematic;
+liblist myLib;
+
+viewlist spectre, cmos_sch, \cmos.sch , schematic, veriloga, ahdl;
+stoplist spectre;
+
+
+inst (lab2v1.inverter_TB:schematic).I0 binding :schematic;
+inst (lab2v1.inverter_TB:schematic).I13 binding :extracted;
+
+
+endconfig

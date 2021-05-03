@@ -1,0 +1,50 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/student1/vshreeka/coe608/lab5/simulation/qsim
+vcontrol
+!s110 1553201523
+!i10b 1
+!s100 9bb?Q@JQ_HYN@A4b0n[AN2
+IM<6F:1[DUU]=ojFf@XX2<2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1553201521
+8control.vo
+Fcontrol.vo
+L0 32
+Z2 OV;L;10.4d;61
+r1
+!s85 0
+31
+!s108 1553201523.000000
+!s107 control.vo|
+!s90 -work|work|control.vo|
+!i113 1
+Z3 o-work work
+vcontrol_vlg_vec_tst
+!s110 1553201524
+!i10b 1
+!s100 Rm7^<CNF7CO>I2o[lV3cF1
+I5>=l41oo0SS;S5mgc_mkh2
+R1
+R0
+w1553201519
+8control_wavel.vwf.vt
+Fcontrol_wavel.vwf.vt
+L0 30
+R2
+r1
+!s85 0
+31
+!s108 1553201524.000000
+!s107 control_wavel.vwf.vt|
+!s90 -work|work|control_wavel.vwf.vt|
+!i113 1
+R3

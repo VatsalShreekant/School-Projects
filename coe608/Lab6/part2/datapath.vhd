@@ -1,0 +1,248 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_arith.ALL;
+USE ieee.std_logic_unsigned.ALL;
+ENTITY datapath IS
+generic (n: natural := 32);
+PORT( 
+Clk, mClk : IN STD_LOGIC; -- clock Signal
+--Memory Signals
+WEN, EN : IN STD_LOGIC;
+-- Register Control Signals (CLR and LD).
+Clr_A , Ld_A : IN STD_LOGIC;
+Clr_B , Ld_B : IN STD_LOGIC;
+Clr_C , Ld_C : IN STD_LOGIC;
+Clr_Z , Ld_Z : IN STD_LOGIC;
+Clr_PC , Ld_PC : IN STD_LOGIC;
+Clr_IR , Ld_IR : IN STD_LOGIC;
+
+-- Register outputs (Some needed to feed back to control unit. Others pulled out for testing.
+Out_A : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+Out_B : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+Out_C : OUT STD_LOGIC;
+Out_Z : OUT STD_LOGIC;
+Out_PC : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+Out_IR : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+
+-- Special inputs to PC.
+Inc_PC : IN STD_LOGIC;
+
+-- Address and Data Bus signals for debugging. 
+ADDR_OUT : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+DATA_IN : IN STD_LOGIC_VECTOR(31 DOWNTO 0); 
+DATA_OUT: OUT STD_LOGIC_VECTOR(31 DOWNTO 0);--MEM_OUT, MEM_IN 
+--MEM_ADDR : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+
+-- Various MUX controls.
+DATA_MUX: IN STD_LOGIC_VECTOR(1 DOWNTO 0); 
+Reg_Mux : IN STD_LOGIC;
+A_Mux, B_Mux : IN STD_LOGIC; 
+IM_MUX1 : IN STD_LOGIC; 
+IM_MUX2 : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+
+-- ALU Operations.
+ALU_OP : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+TEMP: OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+);
+END datapath;
+---------------------------------------------------------------------------------------------------------------------------
+ARCHITECTURE description OF datapath IS
+
+
+	COMPONENT alu32
+	PORT
+	(
+		a, b	: IN 	std_logic_vector(n-1 DOWNTO 0);
+		op		: IN 	std_logic_vector(2 DOWNTO 0);
+		result	: OUT 	std_logic_vector(n-1 DOWNTO 0);	
+		cOut : buffer std_logic_vector(n-1 downto 0);	
+		coutF	: OUT 	std_logic;
+		zero	: OUT 	std_logic		
+	);
+	END COMPONENT;
+--------Data Memory module
+	COMPONENT data_mem
+	PORT(
+		clk : IN STD_LOGIC;
+		addr : IN UNSIGNED(7 DOWNTO 0);
+		data_in : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		wen : IN STD_LOGIC;
+		en : IN STD_LOGIC;
+		data_out : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+	);
+	END COMPONENT;
+-------1-bit Register	
+	COMPONENT reg1 
+	PORT(
+		d : IN STD_LOGIC; -- input.
+		ld : IN STD_LOGIC; -- load/enable.
+		clr : IN STD_LOGIC; -- async. clear.
+		clk : IN STD_LOGIC; -- clock.
+		Q : OUT STD_LOGIC
+		); -- output.
+		
+	END COMPONENT;
+--------32 Bit Register	
+	COMPONENT reg32 
+	PORT(
+		d32 : IN STD_LOGIC_VECTOR(31 DOWNTO 0); -- input.
+		ld : IN STD_LOGIC; -- load/enable.
+		clr : IN STD_LOGIC; -- async. clear.
+		clk : IN STD_LOGIC; -- clock.
+		Q32 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+		); -- output.
+	END COMPONENT;
+--Program Counter 32-bits
+	COMPONENT pc 
+	PORT(
+		   d        : IN STD_LOGIC_VECTOR(n-1 DOWNTO 0); 
+		   ld       : IN STD_LOGIC;
+		   inc		: IN STD_LOGIC; 
+		   clr      : IN STD_LOGIC; 
+		   clk      : IN STD_LOGIC; 
+		   q        : INOUT STD_LOGIC_VECTOR(n-1 DOWNTO 0)
+		   ); 
+	END COMPONENT;		
+--Multiplexer 2 to 1  	
+	COMPONENT MUX_2 
+		PORT(
+		in_ch1 : IN STD_LOGIC_VECTOR(31 DOWNTO 0); -- input port 0.
+		in_ch2 : IN STD_LOGIC_VECTOR(31 DOWNTO 0); -- input port 1.
+		sel_ch: IN STD_LOGIC; -- select input port
+		Out2 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)); -- output.
+	END COMPONENT;
+--Multiplexer 3 to 1 implementation
+	COMPONENT MUX_3 
+	PORT(
+		in_ch1 : IN STD_LOGIC_VECTOR(31 DOWNTO 0); -- input port 0.
+		in_ch2 : IN STD_LOGIC_VECTOR(31 DOWNTO 0); -- input port 1.
+		in_ch3 : IN STD_LOGIC_VECTOR(31 DOWNTO 0); -- input port 2.
+		sel_ch2 : IN STD_LOGIC_VECTOR(1 DOWNTO 0); -- select ports.
+		Out3 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)); -- output.
+	END COMPONENT;
+--LOWER ZERO EXTENDER---
+	COMPONENT LZE 
+	PORT(
+		   d        : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		   o		: out  STD_LOGIC_VECTOR(31 DOWNTO 0));		 
+	end COMPONENT;
+--UPPER ZERO EXTENDER---	
+	COMPONENT UZE 
+	PORT(
+		   d        : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		   o		: out  STD_LOGIC_VECTOR(31 DOWNTO 0));		 
+	end COMPONENT;
+--REDUCER MODULE--
+	COMPONENT RED
+		PORT(
+			   d        : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+			   o		: OUT UNSIGNED(7 DOWNTO 0));     
+	end COMPONENT;
+	
+-- Internal signals--------
+signal DATA_BUS: std_logic_vector(31 downto 0); --out data mux / in regB, im_mux1, IR
+signal IR_OUT: std_logic_vector(31 downto 0); -- out IR / in LZE, UZE, LZE
+		   
+signal LZE_OUT: std_logic_vector(31 downto 0);-- output of LZE
+signal UZE_OUT: std_logic_vector(31 downto 0);-- output of UZE
+
+signal A_IN : std_logic_vector(31 downto 0); 
+signal A_OUT : std_logic_vector(31 downto 0); 
+signal B_IN : std_logic_vector(31 downto 0); 
+signal B_OUT : std_logic_vector(31 downto 0); 
+
+signal addr_in: unsigned(7 downto 0);
+
+signal M4_OUT: std_logic_vector(31 downto 0);
+signal M5_OUT: std_logic_vector(31 downto 0);
+signal ALU_OUT: std_logic_vector(31 downto 0);
+--INTERMEDIATE-----
+signal OUT_DATA: std_logic_vector(31 downto 0);
+signal OUT_ADDR: std_logic_vector(31 downto 0);
+signal IN_MEM: std_logic_vector(31 downto 0);
+signal OUT_MEM: std_logic_vector(31 downto 0);
+signal tmpz, tmpc : std_logic;
+signal one : std_logic_vector(31 downto 0);  
+
+--------------------------------------------------------------------------------------
+Begin
+	one <= "00000000000000000000000000000001"; 
+	--DATA_MUX-- (INPUT[2],SELECT,OUTPUT) 	
+	M6: MUX_3 port map (DATA_IN, OUT_MEM,ALU_OUT ,DATA_MUX, DATA_BUS); 
+	
+	--REG 32 bit : R(Input, load, clear, clock, output)
+	--IR--
+	IR: reg32 port map (DATA_BUS, LD_IR, CLR_IR, Clk, IR_OUT);
+	--LZE--
+	P1: LZE port map (IR_OUT, LZE_OUT); 
+	--UZE--
+	P2: UZE port map (IR_OUT, UZE_OUT); 
+	--RED---
+	P3: RED port map (IR_OUT,addr_in); ----IMPLEMENT!!!!!!!!!!!!!!!
+
+	--MUX_2- (INPUT,SELECT,OUTPUT)
+	--A Mux -- 
+	M2: MUX_2 port map (DATA_BUS,LZE_OUT,A_Mux, A_IN); 
+	--B Mux --
+	M3: MUX_2 port map (DATA_BUS,LZE_OUT,B_Mux, B_IN); 
+	--A&B REG-- 
+	--RegA-
+	A: reg32 port map (A_IN, LD_A, CLR_A, Clk, A_OUT); 
+	--RegB-
+	B: reg32 port map (B_IN, LD_B, CLR_B, Clk, B_OUT);
+	--REG_Mux-- 	
+	M1: MUX_2 port map (A_OUT,B_OUT, Reg_Mux, IN_MEM); 
+	--IM_MUX1-- 	
+	M4: MUX_2 port map (A_OUT,UZE_OUT, IM_MUX1, M4_OUT); 
+	--IM_MUX2-- 	
+	M5: MUX_3 port map (B_OUT,LZE_OUT,one,IM_MUX2, M5_OUT); 	
+	--ALU--( A, B, Select OP,OUTPUT, Carry, Zero)
+	
+	ALU: alu32
+	PORT MAP
+	(
+		a => M4_OUT,
+		b => M5_OUT,
+		op	=>ALU_OP,
+		result =>ALU_OUT,
+		coutF =>tmpc,
+		zero  =>tmpz		
+	);
+	
+	ProgCount:pc
+	PORT MAP
+	(
+		   d  => LZE_OUT,
+		   ld  => LD_PC,
+		   inc => INC_PC,
+		   clr =>CLR_PC,
+		   clk =>Clk,
+		   q   =>OUT_ADDR
+		   );
+		   
+	D1 :data_mem --DATA MEMORY MODULE
+	PORT MAP
+	(
+		clk =>mClk,
+		addr => addr_in,
+		data_in => IN_MEM,
+		wen =>WEN,  
+		en  =>EN,
+		data_out =>OUT_MEM
+	);
+	
+	--out zero-- R(Input, load, clear, clock, output)
+	Z: reg1 port map(tmpz, LD_Z, CLR_Z, Clk, Out_Z);
+	--out carry--
+	C: reg1 port map(tmpc, LD_C, CLR_C, Clk, Out_C);
+
+	--Signal to datapath outputs 
+	DATA_OUT <= DATA_BUS;
+	--MEM_OUT <=OUT_MEM;
+	--	MEM_IN <=IN_MEM;	
+	ADDR_OUT <= OUT_ADDR;
+	OUT_IR <= IR_OUT;
+	OUT_PC <= OUT_ADDR;
+	OUT_A <= A_OUT;
+	OUT_B <= B_OUT; 
+End description; 

@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      a29yang
+HostName                       kipling.ee.ryerson.ca
+ProcessIdentifier              15207
+ProcessCreationTime_UTC        1570225521
+ProcessCreationTime_Readable   Fri Oct  4 17:45:21 2019 EDT
+AppIdentifier                  /CMC/tools/cadence/IC5141USR6_lnx86/tools/dfII/bin/icfb.exe
+OSType                         lnx86
+ReasonForPlacingEditLock       XXsave write lock
+FilePathUsedToEditLock         /home/student1/a29yang/Desktop/ele734/lab2v1/inverter_TB/schematic/sch.cdb
+TimeEditLocked                 Fri Oct  4 20:00:02 2019 EDT
